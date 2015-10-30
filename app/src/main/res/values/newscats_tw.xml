@@ -1,0 +1,584 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string-array name="newscatsYahoo">
+    	<item>政治新聞</item>
+		<item>社會新聞</item>
+		<item>地方新聞</item>
+		<item>國際新聞</item>
+		<item>財經新聞</item>
+		<item>科技新聞</item>
+		<item>運動新聞</item>
+		<item>健康新聞</item>
+		<item>教育新聞</item>
+		<item>藝文新聞</item>
+		<item>影劇新聞</item>
+		<item>旅遊新聞</item>
+		<item>生活新聞</item>
+		<item>實用心情新聞</item>
+		<item>感人心情新聞</item>
+		<item>開心心情新聞</item>
+		<item>超扯心情新聞</item>
+		<item>害怕心情新聞</item>
+		<item>難過心情新聞</item>
+		<item>火大心情新聞</item>
+    </string-array>
+    <string-array name="newsfeedsYahoo">
+  	    <item>http://tw.news.yahoo.com/rss/politics</item>
+	    <item>http://tw.news.yahoo.com/rss/society</item>
+	    <item>http://tw.news.yahoo.com/rss/local</item>
+		<item>http://tw.news.yahoo.com/rss/world</item>
+		<item>http://tw.news.yahoo.com/rss/finance</item>
+		<item>http://tw.news.yahoo.com/rss/technology</item>
+		<item>http://tw.news.yahoo.com/rss/sports</item>
+		<item>http://tw.news.yahoo.com/rss/health</item>
+		<item>http://tw.news.yahoo.com/rss/education</item>
+		<item>http://tw.news.yahoo.com/rss/art</item>
+	  	<item>http://tw.news.yahoo.com/rss/entertainment</item>
+		<item>http://tw.news.yahoo.com/rss/travel</item>
+		<item>http://tw.news.yahoo.com/rss/lifestyle</item>
+		<item>http://tw.news.yahoo.com/sentiment/informative/rss/</item>
+		<item>http://tw.news.yahoo.com/sentiment/warm/rss/</item>
+		<item>http://tw.news.yahoo.com/sentiment/happy/rss/</item>
+		<item>http://tw.news.yahoo.com/sentiment/odd/rss/</item>
+		<item>http://tw.news.yahoo.com/sentiment/worried/rss/</item>
+		<item>http://tw.news.yahoo.com/sentiment/depressing/rss/</item>
+		<item>http://tw.news.yahoo.com/sentiment/angry/rss/</item>
+    </string-array>
+    <string-array name="newscatsAppDaily">
+    	<item>即時新聞</item>
+    	
+	   	<item>今日要聞總覽</item>
+    	<item>今日國際總覽</item>
+    	<item>今日財經總覽</item>
+    	<item>今日娛樂總覽</item>
+    	<item>今日體育總覽</item>
+    	<item>今日地產總覽</item>
+    	<item>今日論壇與專欄</item>
+    	
+    	<item>要聞-頭條</item>
+    	<item>要聞-要聞</item>
+    	<item>要聞-政治</item>
+    	<item>要聞-社會</item>
+    	<item>要聞-生活</item>
+    	<item>要聞-法庭</item>
+    	<item>要聞-地方綜合</item>
+    	<item>要聞-暖流</item>
+    	<item>要聞-投訴</item>
+    	
+    	<item>國際-頭條</item>
+    	<item>國際-焦點</item>
+    	<item>國際-中國</item>
+    	<item>國際-雙語天下</item>
+    	
+    	<item>財經-焦點</item>
+    	<item>財經-國際財經</item>
+    	<item>財經-證券</item>
+    	<item>財經-科技</item>
+    	<item>財經-生活理財</item>
+    	<item>財經-綜合產業</item>
+    	<item>財經-基金</item>
+    	<item>財經-頭家生意</item>
+    	
+    	<item>地產-投資</item>
+    	<item>地產-地產王</item>
+    	<item>地產-居家王</item>
+    	<item>地產-豪宅王</item>
+    	<item>地產-中古好屋王</item>
+    	
+    	<item>娛樂-娛樂名人</item>
+    	<item>娛樂-木瓜霞爆料</item>
+    	<item>娛樂-直擊好萊塢</item>
+    	<item>娛樂-亞洲哈燒星</item>
+    	<item>娛樂-名人時尚</item>
+    	<item>娛樂-Kelly Talk</item>
+    	<item>娛樂-追星趴趴走</item>
+    	<item>娛樂-今天我最肉</item>
+    	
+    	<item>體育-焦點</item>
+    	<item>體育-大運動場</item>
+    	<item>體育-籃球瘋</item>
+    	<item>體育-投打對決</item>
+    	<item>體育-足球新聞</item>
+    	
+    	<item>論壇-蘋論</item>
+    	<item>論壇-司馬觀點</item>
+    	<item>論壇-人間異語</item>
+    	<item>論壇-論壇</item>
+    	
+    	<item>專欄-經濟人語</item>
+    	<item>專欄-法律信箱</item>
+    	<item>專欄-辣蘋果專欄</item>
+    	<item>專欄-今日我最美</item>
+    	<item>專欄-一周大事</item>
+    	<item>專欄-新聞魔法</item>
+    	<item>專欄-求職資訊</item>
+    	<item>專欄-蘋果民調</item>
+    	<item>專欄-營養Q&amp;A</item>
+    	<item>專欄-愛地球</item>
+    	<item>專欄-獵人政治漫畫</item>
+  	
+    	<item>副刊-生活潮流</item>
+    	<item>副刊-旅遊與美食</item>
+    	<item>副刊-家庭與健康</item>
+    	<item>副刊-科技</item>
+    	<item>副刊-論壇與專欄</item>
+    </string-array>
+    <string-array name="newsfeedsAppDaily">
+	    <item>http://www.appledaily.com.tw/rss/create/kind/rnews</item>
+	   
+	   	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/5</item>
+    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/7</item>
+    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/8</item>
+    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/9</item>
+    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/10</item>
+    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/31488836</item>
+    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/col</item>
+    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/1077</item>
+    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/11</item>
+    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/151</item>
+    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/1066</item>
+    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/2724</item>
+    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/152</item>
+    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/1076</item>
+    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/9499</item>
+    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/16287</item>
+    	
+    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/31488833</item>
+    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/1697</item>
+    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/13</item>
+    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/1945241</item>
+   	
+    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/14</item>
+    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/1052</item>
+    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/1028</item>
+    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/1048</item>
+    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/1078</item>
+    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/3847</item>
+    	<item>http://www.appledaily.com.tw/rss/create/kind/col/type/3536666</item>
+    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/5050</item>
+    	
+    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/1061</item>
+    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/31425399</item>
+    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/31477866</item>
+    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/31477901</item>
+    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/31477902</item>
+    	
+    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/1600</item>
+    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/26153</item>
+    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/2890</item>
+    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/6270</item>
+    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/1403917</item>
+    	<item>http://www.appledaily.com.tw/rss/create/kind/col/type/1091735</item>
+    	<item>http://www.appledaily.com.tw/rss/create/kind/col/type/38905</item>
+    	<item>http://www.appledaily.com.tw/rss/create/kind/col/type/30354262</item>
+    	
+    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/2153</item>
+    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/16289</item>
+    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/16</item>
+    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/2154</item>
+    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/31320925</item>
+    	
+    	<item>http://www.appledaily.com.tw/rss/create/kind/col/type/974972</item>
+    	<item>http://www.appledaily.com.tw/rss/create/kind/col/type/1635487</item>
+    	<item>http://www.appledaily.com.tw/rss/create/kind/col/type/2262677</item>
+		<item>http://www.appledaily.com.tw/rss/create/kind/col/type/836825</item>
+		
+    	<item>http://www.appledaily.com.tw/rss/create/kind/col/type/960434</item>
+    	<item>http://www.appledaily.com.tw/rss/create/kind/col/type/1338739</item>
+    	<item>http://www.appledaily.com.tw/rss/create/kind/col/type/30674022</item>
+    	<item>http://www.appledaily.com.tw/rss/create/kind/col/type/30342177</item>
+    	<item>http://www.appledaily.com.tw/rss/create/kind/col/type/33638</item>
+    	<item>http://www.appledaily.com.tw/rss/create/kind/col/type/28856</item>
+    	<item>http://www.appledaily.com.tw/rss/create/kind/col/type/30643434</item>
+    	<item>http://www.appledaily.com.tw/rss/create/kind/col/type/870375</item>
+    	<item>http://www.appledaily.com.tw/rss/create/kind/col/type/31813514</item>
+    	<item>http://www.appledaily.com.tw/rss/create/kind/col/type/32042332</item>
+    	<item>http://www.appledaily.com.tw/rss/create/kind/col/type/32208716</item>
+   	
+    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/17</item>
+    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/ALL24</item>
+    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/19</item>
+    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/18</item>
+    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/20</item>
+    </string-array> 
+    <string-array name="newscatsUDN">
+    <!-- 	<item>即時新聞-國內要聞</item>
+    	<item>即時新聞-兩岸國際</item>
+    	<item>即時新聞-財經產業</item> -->
+    	<item>最新報導</item>
+    	<item>udn發燒新聞</item>
+    	<item>聯合報發燒新聞</item>
+    	<item>經濟日報發燒新聞</item>
+    	<item>聯合晚報發燒新聞</item>
+    	<item>焦點要聞-焦點</item>
+    	<item>焦點要聞-綜合</item>
+    	<item>焦點要聞-政治</item>
+    	<item>焦點要聞-社會</item>
+    	<item>焦點要聞-生活</item>
+    	<item>焦點要聞-意見評論</item>
+    	<item>焦點要聞-校園博覽會</item>
+    	<item>聯合書報攤/新聞時事</item>
+    	<item>兩岸全球-兩岸要聞</item>
+    	<item>兩岸全球-台商經貿</item>
+    	<item>兩岸全球-國際焦點</item>
+    	<item>兩岸全球-國際財經</item>
+    	<item>兩岸全球-全球觀察</item>
+		<item>財經股市-財經焦點</item>
+		<item>財經股市-股市要聞</item>
+		<item>財經股市-股市快訊</item>
+		<item>財經股市-研究報告</item>
+		<item>財經股市-稅務法務</item>
+		<item>財經股市-房市情報</item>
+		<item>財經股市-個人理財 </item>
+		<item>財經股市-基金</item>
+		<item>財經股市-理財會客室</item>
+		<item>運動賽事-棒球</item>
+		<item>運動賽事-籃球</item>
+		<item>運動賽事-體壇動態</item>
+		<item>影視娛樂-熱門星聞</item>
+		<item>影視娛樂-廣電港陸</item>
+		<item>影視娛樂-海外星球</item>
+		<item>影視娛樂-日韓星情</item>
+		<item>影視娛樂-電影世界</item>
+		<item>影視娛樂-流行音樂</item>
+		<item>影視娛樂-觀點專題</item>
+		<item>消費資訊-消費流行</item>
+		<item>消費資訊-食樂指南</item>
+		<item>消費資訊-折扣好康</item>
+		<item>消費資訊-發燒車訊</item>
+		<item>消費資訊-數位資訊</item>
+		<item>健康休閒-醫藥新聞</item>
+		<item>健康休閒-家婦繽紛</item>
+		<item>健康休閒-談星論命</item>
+		<item>健康休閒-文化副刊</item>
+		<item>健康休閒-旅遊休閒</item>
+		<item>健康休閒-健康醫藥</item>
+		<item>健康休閒-閱讀藝文</item>
+    </string-array>
+    <string-array name="newsfeedsUDN">
+    <!-- 	<item>http://udn.com/udnrss/BREAKINGNEWS1.xml</item>
+    	<item>http://udn.com/udnrss/BREAKINGNEWS4.xml</item>
+    	<item>http://udn.com/udnrss/BREAKINGNEWS6.xml</item> -->
+    	<item>http://udn.com/udnrss/latest.xml</item>
+    	<item>http://udn.com/udnrss/mostpopular.xml</item>
+    	<item>http://udn.com/udnrss/udpopular.xml</item>
+    	<item>http://udn.com/udnrss/endpopular.xml</item>
+    	<item>http://udn.com/udnrss/unpopular.xml</item>
+    	<item>http://udn.com/udnrss/focus.xml</item>
+    	<item>http://udn.com/udnrss/education.xml</item>
+    	<item>http://udn.com/udnrss/politics.xml</item>
+    	<item>http://udn.com/udnrss/social.xml</item>
+    	<item>http://udn.com/udnrss/life.xml</item>
+    	<item>http://udn.com/udnrss/opinion.xml</item>
+    	<item>http://mag.udn.com/udnrss/campus_rss.xml</item>
+    	<item>http://mag.udn.com/udnrss/newsstand_se_rss.xml</item>
+    	<item>http://udn.com/udnrss/mainland.xml</item>
+    	<item>http://udn.com/udnrss/financechina.xml</item>
+    	<item>http://udn.com/udnrss/international.xml</item>
+    	<item>http://udn.com/udnrss/financeworld.xml</item>
+    	<item>http://mag.udn.com/udnrss/world_rss.xml</item>
+    	<item>http://udn.com/udnrss/financesfocus.xml</item>
+		<item>http://udn.com/udnrss/stock.xml</item>
+		<item>http://udn.com/udnrss/stklatest.xml</item>
+		<item>http://mag.udn.com/udnrss/report_rss.xml</item>
+		<item>http://udn.com/udnrss/tax.xml</item>
+		<item>http://udn.com/udnrss/houses.xml</item>
+		<item>http://mag.udn.com/udnrss/wealth_rss.xml</item>
+		<item>http://mag.udn.com/udnrss/fund_rss.xml</item>
+		<item>http://mag.udn.com/udnrss/m_forum_rss.xml</item>
+		<item>http://udn.com/udnrss/baseball.xml</item>
+		<item>http://udn.com/udnrss/basketball.xml</item>
+		<item>http://udn.com/udnrss/sportsfocus.xml</item>
+		<item>http://udn.com/udnrss/starsfocus.xml</item>
+		<item>http://udn.com/udnrss/tv.xml</item>
+		<item>http://udn.com/udnrss/starswestern.xml</item>
+		<item>http://udn.com/udnrss/starsjk.xml</item>
+		<item>http://udn.com/udnrss/movie.xml</item>
+		<item>http://udn.com/udnrss/music.xml</item>
+		<item>http://udn.com/udnrss/starssubject.xml</item>
+		<item>http://mag.udn.com/udnrss/happylife_rss.xml</item>
+		<item>http://udn.com/udnrss/food.xml</item>
+		<item>http://udn.com/udnrss/shopping.xml</item>
+		<item>http://mag.udn.com/udnrss/car_rss.xml</item>
+		<item>http://mag.udn.com/udnrss/digital_rss.xml</item>
+		<item>http://udn.com/udnrss/health.xml</item>
+		<item>http://udn.com/udnrss/benfen.xml</item>
+		<item>http://udn.com/udnrss/astrology.xml</item>
+		<item>http://udn.com/udnrss/reading.xml</item>
+		<item>http://travel.udn.com/udnrss/travel_rss.xml</item>
+		<item>http://mag.udn.com/udnrss/life_rss.xml</item>
+		<item>http://mag.udn.com/udnrss/reading_rss.xml</item>
+    </string-array>
+    <string-array name="newscatsPCHome">
+    	<item>政治新聞</item>
+    	<item>社會新聞</item>
+    	<item>生活新聞</item>
+    	<item>娛樂新聞</item>
+    	<item>運動新聞</item>
+    	<item>財經新聞</item>
+		<item>國際新聞</item>
+		<item>地方新聞</item>
+    </string-array>
+    <string-array name="newsfeedsPCHome">
+    	<item>http://n.yam.com/RSS/Rss_politics.xml</item>
+    	<item>http://n.yam.com/RSS/Rss_society.xml</item>
+    	<item>http://n.yam.com/RSS/Rss_life.xml</item>
+    	<item>http://n.yam.com/RSS/Rss_entertain.xml</item>
+    	<item>http://n.yam.com/RSS/Rss_sports.xml</item>
+    	<item>http://n.yam.com/RSS/Rss_fn.xml</item>
+    	<item>http://n.yam.com/RSS/Rss_international.xml</item>
+    	<item>http://n.yam.com/RSS/Rss_place.xml</item>
+    </string-array>
+    <string-array name="newscatsChinaTimes">
+    	<item>即時新聞</item>
+    	<item>熱門排行榜</item> 
+    	<item>焦點新聞</item> 
+    	<item>政治新聞</item>
+    	<item>財經即時新聞</item>
+    	<item>旺報新聞</item>
+    <!-- 	<item>財經新聞</item>
+    	<item>股市新聞</item> -->
+    	<item>社會新聞</item> 
+    	<item>國際新聞</item> 
+    	<item>兩岸新聞</item> 
+    	<item>地方新聞</item> 
+    	<item>言論新聞</item> 
+    	<item>科技新聞</item> 
+    	<item>樂活新聞</item> 
+    	<item>娛樂新聞</item> 
+    	<item>運動新聞</item> 
+    	<item>藝文新聞</item> 
+    </string-array>
+    <string-array name="newsfeedsChinaTimes">
+    	<item>http://rss.chinatimes.com/rss/latestnews-u.rss</item>
+    	<item>http://rss.chinatimes.com/rss/clickboard-u.rss</item>
+    	<item>http://rss.chinatimes.com/rss/focusing-u.rss</item>
+    	<item>http://rss.chinatimes.com/rss/Politic-u.rss</item>
+    	<item>http://rss.chinatimes.com/rss/moneynews-u.rss</item>
+    	<item>http://rss.chinatimes.com/rss/want-u.rss</item>
+     <!-- 	<item>http://rss.chinatimes.com/rss/finance.rss</item>
+    	<item>http://rss.chinatimes.com/rss/stock.rss</item> -->
+    	<item>http://rss.chinatimes.com/rss/social-u.rss</item>
+    	<item>http://rss.chinatimes.com/rss/international-u.rss</item>
+    	<item>http://rss.chinatimes.com/rss/mainland-u.rss</item>
+    	<item>http://rss.chinatimes.com/rss/local-u.rss</item>
+    	<item>http://rss.chinatimes.com/rss/comment-u.rss</item>
+    	<item>http://rss.chinatimes.com/rss/technology-u.rss</item>
+    	<item>http://rss.chinatimes.com/rss/life-u.rss</item>
+    	<item>http://rss.chinatimes.com/rss/showbiz-u.rss</item>
+    	<item>http://rss.chinatimes.com/rss/sport-u.rss</item>
+    	<item>http://rss.chinatimes.com/rss/philology-u.rss</item>
+    </string-array>  
+    <string-array name="newscatsNOW">
+    	<item>即時新聞</item>
+    	<item>政治新聞</item>
+    	<item>財經新聞</item>
+    	<item>社會新聞</item>
+    	<item>生活新聞</item>
+    	<item>消費新聞</item>
+    	<item>旅遊新聞</item>
+    	<item>科技新聞</item>
+    	<item>娛樂新聞</item>
+    	<item>運動新聞</item>
+    	<item>網路追追追</item>
+		<item>命理新聞</item>
+		<item>色區新聞</item>
+		<!-- <item>美人幫</item> -->
+    </string-array>
+    <string-array name="newsfeedsNOW">
+    	<item>http://www.nownews.com/rss/realtime.rdf</item>
+    	<item>http://www.nownews.com/rss/1.rdf</item>
+    	<item>http://www.nownews.com/rss/2.rdf</item>
+    	<item>http://www.nownews.com/rss/3.rdf</item>
+    	<item>http://www.nownews.com/rss/4.rdf</item>
+    	<item>http://www.nownews.com/rss/5.rdf</item>
+    	<item>http://www.nownews.com/rss/6.rdf</item>
+    	<item>http://www.nownews.com/rss/7.rdf</item>
+    	<item>http://www.nownews.com/rss/9.rdf</item>
+    	<item>http://www.nownews.com/rss/10.rdf</item>
+    	<item>http://www.nownews.com/rss/8.rdf</item>
+		<item>http://www.nownews.com/rss/21.rdf</item>
+		<item>http://feeds.feedburner.com/nownews/cybersex</item>
+		<!-- <item>http://www.nownews.com/rss/buty_rss.rdf</item> -->
+    </string-array>
+    <string-array name="newscatsEngadget">
+    	<item>Engadget中文版</item>
+    	<item>Engadget中国版</item>
+     	<item>科新聞</item>
+    	<item>大人物</item>
+    	<item>好科技</item>
+    	<item>癮車報</item>
+    </string-array>
+    <string-array name="newsfeedsEngadget">
+    	<item>http://chinese.engadget.com/rss.xml</item>
+    	<item>http://cn.engadget.com/rss.xml</item> 
+     	<item>http://feeds.feedburner.com/cool3c-nccc </item> <!-- http://feeds.feedburner.com/cool3c-android -->
+    	<item>http://feeds.feedburner.com/cool3c/daman</item>
+    	<item>http://feeds.feedburner.com/cool3c-her</item>
+    	<item>http://feeds.feedburner.com/cool3c/car</item>
+    </string-array>
+    <string-array name="newscatsBNext">
+    	<item>新聞精選</item>
+    	<item>科技</item>
+    	<item>網路</item>
+    	<item>人物</item>
+    	<item>品牌與設計</item>
+    	<item>綠能</item>
+    	<item>數位行銷</item>
+    	<item>社群活動</item>
+    </string-array>
+    <string-array name="newsfeedsBNext">
+    	<item>http://www.bnext.com.tw/feed/rss/topicslinks</item>
+    	<item>http://www.bnext.com.tw/Feed/rss/cid/76</item>
+    	<item>http://www.bnext.com.tw/Feed/rss/cid/99</item>
+    	<item>http://www.bnext.com.tw/Feed/rss/cid/101</item>
+    	<item>http://www.bnext.com.tw/Feed/rss/cid/133</item>
+    	<item>http://www.bnext.com.tw/Feed/rss/cid/52</item>
+    	<item>http://www.bnext.com.tw/Feed/rss/cid/102</item>
+    	<item>http://www.bnext.com.tw/Feed/rss/event</item>
+    </string-array>
+    <string-array name="newscatsEttoday">
+    	<item>即時新聞</item>
+    	<item>政經要聞</item>
+    	<item>國際新聞</item>
+    	<item>大陸新聞</item>
+    	<item>新奇新聞</item>
+    	<item>生活新聞</item>
+    	<item>社會新聞</item>
+    	<item>地方新聞</item>
+    	<item>寵物新聞</item>
+    	<item>影劇新聞</item>
+    	<item>運動新聞</item>
+    	<item>旅遊新聞</item>
+    	<item>時尚新聞</item>
+    	<item>名家新聞</item>
+		<item>開運新聞</item>
+    </string-array>
+    <string-array name="newsfeedsEttoday">
+    	<item>http://feeds.feedburner.com/ettoday/realtime</item>
+    	<item>http://feeds.feedburner.com/ettoday/news</item>
+    	<item>http://feeds.feedburner.com/ettoday/global</item>
+    	<item>http://feeds.feedburner.com/ettoday/china</item>
+    	<item>http://feeds.feedburner.com/ettoday/novelty</item>
+    	<item>http://feeds.feedburner.com/ettoday/lifestyle</item>
+    	<item>http://feeds.feedburner.com/ettoday/society</item>
+    	<item>http://feeds.feedburner.com/ettoday/local</item>
+    	<item>http://feeds.feedburner.com/ettoday/pet</item>
+    	<item>http://feeds.feedburner.com/ettoday/star</item>
+    	<item>http://feeds.feedburner.com/ettoday/sport</item>
+    	<item>http://feeds.feedburner.com/ettoday/travel</item>
+    	<item>http://feeds.feedburner.com/ettoday/consuming</item>
+    	<item>http://feeds.feedburner.com/ettoday/master</item>
+    	<item>http://feeds.feedburner.com/ettoday/fortune</item>
+    </string-array>
+    <string-array name="newscatsCNYes">
+    	<item>總覽</item>
+    	<item>頭條</item>
+    	<item>台股</item>
+    	<item>美股</item>
+    	<item>A股</item>
+    	<item>港股</item>
+    	<item>興櫃</item>
+    	<item>未上市</item>
+    	<item>國際股</item>
+    	<item>基金</item>
+    	<item>宏觀</item>
+    	<item>指標</item>
+    	<item>產業</item>
+    	<item>外匯</item>
+    	<item>期貨</item>
+    	<item>房產</item>
+    	<item>鉅亨看世界</item>
+    	<item>旅遊</item>
+    	<item>深度</item>
+    	<item>時事</item>
+    	<item>生活</item>
+    	<item>能源</item>
+    	<item>黃金</item>
+    	<item>金屬</item>
+    </string-array>
+    <string-array name="newsfeedsCNYes">
+    	<item>http://news.cnyes.com/RSS/rollnews</item>
+    	<item>http://news.cnyes.com/RSS/headline</item>
+    	<item>http://news.cnyes.com/RSS/tw_stock</item>
+    	<item>http://news.cnyes.com/RSS/us_stock</item>
+    	<item>http://news.cnyes.com/RSS/sh_stock</item>
+    	<item>http://news.cnyes.com/RSS/hk_stock</item>
+    	<item>http://news.cnyes.com/RSS/eme</item>
+    	<item>http://news.cnyes.com/RSS/pre</item>
+    	<item>http://news.cnyes.com/RSS/wd_stock</item>
+    	<item>http://news.cnyes.com/RSS/fund</item>
+    	<item>http://news.cnyes.com/RSS/MACRO</item>
+    	<item>http://news.cnyes.com/RSS/index</item>
+    	<item>http://news.cnyes.com/RSS/industry</item>
+    	<item>http://news.cnyes.com/RSS/forex</item>
+    	<item>http://news.cnyes.com/RSS/future</item>
+    	<item>http://news.cnyes.com/RSS/cnyeshouse</item>
+    	<item>http://news.cnyes.com/RSS/MURMUR</item>
+    	<item>http://news.cnyes.com/RSS/travel</item>
+    	<item>http://news.cnyes.com/RSS/deep</item>
+    	<item>http://news.cnyes.com/RSS/event</item>
+    	<item>http://news.cnyes.com/RSS/live</item>
+    	<item>http://news.cnyes.com/RSS/energry</item>
+    	<item>http://news.cnyes.com/RSS/gold</item>
+    	<item>http://news.cnyes.com/RSS/metal</item>   	
+    </string-array>  
+    <string-array name="newscatsNewsTalk">
+    	<item>要聞</item>
+    	<item>國際</item>
+    	<item>政治</item>
+    	<item>財經</item>
+    	<item>司法</item>
+    	<item>生活</item>
+    	<item>媒體</item>
+    	<item>中國</item>
+    	<item>科技</item>
+    	<item>環保</item>
+    	<item>娛樂</item>
+    	<item>藝文</item>
+    	<item>地方</item>
+    </string-array>
+    <string-array name="newsfeedsNewsTalk">
+    	<item>http://newtalk.tw/rss_news.php</item>
+    	<item>http://newtalk.tw/rss_news.php?oid=1</item>
+    	<item>http://newtalk.tw/rss_news.php?oid=2</item>
+    	<item>http://newtalk.tw/rss_news.php?oid=3</item>
+    	<item>http://newtalk.tw/rss_news.php?oid=4</item>
+    	<item>http://newtalk.tw/rss_news.php?oid=5</item>
+    	<item>http://newtalk.tw/rss_news.php?oid=6</item>
+    	<item>http://newtalk.tw/rss_news.php?oid=7</item>
+    	<item>http://newtalk.tw/rss_news.php?oid=8</item>
+    	<item>http://newtalk.tw/rss_news.php?oid=9</item>
+    	<item>http://newtalk.tw/rss_news.php?oid=10</item>
+    	<item>http://newtalk.tw/rss_news.php?oid=11</item>
+    	<item>http://newtalk.tw/rss_news.php?oid=14</item>	
+    </string-array>  
+   <string-array name="newscatsLibertyTimes">
+    	<item>焦點新聞</item>
+    	<item>政治新聞</item>
+    	<item>生活新聞</item>
+    	<item>國際新聞</item>
+    	<item>自由廣場</item>
+    	<item>社會新聞</item>
+    	<item>體育新聞</item>
+    	<item>財經焦點</item>
+    	<item>影視名人</item>
+    	<item>北部新聞</item>
+    	<item>中部新聞</item>
+    	<item>南部新聞</item>
+    </string-array>
+    <string-array name="newsfeedsLibertyTimes">
+    	<item>http://www.libertytimes.com.tw/rss/fo.xml</item>
+    	<item>http://www.libertytimes.com.tw/rss/p.xml</item>
+    	<item>http://www.libertytimes.com.tw/rss/life.xml</item>
+    	<item>http://www.libertytimes.com.tw/rss/int.xml</item>
+    	<item>http://www.libertytimes.com.tw/rss/o.xml</item>
+    	<item>http://www.libertytimes.com.tw/rss/so.xml</item>
+    	<item>http://www.libertytimes.com.tw/rss/sp.xml</item>
+    	<item>http://www.libertytimes.com.tw/rss/e.xml</item>
+    	<item>http://www.libertytimes.com.tw/rss/show.xml</item>
+    	<item>http://www.libertytimes.com.tw/rss/north.xml</item>
+    	<item>http://www.libertytimes.com.tw/rss/center.xml</item>
+    	<item>http://www.libertytimes.com.tw/rss/south.xml</item>
+    </string-array>                                    
+</resources>

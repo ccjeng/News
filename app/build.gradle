@@ -1,0 +1,31 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "22.0.1"
+
+    defaultConfig {
+        applicationId "com.ccjeng.news"
+        minSdkVersion 14
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.1.0'
+    compile 'com.android.support:design:23.1.0'
+    compile 'com.jakewharton:butterknife:7.0.1'
+    compile 'com.mikepenz:iconics-core:1.7.3@aar'
+    compile 'com.mikepenz:community-material-typeface:1.1.70.3@aar'
+    compile project(':volley')
+}

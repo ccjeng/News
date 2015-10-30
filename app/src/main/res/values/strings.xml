@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">華文News</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="tab_tw">台灣</string>
+    <string name="tab_hk">香港</string>
+
+</resources>

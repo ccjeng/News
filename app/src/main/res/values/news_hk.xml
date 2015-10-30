@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string-array name="newsSourceHK">
+    	<item>香港蘋果日報</item>
+    	<item>東方日報</item>
+    	<item>雅虎香港新聞</item>
+    	<item>星島日報 </item>
+    	<item>明報即時新聞</item>
+    	<item>明報新聞網</item>
+    	<item>信報</item>
+    	<item>香港電台新聞頻道</item>
+    	<item>香港太陽報</item>
+    	<item>香港AM730</item>
+    	<item>頭條日報</item>
+   </string-array>
+</resources>    
