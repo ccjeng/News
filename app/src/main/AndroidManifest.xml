@@ -22,6 +22,8 @@
         </activity>
         <activity android:name=".NewsCategory" >
         </activity>
+        <activity android:name=".NewsRSSList">
+        </activity>
     </application>
 
 </manifest>

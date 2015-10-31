@@ -4,5 +4,6 @@
 
     <string name="tab_tw">台灣</string>
     <string name="tab_hk">香港</string>
+    <string name="title_activity_news_rsslist">NewsRSSList</string>
 
 </resources>

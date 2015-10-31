@@ -1,17 +1,19 @@
 package com.ccjeng.news;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 
+import com.ccjeng.news.adapter.NewsCategoryAdapter;
+import com.ccjeng.news.adapter.RecyclerItemClickListener;
 import com.mikepenz.community_material_typeface_library.CommunityMaterial;
 import com.mikepenz.iconics.IconicsDrawable;
 
@@ -22,13 +24,14 @@ public class NewsCategory extends AppCompatActivity {
 
     private static final String TAG = "NewsCategory";
 
-    @Bind(R.id.tool_bar)
+    @Bind(R.id.toolbar)
     Toolbar toolbar;
-    @Bind(R.id.listView)
-    ListView listView;
+    @Bind(R.id.recyclerView)
+    RecyclerView recyclerView;
 
     private int sourceNumber;
     private String tabName;
+    private String categoryName;
     private String[] category;
 
     @Override
@@ -44,14 +47,18 @@ public class NewsCategory extends AppCompatActivity {
                 .color(Color.WHITE)
                 .actionBarSize());
 
+        LinearLayoutManager llm = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(llm);
+        recyclerView.setHasFixedSize(true);
+
         //get intent values
         Bundle bunde = this.getIntent().getExtras();
         sourceNumber = Integer.parseInt(bunde.getString("SourceNum"));
-        String CategoryName = bunde.getString("SourceName");
+        categoryName = bunde.getString("SourceName");
         tabName = bunde.getString("SourceTab");
 
         //set toolbar title
-        getSupportActionBar().setTitle(CategoryName);
+        getSupportActionBar().setTitle(categoryName);
         showResult(tabName, sourceNumber);
         //Log.d(TAG, tabName +" " + CategoryName);
     }
@@ -68,11 +75,10 @@ public class NewsCategory extends AppCompatActivity {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                break;
         }
 
         return super.onOptionsItemSelected(item);
@@ -160,30 +166,33 @@ public class NewsCategory extends AppCompatActivity {
         }
 
         if (category != null) {
-            listView.setAdapter(new ArrayAdapter<String>
-                    (this, android.R.layout.simple_list_item_1, category));
+            NewsCategoryAdapter adapter = new NewsCategoryAdapter(this, category);
 
-            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
-                    /*
-                    dialog = ProgressDialog.show(NewsCategory.this, "", getString(R.string.loading), true, true);
-                    new Thread() {
-                        public void run() {
-                            try {
-                                goIntent(position, category[position]);
-                            } catch(Exception e) {
-                                e.printStackTrace();
-                            } finally {
-                                dialog.dismiss();
-                            }
+            recyclerView.setAdapter(adapter);
+
+            recyclerView.addOnItemTouchListener(
+                    new RecyclerItemClickListener(this, new RecyclerItemClickListener.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(View view, int position) {
+                            goIntent(position, category[position]);
                         }
-                    }.start();
-                    */
-                }
-            });
-
+                    })
+            );
 
         }
+    }
+
+    private void goIntent(int itemnumber, String itemname) {
+        Intent intent = new Intent();
+        intent.setClass(NewsCategory.this, NewsRSSList.class);
+        Bundle bundle = new Bundle();
+
+        bundle.putString("CategoryNum", Integer.toString(itemnumber));
+        bundle.putString("CategoryName", categoryName + " - " + itemname);
+        bundle.putString("SourceNum", Integer.toString(sourceNumber));
+        bundle.putString("SourceTab", tabName);
+        intent.putExtras(bundle);
+        startActivity(intent);
     }
 
 }
