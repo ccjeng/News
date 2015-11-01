@@ -1,9 +1,8 @@
 <resources>
-    <string name="app_name">華文News</string>
-    <string name="action_settings">Settings</string>
+    <string name="app_name">樹懶新聞</string>
+    <string name="action_settings">設定</string>
 
     <string name="tab_tw">台灣</string>
     <string name="tab_hk">香港</string>
-    <string name="title_activity_news_rsslist">NewsRSSList</string>
 
 </resources>

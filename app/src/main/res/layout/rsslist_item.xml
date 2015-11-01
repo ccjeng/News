@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="wrap_content"
-    android:gravity="left|center"
-    android:layout_width="wrap_content"
-    android:paddingBottom="5px"
-    android:paddingTop="5px"
-    android:paddingLeft="5px">
+    android:gravity="start|center"
+    android:layout_width="fill_parent"
+    android:paddingBottom="5dp"
+    android:paddingTop="5dp"
+    android:paddingLeft="5dp">
     <ImageView
         android:id="@+id/icon"
         android:layout_alignParentLeft="true"
@@ -19,5 +19,5 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:padding="5dp"
-        android:textSize="23sp"/>
+        android:textAppearance="?android:attr/textAppearanceMedium"/>
 </LinearLayout>

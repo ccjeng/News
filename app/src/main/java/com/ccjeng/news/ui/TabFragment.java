@@ -1,11 +1,9 @@
-package com.ccjeng.news;
+package com.ccjeng.news.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
-import android.util.TypedValue;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,7 +12,8 @@ import android.widget.ArrayAdapter;
 import android.widget.FrameLayout;
 import android.widget.FrameLayout.LayoutParams;
 import android.widget.ListView;
-import android.widget.TextView;
+
+import com.ccjeng.news.R;
 
 /**
  * Created by andycheng on 2015/10/27.
@@ -97,7 +96,7 @@ public class TabFragment extends Fragment {
         */
         bundle.putString("SourceTab", tabName);
         bundle.putString("SourceNum", Integer.toString(itemnumber));
-        bundle.putString("SourceName", itemname.toString());
+        bundle.putString("SourceName", itemname);
 
         intent.putExtras(bundle);
         startActivityForResult(intent, 0);

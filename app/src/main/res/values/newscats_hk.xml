@@ -2,29 +2,23 @@
 <resources>
     <string-array name="newscatsHKYahoo">
     	<item>港聞</item>
-    	<item>國際兩岸</item>
+    	<item>國際</item>
+		<item>兩岸</item>
     	<item>財經</item>
     	<item>娛樂</item>
     	<item>體育</item>
     	<item>健康</item>
-    	<item>科技</item>
-    	<item>專欄</item>
-    	<item>旅遊</item>
-    	<item>飲食</item>
-    	<item>生活</item>
+    	<item>副刊</item>
     </string-array>
     <string-array name="newsfeedsHKYahoo">
-		<item>http://hk.news.yahoo.com/rss/hongkong/rss.xml</item>
-		<item>http://hk.news.yahoo.com/rss/world/rss.xml</item>
-		<item>http://hk.news.yahoo.com/rss/business/rss.xml</item>
-		<item>http://hk.news.yahoo.com/rss/entertainment/rss.xml</item>
-		<item>http://hk.news.yahoo.com/rss/sports/rss.xml</item>
-		<item>http://hk.news.yahoo.com/rss/health/rss.xml</item>
-		<item>http://hk.news.yahoo.com/rss/sup/tech/rss.xml</item>
-		<item>http://hk.news.yahoo.com/rss/sup/col/rss.xml</item>
-		<item>http://hk.news.yahoo.com/rss/sup/trav/rss.xml</item>
-		<item>http://hk.news.yahoo.com/rss/sup/food/rss.xml</item>
-		<item>http://hk.news.yahoo.com/rss/sup/life/rss.xml</item>
+		<item>https://hk.news.yahoo.com/rss/hong-kong</item>
+		<item>https://hk.news.yahoo.com/rss/world</item>
+		<item>https://hk.news.yahoo.com/rss/china</item>
+		<item>https://hk.news.yahoo.com/rss/business</item>
+		<item>https://hk.news.yahoo.com/rss/entertainment</item>
+		<item>https://hk.news.yahoo.com/rss/sports</item>
+		<item>https://hk.news.yahoo.com/rss/health</item>
+		<item>https://hk.news.yahoo.com/rss/supplement</item>
    </string-array>
     <string-array name="newscatsHKStGlobal">
     	<item>環球新聞</item>
@@ -68,6 +62,7 @@
 		<item>http://ny.stgloballink.com/rss/washington/index.xml</item>
 		<item>http://ny.stgloballink.com/rss/sports/index.xml</item>
    </string-array>
+	<!--
    <string-array name="newscatsHKYahooStGlobal">
     	<item>港聞</item>
     	<item>國際兩岸</item>
@@ -81,7 +76,8 @@
 		<item>http://hk.news.yahoo.com/rss/business/rss.xml?provider=singtao</item>
 		<item>http://hk.news.yahoo.com/rss/entertainment/rss.xml?provider=singtao</item>
 		<item>http://hk.news.yahoo.com/rss/sports/rss.xml?provider=singtao</item>
-   </string-array>       
+   </string-array>
+    -->
    <string-array name="newscatsHKMing">
     	<item>總目錄</item>
     	<item>即時港聞</item>

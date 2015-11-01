@@ -20,9 +20,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".NewsCategory" >
+        <activity android:name=".ui.NewsCategory" >
         </activity>
-        <activity android:name=".NewsRSSList">
+        <activity android:name=".ui.NewsRSSList">
         </activity>
     </application>
 

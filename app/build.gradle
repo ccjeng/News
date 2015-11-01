@@ -28,5 +28,10 @@ dependencies {
     compile 'com.mikepenz:iconics-core:1.7.3@aar'
     compile 'com.mikepenz:community-material-typeface:1.1.70.3@aar'
     compile 'com.einmalfel:earl:1.0.0'
+    compile 'com.pnikosis:materialish-progress:1.5'
+    compile('de.keyboardsurfer.android.widget:crouton:1.8.5@aar') {
+        // exclusion is not necessary, but generally a good idea.
+        exclude group: 'com.google.android', module: 'support-v4'
+    }
     compile project(':volley')
 }

@@ -1,22 +1,28 @@
-package com.ccjeng.news;
+package com.ccjeng.news.ui;
 
+import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
 import com.android.volley.RequestQueue;
+import com.ccjeng.news.R;
 import com.ccjeng.news.adapter.NewsListAdapter;
 import com.ccjeng.news.adapter.RecyclerItemClickListener;
-import com.ccjeng.news.rss.RSSItem;
-import com.ccjeng.news.rss.RssRequest;
+import com.ccjeng.news.service.rss.RSSItem;
+import com.ccjeng.news.service.rss.RssRequest;
 import com.mikepenz.community_material_typeface_library.CommunityMaterial;
 import com.mikepenz.iconics.IconicsDrawable;
+import com.pnikosis.materialishprogress.ProgressWheel;
+
 import java.util.List;
 
 import butterknife.Bind;
@@ -30,6 +36,8 @@ public class NewsRSSList extends AppCompatActivity {
     Toolbar toolbar;
     @Bind(R.id.recyclerView)
     RecyclerView recyclerView;
+    @Bind(R.id.progress_wheel)
+    ProgressWheel progressWheel;
 
     private int sourceNumber;
     private int itemNumber;
@@ -37,7 +45,7 @@ public class NewsRSSList extends AppCompatActivity {
     private String categoryName;
     private String[] feedURL;
     private String rssFeedURL = null;
-    private RequestQueue queue;
+    private List<RSSItem> mRssList;
 
 
     @Override
@@ -93,14 +101,21 @@ public class NewsRSSList extends AppCompatActivity {
 
     public void setListView(List<RSSItem> rssList) {
 
+        mRssList = rssList;
         NewsListAdapter adapter = new NewsListAdapter(this, rssList);
         recyclerView.setAdapter(adapter);
+
+        progressWheel.setVisibility(View.GONE);
 
         recyclerView.addOnItemTouchListener(
                 new RecyclerItemClickListener(this, new RecyclerItemClickListener.OnItemClickListener() {
                     @Override
                     public void onItemClick(View view, int position) {
                       //  goIntent(position, category[position]);
+
+                        //open browser
+                        Uri uri = Uri.parse(mRssList.get(position).getLink());
+                        startActivity( new Intent(Intent.ACTION_VIEW, uri));
                     }
                 })
         );
@@ -108,6 +123,9 @@ public class NewsRSSList extends AppCompatActivity {
     }
 
     private void showResult(String tabName, int sourceNumber) {
+
+        progressWheel.setVisibility(View.VISIBLE);
+
         if (tabName.equals("TW")) {
             switch (sourceNumber) {
                 case 0:
@@ -117,37 +135,34 @@ public class NewsRSSList extends AppCompatActivity {
                     feedURL = getResources().getStringArray(R.array.newsfeedsUDN);
                     break;
                 case 2:
-                    feedURL = getResources().getStringArray(R.array.newsfeedsPCHome);
+                    feedURL = getResources().getStringArray(R.array.newsfeedsYam);
                     break;
                 case 3:
                     feedURL = getResources().getStringArray(R.array.newsfeedsChinaTimes);
                     break;
                 case 4:
-                    feedURL = getResources().getStringArray(R.array.newsfeedsNOW);
+                    feedURL = getResources().getStringArray(R.array.newsfeedsStorm);
                     break;
                 case 5:
-                    feedURL = getResources().getStringArray(R.array.newsfeedsEngadget);
+                    feedURL = getResources().getStringArray(R.array.newsfeedsCommercial);
                     break;
                 case 6:
-                    feedURL = getResources().getStringArray(R.array.newsfeedsBNext);
-                    break;
-                case 7:
                     feedURL = getResources().getStringArray(R.array.newsfeedsEttoday);
                     break;
-                case 8:
+                case 7:
                     feedURL = getResources().getStringArray(R.array.newsfeedsCNYes);
                     break;
-                case 9:
+                case 8:
                     feedURL = getResources().getStringArray(R.array.newsfeedsNewsTalk);
                     break;
-                case 10:
+                case 9:
                     feedURL = getResources().getStringArray(R.array.newsfeedsLibertyTimes);
                     break;
-                case 11:
+                case 10:
                     feedURL = getResources().getStringArray(R.array.newsfeedsAppDaily);
                     break;
             }
-        } else if (tabName.equals("tabHK")) {
+        } else if (tabName.equals("HK")) {
             switch (sourceNumber) {
                 case 0:
                     //feedURL = getResources().getStringArray(R.array.newsfeedsHKAppleDaily);
@@ -161,7 +176,7 @@ public class NewsRSSList extends AppCompatActivity {
                     feedURL = getResources().getStringArray(R.array.newsfeedsHKYahoo);
                     break;
                 case 3:
-                    feedURL = getResources().getStringArray(R.array.newsfeedsHKYahooStGlobal);
+                    //feedURL = getResources().getStringArray(R.array.newsfeedsHKYahooStGlobal);
                     break;
                 case 4:
                     feedURL = getResources().getStringArray(R.array.newsfeedsHKMing);
@@ -188,14 +203,15 @@ public class NewsRSSList extends AppCompatActivity {
         }
 
         //get RSS Feed
-        if (feedURL != null)
+        if (feedURL != null) {
             rssFeedURL = feedURL[itemNumber];
             RssRequest rq = new RssRequest();
             rq.getFeed(NewsRSSList.this, rssFeedURL);
+        }
 
         if (rssFeedURL == null) {
             //showError();
-            return;
+            //return;
         }
 
 

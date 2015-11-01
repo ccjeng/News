@@ -11,6 +11,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.ccjeng.news.ui.TabFragment;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
 

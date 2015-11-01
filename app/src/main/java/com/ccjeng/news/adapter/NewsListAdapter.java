@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.ccjeng.news.R;
-import com.ccjeng.news.rss.RSSItem;
+import com.ccjeng.news.service.rss.RSSItem;
 
 public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.CustomViewHolder> {
 	private final Activity context;

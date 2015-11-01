@@ -1,4 +1,4 @@
-package com.ccjeng.news;
+package com.ccjeng.news.ui;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -7,11 +7,11 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.ccjeng.news.R;
 import com.ccjeng.news.adapter.NewsCategoryAdapter;
 import com.ccjeng.news.adapter.RecyclerItemClickListener;
 import com.mikepenz.community_material_typeface_library.CommunityMaterial;
@@ -95,33 +95,30 @@ public class NewsCategory extends AppCompatActivity {
                     category = getResources().getStringArray(R.array.newscatsUDN);
                     break;
                 case 2:
-                    category = getResources().getStringArray(R.array.newscatsPCHome);
+                    category = getResources().getStringArray(R.array.newscatsYam);
                     break;
                 case 3:
                     category = getResources().getStringArray(R.array.newscatsChinaTimes);
                     break;
                 case 4:
-                    category = getResources().getStringArray(R.array.newscatsNOW);
+                    category = getResources().getStringArray(R.array.newscatsStorm);
                     break;
                 case 5:
-                    category = getResources().getStringArray(R.array.newscatsEngadget);
+                    category = getResources().getStringArray(R.array.newscatsCommercial);
                     break;
                 case 6:
-                    category = getResources().getStringArray(R.array.newscatsBNext);
-                    break;
-                case 7:
                     category = getResources().getStringArray(R.array.newscatsEttoday);
                     break;
-                case 8:
+                case 7:
                     category = getResources().getStringArray(R.array.newscatsCNYes);
                     break;
-                case 9:
+                case 8:
                     category = getResources().getStringArray(R.array.newscatsNewsTalk);
                     break;
-                case 10:
+                case 9:
                     category = getResources().getStringArray(R.array.newscatsLibertyTimes);
                     break;
-                case 11:
+                case 10:
                     category = getResources().getStringArray(R.array.newscatsAppDaily);
                     break;
             }
@@ -139,7 +136,7 @@ public class NewsCategory extends AppCompatActivity {
                     category = getResources().getStringArray(R.array.newscatsHKYahoo);
                     break;
                 case 3:
-                    category = getResources().getStringArray(R.array.newscatsHKYahooStGlobal);
+                    //category = getResources().getStringArray(R.array.newscatsHKYahooStGlobal);
                     break;
                 case 4:
                     category = getResources().getStringArray(R.array.newscatsHKMing);
