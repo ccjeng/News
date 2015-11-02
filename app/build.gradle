@@ -34,4 +34,5 @@ dependencies {
         exclude group: 'com.google.android', module: 'support-v4'
     }
     compile project(':volley')
+    compile 'com.squareup.okhttp:okhttp:2.5.0'
 }

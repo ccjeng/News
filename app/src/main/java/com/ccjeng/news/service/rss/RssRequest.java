@@ -14,7 +14,9 @@ import com.einmalfel.earl.Feed;
 import com.einmalfel.earl.Item;
 
 import java.io.ByteArrayInputStream;
+import java.io.IOException;
 import java.io.InputStream;
+import java.net.URL;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
 import java.util.ArrayList;
@@ -51,6 +53,27 @@ public class RssRequest {
         return returnValue;
     }
 
+    public void getFeedOkhttp(final NewsRSSList context, String url) {
+
+        listItem = new ArrayList<RSSItem>();
+        mUrl = url;
+        encoding = getEncoding(url);
+
+        RSSFeed rssFeed = null;
+        try {
+            final URL uurl = new URL(mUrl);
+            rssFeed = XPPHandler.parseRSS(uurl);
+
+            context.setListView(rssFeed);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+
+    }
+    /*
     public void getFeed(final NewsRSSList context, String url) {
 
         listItem = new ArrayList<RSSItem>();
@@ -72,7 +95,6 @@ public class RssRequest {
                             || mUrl.contains("orientaldaily")) {
                         response = URLDecoder.decode(URLEncoder.encode(response, "iso8859-1"), encoding);
                     }
-                   // Log.i(TAG, newStr);
 
                     InputStream is = new ByteArrayInputStream(response.getBytes(encoding));
                     Feed feed = EarlParser.parseOrThrow(is, 0);
@@ -132,4 +154,5 @@ public class RssRequest {
 
 
     }
+    */
 }

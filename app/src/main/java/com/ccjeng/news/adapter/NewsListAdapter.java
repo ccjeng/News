@@ -10,13 +10,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.ccjeng.news.R;
+import com.ccjeng.news.service.rss.RSSFeed;
 import com.ccjeng.news.service.rss.RSSItem;
 
 public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.CustomViewHolder> {
 	private final Activity context;
-	private final List<RSSItem> items;
+	private final RSSFeed items;
 	
-	public NewsListAdapter(Activity context, List<RSSItem> list) {
+	public NewsListAdapter(Activity context, RSSFeed list) {
 		  this.context = context;
 		  this.items = list;
 	 }
@@ -34,12 +35,12 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.Custom
 	public void onBindViewHolder(CustomViewHolder customViewHolder, int i) {
 
 		//Setting text view title
-		customViewHolder.textView.setText(items.get(i).getTitle());
+		customViewHolder.textView.setText(items.getItem(i).getTitle());
 	}
 
 	@Override
 	public int getItemCount() {
-		return (null != items ? items.size() : 0);
+		return (null != items ? items.getItemCount() : 0);
 	}
 
 	public class CustomViewHolder extends RecyclerView.ViewHolder {

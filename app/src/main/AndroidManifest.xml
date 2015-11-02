@@ -22,7 +22,9 @@
         </activity>
         <activity android:name=".ui.NewsCategory" >
         </activity>
-        <activity android:name=".ui.NewsRSSList">
+        <activity android:name=".ui.NewsRSSList" >
+        </activity>
+        <activity android:name=".ui.NewsWeb" >
         </activity>
     </application>
 

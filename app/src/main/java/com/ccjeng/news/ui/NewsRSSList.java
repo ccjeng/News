@@ -17,6 +17,7 @@ import com.android.volley.RequestQueue;
 import com.ccjeng.news.R;
 import com.ccjeng.news.adapter.NewsListAdapter;
 import com.ccjeng.news.adapter.RecyclerItemClickListener;
+import com.ccjeng.news.service.rss.RSSFeed;
 import com.ccjeng.news.service.rss.RSSItem;
 import com.ccjeng.news.service.rss.RssRequest;
 import com.mikepenz.community_material_typeface_library.CommunityMaterial;
@@ -45,7 +46,7 @@ public class NewsRSSList extends AppCompatActivity {
     private String categoryName;
     private String[] feedURL;
     private String rssFeedURL = null;
-    private List<RSSItem> mRssList;
+    private RSSFeed mRssList;
 
 
     @Override
@@ -99,7 +100,8 @@ public class NewsRSSList extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void setListView(List<RSSItem> rssList) {
+    public void setListView(RSSFeed rssList) {
+        //public void setListView(List<RSSItem> rssList) {
 
         mRssList = rssList;
         NewsListAdapter adapter = new NewsListAdapter(this, rssList);
@@ -112,10 +114,11 @@ public class NewsRSSList extends AppCompatActivity {
                     @Override
                     public void onItemClick(View view, int position) {
                       //  goIntent(position, category[position]);
+                        showDetail(position);
 
                         //open browser
-                        Uri uri = Uri.parse(mRssList.get(position).getLink());
-                        startActivity( new Intent(Intent.ACTION_VIEW, uri));
+                        //Uri uri = Uri.parse(mRssList.get(position).getLink());
+                        //startActivity( new Intent(Intent.ACTION_VIEW, uri));
                     }
                 })
         );
@@ -165,7 +168,7 @@ public class NewsRSSList extends AppCompatActivity {
         } else if (tabName.equals("HK")) {
             switch (sourceNumber) {
                 case 0:
-                    //feedURL = getResources().getStringArray(R.array.newsfeedsHKAppleDaily);
+                    feedURL = getResources().getStringArray(R.array.newsfeedsHKAppleDaily);
                     /// Category appCategory = new Category();
                     /// feedURL = appCategory.getURL();
                     break;
@@ -205,8 +208,11 @@ public class NewsRSSList extends AppCompatActivity {
         //get RSS Feed
         if (feedURL != null) {
             rssFeedURL = feedURL[itemNumber];
+
             RssRequest rq = new RssRequest();
-            rq.getFeed(NewsRSSList.this, rssFeedURL);
+            //rq.getFeed(NewsRSSList.this, rssFeedURL);
+            rq.getFeedOkhttp(NewsRSSList.this, rssFeedURL);
+
         }
 
         if (rssFeedURL == null) {
@@ -216,4 +222,22 @@ public class NewsRSSList extends AppCompatActivity {
 
 
     }
+
+    private void showDetail(int position) {
+
+        Intent intent = new Intent();
+        intent.setClass(NewsRSSList.this, NewsWeb.class);
+
+        Bundle bundle = new Bundle();
+        bundle.putString("SourceNum", Integer.toString(sourceNumber));
+        bundle.putString("SourceTab", tabName);
+        bundle.putString("position", Integer.toString(position));
+        bundle.putString("url", mRssList.getItem(position).getLink());
+
+        //itemintent.putExtras(bundle);
+        //itemintent.putExtra("feed", info);
+        intent.putExtras(bundle);
+        startActivity(intent);
+    }
+
 }

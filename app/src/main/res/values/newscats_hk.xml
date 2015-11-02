@@ -143,45 +143,31 @@
     	<item>兩岸國際</item>
     	<item>娛樂名人</item>
     	<item>體育</item>
-    	<item>飲食</item>
-    	<item>旅遊</item>
-    	<item>科技</item>
-    	<item>家庭</item>
-    	<item>文化</item>
-    	<item>運程</item>
+  	    <item>專題</item>
+ 	    <item>旅遊</item>
+	    <item>科技</item>
+	    <item>飲食</item>
+	    <item>汽車</item>
+    	<item>親子</item>
+    	<item>品味</item>
     	<item>名采</item>
-<!-- >    	<item>暖流服務</item>
-    	<item>豪情</item>-->
+	    <item>運程</item>
    </string-array>
    <string-array name="newsfeedsHKAppleDaily">   
-	   	<item>http://hkmagze.serveblog.net/index.php?c=要聞港聞</item>
-		<item>http://hkmagze.serveblog.net/index.php?c=財經地產</item>
-		<item>http://hkmagze.serveblog.net/index.php?c=兩岸國際</item>
-		<item>http://hkmagze.serveblog.net/index.php?c=娛樂名人</item>
-		<item>http://hkmagze.serveblog.net/index.php?c=體育</item>
-		<item>http://hkmagze.serveblog.net/index.php?c=飲食</item>
-		<item>http://hkmagze.serveblog.net/index.php?c=旅遊</item>
-		<item>http://hkmagze.serveblog.net/index.php?c=科技</item>
-		<item>http://hkmagze.serveblog.net/index.php?c=家庭</item>
-		<item>http://hkmagze.serveblog.net/index.php?c=文化</item>
-		<item>http://hkmagze.serveblog.net/index.php?c=運程</item>
-		<item>http://hkmagze.serveblog.net/index.php?c=名采</item>           
-<!-- 
-			<item>http://news.hotpot.hk/fruit/index.php?sec_id=4104</item>
-    	<item>http://news.hotpot.hk/fruit/index.php?sec_id=15335</item>
-    	<item>http://news.hotpot.hk/fruit/index.php?sec_id=15307</item>
-    	<item>http://news.hotpot.hk/fruit/index.php?sec_id=462</item>
-    	<item>http://news.hotpot.hk/fruit/index.php?sec_id=25391</item>
-    	<item>http://news.hotpot.hk/fruit/index.php?sec_id=12187363</item>
-    	<item>http://news.hotpot.hk/fruit/index.php?sec_id=12187369</item>
-    	<item>http://news.hotpot.hk/fruit/index.php?sec_id=12187373</item>
-        <item>http://news.hotpot.hk/fruit/index.php?sec_id=12187376</item>
-    	<item>http://news.hotpot.hk/fruit/index.php?sec_id=12187379</item>
-    	<item>http://news.hotpot.hk/fruit/index.php?sec_id=12187383</item>
-    	<item>http://news.hotpot.hk/fruit/index.php?sec_id=12187386</item>
-    	<item>http://news.hotpot.hk/fruit/index.php?sec_id=12187389</item>
-    	<item>http://news.hotpot.hk/fruit/index.php?sec_id=12187396</item>
-  -->
+	   <item>http://feed43.com/hkappledaily-01.xml</item>
+	   <item>http://feed43.com/hkappledaily-02.xml</item>
+	   <item>http://feed43.com/hkappledaily-03.xml</item>
+	   <item>http://feed43.com/hkappledaily-04.xml</item>
+	   <item>http://feed43.com/hkappledaily-05.xml</item>
+	   <item>http://feed43.com/hkappledaily-06.xml</item>
+	   <item>http://feed43.com/hkappledaily-07.xml</item>
+	   <item>http://feed43.com/hkappledaily-08.xml</item>
+	   <item>http://feed43.com/hkappledaily-09.xml</item>
+	   <item>http://feed43.com/hkappledaily-10.xml</item>
+	   <item>http://feed43.com/hkappledaily-11.xml</item>
+	   <item>http://feed43.com/hkappledaily-12.xml</item>
+	   <item>http://feed43.com/hkappledaily-13.xml</item>
+	   <item>http://feed43.com/hkappledaily-14.xml</item>
    </string-array>    
    <string-array name="newscatsHKEJ">
     	<item>即時財訊</item>
