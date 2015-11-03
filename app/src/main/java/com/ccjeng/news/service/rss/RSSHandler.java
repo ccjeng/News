@@ -1,5 +1,7 @@
 package com.ccjeng.news.service.rss;
 
+import android.util.Log;
+
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
@@ -7,6 +9,8 @@ import org.xml.sax.helpers.DefaultHandler;
 //import android.util.Log;
 
 public class RSSHandler extends DefaultHandler {
+
+    private static final String TAG = "RSSHandler";
 
     private boolean in_item = false;
     private boolean in_title = false;
@@ -66,6 +70,7 @@ public class RSSHandler extends DefaultHandler {
         if (localName.equals("item")) {
             this.in_item = false;
             feed.addItem(item);
+
         } else if (localName.equals("title")) {
             if (this.in_item) {
                 item.setTitle(buf.toString().trim());
@@ -78,17 +83,25 @@ public class RSSHandler extends DefaultHandler {
                 buf.setLength(0);
                 this.in_link = false;
             }
-        } else if (localName.equals("description")) {
-            if (in_item) {
-                item.setDescription(buf.toString().trim());
-                buf.setLength(0);
-                this.in_desc = false;
-            }
-        } else if (localName.equals("pubDate")) {
+        }  else if (localName.equals("pubDate")) {
             if (in_item) {
                 item.setPubDate(buf.toString().trim());
                 buf.setLength(0);
                 this.in_date = false;
+            }
+        } else if (localName.equals("description")) {
+            if (in_item) {
+                item.setDescription(buf.toString().trim());
+
+                //remove AppleDaily AD items
+                /*
+                if (skipThisItem(buf.toString().trim())) {
+                    feed.removeItem(item);
+                    Log.d(TAG, "removed");
+                }
+                */
+                buf.setLength(0);
+                this.in_desc = false;
             }
         } else buf.setLength(0);
         /*
@@ -103,5 +116,16 @@ public class RSSHandler extends DefaultHandler {
         if (this.in_item) {
             buf.append(ch, start, length);
         }
+    }
+
+    private boolean skipThisItem(String description){
+        Boolean ret = false;
+
+        if (description.contains("廣編特輯")
+                || description.contains("專題企劃")) {
+            ret = true;
+        }
+
+        return ret;
     }
 }

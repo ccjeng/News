@@ -2,25 +2,11 @@ package com.ccjeng.news.service.rss;
 
 import android.util.Log;
 
-import com.android.volley.Request;
 import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 import com.ccjeng.news.ui.NewsRSSList;
-import com.einmalfel.earl.EarlParser;
-import com.einmalfel.earl.Feed;
-import com.einmalfel.earl.Item;
 
-import java.io.ByteArrayInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.net.URL;
-import java.net.URLDecoder;
-import java.net.URLEncoder;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -53,26 +39,22 @@ public class RssRequest {
         return returnValue;
     }
 
-    public void getFeedOkhttp(final NewsRSSList context, String url) {
+    public void getFeed(final NewsRSSList context, String url) {
 
-        listItem = new ArrayList<RSSItem>();
-        mUrl = url;
-        encoding = getEncoding(url);
-
-        RSSFeed rssFeed = null;
         try {
-            final URL uurl = new URL(mUrl);
-            rssFeed = XPPHandler.parseRSS(uurl);
-
-            context.setListView(rssFeed);
+            final URL feedURL = new URL(url);
+            XPPHandler xpp = new XPPHandler();
+            xpp.parseRSS(context, feedURL);
 
         } catch (IOException e) {
             e.printStackTrace();
+            Log.d(TAG, "getFeed error = " + e.toString());
         }
 
 
 
     }
+
     /*
     public void getFeed(final NewsRSSList context, String url) {
 

@@ -47,22 +47,23 @@ public class NewsWeb extends AppCompatActivity {
         String url = bundle.getString("url");
 
         // Makes Progress bar Visible
-        getWindow().setFeatureInt( Window.FEATURE_PROGRESS, Window.PROGRESS_VISIBILITY_ON);
+        //getWindow().setFeatureInt( Window.FEATURE_PROGRESS, Window.PROGRESS_VISIBILITY_ON);
 
-        webView.setWebViewClient(mWebViewClient);
-        //webView.getSettings().setJavaScriptEnabled(false);
+        //webView.setWebViewClient(mWebViewClient);
+        webView.getSettings().setJavaScriptEnabled(false);
         webView.loadUrl(url);
 
     }
 
     //do not open default browser
+    /*
     WebViewClient mWebViewClient = new WebViewClient() {
         @Override
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
             view.loadUrl(url);
             return true;
         }
-    };
+    };*/
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

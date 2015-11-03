@@ -33,7 +33,11 @@ public class RSSFeed {
 		itemCount ++;
 		return itemCount;
 	}
-	
+
+	public void removeItem(RSSItem item) {
+		itemList.remove(item);
+	}
+
 	public RSSItem getItem(int location) {
 		return itemList.get(location);
 	}
