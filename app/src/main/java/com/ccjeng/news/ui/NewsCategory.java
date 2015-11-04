@@ -126,8 +126,6 @@ public class NewsCategory extends AppCompatActivity {
             switch (sourceNumber) {
                 case 0:
                     category = getResources().getStringArray(R.array.newscatsHKAppleDaily);
-                    /*Category appCategory = new Category();
-	        		category = appCategory.getCategory();*/
                     break;
                 case 1:
                     category = getResources().getStringArray(R.array.newscatsHKOrientalDaily);
@@ -136,27 +134,24 @@ public class NewsCategory extends AppCompatActivity {
                     category = getResources().getStringArray(R.array.newscatsHKYahoo);
                     break;
                 case 3:
-                    //category = getResources().getStringArray(R.array.newscatsHKYahooStGlobal);
+                    category = getResources().getStringArray(R.array.newscatsHKMingRT);
                     break;
                 case 4:
                     category = getResources().getStringArray(R.array.newscatsHKMing);
                     break;
                 case 5:
-                    category = getResources().getStringArray(R.array.newscatsHKYahooMing);
-                    break;
-                case 6:
                     category = getResources().getStringArray(R.array.newscatsHKEJ);
                     break;
-                case 7:
+                case 6:
                     category = getResources().getStringArray(R.array.newscatsHKMetro);
                     break;
-                case 8:
+                case 7:
                     category = getResources().getStringArray(R.array.newscatsHKsun);
                     break;
-                case 9:
+                case 8:
                     category = getResources().getStringArray(R.array.newscatsHKam730);
                     break;
-                case 10:
+                case 9:
                     category = getResources().getStringArray(R.array.newscatsHKheadline);
                     break;
             }

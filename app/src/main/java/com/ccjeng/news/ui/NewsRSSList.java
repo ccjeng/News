@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,10 +17,13 @@ import com.ccjeng.news.R;
 import com.ccjeng.news.adapter.NewsListAdapter;
 import com.ccjeng.news.adapter.RecyclerItemClickListener;
 import com.ccjeng.news.service.rss.RSSFeed;
-import com.ccjeng.news.service.rss.RssRequest;
+import com.ccjeng.news.service.rss.RSSService;
 import com.mikepenz.community_material_typeface_library.CommunityMaterial;
 import com.mikepenz.iconics.IconicsDrawable;
 import com.pnikosis.materialishprogress.ProgressWheel;
+
+import java.io.IOException;
+import java.net.URL;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -164,8 +168,6 @@ public class NewsRSSList extends AppCompatActivity {
             switch (sourceNumber) {
                 case 0:
                     feedURL = getResources().getStringArray(R.array.newsfeedsHKAppleDaily);
-                    /// Category appCategory = new Category();
-                    /// feedURL = appCategory.getURL();
                     break;
                 case 1:
                     feedURL = getResources().getStringArray(R.array.newsfeedsHKOrientalDaily);
@@ -174,27 +176,24 @@ public class NewsRSSList extends AppCompatActivity {
                     feedURL = getResources().getStringArray(R.array.newsfeedsHKYahoo);
                     break;
                 case 3:
-                    //feedURL = getResources().getStringArray(R.array.newsfeedsHKYahooStGlobal);
+                    feedURL = getResources().getStringArray(R.array.newsfeedsHKMingRT);
                     break;
                 case 4:
                     feedURL = getResources().getStringArray(R.array.newsfeedsHKMing);
                     break;
                 case 5:
-                    feedURL = getResources().getStringArray(R.array.newsfeedsHKYahooMing);
-                    break;
-                case 6:
                     feedURL = getResources().getStringArray(R.array.newsfeedsHKEJ);
                     break;
-                case 7:
+                case 6:
                     feedURL = getResources().getStringArray(R.array.newsfeedsHKMetro);
                     break;
-                case 8:
+                case 7:
                     feedURL = getResources().getStringArray(R.array.newsfeedsHKsun);
                     break;
-                case 9:
+                case 8:
                     feedURL = getResources().getStringArray(R.array.newsfeedsHKam730);
                     break;
-                case 10:
+                case 9:
                     feedURL = getResources().getStringArray(R.array.newsfeedsHKheadline);
                     break;
             }
@@ -203,8 +202,17 @@ public class NewsRSSList extends AppCompatActivity {
         //get RSS Feed
         if (feedURL != null) {
             rssFeedURL = feedURL[itemNumber];
-            RssRequest rq = new RssRequest();
-            rq.getFeed(NewsRSSList.this, rssFeedURL);
+
+            try {
+                final URL feedURL = new URL(rssFeedURL);
+                RSSService srv = new RSSService();
+                srv.requestRSS(NewsRSSList.this, feedURL);
+
+            } catch (IOException e) {
+                e.printStackTrace();
+                Log.d(TAG, "getFeed error = " + e.toString());
+            }
+
 
         }
 

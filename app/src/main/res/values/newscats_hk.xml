@@ -1,256 +1,260 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
     <string-array name="newscatsHKYahoo">
-    	<item>港聞</item>
-    	<item>國際</item>
-		<item>兩岸</item>
-    	<item>財經</item>
-    	<item>娛樂</item>
-    	<item>體育</item>
-    	<item>健康</item>
-    	<item>副刊</item>
+        <item>港聞</item>
+        <item>國際</item>
+        <item>兩岸</item>
+        <item>財經</item>
+        <item>娛樂</item>
+        <item>體育</item>
+        <item>健康</item>
+        <item>副刊</item>
     </string-array>
     <string-array name="newsfeedsHKYahoo">
-		<item>https://hk.news.yahoo.com/rss/hong-kong</item>
-		<item>https://hk.news.yahoo.com/rss/world</item>
-		<item>https://hk.news.yahoo.com/rss/china</item>
-		<item>https://hk.news.yahoo.com/rss/business</item>
-		<item>https://hk.news.yahoo.com/rss/entertainment</item>
-		<item>https://hk.news.yahoo.com/rss/sports</item>
-		<item>https://hk.news.yahoo.com/rss/health</item>
-		<item>https://hk.news.yahoo.com/rss/supplement</item>
-   </string-array>
+        <item>https://hk.news.yahoo.com/rss/hong-kong</item>
+        <item>https://hk.news.yahoo.com/rss/world</item>
+        <item>https://hk.news.yahoo.com/rss/china</item>
+        <item>https://hk.news.yahoo.com/rss/business</item>
+        <item>https://hk.news.yahoo.com/rss/entertainment</item>
+        <item>https://hk.news.yahoo.com/rss/sports</item>
+        <item>https://hk.news.yahoo.com/rss/health</item>
+        <item>https://hk.news.yahoo.com/rss/supplement</item>
+    </string-array>
     <string-array name="newscatsHKStGlobal">
-    	<item>環球新聞</item>
-    	<item>美國新聞</item>
-    	<item>大陸新聞</item>
-    	<item>香港新聞</item>
-    	<item>台灣新聞</item>
-    	<item>港台娛樂</item>
-    	<item>大陸娛樂</item>
-    	<item>海外娛樂</item>
-    	<item>花花體壇</item>
-    	<item>環球財經</item>
-    	<item>大中華經濟</item>
-    	<item>市場觀察</item>
-    	<item>大都會新聞</item>
-    	<item>僑社新聞</item>
-    	<item>波士頓新聞</item>
-    	<item>芝加哥新聞</item>
-    	<item>費城新聞</item>
-    	<item>華盛頓新聞</item>
-    	<item>體育新聞</item>
+        <item>環球新聞</item>
+        <item>美國新聞</item>
+        <item>大陸新聞</item>
+        <item>香港新聞</item>
+        <item>台灣新聞</item>
+        <item>港台娛樂</item>
+        <item>大陸娛樂</item>
+        <item>海外娛樂</item>
+        <item>花花體壇</item>
+        <item>環球財經</item>
+        <item>大中華經濟</item>
+        <item>市場觀察</item>
+        <item>大都會新聞</item>
+        <item>僑社新聞</item>
+        <item>波士頓新聞</item>
+        <item>芝加哥新聞</item>
+        <item>費城新聞</item>
+        <item>華盛頓新聞</item>
+        <item>體育新聞</item>
     </string-array>
     <string-array name="newsfeedsHKStGlobal">
-		<item>http://ny.stgloballink.com/rss/global/index.xml</item>
-		<item>http://ny.stgloballink.com/rss/usa/index.xml</item>
-		<item>http://ny.stgloballink.com/rss/china/index.xml</item>
-		<item>http://ny.stgloballink.com/rss/hk/index.xml</item>
-		<item>http://ny.stgloballink.com/rss/taiwan/index.xml</item>
-		<item>http://ny.stgloballink.com/rss/ent_focus/index.xml</item>
-		<item>http://ny.stgloballink.com/rss/ent_china/index.xml</item>
-		<item>http://ny.stgloballink.com/rss/ent_oversea/index.xml</item>
-		<item>http://ny.stgloballink.com/rss/ent_sport/index.xml</item>
-		<item>http://ny.stgloballink.com/rss/worldfin/index.xml</item>
-		<item>http://ny.stgloballink.com/rss/chinafin/index.xml</item>
-		<item>http://ny.stgloballink.com/rss/market/index.xml</item>
-		<item>http://ny.stgloballink.com/rss/ny/index.xml</item>
-		<item>http://ny.stgloballink.com/rss/community/index.xml</item>
-		<item>http://ny.stgloballink.com/rss/boston/index.xml</item>
-		<item>http://ny.stgloballink.com/rss/chicago/index.xml</item>
-		<item>http://ny.stgloballink.com/rss/philadelphia/index.xml</item>
-		<item>http://ny.stgloballink.com/rss/washington/index.xml</item>
-		<item>http://ny.stgloballink.com/rss/sports/index.xml</item>
-   </string-array>
-	<!--
-   <string-array name="newscatsHKYahooStGlobal">
-    	<item>港聞</item>
-    	<item>國際兩岸</item>
-    	<item>財經</item>
-    	<item>娛樂</item>
-    	<item>體育</item>
-   </string-array>
-   <string-array name="newsfeedsHKYahooStGlobal">
-		<item>http://hk.news.yahoo.com/rss/hongkong/rss.xml?provider=singtao</item>
-		<item>http://hk.news.yahoo.com/rss/world/rss.xml?provider=singtao</item>
-		<item>http://hk.news.yahoo.com/rss/business/rss.xml?provider=singtao</item>
-		<item>http://hk.news.yahoo.com/rss/entertainment/rss.xml?provider=singtao</item>
-		<item>http://hk.news.yahoo.com/rss/sports/rss.xml?provider=singtao</item>
-   </string-array>
-    -->
-   <string-array name="newscatsHKMing">
-    	<item>總目錄</item>
-    	<item>即時港聞</item>
-    	<item>即時兩岸</item>
-    	<item>即時國際</item>
-    	<item>即時財經</item>
-    	<item>即時娛樂</item>
-    	<item>即時體育</item>
-   </string-array>
-   <string-array name="newsfeedsHKMing">
-		<item>http://inews.mingpao.com/rss/INews/all.xml</item>
-		<item>http://inews.mingpao.com/rss/INews/gb.xml</item>
-		<item>http://inews.mingpao.com/rss/INews/ca.xml</item>
-		<item>http://inews.mingpao.com/rss/INews/ta.xml</item>
-		<item>http://inews.mingpao.com/rss/INews/ea.xml</item>
-		<item>http://inews.mingpao.com/rss/INews/ma.xml</item>
-		<item>http://inews.mingpao.com/rss/INews/sp.xml</item>
-   </string-array>
-   <string-array name="newscatsHKOrientalDaily">
-    	<item>要聞港聞</item>
-    	<item>兩岸國際</item>
-    	<item>財經</item>
-    	<item>娛樂</item>
-    	<item>副刊</item>
-    	<item>體育</item>
-    	<item>男極圈</item>
-   </string-array>
-   <string-array name="newsfeedsHKOrientalDaily">
-		<item>http://orientaldaily.on.cc/rss/news.xml</item>
-		<item>http://orientaldaily.on.cc/rss/china_world.xml</item>
-		<item>http://orientaldaily.on.cc/rss/finance.xml</item>
-		<item>http://orientaldaily.on.cc/rss/entertainment.xml</item>
-		<item>http://orientaldaily.on.cc/rss/lifestyle.xml</item>
-		<item>http://orientaldaily.on.cc/rss/sport.xml</item>
-		<item>http://orientaldaily.on.cc/rss/adult.xml</item>
-   </string-array>
-   <string-array name="newscatsHKYahooMing">
-    	<item>要聞</item>
-    	<item>港聞</item>
-    	<item>中國</item>
-    	<item>國際</item>
-    	<item>體育</item>
-   <!--  	<item>科技</item>-->
-    	<item>教育</item>
-    	<item>社評‧筆陣</item>
-    	<item>論壇</item>
-   </string-array>
-   <string-array name="newsfeedsHKYahooMing">
-		<item>http://news.mingpao.com/RSS/webnews/ga.xml</item>
-		<item>http://news.mingpao.com/RSS/webnews/gb.xml</item>
-		<item>http://news.mingpao.com/RSS/webnews/ca.xml</item>
-		<item>http://news.mingpao.com/RSS/webnews/ta.xml</item>
-		<item>http://news.mingpao.com/RSS/webnews/sp.xml</item>
-	<!-- 	<item>http://feed43.com/7612503534086330.xml</item> -->
-	<!-- 	<item>http://news.mingpao.com/RSS/webnews/na.xml</item> -->
-		<item>http://news.mingpao.com/RSS/webnews/gf.xml</item>
-		<item>http://news.mingpao.com/RSS/webnews/mr.xml</item>
-		<item>http://news.mingpao.com/RSS/webnews/fa.xml</item>
-   </string-array>
-   <string-array name="newscatsHKAppleDaily">
-    	<item>要聞港聞</item>
-    	<item>財經地產</item>
-    	<item>兩岸國際</item>
-    	<item>娛樂名人</item>
-    	<item>體育</item>
-  	    <item>專題</item>
- 	    <item>旅遊</item>
-	    <item>科技</item>
-	    <item>飲食</item>
-	    <item>汽車</item>
-    	<item>親子</item>
-    	<item>品味</item>
-    	<item>名采</item>
-	    <item>運程</item>
-   </string-array>
-   <string-array name="newsfeedsHKAppleDaily">   
-	   <item>http://feed43.com/hkappledaily-01.xml</item>
-	   <item>http://feed43.com/hkappledaily-02.xml</item>
-	   <item>http://feed43.com/hkappledaily-03.xml</item>
-	   <item>http://feed43.com/hkappledaily-04.xml</item>
-	   <item>http://feed43.com/hkappledaily-05.xml</item>
-	   <item>http://feed43.com/hkappledaily-06.xml</item>
-	   <item>http://feed43.com/hkappledaily-07.xml</item>
-	   <item>http://feed43.com/hkappledaily-08.xml</item>
-	   <item>http://feed43.com/hkappledaily-09.xml</item>
-	   <item>http://feed43.com/hkappledaily-10.xml</item>
-	   <item>http://feed43.com/hkappledaily-11.xml</item>
-	   <item>http://feed43.com/hkappledaily-12.xml</item>
-	   <item>http://feed43.com/hkappledaily-13.xml</item>
-	   <item>http://feed43.com/hkappledaily-14.xml</item>
-   </string-array>    
-   <string-array name="newscatsHKEJ">
-    	<item>即時財訊</item>
-   </string-array>
-   <string-array name="newsfeedsHKEJ">
-		<item>http://www.hkej.com/rss/onlinenews.xml</item>
-   </string-array>
-   <string-array name="newscatsHKMetro">
-    	<item>即時新聞</item>
-    	<item>財經新聞</item>
-   </string-array>
-   <string-array name="newsfeedsHKMetro">
-		<item>http://rthk.hk/rthk/news/rss/c_expressnews.xml</item>
-		<item>http://rthk.hk/rthk/news/rss/c_finance.xml</item>
-   </string-array>
-   <string-array name="newscatsHKsun">
-    	<item>要聞港聞</item>
-    	<item>兩岸國際</item>
-    	<item>財經</item>
-    	<item>娛樂</item>
-    	<item>副刊</item>
-    	<item>體育</item>
-    	<item>SUN樂園</item>
-   </string-array>
-   <string-array name="newsfeedsHKsun">
-		<item>http://the-sun.on.cc/rss/news.xml</item>
-		<item>http://the-sun.on.cc/rss/china_world.xml</item>
-		<item>http://the-sun.on.cc/rss/finance.xml</item>
-		<item>http://the-sun.on.cc/rss/entertainment.xml</item>
-		<item>http://the-sun.on.cc/rss/lifestyle.xml</item>
-		<item>http://the-sun.on.cc/rss/sport.xml</item>
-		<item>http://the-sun.on.cc/rss/adult.xml</item>
-   </string-array>
-   <string-array name="newscatsHKam730">
-    	<item>新聞</item>
-    	<item>財經</item>
-    	<item>地產</item>
-    	<item>娛樂</item>
-    	<item>體育</item>
-    	<item>健康</item>
-    	<item>小歇 </item>
-    	<item>時尚</item>
-    	<item>新科玩</item>
-    	<item>賞味</item>
-    	<item>遊樂 </item>
-   </string-array>
-   <string-array name="newsfeedsHKam730">
-		<item>http://feed43.com/6837465783746248.xml</item>
-    	<item>http://feed43.com/4256550767731704.xml</item>
-    	<item>http://feed43.com/1104430416276431.xml</item>
-    	<item>http://feed43.com/6485536800681520.xml</item>
-    	<item>http://feed43.com/1144208663656355.xml</item>
-    	<item>http://feed43.com/0518810451173117.xml</item>
-    	<item>http://feed43.com/5401245011828043.xml</item>
-    	<item>http://feed43.com/7564127326106444.xml</item>
-    	<item>http://feed43.com/4423231820863214.xml</item>
-    	<item>http://feed43.com/6836443172662354.xml</item>
-    	<item>http://feed43.com/7520030888508064.xml</item>
-   </string-array>
-   <string-array name="newscatsHKheadline">
-    	<item>即時新聞</item>
-    <!-- 	<item>日報新聞-全部</item> -->
-    	<item>日報新聞-港聞</item>
-    	<item>日報新聞-中國</item>
-    	<item>日報新聞-國際</item>
-    	<item>日報新聞-地產</item>
-    	<item>日報新聞-體育</item>
-    	<item>日報新聞-副刊</item>
-    	<item>日報新聞-娛樂 最新本地</item>
-    	<item>日報新聞-娛樂 最新外娛</item>
-    	<!-- <item>日報新聞-旅遊</item> -->
-   </string-array>
-   <string-array name="newsfeedsHKheadline">
-		<item>http://news.hkheadline.com/instantnews/xml/instant_news_xml.xml</item>
-	<!-- <item>http://news.hkheadline.com/dailynews/xml/daily_news_xml.xml</item> -->
-		<item>http://www.feed43.com/5652083487268223.xml</item>
-		<item>http://www.feed43.com/1650212611678040.xml</item>
-		<item>http://www.feed43.com/8334601303067526.xml</item>
-		<item>http://www.feed43.com/6861325447714757.xml</item>
-		<item>http://www.feed43.com/6835046601035184.xml</item>
-		<item>http://www.feed43.com/2016532758715585.xml</item>
-		<item>http://www.feed43.com/1074704207872608.xml</item>
-		<item>http://www.feed43.com/7074545008260156.xml</item>
-		<!--<item>http://www.feed43.com/0455766384530424.xml</item> -->
-   </string-array>                  
- </resources>       
+        <item>http://ny.stgloballink.com/rss/global/index.xml</item>
+        <item>http://ny.stgloballink.com/rss/usa/index.xml</item>
+        <item>http://ny.stgloballink.com/rss/china/index.xml</item>
+        <item>http://ny.stgloballink.com/rss/hk/index.xml</item>
+        <item>http://ny.stgloballink.com/rss/taiwan/index.xml</item>
+        <item>http://ny.stgloballink.com/rss/ent_focus/index.xml</item>
+        <item>http://ny.stgloballink.com/rss/ent_china/index.xml</item>
+        <item>http://ny.stgloballink.com/rss/ent_oversea/index.xml</item>
+        <item>http://ny.stgloballink.com/rss/ent_sport/index.xml</item>
+        <item>http://ny.stgloballink.com/rss/worldfin/index.xml</item>
+        <item>http://ny.stgloballink.com/rss/chinafin/index.xml</item>
+        <item>http://ny.stgloballink.com/rss/market/index.xml</item>
+        <item>http://ny.stgloballink.com/rss/ny/index.xml</item>
+        <item>http://ny.stgloballink.com/rss/community/index.xml</item>
+        <item>http://ny.stgloballink.com/rss/boston/index.xml</item>
+        <item>http://ny.stgloballink.com/rss/chicago/index.xml</item>
+        <item>http://ny.stgloballink.com/rss/philadelphia/index.xml</item>
+        <item>http://ny.stgloballink.com/rss/washington/index.xml</item>
+        <item>http://ny.stgloballink.com/rss/sports/index.xml</item>
+    </string-array>
+
+    <string-array name="newscatsHKMingRT">
+        <item>港聞</item>
+        <item>娛樂</item>
+        <item>經濟</item>
+        <item>地產</item>
+        <item>兩岸</item>
+        <item>國際</item>
+        <item>體育</item>
+        <item>本港今日天氣預測</item>
+    </string-array>
+    <string-array name="newsfeedsHKMingRT">
+        <item>http://news.mingpao.com/rss/ins/s00001.xml</item>
+        <item>http://news.mingpao.com/rss/ins/s00007.xml</item>
+        <item>http://news.mingpao.com/rss/ins/s00002.xml</item>
+        <item>http://news.mingpao.com/rss/ins/s00003.xml</item>
+        <item>http://news.mingpao.com/rss/ins/s00004.xml</item>
+        <item>http://news.mingpao.com/rss/ins/s00005.xml</item>
+        <item>http://news.mingpao.com/rss/ins/s00006.xml</item>
+        <item>http://news.mingpao.com/rss/weather/rss.xml</item>
+    </string-array>
+
+    <string-array name="newscatsHKMing">
+        <item>要聞</item>
+        <item>港聞</item>
+        <item>經濟</item>
+        <item>娛樂</item>
+        <item>社評‧筆陣</item>
+        <item>觀點</item>
+        <item>中國</item>
+        <item>國際</item>
+        <item>教育</item>
+        <item>體育</item>
+        <item>副刊</item>
+        <item>英文</item>
+        <item>作家專欄</item>
+        <item>深度報道</item>
+        <item>偵查報道</item>
+    </string-array>
+    <string-array name="newsfeedsHKMing">
+        <item>http://news.mingpao.com/rss/pns/s00001.xml</item>
+        <item>http://news.mingpao.com/rss/pns/s00002.xml</item>
+        <item>http://news.mingpao.com/rss/pns/s00004.xml</item>
+        <item>http://news.mingpao.com/rss/pns/s00016.xml</item>
+        <item>http://news.mingpao.com/rss/pns/s00003.xml</item>
+        <item>http://news.mingpao.com/rss/pns/s00012.xml</item>
+        <item>http://news.mingpao.com/rss/pns/s00013.xml</item>
+        <item>http://news.mingpao.com/rss/pns/s00014.xml</item>
+        <item>http://news.mingpao.com/rss/pns/s00011.xml</item>
+        <item>http://news.mingpao.com/rss/pns/s00015.xml</item>
+        <item>http://news.mingpao.com/rss/pns/s00005.xml</item>
+        <item>http://news.mingpao.com/rss/pns/s00017.xml</item>
+        <item>http://news.mingpao.com/rss/pns/s00018.xml</item>
+        <item>http://news.mingpao.com/rss/pns/s00285.xml</item>
+        <item>http://news.mingpao.com/rss/pns/s00287.xml</item>
+    </string-array>
+    <string-array name="newscatsHKOrientalDaily">
+        <item>要聞港聞</item>
+        <item>兩岸國際</item>
+        <item>財經</item>
+        <item>娛樂</item>
+        <item>副刊</item>
+        <item>體育</item>
+        <item>男極圈</item>
+    </string-array>
+    <string-array name="newsfeedsHKOrientalDaily">
+        <item>http://orientaldaily.on.cc/rss/news.xml</item>
+        <item>http://orientaldaily.on.cc/rss/china_world.xml</item>
+        <item>http://orientaldaily.on.cc/rss/finance.xml</item>
+        <item>http://orientaldaily.on.cc/rss/entertainment.xml</item>
+        <item>http://orientaldaily.on.cc/rss/lifestyle.xml</item>
+        <item>http://orientaldaily.on.cc/rss/sport.xml</item>
+        <item>http://orientaldaily.on.cc/rss/adult.xml</item>
+    </string-array>
+
+    <string-array name="newscatsHKAppleDaily">
+        <item>要聞港聞</item>
+        <item>財經地產</item>
+        <item>兩岸國際</item>
+        <item>娛樂名人</item>
+        <item>體育</item>
+        <item>專題</item>
+        <item>旅遊</item>
+        <item>科技</item>
+        <item>飲食</item>
+        <item>汽車</item>
+        <item>親子</item>
+        <item>品味</item>
+        <item>名采</item>
+        <item>運程</item>
+    </string-array>
+    <string-array name="newsfeedsHKAppleDaily">
+        <item>http://feed43.com/hkappledaily-01.xml</item>
+        <item>http://feed43.com/hkappledaily-02.xml</item>
+        <item>http://feed43.com/hkappledaily-03.xml</item>
+        <item>http://feed43.com/hkappledaily-04.xml</item>
+        <item>http://feed43.com/hkappledaily-05.xml</item>
+        <item>http://feed43.com/hkappledaily-06.xml</item>
+        <item>http://feed43.com/hkappledaily-07.xml</item>
+        <item>http://feed43.com/hkappledaily-08.xml</item>
+        <item>http://feed43.com/hkappledaily-09.xml</item>
+        <item>http://feed43.com/hkappledaily-10.xml</item>
+        <item>http://feed43.com/hkappledaily-11.xml</item>
+        <item>http://feed43.com/hkappledaily-12.xml</item>
+        <item>http://feed43.com/hkappledaily-13.xml</item>
+        <item>http://feed43.com/hkappledaily-14.xml</item>
+    </string-array>
+    <string-array name="newscatsHKEJ">
+        <item>即時財訊</item>
+    </string-array>
+    <string-array name="newsfeedsHKEJ">
+        <item>http://www.hkej.com/rss/onlinenews.xml</item>
+    </string-array>
+    <string-array name="newscatsHKMetro">
+        <item>本地新聞</item>
+        <item>大中華新聞</item>
+        <item>國際新聞</item>
+        <item>財經新聞</item>
+        <item>體育新聞</item>
+    </string-array>
+    <string-array name="newsfeedsHKMetro">
+        <item>http://rthk.hk/rthk/news/rss/c_expressnews_clocal.xml</item>
+        <item>http://rthk.hk/rthk/news/rss/c_expressnews_greaterchina.xml</item>
+        <item>http://rthk.hk/rthk/news/rss/c_expressnews_cinternational.xml</item>
+        <item>http://rthk.hk/rthk/news/rss/c_expressnews_cfinance.xml</item>
+        <item>http://rthk.hk/rthk/news/rss/c_expressnews_csport.xml</item>
+    </string-array>
+    <string-array name="newscatsHKsun">
+        <item>要聞港聞</item>
+        <item>兩岸國際</item>
+        <item>財經</item>
+        <item>娛樂</item>
+        <item>副刊</item>
+        <item>體育</item>
+    </string-array>
+    <string-array name="newsfeedsHKsun">
+        <item>http://the-sun.on.cc/rss/news.xml</item>
+        <item>http://the-sun.on.cc/rss/china_world.xml</item>
+        <item>http://the-sun.on.cc/rss/finance.xml</item>
+        <item>http://the-sun.on.cc/rss/entertainment.xml</item>
+        <item>http://the-sun.on.cc/rss/lifestyle.xml</item>
+        <item>http://the-sun.on.cc/rss/sport.xml</item>
+    </string-array>
+    <string-array name="newscatsHKam730">
+        <item>新聞</item>
+        <item>財經</item>
+        <item>地產</item>
+        <item>娛樂</item>
+        <item>體育</item>
+        <item>健康</item>
+        <item>小歇 </item>
+        <item>時尚</item>
+        <item>新科玩</item>
+        <item>賞味</item>
+        <item>遊樂 </item>
+    </string-array>
+    <string-array name="newsfeedsHKam730">
+        <item>http://feed43.com/6837465783746248.xml</item>
+        <item>http://feed43.com/4256550767731704.xml</item>
+        <item>http://feed43.com/1104430416276431.xml</item>
+        <item>http://feed43.com/6485536800681520.xml</item>
+        <item>http://feed43.com/1144208663656355.xml</item>
+        <item>http://feed43.com/0518810451173117.xml</item>
+        <item>http://feed43.com/5401245011828043.xml</item>
+        <item>http://feed43.com/7564127326106444.xml</item>
+        <item>http://feed43.com/4423231820863214.xml</item>
+        <item>http://feed43.com/6836443172662354.xml</item>
+        <item>http://feed43.com/7520030888508064.xml</item>
+    </string-array>
+    <string-array name="newscatsHKheadline">
+        <item>即時新聞</item>
+        <!-- 	<item>日報新聞-全部</item> -->
+        <item>日報新聞-港聞</item>
+        <item>日報新聞-中國</item>
+        <item>日報新聞-國際</item>
+        <item>日報新聞-地產</item>
+        <item>日報新聞-體育</item>
+        <item>日報新聞-副刊</item>
+        <item>日報新聞-娛樂 最新本地</item>
+        <item>日報新聞-娛樂 最新外娛</item>
+        <!-- <item>日報新聞-旅遊</item> -->
+    </string-array>
+    <string-array name="newsfeedsHKheadline">
+        <item>http://news.hkheadline.com/instantnews/xml/instant_news_xml.xml</item>
+        <!-- <item>http://news.hkheadline.com/dailynews/xml/daily_news_xml.xml</item> -->
+        <item>http://www.feed43.com/5652083487268223.xml</item>
+        <item>http://www.feed43.com/1650212611678040.xml</item>
+        <item>http://www.feed43.com/8334601303067526.xml</item>
+        <item>http://www.feed43.com/6861325447714757.xml</item>
+        <item>http://www.feed43.com/6835046601035184.xml</item>
+        <item>http://www.feed43.com/2016532758715585.xml</item>
+        <item>http://www.feed43.com/1074704207872608.xml</item>
+        <item>http://www.feed43.com/7074545008260156.xml</item>
+        <!--<item>http://www.feed43.com/0455766384530424.xml</item> -->
+    </string-array>
+</resources>

@@ -23,9 +23,10 @@
             android:id="@+id/tabs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/MyCustomTabLayout"
+            app:tabMaxWidth="0dp"
             app:tabMode="fixed"
-            app:tabGravity="fill"/>
+            app:tabGravity="fill"
+            android:theme="@style/MyCustomTabLayout"/>
 
     </android.support.design.widget.AppBarLayout>
 

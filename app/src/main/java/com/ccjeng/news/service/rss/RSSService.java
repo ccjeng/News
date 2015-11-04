@@ -14,18 +14,20 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
 
-import javax.xml.parsers.*;
-
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;
 
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
 
-public class XPPHandler {
 
-    private static final String TAG = "XPPHandler";
+public class RSSService {
 
-    public void parseRSS(final NewsRSSList context, final URL url) throws IOException {
+    private static final String TAG = "RSSService";
+
+    public void requestRSS(final NewsRSSList context, final URL url) throws IOException {
 
         OkHttpClient client = new OkHttpClient();
         Request request = new Request.Builder()
