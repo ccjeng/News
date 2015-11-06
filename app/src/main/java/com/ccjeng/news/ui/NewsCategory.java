@@ -180,7 +180,8 @@ public class NewsCategory extends AppCompatActivity {
         Bundle bundle = new Bundle();
 
         bundle.putString("CategoryNum", Integer.toString(itemnumber));
-        bundle.putString("CategoryName", categoryName + " - " + itemname);
+        bundle.putString("CategoryName", itemname);
+        bundle.putString("NewsName", categoryName);
         bundle.putString("SourceNum", Integer.toString(sourceNumber));
         bundle.putString("SourceTab", tabName);
         intent.putExtras(bundle);

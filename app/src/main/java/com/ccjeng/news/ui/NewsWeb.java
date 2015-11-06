@@ -44,26 +44,32 @@ public class NewsWeb extends AppCompatActivity {
         Bundle bundle = this.getIntent().getExtras();
         int sourceNumber = Integer.parseInt(bundle.getString("SourceNum"));
         String TabName = bundle.getString("SourceTab");
+        String newsName = bundle.getString("NewsName");
+        String categoryName = bundle.getString("CategoryName");
+
         String url = bundle.getString("url");
 
-        // Makes Progress bar Visible
-        //getWindow().setFeatureInt( Window.FEATURE_PROGRESS, Window.PROGRESS_VISIBILITY_ON);
+        getSupportActionBar().setTitle(categoryName);
+        getSupportActionBar().setSubtitle(newsName);
 
-        //webView.setWebViewClient(mWebViewClient);
-        webView.getSettings().setJavaScriptEnabled(false);
+        // Makes Progress bar Visible
+        getWindow().setFeatureInt(Window.FEATURE_PROGRESS, Window.PROGRESS_VISIBILITY_ON);
+
+        webView.setWebViewClient(mWebViewClient);
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.getSettings().setUseWideViewPort(true);
         webView.loadUrl(url);
 
     }
 
     //do not open default browser
-    /*
     WebViewClient mWebViewClient = new WebViewClient() {
         @Override
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
             view.loadUrl(url);
             return true;
         }
-    };*/
+    };
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

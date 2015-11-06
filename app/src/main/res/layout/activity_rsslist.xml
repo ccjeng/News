@@ -17,8 +17,7 @@
         <include layout="@layout/toolbar"
             android:id="@+id/toolbar"
             android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:layout_alignParentTop="true"/>
+            android:layout_width="match_parent"/>
 
     </android.support.design.widget.AppBarLayout>
 
@@ -36,6 +35,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/recyclerView"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
 </android.support.design.widget.CoordinatorLayout>

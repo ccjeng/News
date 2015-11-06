@@ -42,6 +42,7 @@ public class NewsRSSList extends AppCompatActivity {
     private int sourceNumber;
     private int itemNumber;
     private String tabName;
+    private String newsName;
     private String categoryName;
     private String[] feedURL;
     private String rssFeedURL = null;
@@ -68,11 +69,21 @@ public class NewsRSSList extends AppCompatActivity {
         //get intent values
         Bundle bunde = this.getIntent().getExtras();
         itemNumber = Integer.parseInt(bunde.getString("CategoryNum"));
+        newsName = bunde.getString("NewsName");
         categoryName = bunde.getString("CategoryName");
         sourceNumber = Integer.parseInt(bunde.getString("SourceNum"));
         tabName = bunde.getString("SourceTab");
+
+        String strTabName;
+        if (tabName.equals("TW")) {
+            strTabName = getString(R.string.tab_tw);
+        } else {
+            strTabName = getString(R.string.tab_hk);
+        }
+
         //set toolbar title
         getSupportActionBar().setTitle(categoryName);
+        getSupportActionBar().setSubtitle(strTabName + " - " + newsName);
         showResult(tabName, sourceNumber);
 
     }
@@ -113,11 +124,11 @@ public class NewsRSSList extends AppCompatActivity {
                     @Override
                     public void onItemClick(View view, int position) {
                       //  goIntent(position, category[position]);
-                        //showDetail(position);
+                        showDetail(position, rssList);
 
                         //open browser
-                        Uri uri = Uri.parse(rssList.getItem(position).getLink());
-                        startActivity( new Intent(Intent.ACTION_VIEW, uri));
+                        //Uri uri = Uri.parse(rssList.getItem(position).getLink());
+                        //startActivity( new Intent(Intent.ACTION_VIEW, uri));
                     }
                 })
         );
@@ -224,7 +235,7 @@ public class NewsRSSList extends AppCompatActivity {
 
     }
 
-    private void showDetail(int position) {
+    private void showDetail(int position, RSSFeed rssList) {
 
         Intent intent = new Intent();
         intent.setClass(NewsRSSList.this, NewsWeb.class);
@@ -232,8 +243,10 @@ public class NewsRSSList extends AppCompatActivity {
         Bundle bundle = new Bundle();
         bundle.putString("SourceNum", Integer.toString(sourceNumber));
         bundle.putString("SourceTab", tabName);
+        bundle.putString("NewsName", newsName);
+        bundle.putString("CategoryName", categoryName);
         bundle.putString("position", Integer.toString(position));
-    //    bundle.putString("url", mRssList.getItem(position).getLink());
+        bundle.putString("url", rssList.getItem(position).getLink());
 
         //itemintent.putExtras(bundle);
         //itemintent.putExtra("feed", info);
