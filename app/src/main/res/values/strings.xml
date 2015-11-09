@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">樹懶新聞</string>
     <string name="action_settings">設定</string>
+    <string name="open_browser">開啟瀏覽器</string>
+    <string name="share">分享</string>
 
     <string name="tab_tw">台灣</string>
     <string name="tab_hk">香港</string>

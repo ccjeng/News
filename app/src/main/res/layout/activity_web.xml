@@ -16,21 +16,28 @@
         <include layout="@layout/toolbar"
             android:id="@+id/toolbar"
             android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:layout_alignParentTop="true"/>
+            android:layout_width="match_parent"/>
 
     </android.support.design.widget.AppBarLayout>
 
-    <RelativeLayout
-        android:id="@+id/main"
+    <!--<android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="fill_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        android:layout_height="fill_parent">-->
 
-        <WebView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/webView" />
-    </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/main"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <org.xwalk.core.XWalkView
+                android:id="@+id/webView"
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                />
+        </RelativeLayout>
+
+    <!--</android.support.v4.widget.NestedScrollView>-->
 
 </android.support.design.widget.CoordinatorLayout>

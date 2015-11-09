@@ -74,16 +74,9 @@ public class NewsRSSList extends AppCompatActivity {
         sourceNumber = Integer.parseInt(bunde.getString("SourceNum"));
         tabName = bunde.getString("SourceTab");
 
-        String strTabName;
-        if (tabName.equals("TW")) {
-            strTabName = getString(R.string.tab_tw);
-        } else {
-            strTabName = getString(R.string.tab_hk);
-        }
-
         //set toolbar title
         getSupportActionBar().setTitle(categoryName);
-        getSupportActionBar().setSubtitle(strTabName + " - " + newsName);
+        getSupportActionBar().setSubtitle(newsName);
         showResult(tabName, sourceNumber);
 
     }
@@ -123,12 +116,7 @@ public class NewsRSSList extends AppCompatActivity {
                 new RecyclerItemClickListener(this, new RecyclerItemClickListener.OnItemClickListener() {
                     @Override
                     public void onItemClick(View view, int position) {
-                      //  goIntent(position, category[position]);
                         showDetail(position, rssList);
-
-                        //open browser
-                        //Uri uri = Uri.parse(rssList.getItem(position).getLink());
-                        //startActivity( new Intent(Intent.ACTION_VIEW, uri));
                     }
                 })
         );
@@ -246,7 +234,8 @@ public class NewsRSSList extends AppCompatActivity {
         bundle.putString("NewsName", newsName);
         bundle.putString("CategoryName", categoryName);
         bundle.putString("position", Integer.toString(position));
-        bundle.putString("url", rssList.getItem(position).getLink());
+        bundle.putString("newsUrl", rssList.getItem(position).getLink());
+        bundle.putString("newsTitle", rssList.getItem(position).getTitle());
 
         //itemintent.putExtras(bundle);
         //itemintent.putExtra("feed", info);

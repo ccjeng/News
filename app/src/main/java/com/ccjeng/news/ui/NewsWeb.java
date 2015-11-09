@@ -1,10 +1,10 @@
 package com.ccjeng.news.ui;
 
+import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -18,6 +18,9 @@ import com.ccjeng.news.R;
 import com.mikepenz.community_material_typeface_library.CommunityMaterial;
 import com.mikepenz.iconics.IconicsDrawable;
 
+import org.xwalk.core.XWalkPreferences;
+import org.xwalk.core.XWalkView;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
@@ -26,7 +29,9 @@ public class NewsWeb extends AppCompatActivity {
     @Bind(R.id.toolbar)
     Toolbar toolbar;
     @Bind(R.id.webView)
-    WebView webView;
+    XWalkView webView;
+
+    private String newsUrl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,49 +52,50 @@ public class NewsWeb extends AppCompatActivity {
         String newsName = bundle.getString("NewsName");
         String categoryName = bundle.getString("CategoryName");
 
-        String url = bundle.getString("url");
+        newsUrl = bundle.getString("newsUrl");
+        String newsTitle = bundle.getString("newsTitle");
 
-        getSupportActionBar().setTitle(categoryName);
+        getSupportActionBar().setTitle(newsTitle);
         getSupportActionBar().setSubtitle(newsName);
 
         // Makes Progress bar Visible
         getWindow().setFeatureInt(Window.FEATURE_PROGRESS, Window.PROGRESS_VISIBILITY_ON);
 
-        webView.setWebViewClient(mWebViewClient);
-        webView.getSettings().setJavaScriptEnabled(true);
-        webView.getSettings().setUseWideViewPort(true);
-        webView.loadUrl(url);
+        webView.load(newsUrl, null);
+        XWalkPreferences.setValue(XWalkPreferences.REMOTE_DEBUGGING, true);
+
 
     }
 
-    //do not open default browser
-    WebViewClient mWebViewClient = new WebViewClient() {
-        @Override
-        public boolean shouldOverrideUrlLoading(WebView view, String url) {
-            view.loadUrl(url);
-            return true;
-        }
-    };
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_web, menu);
+
+        MenuItem menuItem1 = menu.findItem(R.id.action_browser);
+        menuItem1.setIcon(new IconicsDrawable(this, CommunityMaterial.Icon.cmd_web).actionBarSize().color(Color.WHITE));
+
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         switch (item.getItemId()) {
             case android.R.id.home:
                 finish();
+                break;
+            case R.id.action_browser:
+                openBrowser();
                 break;
         }
 
         return super.onOptionsItemSelected(item);
     }
 
+
+    private void openBrowser() {
+
+        Uri uri = Uri.parse(newsUrl);
+        startActivity( new Intent(Intent.ACTION_VIEW, uri));
+
+    }
 }
