@@ -183,11 +183,11 @@
         <item>體育新聞</item>
     </string-array>
     <string-array name="newsfeedsHKMetro">
-        <item>http://rthk.hk/rthk/news/rss/c_expressnews_clocal.xml</item>
-        <item>http://rthk.hk/rthk/news/rss/c_expressnews_greaterchina.xml</item>
-        <item>http://rthk.hk/rthk/news/rss/c_expressnews_cinternational.xml</item>
-        <item>http://rthk.hk/rthk/news/rss/c_expressnews_cfinance.xml</item>
-        <item>http://rthk.hk/rthk/news/rss/c_expressnews_csport.xml</item>
+        <item>http://feeds.feedburner.com/rthk/irFT</item>
+        <item>http://feeds.feedburner.com/rthk/Tumf</item>
+        <item>http://feeds.feedburner.com/rthk/Lpzl</item>
+        <item>http://feeds.feedburner.com/rthk/ksHf</item>
+        <item>http://feeds.feedburner.com/rthk/bkob</item>
     </string-array>
     <string-array name="newscatsHKsun">
         <item>要聞港聞</item>

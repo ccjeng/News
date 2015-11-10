@@ -49,6 +49,10 @@ public class RSSHandler extends DefaultHandler {
             if (this.in_item) {
                 this.in_title = true;
             }
+        /*} else if (localName.equals("guid")) {
+            if (this.in_item) {
+                this.in_link = true;
+            }*/
         } else if (localName.equals("link")) {
             if (this.in_item) {
                 this.in_link = true;
@@ -67,6 +71,9 @@ public class RSSHandler extends DefaultHandler {
     @Override
     public void endElement(String namespaceURI, String localName,
                            String qName) throws SAXException {
+
+        Log.d(TAG, localName + " - " + buf.toString().trim());
+
         if (localName.equals("item")) {
             this.in_item = false;
             feed.addItem(item);
@@ -77,6 +84,12 @@ public class RSSHandler extends DefaultHandler {
                 buf.setLength(0);
                 this.in_title = false;
             }
+        /*} else if (localName.equals("guid")) {
+            if (this.in_item) {
+                item.setLink(buf.toString().trim());
+                buf.setLength(0);
+                this.in_link = false;
+            }*/
         } else if (localName.equals("link")) {
             if (this.in_item) {
                 item.setLink(buf.toString().trim());
