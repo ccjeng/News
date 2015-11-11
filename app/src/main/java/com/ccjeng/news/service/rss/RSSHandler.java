@@ -72,7 +72,7 @@ public class RSSHandler extends DefaultHandler {
     public void endElement(String namespaceURI, String localName,
                            String qName) throws SAXException {
 
-        Log.d(TAG, localName + " - " + buf.toString().trim());
+        //Log.d(TAG, localName + " - " + buf.toString().trim());
 
         if (localName.equals("item")) {
             this.in_item = false;

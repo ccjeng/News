@@ -7,18 +7,19 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
 
 import com.ccjeng.news.R;
 import com.mikepenz.community_material_typeface_library.CommunityMaterial;
 import com.mikepenz.iconics.IconicsDrawable;
+import com.pnikosis.materialishprogress.ProgressWheel;
 
 import org.xwalk.core.XWalkPreferences;
+import org.xwalk.core.XWalkResourceClient;
+import org.xwalk.core.XWalkUIClient;
 import org.xwalk.core.XWalkView;
 
 import butterknife.Bind;
@@ -26,10 +27,14 @@ import butterknife.ButterKnife;
 
 public class NewsWeb extends AppCompatActivity {
 
+    private static final String TAG = "NewsWeb";
+
     @Bind(R.id.toolbar)
     Toolbar toolbar;
     @Bind(R.id.webView)
     XWalkView webView;
+    @Bind(R.id.progress_wheel)
+    ProgressWheel progressWheel;
 
     private String newsUrl;
 
@@ -58,12 +63,46 @@ public class NewsWeb extends AppCompatActivity {
         getSupportActionBar().setTitle(newsTitle);
         getSupportActionBar().setSubtitle(newsName);
 
-        // Makes Progress bar Visible
-        getWindow().setFeatureInt(Window.FEATURE_PROGRESS, Window.PROGRESS_VISIBILITY_ON);
-
         webView.load(newsUrl, null);
-        XWalkPreferences.setValue(XWalkPreferences.REMOTE_DEBUGGING, true);
+        //XWalkPreferences.setValue(XWalkPreferences.REMOTE_DEBUGGING, true);
 
+        /*
+        webView.setUIClient(new XWalkUIClient(webView) {
+
+            @Override
+            public void onPageLoadStarted(XWalkView view, String url) {
+                super.onPageLoadStarted(view, url);
+                Log.d(TAG, "onPageLoadStarted");
+                progressWheel.setVisibility(View.VISIBLE);
+                webView.setVisibility(View.GONE);
+            }
+
+            @Override
+            public void onPageLoadStopped(XWalkView view, String url, LoadStatus status) {
+                super.onPageLoadStopped(view, url, status);
+                Log.d(TAG, "onPageLoadStopped");
+                progressWheel.setVisibility(View.GONE);
+                webView.setVisibility(View.VISIBLE);
+            }
+        });*/
+
+        webView.setResourceClient(new XWalkResourceClient(webView) {
+            @Override
+            public void onLoadFinished(XWalkView view, String url) {
+                super.onLoadFinished(view, url);
+                progressWheel.setVisibility(View.GONE);
+                webView.setVisibility(View.VISIBLE);
+            }
+
+            @Override
+            public void onLoadStarted(XWalkView view, String url) {
+                super.onLoadStarted(view, url);
+                progressWheel.setVisibility(View.VISIBLE);
+                webView.setVisibility(View.GONE);
+            }
+        });
+
+        //webView.load("javascript:document.body.style.transform=\"scale(ZoomLevel)\";", null);
 
     }
 
@@ -97,5 +136,32 @@ public class NewsWeb extends AppCompatActivity {
         Uri uri = Uri.parse(newsUrl);
         startActivity( new Intent(Intent.ACTION_VIEW, uri));
 
+    }
+
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if (webView != null) {
+            webView.pauseTimers();
+            webView.onHide();
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (webView != null) {
+            webView.resumeTimers();
+            webView.onShow();
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (webView != null) {
+            webView.onDestroy();
+        }
     }
 }

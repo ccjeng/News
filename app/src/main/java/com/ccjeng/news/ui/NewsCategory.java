@@ -154,7 +154,6 @@ public class NewsCategory extends AppCompatActivity {
 
         if (category != null) {
             NewsCategoryAdapter adapter = new NewsCategoryAdapter(this, category);
-
             recyclerView.setAdapter(adapter);
 
             recyclerView.addOnItemTouchListener(

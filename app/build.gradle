@@ -38,7 +38,6 @@ dependencies {
         // exclusion is not necessary, but generally a good idea.
         exclude group: 'com.google.android', module: 'support-v4'
     }
-    compile project(':volley')
     compile 'com.squareup.okhttp:okhttp:2.5.0'
     compile 'org.xwalk:xwalk_core_library:15.44.384.12'
 }

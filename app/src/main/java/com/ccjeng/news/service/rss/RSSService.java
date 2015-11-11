@@ -103,10 +103,10 @@ public class RSSService {
         // perform the synchronous parse
         try {
             if (url.toString().contains("stgloballink")
-                    || url.toString().contains("nownews")
+                  //  || url.toString().contains("nownews")
                     || url.toString().contains("hkheadline")
-                    || url.toString().contains("rthk.hk")
-                    || url.toString().contains("mingpao")
+                  //  || url.toString().contains("rthk.hk")
+                  //  || url.toString().contains("mingpao")
                     ) {
                 streamReader = new InputStreamReader(in, "big5");
             } else if (url.toString().contains("ent.163.com")
