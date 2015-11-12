@@ -23,8 +23,8 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.Custom
 	 }
 
 	@Override
-	public CustomViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-		View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.rsslist_item, null);
+	public CustomViewHolder onCreateViewHolder(ViewGroup parent, int i) {
+		View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.rsslist_item, parent, false);
 
 		CustomViewHolder viewHolder = new CustomViewHolder(view);
 

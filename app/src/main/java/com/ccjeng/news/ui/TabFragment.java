@@ -3,6 +3,8 @@ package com.ccjeng.news.ui;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +16,8 @@ import android.widget.FrameLayout.LayoutParams;
 import android.widget.ListView;
 
 import com.ccjeng.news.R;
+import com.ccjeng.news.adapter.NewsCategoryAdapter;
+import com.ccjeng.news.adapter.RecyclerItemClickListener;
 
 /**
  * Created by andycheng on 2015/10/27.
@@ -50,12 +54,11 @@ public class TabFragment extends Fragment {
         FrameLayout fl = new FrameLayout(getActivity());
         fl.setLayoutParams(params);
 
-        ListView v = new ListView(getActivity());
-        v.setLayoutParams(params);
-        v.setLayoutParams(params);
-        //v.setGravity(Gravity.CENTER);
-        v.setBackgroundResource(R.color.windowBackground);
-        //v.setText("Tab " + (position + 1));
+        RecyclerView v = new RecyclerView(getActivity());
+
+        LinearLayoutManager llm = new LinearLayoutManager(getActivity());
+        v.setLayoutManager(llm);
+        v.setHasFixedSize(true);
 
 
         switch (position) {
@@ -69,15 +72,18 @@ public class TabFragment extends Fragment {
                 break;
         }
 
-        v.setAdapter(new ArrayAdapter<String>
-			(getActivity(),android.R.layout.simple_list_item_1 , newsSource));
+        NewsCategoryAdapter adapter = new NewsCategoryAdapter(getActivity(), newsSource);
+        v.setAdapter(adapter);
 
-        v.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                goIntent(tabName, position, newsSource[position]);
-                Log.d(TAG, "TAB " + position);
-            }
-        });
+        v.addOnItemTouchListener(
+                new RecyclerItemClickListener(getActivity(), new RecyclerItemClickListener.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(View view, int position) {
+                        goIntent(tabName, position, newsSource[position]);
+                        Log.d(TAG, "TAB " + position);
+                    }
+                })
+        );
 
         fl.addView(v);
         return fl;
@@ -87,13 +93,8 @@ public class TabFragment extends Fragment {
     private void goIntent(String tabName, int itemnumber, String itemname) {
         Intent intent = new Intent();
         intent.setClass(getActivity(), NewsCategory.class);
+
         Bundle bundle = new Bundle();
-        /*if (Debug.On) {
-            Log.d(TAG, "goIntent-itemnumber: " + Integer.toString(itemnumber));
-            Log.d(TAG, "goIntent-itemname: " + itemname.toString());
-            Log.d(TAG, "goIntent-tab: " + newsSourceIntent.toString());
-        }
-        */
         bundle.putString("SourceTab", tabName);
         bundle.putString("SourceNum", Integer.toString(itemnumber));
         bundle.putString("SourceName", itemname);

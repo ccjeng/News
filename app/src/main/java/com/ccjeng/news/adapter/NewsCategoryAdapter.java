@@ -25,8 +25,8 @@ public class NewsCategoryAdapter extends RecyclerView.Adapter<NewsCategoryAdapte
     }
 
     @Override
-    public CustomViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.category_item, null);
+    public CustomViewHolder onCreateViewHolder(ViewGroup parent, int i) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.category_item, parent, false);
 
         CustomViewHolder viewHolder = new CustomViewHolder(view);
 
@@ -52,13 +52,6 @@ public class NewsCategoryAdapter extends RecyclerView.Adapter<NewsCategoryAdapte
             super(view);
             this.imageView = (ImageView) view.findViewById(R.id.icon);
             this.textView = (TextView) view.findViewById(R.id.row);
-/*
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Log.e("NewsCategoryAdapter", "当前点击的位置：" + getPosition());
-                }
-            });*/
         }
 
     }
