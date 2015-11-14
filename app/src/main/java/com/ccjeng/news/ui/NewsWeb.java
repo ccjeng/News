@@ -2,9 +2,12 @@ package com.ccjeng.news.ui;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -13,16 +16,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
+import android.webkit.WebChromeClient;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 import com.ccjeng.news.R;
 import com.mikepenz.community_material_typeface_library.CommunityMaterial;
 import com.mikepenz.iconics.IconicsDrawable;
 import com.pnikosis.materialishprogress.ProgressWheel;
-
-import org.xwalk.core.XWalkPreferences;
-import org.xwalk.core.XWalkResourceClient;
-import org.xwalk.core.XWalkUIClient;
-import org.xwalk.core.XWalkView;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -34,11 +35,13 @@ public class NewsWeb extends AppCompatActivity {
     @Bind(R.id.toolbar)
     Toolbar toolbar;
     @Bind(R.id.webView)
-    XWalkView webView;
+    WebView webView;
     @Bind(R.id.progress_wheel)
     ProgressWheel progressWheel;
 
+    private String newsName;
     private String newsUrl;
+    private String newsTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,56 +59,52 @@ public class NewsWeb extends AppCompatActivity {
         Bundle bundle = this.getIntent().getExtras();
         final int sourceNumber = Integer.parseInt(bundle.getString("SourceNum"));
         final String TabName = bundle.getString("SourceTab");
-        final String newsName = bundle.getString("NewsName");
+        newsName = bundle.getString("NewsName");
         final String categoryName = bundle.getString("CategoryName");
 
         newsUrl = bundle.getString("newsUrl");
-        final String newsTitle = bundle.getString("newsTitle");
+        newsTitle = bundle.getString("newsTitle");
 
         getSupportActionBar().setTitle(newsTitle);
         getSupportActionBar().setSubtitle(newsName);
 
-        webView.load(newsUrl, null);
-        XWalkPreferences.setValue(XWalkPreferences.JAVASCRIPT_CAN_OPEN_WINDOW, false);
-        //XWalkPreferences.setValue("enable-javascript",false);
-        //XWalkPreferences.setValue(XWalkPreferences.REMOTE_DEBUGGING, true);
+        getPrefs();
 
-        final Activity WebActivity = this;
+        webView.loadUrl(newsUrl, null);
+        //webView.getSettings().setJavaScriptEnabled(true);
+        webView.getSettings().setBuiltInZoomControls(true);
 
-        webView.setUIClient(new XWalkUIClient(webView) {
+        webView.setWebViewClient(new WebViewClient() {
 
             @Override
-            public void onPageLoadStarted(XWalkView view, String url) {
-                super.onPageLoadStarted(view, url);
-                Log.d(TAG, "onPageLoadStarted");
+            public void onPageStarted(WebView view, String url, Bitmap favicon) {
+                super.onPageStarted(view, url, favicon);
+                Log.d(TAG, "onPageStarted");
                 progressWheel.setVisibility(View.VISIBLE);
                 webView.setVisibility(View.GONE);
             }
 
             @Override
-            public void onPageLoadStopped(XWalkView view, String url, LoadStatus status) {
-                super.onPageLoadStopped(view, url, status);
-                Log.d(TAG, "onPageLoadStopped");
+            public void onPageFinished(WebView view, String url) {
+                super.onPageFinished(view, url);
+                Log.d(TAG, "onPageFinished");
                 progressWheel.setVisibility(View.GONE);
                 webView.setVisibility(View.VISIBLE);
             }
         });
+        webView.setWebChromeClient(new WebChromeClient() {
 
-        webView.setResourceClient(new XWalkResourceClient(webView) {
             @Override
-            public void onProgressChanged(XWalkView view, int progressInPercent) {
-                super.onProgressChanged(view, progressInPercent);
+            public void onProgressChanged(WebView view, int newProgress) {
+                super.onProgressChanged(view, newProgress);
+                progressWheel.setProgress((float) newProgress / 100);
 
-                progressWheel.setProgress((float) progressInPercent / 100);
-
-                if (progressInPercent > 95) {
+                if (newProgress > 90) {
                     progressWheel.setVisibility(View.GONE);
                     webView.setVisibility(View.VISIBLE);
                 }
             }
         });
-
-        //webView.load("javascript:document.body.style.transform=\"scale(ZoomLevel)\";", null);
 
     }
 
@@ -115,6 +114,7 @@ public class NewsWeb extends AppCompatActivity {
 
         MenuItem menuItem1 = menu.findItem(R.id.action_browser);
         menuItem1.setIcon(new IconicsDrawable(this, CommunityMaterial.Icon.cmd_web).actionBarSize().color(Color.WHITE));
+
 
         return true;
     }
@@ -126,7 +126,10 @@ public class NewsWeb extends AppCompatActivity {
                 finish();
                 break;
             case R.id.action_browser:
-                openBrowser();
+                menuOpenBrowser();
+                break;
+            case R.id.action_share:
+                menuShare();
                 break;
         }
 
@@ -134,37 +137,51 @@ public class NewsWeb extends AppCompatActivity {
     }
 
 
-    private void openBrowser() {
+    private void menuOpenBrowser() {
 
         Uri uri = Uri.parse(newsUrl);
         startActivity(new Intent(Intent.ACTION_VIEW, uri));
 
     }
 
+    private void menuShare() {
+
+        final Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("text/plain");
+        intent.putExtra(Intent.EXTRA_SUBJECT, "");
+        intent.putExtra(Intent.EXTRA_TEXT, "["+ newsName + "] " + newsTitle + " " + newsUrl);
+        startActivity(Intent.createChooser(intent, getString(R.string.sharing_description)));
+
+    }
+
+    private void getPrefs() {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+        Boolean disableJS = prefs.getBoolean("disableJS", false);
+
+        Log.d(TAG, "disableJS = " + disableJS);
+
+        if (disableJS) {
+            webView.getSettings().setJavaScriptEnabled(false);
+        } else {
+            webView.getSettings().setJavaScriptEnabled(true);
+        }
+    }
 
     @Override
     protected void onPause() {
         super.onPause();
-        if (webView != null) {
-            webView.pauseTimers();
-            webView.onHide();
-        }
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        if (webView != null) {
-            webView.resumeTimers();
-            webView.onShow();
-        }
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
         if (webView != null) {
-            webView.onDestroy();
+            //webView.destroy();
         }
     }
 }

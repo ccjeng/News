@@ -14,6 +14,7 @@ import android.view.View;
 import com.ccjeng.news.R;
 import com.ccjeng.news.adapter.NewsCategoryAdapter;
 import com.ccjeng.news.adapter.RecyclerItemClickListener;
+import com.ccjeng.news.utils.Category;
 import com.mikepenz.community_material_typeface_library.CommunityMaterial;
 import com.mikepenz.iconics.IconicsDrawable;
 
@@ -41,7 +42,10 @@ public class NewsCategory extends AppCompatActivity {
         ButterKnife.bind(this);
 
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
         toolbar.setNavigationIcon(new IconicsDrawable(this)
                 .icon(CommunityMaterial.Icon.cmd_keyboard_backspace)
                 .color(Color.WHITE)
@@ -81,76 +85,8 @@ public class NewsCategory extends AppCompatActivity {
 
     private void showResult(String tabName, int sourceNumber) {
 
-        if (tabName.equals("TW")) {
-            switch (sourceNumber) {
-                case 0:
-                    category = getResources().getStringArray(R.array.newscatsYahoo);
-                    break;
-                case 1:
-                    category = getResources().getStringArray(R.array.newscatsUDN);
-                    break;
-                case 2:
-                    category = getResources().getStringArray(R.array.newscatsYam);
-                    break;
-                case 3:
-                    category = getResources().getStringArray(R.array.newscatsChinaTimes);
-                    break;
-                case 4:
-                    category = getResources().getStringArray(R.array.newscatsStorm);
-                    break;
-                case 5:
-                    category = getResources().getStringArray(R.array.newscatsCommercial);
-                    break;
-                case 6:
-                    category = getResources().getStringArray(R.array.newscatsEttoday);
-                    break;
-                case 7:
-                    category = getResources().getStringArray(R.array.newscatsCNYes);
-                    break;
-                case 8:
-                    category = getResources().getStringArray(R.array.newscatsNewsTalk);
-                    break;
-                case 9:
-                    category = getResources().getStringArray(R.array.newscatsLibertyTimes);
-                    break;
-                case 10:
-                    category = getResources().getStringArray(R.array.newscatsAppDaily);
-                    break;
-            }
-        } else if (tabName.equals("HK")) {
-            switch (sourceNumber) {
-                case 0:
-                    category = getResources().getStringArray(R.array.newscatsHKAppleDaily);
-                    break;
-                case 1:
-                    category = getResources().getStringArray(R.array.newscatsHKOrientalDaily);
-                    break;
-                case 2:
-                    category = getResources().getStringArray(R.array.newscatsHKYahoo);
-                    break;
-                case 3:
-                    category = getResources().getStringArray(R.array.newscatsHKMingRT);
-                    break;
-                case 4:
-                    category = getResources().getStringArray(R.array.newscatsHKMing);
-                    break;
-                case 5:
-                    category = getResources().getStringArray(R.array.newscatsHKEJ);
-                    break;
-                case 6:
-                    category = getResources().getStringArray(R.array.newscatsHKMetro);
-                    break;
-                case 7:
-                    category = getResources().getStringArray(R.array.newscatsHKsun);
-                    break;
-                case 8:
-                    category = getResources().getStringArray(R.array.newscatsHKam730);
-                    break;
-                case 9:
-                    category = getResources().getStringArray(R.array.newscatsHKheadline);
-                    break;
-            }
-        }
+        Category cat = new Category(this);
+        category = cat.getCategory(tabName, sourceNumber);
 
         if (category != null) {
             NewsCategoryAdapter adapter = new NewsCategoryAdapter(this, category);

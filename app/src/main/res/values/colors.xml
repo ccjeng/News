@@ -1,10 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#125688</color>
-    <color name="colorPrimaryDark">#125688</color>
+    <color name="colorPrimary">@color/md_bluegray_700</color>
+    <color name="colorPrimaryDark">@color/md_bluegray_900</color>
     <color name="textColorPrimary">#FFFFFF</color>
-    <color name="windowBackground">#FFFFFF</color>
+    <color name="windowBackground">@color/md_bluegray_50</color>
     <color name="navigationBarColor">#000000</color>
-    <color name="colorAccent">#c8e8ff</color>
-    <color name="colorProgress">#1E88E5</color>
+    <color name="colorAccent">@color/md_bluegray_700</color>
+    <color name="colorProgress">@color/md_bluegray_400</color>
+
+
+    <!--blue-->
+    <color name="md_blue_50">#E3F2FD</color>
+    <color name="md_blue_100">#BBDEFB</color>
+    <color name="md_blue_200">#90CAF9</color>
+    <color name="md_blue_300">#64B5F6</color>
+    <color name="md_blue_400">#42A5F5</color>
+    <color name="md_blue_500">#2196F3</color>
+    <color name="md_blue_600">#1E88E5</color>
+    <color name="md_blue_700">#1976D2</color>
+    <color name="md_blue_800">#1565C0</color>
+    <color name="md_blue_900">#0D47A1</color>
+    <color name="md_blue_A100">#82B1FF</color>
+    <color name="md_blue_A200">#448AFF</color>
+    <color name="md_blue_A400">#2979FF</color>
+    <color name="md_blue_A700">#2962FF</color>
+
+    <!--Lime-->
+    <color name="md_lime_50">#F9FBE7</color>
+    <color name="md_lime_100">#F0F4C3</color>
+    <color name="md_lime_200">#E6EE9C</color>
+    <color name="md_lime_300">#DCE775</color>
+    <color name="md_lime_400">#D4E157</color>
+    <color name="md_lime_500">#CDDC39</color>
+    <color name="md_lime_600">#C0CA33</color>
+    <color name="md_lime_700">#AFB42B</color>
+    <color name="md_lime_800">#9E9D24</color>
+    <color name="md_lime_900">#827717</color>
+    <color name="md_lime_A100">#F4FF81</color>
+    <color name="md_lime_A200">#EEFF41</color>
+    <color name="md_lime_A400">#C6FF00</color>
+    <color name="md_lime_A700">#AEEA00</color>
+
+
+    <!--Blue Gray-->
+    <color name="md_bluegray_50">#ECEFF1</color>
+    <color name="md_bluegray_100">#CFD8DC</color>
+    <color name="md_bluegray_200">#B0BEC5</color>
+    <color name="md_bluegray_300">#90A4AE</color>
+    <color name="md_bluegray_400">#78909C</color>
+    <color name="md_bluegray_500">#607D8B</color>
+    <color name="md_bluegray_600">#546E7A</color>
+    <color name="md_bluegray_700">#455A64</color>
+    <color name="md_bluegray_800">#37474F</color>
+    <color name="md_bluegray_900">#263238</color>
+    <color name="md_bluegray_A100">#F4FF81</color>
+    <color name="md_bluegray_A200">#EEFF41</color>
+    <color name="md_bluegray_A400">#C6FF00</color>
+    <color name="md_bluegray_A700">#AEEA00</color>
 </resources>

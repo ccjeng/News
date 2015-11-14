@@ -18,6 +18,7 @@ import com.ccjeng.news.adapter.NewsListAdapter;
 import com.ccjeng.news.adapter.RecyclerItemClickListener;
 import com.ccjeng.news.service.rss.RSSFeed;
 import com.ccjeng.news.service.rss.RSSService;
+import com.ccjeng.news.utils.Category;
 import com.mikepenz.community_material_typeface_library.CommunityMaterial;
 import com.mikepenz.iconics.IconicsDrawable;
 import com.pnikosis.materialishprogress.ProgressWheel;
@@ -56,7 +57,9 @@ public class NewsRSSList extends AppCompatActivity {
         ButterKnife.bind(this);
 
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
         toolbar.setNavigationIcon(new IconicsDrawable(this)
                 .icon(CommunityMaterial.Icon.cmd_keyboard_backspace)
                 .color(Color.WHITE)
@@ -127,76 +130,8 @@ public class NewsRSSList extends AppCompatActivity {
 
         progressWheel.setVisibility(View.VISIBLE);
 
-        if (tabName.equals("TW")) {
-            switch (sourceNumber) {
-                case 0:
-                    feedURL = getResources().getStringArray(R.array.newsfeedsYahoo);
-                    break;
-                case 1:
-                    feedURL = getResources().getStringArray(R.array.newsfeedsUDN);
-                    break;
-                case 2:
-                    feedURL = getResources().getStringArray(R.array.newsfeedsYam);
-                    break;
-                case 3:
-                    feedURL = getResources().getStringArray(R.array.newsfeedsChinaTimes);
-                    break;
-                case 4:
-                    feedURL = getResources().getStringArray(R.array.newsfeedsStorm);
-                    break;
-                case 5:
-                    feedURL = getResources().getStringArray(R.array.newsfeedsCommercial);
-                    break;
-                case 6:
-                    feedURL = getResources().getStringArray(R.array.newsfeedsEttoday);
-                    break;
-                case 7:
-                    feedURL = getResources().getStringArray(R.array.newsfeedsCNYes);
-                    break;
-                case 8:
-                    feedURL = getResources().getStringArray(R.array.newsfeedsNewsTalk);
-                    break;
-                case 9:
-                    feedURL = getResources().getStringArray(R.array.newsfeedsLibertyTimes);
-                    break;
-                case 10:
-                    feedURL = getResources().getStringArray(R.array.newsfeedsAppDaily);
-                    break;
-            }
-        } else if (tabName.equals("HK")) {
-            switch (sourceNumber) {
-                case 0:
-                    feedURL = getResources().getStringArray(R.array.newsfeedsHKAppleDaily);
-                    break;
-                case 1:
-                    feedURL = getResources().getStringArray(R.array.newsfeedsHKOrientalDaily);
-                    break;
-                case 2:
-                    feedURL = getResources().getStringArray(R.array.newsfeedsHKYahoo);
-                    break;
-                case 3:
-                    feedURL = getResources().getStringArray(R.array.newsfeedsHKMingRT);
-                    break;
-                case 4:
-                    feedURL = getResources().getStringArray(R.array.newsfeedsHKMing);
-                    break;
-                case 5:
-                    feedURL = getResources().getStringArray(R.array.newsfeedsHKEJ);
-                    break;
-                case 6:
-                    feedURL = getResources().getStringArray(R.array.newsfeedsHKMetro);
-                    break;
-                case 7:
-                    feedURL = getResources().getStringArray(R.array.newsfeedsHKsun);
-                    break;
-                case 8:
-                    feedURL = getResources().getStringArray(R.array.newsfeedsHKam730);
-                    break;
-                case 9:
-                    feedURL = getResources().getStringArray(R.array.newsfeedsHKheadline);
-                    break;
-            }
-        }
+        Category cat = new Category(this);
+        feedURL = cat.getFeedURL(tabName, sourceNumber);
 
         //get RSS Feed
         if (feedURL != null) {

@@ -18,11 +18,6 @@ android {
         }
     }
 
-    repositories {
-        maven {
-            url 'https://download.01.org/crosswalk/releases/crosswalk/android/maven2'
-        }
-    }
 }
 
 dependencies {
@@ -39,5 +34,7 @@ dependencies {
         exclude group: 'com.google.android', module: 'support-v4'
     }
     compile 'com.squareup.okhttp:okhttp:2.5.0'
-    compile 'org.xwalk:xwalk_core_library:15.44.384.12'
+    compile('com.mikepenz:aboutlibraries:5.2.1@aar') {
+        transitive = true
+    }
 }

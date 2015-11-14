@@ -27,6 +27,8 @@
         </activity>
         <activity android:name=".ui.NewsWeb" >
         </activity>
+        <activity android:name=".ui.Preference" >
+        </activity>
     </application>
 
 </manifest>

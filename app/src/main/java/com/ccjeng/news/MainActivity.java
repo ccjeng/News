@@ -1,17 +1,27 @@
 package com.ccjeng.news;
 
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.ccjeng.news.ui.Preference;
 import com.ccjeng.news.ui.TabFragment;
+import com.mikepenz.aboutlibraries.Libs;
+import com.mikepenz.aboutlibraries.LibsBuilder;
+import com.mikepenz.community_material_typeface_library.CommunityMaterial;
+import com.mikepenz.iconics.IconicsDrawable;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -29,6 +39,12 @@ public class MainActivity extends AppCompatActivity {
     @Bind(R.id.pager)
     ViewPager pager;
 
+    @Bind(R.id.navigation)
+    NavigationView navigation;
+
+    @Bind(R.id.drawerlayout)
+    DrawerLayout drawerLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,10 +52,15 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         setSupportActionBar(toolbar);
-        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationIcon(new IconicsDrawable(this)
+                .icon(CommunityMaterial.Icon.cmd_menu)
+                .color(Color.WHITE)
+                .actionBarSize());
 
         pager.setAdapter(new ViewPagerAdapter(getSupportFragmentManager()));
         tabs.setupWithViewPager(pager);
+
+        navDrawer();
 
     }
 
@@ -51,7 +72,11 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                drawerLayout.openDrawer(GravityCompat.START);
+                return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 
@@ -78,5 +103,43 @@ public class MainActivity extends AppCompatActivity {
             return TabFragment.newInstance(position);
         }
 
+    }
+
+    private void navDrawer() {
+        navigation.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(MenuItem menuItem) {
+                int id = menuItem.getItemId();
+                switch (id) {
+                    case R.id.navSetting:
+                        startActivity(new Intent(MainActivity.this, Preference.class));
+                        break;
+                    case R.id.navAbout:
+                        new LibsBuilder()
+                                //provide a style (optional) (LIGHT, DARK, LIGHT_DARK_TOOLBAR)
+                                .withActivityStyle(Libs.ActivityStyle.LIGHT_DARK_TOOLBAR)
+                                .withAboutIconShown(true)
+                                .withAboutVersionShown(true)
+                                .withAboutAppName(getString(R.string.app_name))
+                                .withActivityTitle(getString(R.string.about))
+                                .withAboutDescription(getString(R.string.license))
+                                .start(MainActivity.this);
+                        break;
+
+                }
+                return false;
+            }
+        });
+
+        //change navigation drawer item icons
+        navigation.getMenu().findItem(R.id.navSetting).setIcon(new IconicsDrawable(this)
+                .icon(CommunityMaterial.Icon.cmd_settings)
+                .color(Color.GRAY)
+                .sizeDp(24));
+
+        navigation.getMenu().findItem(R.id.navAbout).setIcon(new IconicsDrawable(this)
+                .icon(CommunityMaterial.Icon.cmd_information)
+                .color(Color.GRAY)
+                .sizeDp(24));
     }
 }
