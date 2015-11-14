@@ -6,18 +6,21 @@
     android:paddingBottom="5dp"
     android:paddingTop="5dp"
     android:paddingLeft="5dp">
-    <ImageView
-        android:id="@+id/icon"
-        android:layout_alignParentLeft="true"
-        android:layout_width="wrap_content"
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_vertical|left"
-        android:src="@drawable/rss_item"
-        />
-    <TextView
-        android:id="@+id/row"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:padding="5dp"
-        android:textAppearance="?android:attr/textAppearanceLarge"/>
+        android:id="@+id/cv">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            >
+        <TextView
+            android:id="@+id/row"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"/>
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
 </LinearLayout>

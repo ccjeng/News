@@ -45,12 +45,12 @@ public class NewsCategoryAdapter extends RecyclerView.Adapter<NewsCategoryAdapte
     }
 
     public class CustomViewHolder extends RecyclerView.ViewHolder {
-        protected ImageView imageView;
+        //protected ImageView imageView;
         protected TextView textView;
 
         public CustomViewHolder(View view) {
             super(view);
-            this.imageView = (ImageView) view.findViewById(R.id.icon);
+            //this.imageView = (ImageView) view.findViewById(R.id.icon);
             this.textView = (TextView) view.findViewById(R.id.row);
         }
 
