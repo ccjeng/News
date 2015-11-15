@@ -29,6 +29,8 @@
         </activity>
         <activity android:name=".ui.Preference" >
         </activity>
+        <activity android:name=".ui.NewsView" >
+        </activity>
     </application>
 
 </manifest>

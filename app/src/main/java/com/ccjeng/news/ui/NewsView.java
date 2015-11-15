@@ -1,40 +1,28 @@
 package com.ccjeng.news.ui;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
-import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.Window;
-import android.webkit.WebChromeClient;
 import android.webkit.WebView;
-import android.webkit.WebViewClient;
 
 import com.ccjeng.news.R;
-import com.ccjeng.news.utils.Network;
+import com.ccjeng.news.service.web.NewsHandler;
 import com.mikepenz.community_material_typeface_library.CommunityMaterial;
 import com.mikepenz.iconics.IconicsDrawable;
 import com.pnikosis.materialishprogress.ProgressWheel;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import de.keyboardsurfer.android.widget.crouton.Crouton;
-import de.keyboardsurfer.android.widget.crouton.Style;
 
-public class NewsWeb extends AppCompatActivity {
-
-    private static final String TAG = "NewsWeb";
+public class NewsView extends AppCompatActivity {
 
     @Bind(R.id.toolbar)
     Toolbar toolbar;
@@ -51,6 +39,7 @@ public class NewsWeb extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_web);
+
         ButterKnife.bind(this);
 
         setSupportActionBar(toolbar);
@@ -64,7 +53,7 @@ public class NewsWeb extends AppCompatActivity {
 
         Bundle bundle = this.getIntent().getExtras();
         final int sourceNumber = Integer.parseInt(bundle.getString("SourceNum"));
-        final String TabName = bundle.getString("SourceTab");
+        final String tabName = bundle.getString("SourceTab");
         newsName = bundle.getString("NewsName");
         final String categoryName = bundle.getString("CategoryName");
 
@@ -74,50 +63,7 @@ public class NewsWeb extends AppCompatActivity {
         getSupportActionBar().setTitle(newsTitle);
         getSupportActionBar().setSubtitle(newsName);
 
-        getPrefs();
-
-        if (Network.isNetworkAvailable(this)) {
-            webView.loadUrl(newsUrl, null);
-            //webView.getSettings().setJavaScriptEnabled(true);
-            webView.getSettings().setBuiltInZoomControls(true);
-        } else {
-            Crouton.makeText(NewsWeb.this, R.string.network_error, Style.ALERT,
-                    (ViewGroup) findViewById(R.id.main)).show();
-        }
-
-
-
-        webView.setWebViewClient(new WebViewClient() {
-
-            @Override
-            public void onPageStarted(WebView view, String url, Bitmap favicon) {
-                super.onPageStarted(view, url, favicon);
-                Log.d(TAG, "onPageStarted");
-                progressWheel.setVisibility(View.VISIBLE);
-                webView.setVisibility(View.GONE);
-            }
-
-            @Override
-            public void onPageFinished(WebView view, String url) {
-                super.onPageFinished(view, url);
-                Log.d(TAG, "onPageFinished");
-                progressWheel.setVisibility(View.GONE);
-                webView.setVisibility(View.VISIBLE);
-            }
-        });
-        webView.setWebChromeClient(new WebChromeClient() {
-
-            @Override
-            public void onProgressChanged(WebView view, int newProgress) {
-                super.onProgressChanged(view, newProgress);
-                progressWheel.setProgress((float) newProgress / 100);
-
-                if (newProgress > 90) {
-                    progressWheel.setVisibility(View.GONE);
-                    webView.setVisibility(View.VISIBLE);
-                }
-            }
-        });
+        NewsHandler.getNewsContent(this, newsUrl, tabName, sourceNumber);
 
     }
 
@@ -166,36 +112,6 @@ public class NewsWeb extends AppCompatActivity {
 
     }
 
-    private void getPrefs() {
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
-        Boolean disableJS = prefs.getBoolean("disableJS", false);
 
-        Log.d(TAG, "disableJS = " + disableJS);
 
-        if (disableJS) {
-            webView.getSettings().setJavaScriptEnabled(false);
-        } else {
-            webView.getSettings().setJavaScriptEnabled(true);
-        }
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        if (webView != null) {
-            webView.setVisibility(View.GONE);
-            webView.removeAllViews();
-            webView.destroy();
-        }
-    }
 }

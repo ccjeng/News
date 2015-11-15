@@ -51,8 +51,6 @@ public class NewsRSSList extends AppCompatActivity {
     private String categoryName;
     private String[] feedURL;
     private String rssFeedURL = null;
-    //private RSSFeed mRssList;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -174,7 +172,7 @@ public class NewsRSSList extends AppCompatActivity {
     private void showDetail(int position, RSSFeed rssList) {
 
         Intent intent = new Intent();
-        intent.setClass(NewsRSSList.this, NewsWeb.class);
+        intent.setClass(NewsRSSList.this, NewsView.class);
 
         Bundle bundle = new Bundle();
         bundle.putString("SourceNum", Integer.toString(sourceNumber));

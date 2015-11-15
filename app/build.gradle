@@ -38,4 +38,5 @@ dependencies {
         transitive = true
     }
     compile 'org.jsoup:jsoup:1.8.3'
+    compile project(':volley')
 }
