@@ -37,4 +37,5 @@ dependencies {
     compile('com.mikepenz:aboutlibraries:5.2.1@aar') {
         transitive = true
     }
+    compile 'org.jsoup:jsoup:1.8.3'
 }

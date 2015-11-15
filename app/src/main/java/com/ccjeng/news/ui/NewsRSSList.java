@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 
 import com.ccjeng.news.R;
 import com.ccjeng.news.adapter.NewsListAdapter;
@@ -19,6 +20,7 @@ import com.ccjeng.news.adapter.RecyclerItemClickListener;
 import com.ccjeng.news.service.rss.RSSFeed;
 import com.ccjeng.news.service.rss.RSSService;
 import com.ccjeng.news.utils.Category;
+import com.ccjeng.news.utils.Network;
 import com.mikepenz.community_material_typeface_library.CommunityMaterial;
 import com.mikepenz.iconics.IconicsDrawable;
 import com.pnikosis.materialishprogress.ProgressWheel;
@@ -28,6 +30,8 @@ import java.net.URL;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import de.keyboardsurfer.android.widget.crouton.Crouton;
+import de.keyboardsurfer.android.widget.crouton.Style;
 
 public class NewsRSSList extends AppCompatActivity {
 
@@ -80,7 +84,13 @@ public class NewsRSSList extends AppCompatActivity {
         //set toolbar title
         getSupportActionBar().setTitle(categoryName);
         getSupportActionBar().setSubtitle(newsName);
-        showResult(tabName, sourceNumber);
+
+        if (Network.isNetworkAvailable(this)) {
+            showResult(tabName, sourceNumber);
+        } else {
+            Crouton.makeText(NewsRSSList.this, R.string.network_error, Style.ALERT,
+                    (ViewGroup) findViewById(R.id.croutonview)).show();
+        }
 
     }
 
@@ -107,11 +117,14 @@ public class NewsRSSList extends AppCompatActivity {
     }
 
     public void setListView(final RSSFeed rssList) {
-        //public void setListView(List<RSSItem> rssList) {
 
-        //mRssList = rssList;
         NewsListAdapter adapter = new NewsListAdapter(this, rssList);
         recyclerView.setAdapter(adapter);
+
+        if (rssList.getItemCount() == 0) {
+            Crouton.makeText(NewsRSSList.this, R.string.no_data, Style.CONFIRM,
+                    (ViewGroup) findViewById(R.id.croutonview)).show();
+        }
 
         progressWheel.setVisibility(View.GONE);
 
@@ -151,8 +164,8 @@ public class NewsRSSList extends AppCompatActivity {
         }
 
         if (rssFeedURL == null) {
-            //showError();
-            //return;
+            Crouton.makeText(NewsRSSList.this, R.string.network_error, Style.ALERT,
+                    (ViewGroup) findViewById(R.id.croutonview)).show();
         }
 
 

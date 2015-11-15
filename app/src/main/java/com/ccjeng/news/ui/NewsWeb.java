@@ -15,18 +15,22 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 import com.ccjeng.news.R;
+import com.ccjeng.news.utils.Network;
 import com.mikepenz.community_material_typeface_library.CommunityMaterial;
 import com.mikepenz.iconics.IconicsDrawable;
 import com.pnikosis.materialishprogress.ProgressWheel;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import de.keyboardsurfer.android.widget.crouton.Crouton;
+import de.keyboardsurfer.android.widget.crouton.Style;
 
 public class NewsWeb extends AppCompatActivity {
 
@@ -70,9 +74,16 @@ public class NewsWeb extends AppCompatActivity {
 
         getPrefs();
 
-        webView.loadUrl(newsUrl, null);
-        //webView.getSettings().setJavaScriptEnabled(true);
-        webView.getSettings().setBuiltInZoomControls(true);
+        if (Network.isNetworkAvailable(this)) {
+            webView.loadUrl(newsUrl, null);
+            //webView.getSettings().setJavaScriptEnabled(true);
+            webView.getSettings().setBuiltInZoomControls(true);
+        } else {
+            Crouton.makeText(NewsWeb.this, R.string.network_error, Style.ALERT,
+                    (ViewGroup) findViewById(R.id.main)).show();
+        }
+
+
 
         webView.setWebViewClient(new WebViewClient() {
 
@@ -114,7 +125,6 @@ public class NewsWeb extends AppCompatActivity {
 
         MenuItem menuItem1 = menu.findItem(R.id.action_browser);
         menuItem1.setIcon(new IconicsDrawable(this, CommunityMaterial.Icon.cmd_web).actionBarSize().color(Color.WHITE));
-
 
         return true;
     }
@@ -181,7 +191,9 @@ public class NewsWeb extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         if (webView != null) {
-            //webView.destroy();
+            webView.setVisibility(View.GONE);
+            webView.removeAllViews();
+            webView.destroy();
         }
     }
 }
