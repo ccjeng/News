@@ -1,4 +1,4 @@
-package com.ccjeng.news;
+package com.ccjeng.news.view;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -16,8 +16,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.ccjeng.news.ui.Preference;
-import com.ccjeng.news.ui.TabFragment;
+import com.ccjeng.news.R;
 import com.mikepenz.aboutlibraries.Libs;
 import com.mikepenz.aboutlibraries.LibsBuilder;
 import com.mikepenz.community_material_typeface_library.CommunityMaterial;

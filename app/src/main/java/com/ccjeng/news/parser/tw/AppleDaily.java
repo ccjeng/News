@@ -29,16 +29,27 @@ public class AppleDaily implements INewsParser {
 
         Log.d(TAG, "title = " + title);
         Log.d(TAG, "time = " + time);
-        Log.d(TAG, "body = " + body);
+        Log.d(TAG, "body = " + cleaner(body));
 
-        //draw webview
+
         return Webpage.htmlDrawer(title, time, cleaner(body));
 
     }
 
-    private String cleaner(String body) {
+    private String cleaner(String rs) {
 
+        rs = rs.replace("<a ", "<a");
+        rs = rs.replace(" href", "href");
+        //rs = rs.replace(" class", "class");
+        //rs = rs.replace(" id", "id");
+        rs = rs.replace("<script ", "<script");
+        rs = rs.replace("<img src=\"http://twimg.edgesuite.net/appledaily/images/twitterline.png\">", "");
+        rs = rs.replace("<iframe", "<!--");
+        rs = rs.replace("</iframe>", "-->");
+        rs = rs.replace("<script", "<!--");
+        rs = rs.replace("</script>", "-->");
+        rs = rs.replace(">更多文章","><!--");
 
-        return body;
+        return rs;
     }
 }

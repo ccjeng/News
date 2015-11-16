@@ -1,4 +1,4 @@
-package com.ccjeng.news.service.rss;
+package com.ccjeng.news.controler.rss;
 
 public class RSSItem {
 

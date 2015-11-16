@@ -1,8 +1,7 @@
-package com.ccjeng.news.ui;
+package com.ccjeng.news.view;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -17,8 +16,8 @@ import android.view.ViewGroup;
 import com.ccjeng.news.R;
 import com.ccjeng.news.adapter.NewsListAdapter;
 import com.ccjeng.news.adapter.RecyclerItemClickListener;
-import com.ccjeng.news.service.rss.RSSFeed;
-import com.ccjeng.news.service.rss.RSSService;
+import com.ccjeng.news.controler.rss.RSSFeed;
+import com.ccjeng.news.controler.rss.RSSService;
 import com.ccjeng.news.utils.Category;
 import com.ccjeng.news.utils.Network;
 import com.mikepenz.community_material_typeface_library.CommunityMaterial;

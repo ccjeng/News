@@ -3,6 +3,7 @@ package com.ccjeng.news.utils;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.util.Log;
 
 /**
  * Created by andycheng on 2015/11/15.
@@ -15,15 +16,14 @@ public class Network {
         if(null == connMgr){
             connMgr = (ConnectivityManager)context.getSystemService(Context.CONNECTIVITY_SERVICE);
         }
-        NetworkInfo wifiInfo = connMgr.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
-        NetworkInfo mobileInfo = connMgr.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
 
-        if(wifiInfo.isAvailable()){
+        NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
+
+        if (networkInfo != null && networkInfo.isConnected()) {
             return true;
-        }else if(mobileInfo.isAvailable()){
-            return true;
-        }else{
+        } else {
             return false;
         }
+
     }
 }

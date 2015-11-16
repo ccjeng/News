@@ -1,6 +1,4 @@
-package com.ccjeng.news.service.rss;
-
-import android.util.Log;
+package com.ccjeng.news.controler.rss;
 
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;

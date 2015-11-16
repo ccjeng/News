@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".MainActivity"
+            android:name=".view.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
@@ -21,15 +21,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.NewsCategory" >
+        <activity android:name=".view.NewsCategory" >
         </activity>
-        <activity android:name=".ui.NewsRSSList" >
+        <activity android:name=".view.NewsRSSList" >
         </activity>
-        <activity android:name=".ui.NewsWeb" >
+        <activity android:name=".view.NewsWeb" >
         </activity>
-        <activity android:name=".ui.Preference" >
+        <activity android:name=".view.Preference" >
         </activity>
-        <activity android:name=".ui.NewsView" >
+        <activity android:name=".view.NewsView" >
         </activity>
     </application>
 

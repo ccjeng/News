@@ -1,9 +1,7 @@
-package com.ccjeng.news.ui;
+package com.ccjeng.news.view;
 
 
-import android.content.Intent;
 import android.graphics.Color;
-import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
 import android.support.v7.widget.Toolbar;

@@ -1,6 +1,5 @@
 package com.ccjeng.news.adapter;
 
-import java.util.List;
 import android.app.Activity;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -10,8 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.ccjeng.news.R;
-import com.ccjeng.news.service.rss.RSSFeed;
-import com.ccjeng.news.service.rss.RSSItem;
+import com.ccjeng.news.controler.rss.RSSFeed;
 
 public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.CustomViewHolder> {
 	private final Activity context;

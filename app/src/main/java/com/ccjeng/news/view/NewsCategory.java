@@ -1,4 +1,4 @@
-package com.ccjeng.news.ui;
+package com.ccjeng.news.view;
 
 import android.content.Intent;
 import android.graphics.Color;

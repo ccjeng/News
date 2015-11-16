@@ -1,8 +1,8 @@
-package com.ccjeng.news.service.rss;
+package com.ccjeng.news.controler.rss;
 
 import android.util.Log;
 
-import com.ccjeng.news.ui.NewsRSSList;
+import com.ccjeng.news.view.NewsRSSList;
 import com.squareup.okhttp.Call;
 import com.squareup.okhttp.Callback;
 import com.squareup.okhttp.OkHttpClient;
