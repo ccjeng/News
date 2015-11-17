@@ -49,6 +49,8 @@ public class AppleDaily implements INewsParser {
         rs = rs.replace("<script", "<!--");
         rs = rs.replace("</script>", "-->");
         rs = rs.replace(">更多文章","><!--");
+        rs = rs.replace("figure class","figureclass");
+        rs = rs.replace("<ahref=\"/realtimenews", "<!--");
 
         return rs;
     }

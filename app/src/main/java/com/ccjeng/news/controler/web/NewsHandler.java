@@ -44,6 +44,8 @@ public class NewsHandler {
         final ProgressWheel progressWheel = (ProgressWheel) context.findViewById(R.id.progress_wheel);
         final WebView webView = (WebView) context.findViewById(R.id.webView);
 
+        webView.getSettings().setJavaScriptEnabled(true);
+
         progressWheel.setVisibility(View.VISIBLE);
         webView.setVisibility(View.GONE);
 
@@ -62,6 +64,7 @@ public class NewsHandler {
 
 
                     //image fit screen
+                    /*
                     final String js;
                     js= "javascript:(function () { " +
                             " var w = " + getWidth(context)/2 + ";" +
@@ -78,6 +81,8 @@ public class NewsHandler {
                             webView.loadUrl(js);
                         }
                     });
+*/
+
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
