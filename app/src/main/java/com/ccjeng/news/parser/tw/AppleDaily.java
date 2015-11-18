@@ -7,6 +7,7 @@ import com.ccjeng.news.utils.Webpage;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.jsoup.safety.Whitelist;
 
 import java.io.IOException;
 
@@ -19,7 +20,7 @@ public class AppleDaily implements INewsParser {
 
     @Override
     public String parseHtml(String content) throws IOException {
-        Log.d(TAG, "Response = " + content);
+        //Log.d(TAG, "Response = " + content);
 
         Document doc = Jsoup.parse(content);
 
@@ -31,13 +32,23 @@ public class AppleDaily implements INewsParser {
         Log.d(TAG, "time = " + time);
         Log.d(TAG, "body = " + cleaner(body));
 
-
         return Webpage.htmlDrawer(title, time, cleaner(body));
 
     }
 
     private String cleaner(String rs) {
 
+        rs = rs.replace("<img src=\"http://twimg.edgesuite.net/appledaily/images/twitterline.png\">", "");
+
+        Whitelist wlist=new Whitelist();
+
+        wlist.addTags("p","h2","hr","span","br");
+        wlist.addTags("img").addAttributes("img","src");
+
+        return Jsoup.clean(rs,wlist);
+
+
+        /*
         rs = rs.replace("<a ", "<a");
         rs = rs.replace(" href", "href");
         //rs = rs.replace(" class", "class");
@@ -51,7 +62,8 @@ public class AppleDaily implements INewsParser {
         rs = rs.replace(">更多文章","><!--");
         rs = rs.replace("figure class","figureclass");
         rs = rs.replace("<ahref=\"/realtimenews", "<!--");
+*/
 
-        return rs;
+        //return clean;
     }
 }

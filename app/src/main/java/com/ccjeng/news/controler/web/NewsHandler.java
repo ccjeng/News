@@ -17,6 +17,7 @@ import com.android.volley.toolbox.Volley;
 import com.ccjeng.news.R;
 import com.ccjeng.news.parser.INewsParser;
 import com.ccjeng.news.parser.tw.AppleDaily;
+import com.ccjeng.news.utils.Category;
 import com.ccjeng.news.view.NewsView;
 import com.pnikosis.materialishprogress.ProgressWheel;
 
@@ -33,7 +34,7 @@ public class NewsHandler {
     private static final String TAG = "NewsContent";
 
 
-    public static void getNewsContent(final NewsView context, String url, String tab, int position) {
+    public static void getNewsContent(final NewsView context, String url, final String tab, final int position) {
 
         final String mimeType = "text/html";
         final String encoding = "utf-8";
@@ -56,7 +57,8 @@ public class NewsHandler {
                 progressWheel.setVisibility(View.GONE);
                 webView.setVisibility(View.VISIBLE);
 
-                INewsParser parser = new AppleDaily();
+                Category cat = new Category(context);
+                INewsParser parser = cat.getNewsParser(tab, position);
 
                 try {
                     String newsContent = parser.parseHtml(response);

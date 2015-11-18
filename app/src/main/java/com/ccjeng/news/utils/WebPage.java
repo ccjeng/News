@@ -10,7 +10,7 @@ public class Webpage {
                 + "<div>" + time + "</div>";
 
         html = html + "<hr><br/>";
-        html = html + "<div>" + body + "</div>";
+        html = html + "<div><big>" + body + "</big></div>";
 
         return html;
     }

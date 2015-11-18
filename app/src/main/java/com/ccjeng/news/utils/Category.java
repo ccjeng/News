@@ -3,6 +3,9 @@ package com.ccjeng.news.utils;
 import android.content.Context;
 
 import com.ccjeng.news.R;
+import com.ccjeng.news.parser.INewsParser;
+import com.ccjeng.news.parser.tw.AppleDaily;
+import com.ccjeng.news.parser.tw.Yahoo;
 
 /**
  * Created by andycheng on 2015/11/14.
@@ -14,6 +17,7 @@ public class Category {
     public Category(Context context) {
         this.context = context;
     }
+
     public String[] getCategory(String tab, int position) {
         String[] category = null;
 
@@ -167,5 +171,82 @@ public class Category {
 
 
         return feedURL;
+    }
+
+    public INewsParser getNewsParser(String tab, int position) {
+        INewsParser parser = null;
+
+        if (tab.equals("TW")) {
+            switch (position) {
+                case 0:
+                    parser = new Yahoo();
+                    break;
+                case 1:
+                    parser = new AppleDaily();
+                    break;
+                case 2:
+                    parser = new AppleDaily();
+                    break;
+                case 3:
+                    parser = new AppleDaily();
+                    break;
+                case 4:
+                    parser = new AppleDaily();
+                    break;
+                case 5:
+                    parser = new AppleDaily();
+                    break;
+                case 6:
+                    parser = new AppleDaily();
+                    break;
+                case 7:
+                    parser = new AppleDaily();
+                    break;
+                case 8:
+                    parser = new AppleDaily();
+                    break;
+                case 9:
+                    parser = new AppleDaily();
+                    break;
+                case 10:
+                    parser = new AppleDaily();
+                    break;
+            }
+        } else if (tab.equals("HK")) {
+            switch (position) {
+                case 0:
+                    parser = new AppleDaily();
+                    break;
+                case 1:
+                    parser = new AppleDaily();
+                    break;
+                case 2:
+                    parser = new AppleDaily();
+                    break;
+                case 3:
+                    parser = new AppleDaily();
+                    break;
+                case 4:
+                    parser = new AppleDaily();
+                    break;
+                case 5:
+                    parser = new AppleDaily();
+                    break;
+                case 6:
+                    parser = new AppleDaily();
+                    break;
+                case 7:
+                    parser = new AppleDaily();
+                    break;
+                case 8:
+                    parser = new AppleDaily();
+                    break;
+                case 9:
+                    parser = new AppleDaily();
+                    break;
+            }
+        }
+
+        return parser;
     }
 }
