@@ -12,26 +12,23 @@ import org.jsoup.safety.Whitelist;
 import java.io.IOException;
 
 /**
- * Created by andycheng on 2015/11/18.
+ * Created by andycheng on 2015/11/19.
  */
-public class Yahoo implements INewsParser {
+public class UDN implements INewsParser {
     private static final String TAG = "Yahoo";
 
     @Override
     public String parseHtml(String content) throws IOException {
         Log.d(TAG, "Response = " + content);
-
-        //replace url "news" to "mobi"
-
         Document doc = Jsoup.parse(content);
 
         String title = "";
-        String time = "";//doc.select("div#image").first().text();
+        String time = "";
         String body = "";
         try {
-            title = doc.select("h1").text();
-            time = "";
-            body = doc.select("div#main-2-Story").html();
+            title = doc.select("h2#story_art_title").text();
+            time = doc.select("div#story_bady_info h3").text();
+            body = doc.select("div#story_body_content").html();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -48,14 +45,14 @@ public class Yahoo implements INewsParser {
 
         //rs = rs.replace("<img src=\"http://twimg.edgesuite.net/appledaily/images/twitterline.png\">", "");
 
-        Whitelist wlist=new Whitelist();
+        Whitelist wlist = new Whitelist();
 
-        wlist.addTags("p");
-        wlist.addTags("img").addAttributes("img","src");
+        wlist.addTags("p","h4");
+        wlist.addTags("img").addAttributes("img", "src");
 
-        return Jsoup.clean(rs,wlist);
 
-        //return rs;
+        return Jsoup.clean(rs, wlist);
+
 
     }
 

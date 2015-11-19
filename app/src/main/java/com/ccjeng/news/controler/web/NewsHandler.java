@@ -1,27 +1,25 @@
 package com.ccjeng.news.controler.web;
 
-import android.content.Context;
 import android.content.res.Configuration;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
-import android.webkit.WebViewClient;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.ccjeng.news.R;
 import com.ccjeng.news.parser.INewsParser;
-import com.ccjeng.news.parser.tw.AppleDaily;
 import com.ccjeng.news.utils.Category;
 import com.ccjeng.news.view.NewsView;
 import com.pnikosis.materialishprogress.ProgressWheel;
 
 import java.io.IOException;
+import java.net.URLDecoder;
+import java.net.URLEncoder;
 
 import de.keyboardsurfer.android.widget.crouton.Crouton;
 import de.keyboardsurfer.android.widget.crouton.Style;
@@ -31,15 +29,16 @@ import de.keyboardsurfer.android.widget.crouton.Style;
  */
 public class NewsHandler {
 
-    private static final String TAG = "NewsContent";
-
+    private static final String TAG = "NewsHandler";
 
     public static void getNewsContent(final NewsView context, String url, final String tab, final int position) {
 
         final String mimeType = "text/html";
-        final String encoding = "utf-8";
+        final String charset = Category.getEncoding(tab, position);//"utf-8";
+
 
         RequestQueue mRequestQueue = Volley.newRequestQueue(context);
+        Log.d(TAG, "charset = " + charset);
         Log.d(TAG, "url = " + url);
 
         final ProgressWheel progressWheel = (ProgressWheel) context.findViewById(R.id.progress_wheel);
@@ -50,7 +49,7 @@ public class NewsHandler {
         progressWheel.setVisibility(View.VISIBLE);
         webView.setVisibility(View.GONE);
 
-        StringRequest req = new StringRequest(url, new Response.Listener<String>() {
+        VolleyStringRequest req = new VolleyStringRequest(url, charset, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
 
@@ -61,8 +60,9 @@ public class NewsHandler {
                 INewsParser parser = cat.getNewsParser(tab, position);
 
                 try {
+
                     String newsContent = parser.parseHtml(response);
-                    webView.loadDataWithBaseURL(null, newsContent, mimeType, encoding, "about:blank");
+                    webView.loadDataWithBaseURL(null, newsContent, mimeType, "uf-8", "about:blank");
 
 
                     //image fit screen
@@ -91,6 +91,8 @@ public class NewsHandler {
 
 
             }
+
+
 
         }, new Response.ErrorListener() {
             @Override

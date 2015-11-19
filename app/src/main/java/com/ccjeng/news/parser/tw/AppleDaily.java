@@ -24,9 +24,18 @@ public class AppleDaily implements INewsParser {
 
         Document doc = Jsoup.parse(content);
 
-        String title = doc.select("h1#h1").text();
-        String time = doc.select("time").first().text();
-        String body = doc.select("div.articulum").html();
+        String title = "";
+        String time = "";
+        String body = "";
+
+        try {
+            title = doc.select("h1#h1").text();
+            time = doc.select("time").first().text();
+            body = doc.select("div.articulum").html();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         Log.d(TAG, "title = " + title);
         Log.d(TAG, "time = " + time);
