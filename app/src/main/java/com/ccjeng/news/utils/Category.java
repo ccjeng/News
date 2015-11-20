@@ -6,8 +6,10 @@ import com.ccjeng.news.R;
 import com.ccjeng.news.parser.INewsParser;
 import com.ccjeng.news.parser.Standard;
 import com.ccjeng.news.parser.tw.AppleDaily;
+import com.ccjeng.news.parser.tw.ChinaTimes;
 import com.ccjeng.news.parser.tw.UDN;
 import com.ccjeng.news.parser.tw.Yahoo;
+import com.ccjeng.news.parser.tw.YamNews;
 
 /**
  * Created by andycheng on 2015/11/14.
@@ -187,16 +189,16 @@ public class Category {
                     parser = new UDN();
                     break;
                 case 2:
-                    parser = new Standard();
+                    parser = new YamNews();
                     break;
                 case 3:
-                    parser = new Standard();
+                    parser = new ChinaTimes();
                     break;
                 case 4:
                     parser = new Standard();
                     break;
                 case 5:
-                    parser = new Standard();
+                    parser = new ChinaTimes();
                     break;
                 case 6:
                     parser = new Standard();
@@ -258,69 +260,31 @@ public class Category {
 
         if (tab.equals("TW")) {
             switch (position) {
-                case 0:
-                    encoding = "utf-8"; //Yahoo
-                    break;
-                case 1:
-                    encoding = "utf-8"; //UDN
-                    break;
+                case 0://Yahoo
+                case 1://UDN
                 case 2:
-                    encoding = "utf-8";
-                    break;
                 case 3:
-                    encoding = "utf-8";
-                    break;
                 case 4:
-                    encoding = "utf-8";
-                    break;
                 case 5:
-                    encoding = "utf-8";
-                    break;
                 case 6:
-                    encoding = "utf-8";
-                    break;
                 case 7:
-                    encoding = "utf-8";
-                    break;
                 case 8:
-                    encoding = "utf-8";
-                    break;
                 case 9:
+                case 10://Apple Daily
                     encoding = "utf-8";
-                    break;
-                case 10:
-                    encoding = "utf-8"; //Apple Daily
                     break;
             }
         } else if (tab.equals("HK")) {
             switch (position) {
                 case 0:
-                    encoding = "utf-8";
-                    break;
                 case 1:
-                    encoding = "utf-8";
-                    break;
                 case 2:
-                    encoding = "utf-8";
-                    break;
                 case 3:
-                    encoding = "utf-8";
-                    break;
                 case 4:
-                    encoding = "utf-8";
-                    break;
                 case 5:
-                    encoding = "utf-8";
-                    break;
                 case 6:
-                    encoding = "utf-8";
-                    break;
                 case 7:
-                    encoding = "utf-8";
-                    break;
                 case 8:
-                    encoding = "utf-8";
-                    break;
                 case 9:
                     encoding = "utf-8";
                     break;

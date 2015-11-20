@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -64,12 +65,10 @@ public class NewsHandler {
                     String newsContent = parser.parseHtml(response);
                     webView.loadDataWithBaseURL(null, newsContent, mimeType, "uf-8", "about:blank");
 
-
                     //image fit screen
-                    /*
                     final String js;
                     js= "javascript:(function () { " +
-                            " var w = " + getWidth(context)/2 + ";" +
+                            " var w = " + getWidth(context)/3 + ";" +
                             " for( var i = 0; i < document.images.length; i++ ) {" +
                             " var img = document.images[i]; " +
                             "   img.height = Math.round( img.height * ( w/img.width ) ); " +
@@ -83,7 +82,7 @@ public class NewsHandler {
                             webView.loadUrl(js);
                         }
                     });
-*/
+
 
                 } catch (IOException e) {
                     e.printStackTrace();
