@@ -18,7 +18,7 @@ public class YamNews implements INewsParser {
     private static final String TAG = "YamNews";
 
     @Override
-    public String parseHtml(String content) throws IOException {
+    public String parseHtml(final String link, String content) throws IOException {
 
         Document doc = Jsoup.parse(content);
 
@@ -28,7 +28,7 @@ public class YamNews implements INewsParser {
         try {
             title = doc.select("li.title > h2").text();
             time = doc.select("li.info > time").text() + "<br/>" + doc.select("li.info > span").text();
-            body = doc.select("div#news_content").get(1).html();
+            body = doc.select("li.photo").html() +  doc.select("li.photoData > h3").text() + doc.select("div#news_content").html();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -43,16 +43,16 @@ public class YamNews implements INewsParser {
 
     private String cleaner(String rs) {
 
-        //rs = rs.replace("<img src=\"http://twimg.edgesuite.net/appledaily/images/twitterline.png\">", "");
+        rs = rs.replace("<!-- 蕃plus + AD START -->", "<!-- 蕃plus + AD START ");
+        rs = rs.replace("<!-- Customized -->", "<!-- Customized ");
 
         Whitelist wlist = new Whitelist();
 
-        wlist.addTags("p");
+        wlist.addTags("p","h3");
+        wlist.addTags("table","tbody","tr","td");
         wlist.addTags("img").addAttributes("img", "src");
 
-
         return Jsoup.clean(rs, wlist);
-
 
     }
 }

@@ -32,7 +32,7 @@ public class NewsHandler {
 
     private static final String TAG = "NewsHandler";
 
-    public static void getNewsContent(final NewsView context, String url, final String tab, final int position) {
+    public static void getNewsContent(final NewsView context, final String url, final String tab, final int position) {
 
         final String mimeType = "text/html";
         final String charset = Category.getEncoding(tab, position);//"utf-8";
@@ -62,7 +62,7 @@ public class NewsHandler {
 
                 try {
 
-                    String newsContent = parser.parseHtml(response);
+                    String newsContent = parser.parseHtml(url, response);
                     webView.loadDataWithBaseURL(null, newsContent, mimeType, "uf-8", "about:blank");
 
                     //image fit screen

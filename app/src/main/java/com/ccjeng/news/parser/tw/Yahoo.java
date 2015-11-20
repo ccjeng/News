@@ -18,8 +18,7 @@ public class Yahoo implements INewsParser {
     private static final String TAG = "Yahoo";
 
     @Override
-    public String parseHtml(String content) throws IOException {
-        Log.d(TAG, "Response = " + content);
+    public String parseHtml(final String link, String content) throws IOException {
 
         //replace url "news" to "mobi"
 
@@ -51,6 +50,7 @@ public class Yahoo implements INewsParser {
         Whitelist wlist=new Whitelist();
 
         wlist.addTags("p");
+        wlist.addTags("table","tbody","tr","td");
         wlist.addTags("img").addAttributes("img","src");
 
         return Jsoup.clean(rs,wlist);

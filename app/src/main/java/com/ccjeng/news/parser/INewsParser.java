@@ -8,6 +8,6 @@ import java.io.IOException;
 
 
 public interface INewsParser {
-    public String parseHtml(String link) throws IOException;
+    public String parseHtml(final String link, String content) throws IOException;
 }
 

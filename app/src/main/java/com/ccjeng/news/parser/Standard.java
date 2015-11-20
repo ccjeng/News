@@ -18,7 +18,7 @@ public class Standard implements INewsParser {
     private static final String TAG = "Standard";
 
     @Override
-    public String parseHtml(String content) throws IOException {
+    public String parseHtml(final String link, String content) throws IOException {
 
         Document doc = Jsoup.parse(content);
 

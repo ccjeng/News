@@ -7,6 +7,7 @@ import com.ccjeng.news.parser.INewsParser;
 import com.ccjeng.news.parser.Standard;
 import com.ccjeng.news.parser.tw.AppleDaily;
 import com.ccjeng.news.parser.tw.ChinaTimes;
+import com.ccjeng.news.parser.tw.LibertyTimes;
 import com.ccjeng.news.parser.tw.UDN;
 import com.ccjeng.news.parser.tw.Yahoo;
 import com.ccjeng.news.parser.tw.YamNews;
@@ -210,7 +211,7 @@ public class Category {
                     parser = new Standard();
                     break;
                 case 9:
-                    parser = new Standard();
+                    parser = new LibertyTimes();
                     break;
                 case 10:
                     parser = new AppleDaily();

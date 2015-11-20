@@ -19,7 +19,7 @@ public class AppleDaily implements INewsParser {
     private static final String TAG = "AppleDaily";
 
     @Override
-    public String parseHtml(String content) throws IOException {
+    public String parseHtml(final String link, String content) throws IOException {
         //Log.d(TAG, "Response = " + content);
 
         Document doc = Jsoup.parse(content);
@@ -52,6 +52,7 @@ public class AppleDaily implements INewsParser {
         Whitelist wlist=new Whitelist();
 
         wlist.addTags("p","h2","hr","span","br");
+        wlist.addTags("table","tbody","tr","td");
         wlist.addTags("img").addAttributes("img","src");
 
         return Jsoup.clean(rs,wlist);

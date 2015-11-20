@@ -18,8 +18,8 @@ public class UDN implements INewsParser {
     private static final String TAG = "Yahoo";
 
     @Override
-    public String parseHtml(String content) throws IOException {
-        Log.d(TAG, "Response = " + content);
+    public String parseHtml(final String link, String content) throws IOException {
+
         Document doc = Jsoup.parse(content);
 
         String title = "";
@@ -48,6 +48,7 @@ public class UDN implements INewsParser {
         Whitelist wlist = new Whitelist();
 
         wlist.addTags("p","h4");
+        wlist.addTags("table","tbody","tr","td");
         wlist.addTags("img").addAttributes("img", "src");
 
 
