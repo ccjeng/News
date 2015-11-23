@@ -12,6 +12,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.Volley;
+import com.ccjeng.news.News;
 import com.ccjeng.news.R;
 import com.ccjeng.news.parser.INewsParser;
 import com.ccjeng.news.utils.Category;
@@ -37,8 +38,6 @@ public class NewsHandler {
         final String mimeType = "text/html";
         final String charset = Category.getEncoding(tab, position);//"utf-8";
 
-
-        RequestQueue mRequestQueue = Volley.newRequestQueue(context);
         Log.d(TAG, "charset = " + charset);
         Log.d(TAG, "url = " + url);
 
@@ -68,7 +67,8 @@ public class NewsHandler {
                     //image fit screen
                     final String js;
                     js= "javascript:(function () { " +
-                            " var w = " + getWidth(context)/3 + ";" +
+                            //" var w = " + getWidth(context)/3 + ";" +
+                            " var w = 100%;" +
                             " for( var i = 0; i < document.images.length; i++ ) {" +
                             " var img = document.images[i]; " +
                             "   img.height = Math.round( img.height * ( w/img.width ) ); " +
@@ -103,7 +103,7 @@ public class NewsHandler {
             }
         });
 
-        mRequestQueue.add(req);
+        VolleySingleton.getInstance(context).addToRequestQueue(req);
     }
 
     private static int getWidth(NewsView context) {

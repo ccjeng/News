@@ -15,6 +15,7 @@ public class News extends Application {
         super.onCreate();
     }
 
+
     /*
 
     // The following line should be changed to include the correct property id.

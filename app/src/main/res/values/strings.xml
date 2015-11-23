@@ -17,7 +17,7 @@
     <string name="preference_js_summary">停用JavaScript可以去除廣告，但可能會導致頁面排版不正常</string>
 
     <string name="network_error">無法連線，請檢查裝置是否正常連網</string>
-    <string name="data_error">資料錯誤</string>
+    <string name="data_error">網路錯誤，請檢查裝置是否正常連網</string>
     <string name="no_data">沒有資料</string>
 
 
