@@ -48,6 +48,8 @@ public class AppleDaily implements INewsParser {
     private String cleaner(String rs) {
 
         rs = rs.replace("<img src=\"http://twimg.edgesuite.net/appledaily/images/twitterline.png\">", "");
+        rs = rs.replace("/thumbnail/","/IphoneThumbnail/");
+        rs = rs.replace("_160x160.jpg","_280x.jpg");
 
         Whitelist wlist=new Whitelist();
 

@@ -12,10 +12,10 @@ import org.jsoup.safety.Whitelist;
 import java.io.IOException;
 
 /**
- * Created by andycheng on 2015/11/20.
+ * Created by andycheng on 2015/11/23.
  */
-public class ChinaTimes implements INewsParser {
-    private static final String TAG = "ChinaTimes";
+public class Storm implements INewsParser {
+    private static final String TAG = "Storm";
 
     @Override
     public String parseHtml(final String link, String content) throws IOException {
@@ -26,9 +26,9 @@ public class ChinaTimes implements INewsParser {
         String time = "";
         String body = "";
         try {
-            title = doc.select("header > h1").text();
-            time = doc.select("div.reporter > time").text() + "<br/>" + doc.select("div.rp_name").text();
-            body = doc.select("article.clear-fix").get(1).html();
+            title = doc.select("div.title-wrap > h1.title").text();
+            time = doc.select("div.author_date > span.date").text() + " " + doc.select("div.author_date > a").text();
+            body = doc.select("div.content-float > div.imgs").html() + doc.select("div.content-float > div.article-wrapper").html();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -46,16 +46,16 @@ public class ChinaTimes implements INewsParser {
 
     private String cleaner(String rs) {
 
+        rs = rs.replace("相關報導", "<!--");
+
         Whitelist wlist = new Whitelist();
 
-        wlist.addTags("p","figcaption");
+        wlist.addTags("p");
         wlist.addTags("table","tbody","tr","td");
         wlist.addTags("img").addAttributes("img", "src");
 
         return Jsoup.clean(rs, wlist);
 
-
     }
-
 
 }

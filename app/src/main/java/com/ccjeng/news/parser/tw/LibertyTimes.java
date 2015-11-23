@@ -31,7 +31,19 @@ public class LibertyTimes implements INewsParser {
                 title = doc.select("div.Btitle").text();
                 time = doc.select("div.date").get(0).text();
                 body = doc.select("div.news_content").html();
-            } else {
+
+            } else if (link.contains("entertainment")) {
+                title = doc.select("div.news_content > h1").text();
+                time = doc.select("div.news_content > div.date").text();
+                body = doc.select("div.news_content").html();
+
+            } else if (link.contains("opinion")) {
+                title = doc.select("div.conbox > h2").text();
+                time = doc.select("div.conbox > div.writer > span").text();
+                body = doc.select("div.conbox > div.cont").html();
+
+            }
+            else {
                 title = doc.select("h1").text();
                 time = doc.select("div#newstext span").get(0).text();
                 body = doc.select("div#newstext").html();
@@ -42,10 +54,12 @@ public class LibertyTimes implements INewsParser {
 
         Log.d(TAG, "title = " + title);
         Log.d(TAG, "time = " + time);
-        Log.d(TAG, "rs = " + body);
-        Log.d(TAG, "body = " + cleaner(body));
+        Log.d(TAG, "body = " + body);
 
-        return Webpage.htmlDrawer(title, time, cleaner(body));
+        String b = cleaner(body);
+        Log.d(TAG, "html=" + b);
+
+        return Webpage.htmlDrawer(title, time, b);
 
     }
 
@@ -53,10 +67,13 @@ public class LibertyTimes implements INewsParser {
 
         rs = rs.replace(" 廣告","");
         rs = rs.replace("data-original=","src=");
+        //rs = rs.replace("<span>","<p>");
+        //rs = rs.replace("</span>","</p>");
+        rs = rs.replace("相關新聞", "<!--");
 
         Whitelist wlist = new Whitelist();
 
-        wlist.addTags("p");
+        wlist.addTags("p", "span");
         wlist.addTags("table","tbody","tr","td");
         wlist.addTags("img").addAttributes("img", "src");
 

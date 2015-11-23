@@ -67,8 +67,7 @@ public class NewsHandler {
                     //image fit screen
                     final String js;
                     js= "javascript:(function () { " +
-                            //" var w = " + getWidth(context)/3 + ";" +
-                            " var w = 100%;" +
+                            " var w = " + getWidth(context)/3 + ";" +
                             " for( var i = 0; i < document.images.length; i++ ) {" +
                             " var img = document.images[i]; " +
                             "   img.height = Math.round( img.height * ( w/img.width ) ); " +
