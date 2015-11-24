@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
     <string-array name="newsSourceTW">
+		<item>中央社即時新聞</item>
     	<item>Yahoo奇摩新聞</item>
     	<item>聯合新聞網</item>
     	<item>蕃薯藤新聞</item>

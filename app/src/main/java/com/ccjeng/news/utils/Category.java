@@ -5,10 +5,18 @@ import android.content.Context;
 import com.ccjeng.news.R;
 import com.ccjeng.news.parser.INewsParser;
 import com.ccjeng.news.parser.Standard;
+import com.ccjeng.news.parser.hk.HKAppleDaily;
+import com.ccjeng.news.parser.hk.HKHeadline;
+import com.ccjeng.news.parser.hk.HKYahoo;
+import com.ccjeng.news.parser.hk.MingPao;
+import com.ccjeng.news.parser.hk.OrientalDaily;
 import com.ccjeng.news.parser.tw.AppleDaily;
+import com.ccjeng.news.parser.tw.CNA;
+import com.ccjeng.news.parser.tw.CNYes;
 import com.ccjeng.news.parser.tw.ChinaTimes;
 import com.ccjeng.news.parser.tw.ETToday;
 import com.ccjeng.news.parser.tw.LibertyTimes;
+import com.ccjeng.news.parser.tw.NewTalk;
 import com.ccjeng.news.parser.tw.Storm;
 import com.ccjeng.news.parser.tw.UDN;
 import com.ccjeng.news.parser.tw.Yahoo;
@@ -31,36 +39,39 @@ public class Category {
         if (tab.equals("TW")) {
             switch (position) {
                 case 0:
-                    category = context.getResources().getStringArray(R.array.newscatsYahoo);
+                    category = context.getResources().getStringArray(R.array.newscatsCNA);
                     break;
                 case 1:
-                    category = context.getResources().getStringArray(R.array.newscatsUDN);
+                    category = context.getResources().getStringArray(R.array.newscatsYahoo);
                     break;
                 case 2:
-                    category = context.getResources().getStringArray(R.array.newscatsYam);
+                    category = context.getResources().getStringArray(R.array.newscatsUDN);
                     break;
                 case 3:
-                    category = context.getResources().getStringArray(R.array.newscatsChinaTimes);
+                    category = context.getResources().getStringArray(R.array.newscatsYam);
                     break;
                 case 4:
-                    category = context.getResources().getStringArray(R.array.newscatsStorm);
+                    category = context.getResources().getStringArray(R.array.newscatsChinaTimes);
                     break;
                 case 5:
-                    category = context.getResources().getStringArray(R.array.newscatsCommercial);
+                    category = context.getResources().getStringArray(R.array.newscatsStorm);
                     break;
                 case 6:
-                    category = context.getResources().getStringArray(R.array.newscatsEttoday);
+                    category = context.getResources().getStringArray(R.array.newscatsCommercial);
                     break;
                 case 7:
-                    category = context.getResources().getStringArray(R.array.newscatsCNYes);
+                    category = context.getResources().getStringArray(R.array.newscatsEttoday);
                     break;
                 case 8:
-                    category = context.getResources().getStringArray(R.array.newscatsNewsTalk);
+                    category = context.getResources().getStringArray(R.array.newscatsCNYes);
                     break;
                 case 9:
-                    category = context.getResources().getStringArray(R.array.newscatsLibertyTimes);
+                    category = context.getResources().getStringArray(R.array.newscatsNewsTalk);
                     break;
                 case 10:
+                    category = context.getResources().getStringArray(R.array.newscatsLibertyTimes);
+                    break;
+                case 11:
                     category = context.getResources().getStringArray(R.array.newscatsAppDaily);
                     break;
             }
@@ -108,36 +119,39 @@ public class Category {
         if (tab.equals("TW")) {
             switch (position) {
                 case 0:
-                    feedURL = context.getResources().getStringArray(R.array.newsfeedsYahoo);
+                    feedURL = context.getResources().getStringArray(R.array.newsfeedsCNA);
                     break;
                 case 1:
-                    feedURL = context.getResources().getStringArray(R.array.newsfeedsUDN);
+                    feedURL = context.getResources().getStringArray(R.array.newsfeedsYahoo);
                     break;
                 case 2:
-                    feedURL = context.getResources().getStringArray(R.array.newsfeedsYam);
+                    feedURL = context.getResources().getStringArray(R.array.newsfeedsUDN);
                     break;
                 case 3:
-                    feedURL = context.getResources().getStringArray(R.array.newsfeedsChinaTimes);
+                    feedURL = context.getResources().getStringArray(R.array.newsfeedsYam);
                     break;
                 case 4:
-                    feedURL = context.getResources().getStringArray(R.array.newsfeedsStorm);
+                    feedURL = context.getResources().getStringArray(R.array.newsfeedsChinaTimes);
                     break;
                 case 5:
-                    feedURL = context.getResources().getStringArray(R.array.newsfeedsCommercial);
+                    feedURL = context.getResources().getStringArray(R.array.newsfeedsStorm);
                     break;
                 case 6:
-                    feedURL = context.getResources().getStringArray(R.array.newsfeedsEttoday);
+                    feedURL = context.getResources().getStringArray(R.array.newsfeedsCommercial);
                     break;
                 case 7:
-                    feedURL = context.getResources().getStringArray(R.array.newsfeedsCNYes);
+                    feedURL = context.getResources().getStringArray(R.array.newsfeedsEttoday);
                     break;
                 case 8:
-                    feedURL = context.getResources().getStringArray(R.array.newsfeedsNewsTalk);
+                    feedURL = context.getResources().getStringArray(R.array.newsfeedsCNYes);
                     break;
                 case 9:
-                    feedURL = context.getResources().getStringArray(R.array.newsfeedsLibertyTimes);
+                    feedURL = context.getResources().getStringArray(R.array.newsfeedsNewsTalk);
                     break;
                 case 10:
+                    feedURL = context.getResources().getStringArray(R.array.newsfeedsLibertyTimes);
+                    break;
+                case 11:
                     feedURL = context.getResources().getStringArray(R.array.newsfeedsAppDaily);
                     break;
             }
@@ -186,52 +200,55 @@ public class Category {
         if (tab.equals("TW")) {
             switch (position) {
                 case 0:
-                    parser = new Yahoo();
+                    parser = new CNA();
                     break;
                 case 1:
-                    parser = new UDN();
+                    parser = new Yahoo();
                     break;
                 case 2:
-                    parser = new YamNews();
+                    parser = new UDN();
                     break;
                 case 3:
-                    parser = new ChinaTimes();
+                    parser = new YamNews();
                     break;
                 case 4:
-                    parser = new Storm();
-                    break;
-                case 5:
                     parser = new ChinaTimes();
                     break;
+                case 5:
+                    parser = new Storm();
+                    break;
                 case 6:
-                    parser = new ETToday();
+                    parser = new ChinaTimes();
                     break;
                 case 7:
-                    parser = new Standard();
+                    parser = new ETToday();
                     break;
                 case 8:
-                    parser = new Standard();
+                    parser = new CNYes();
                     break;
                 case 9:
-                    parser = new LibertyTimes();
+                    parser = new NewTalk();
                     break;
                 case 10:
+                    parser = new LibertyTimes();
+                    break;
+                case 11:
                     parser = new AppleDaily();
                     break;
             }
         } else if (tab.equals("HK")) {
             switch (position) {
                 case 0:
-                    parser = new Standard();
+                    parser = new HKAppleDaily();
                     break;
                 case 1:
-                    parser = new Standard();
+                    parser = new OrientalDaily();
                     break;
                 case 2:
-                    parser = new Standard();
+                    parser = new HKYahoo();
                     break;
                 case 3:
-                    parser = new Standard();
+                    parser = new MingPao();
                     break;
                 case 4:
                     parser = new Standard();
@@ -249,7 +266,7 @@ public class Category {
                     parser = new Standard();
                     break;
                 case 9:
-                    parser = new Standard();
+                    parser = new HKHeadline();
                     break;
             }
         }

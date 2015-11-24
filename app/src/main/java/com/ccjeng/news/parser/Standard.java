@@ -28,7 +28,7 @@ public class Standard implements INewsParser {
 
         Log.d(TAG, "title = " + title);
         Log.d(TAG, "time = " + time);
-        Log.d(TAG, "body = " + cleaner(body));
+        Log.d(TAG, "body = " + body);
 
         return Webpage.htmlDrawer(title, time, cleaner(body));
 

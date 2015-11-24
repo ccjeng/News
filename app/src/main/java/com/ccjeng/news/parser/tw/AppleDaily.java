@@ -50,32 +50,17 @@ public class AppleDaily implements INewsParser {
         rs = rs.replace("<img src=\"http://twimg.edgesuite.net/appledaily/images/twitterline.png\">", "");
         rs = rs.replace("/thumbnail/","/IphoneThumbnail/");
         rs = rs.replace("_160x160.jpg","_280x.jpg");
+        rs = rs.replace("<h2>","<b>");
+        rs = rs.replace("</h2>","</b></br>");
 
         Whitelist wlist=new Whitelist();
 
-        wlist.addTags("p","h2","hr","span","br");
+        wlist.addTags("p","b","hr","span","br");
         wlist.addTags("table","tbody","tr","td");
         wlist.addTags("img").addAttributes("img","src");
 
         return Jsoup.clean(rs,wlist);
 
 
-        /*
-        rs = rs.replace("<a ", "<a");
-        rs = rs.replace(" href", "href");
-        //rs = rs.replace(" class", "class");
-        //rs = rs.replace(" id", "id");
-        rs = rs.replace("<script ", "<script");
-        rs = rs.replace("<img src=\"http://twimg.edgesuite.net/appledaily/images/twitterline.png\">", "");
-        rs = rs.replace("<iframe", "<!--");
-        rs = rs.replace("</iframe>", "-->");
-        rs = rs.replace("<script", "<!--");
-        rs = rs.replace("</script>", "-->");
-        rs = rs.replace(">更多文章","><!--");
-        rs = rs.replace("figure class","figureclass");
-        rs = rs.replace("<ahref=\"/realtimenews", "<!--");
-*/
-
-        //return clean;
     }
 }

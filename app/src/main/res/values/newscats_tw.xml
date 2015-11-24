@@ -1,5 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
+	<string-array name="newscatsCNA">
+		<item>重點新聞</item>
+		<item>新聞圖輯</item>
+		<item>要聞新聞</item>
+		<item>社會新聞</item>
+		<item>生活新聞</item>
+		<item>財經新聞</item>
+		<item>國際新聞</item>
+		<item>兩岸新聞</item>
+		<item>娛樂新聞</item>
+		<item>體育新聞</item>
+		<item>地方新聞</item>
+		<item>一週大事</item>
+	</string-array>
+	<string-array name="newsfeedsCNA">
+		<item>http://feeds.feedburner.com/cnaFirstNews</item>
+		<item>http://feeds.feedburner.com/rsscna/PhotoAlbum</item>
+		<item>http://feeds.feedburner.com/rsscna/politics</item>
+		<item>http://feeds.feedburner.com/rsscna/social</item>
+		<item>http://feeds.feedburner.com/rsscna/lifehealth</item>
+		<item>http://feeds.feedburner.com/rsscna/finance</item>
+		<item>http://feeds.feedburner.com/rsscna/intworld</item>
+		<item>http://feeds.feedburner.com/rsscna/mainland</item>
+		<item>http://feeds.feedburner.com/rsscna/stars</item>
+		<item>http://feeds.feedburner.com/rsscna/sport</item>
+		<item>http://feeds.feedburner.com/rsscna/local</item>
+		<item>http://feeds.feedburner.com/rsscna/TopNewsforWeek</item>
+	</string-array>
     <string-array name="newscatsYahoo">
     	<item>政治新聞</item>
 		<item>社會新聞</item>
@@ -48,82 +76,13 @@
     </string-array>
     <string-array name="newscatsAppDaily">
     	<item>即時新聞</item>
-	   	<item>今日要聞總覽</item>
-    	<item>今日國際總覽</item>
-    	<item>今日財經總覽</item>
-    	<item>今日娛樂總覽</item>
-    	<item>今日體育總覽</item>
-    	<item>今日地產總覽</item>
-    	<item>今日論壇與專欄</item>
-		<!--
-    	<item>要聞-頭條</item>
-    	<item>要聞-要聞</item>
-    	<item>要聞-政治</item>
-    	<item>要聞-社會</item>
-    	<item>要聞-生活</item>
-    	<item>要聞-法庭</item>
-    	<item>要聞-地方綜合</item>
-    	<item>要聞-暖流</item>
-    	<item>要聞-投訴</item>
-    	
-    	<item>國際-頭條</item>
-    	<item>國際-焦點</item>
-    	<item>國際-中國</item>
-    	<item>國際-雙語天下</item>
-    	
-    	<item>財經-焦點</item>
-    	<item>財經-國際財經</item>
-    	<item>財經-證券</item>
-    	<item>財經-科技</item>
-    	<item>財經-生活理財</item>
-    	<item>財經-綜合產業</item>
-    	<item>財經-基金</item>
-    	<item>財經-頭家生意</item>
-    	
-    	<item>地產-投資</item>
-    	<item>地產-地產王</item>
-    	<item>地產-居家王</item>
-    	<item>地產-豪宅王</item>
-    	<item>地產-中古好屋王</item>
-    	
-    	<item>娛樂-娛樂名人</item>
-    	<item>娛樂-木瓜霞爆料</item>
-    	<item>娛樂-直擊好萊塢</item>
-    	<item>娛樂-亞洲哈燒星</item>
-    	<item>娛樂-名人時尚</item>
-    	<item>娛樂-Kelly Talk</item>
-    	<item>娛樂-追星趴趴走</item>
-    	<item>娛樂-今天我最肉</item>
-    	
-    	<item>體育-焦點</item>
-    	<item>體育-大運動場</item>
-    	<item>體育-籃球瘋</item>
-    	<item>體育-投打對決</item>
-    	<item>體育-足球新聞</item>
-    	
-    	<item>論壇-蘋論</item>
-    	<item>論壇-司馬觀點</item>
-    	<item>論壇-人間異語</item>
-    	<item>論壇-論壇</item>
-    	
-    	<item>專欄-經濟人語</item>
-    	<item>專欄-法律信箱</item>
-    	<item>專欄-辣蘋果專欄</item>
-    	<item>專欄-今日我最美</item>
-    	<item>專欄-一周大事</item>
-    	<item>專欄-新聞魔法</item>
-    	<item>專欄-求職資訊</item>
-    	<item>專欄-蘋果民調</item>
-    	<item>專欄-營養Q&amp;A</item>
-    	<item>專欄-愛地球</item>
-    	<item>專欄-獵人政治漫畫</item>
-  	
-    	<item>副刊-生活潮流</item>
-    	<item>副刊-旅遊與美食</item>
-    	<item>副刊-家庭與健康</item>
-    	<item>副刊-科技</item>
-    	<item>副刊-論壇與專欄</item>
-		-->
+	   	<item>要聞總覽</item>
+    	<item>國際總覽</item>
+    	<item>財經總覽</item>
+    	<item>娛樂總覽</item>
+    	<item>體育總覽</item>
+    	<item>地產總覽</item>
+    	<item>論壇與專欄</item>
     </string-array>
     <string-array name="newsfeedsAppDaily">
 	    <item>http://www.appledaily.com.tw/rss/newcreate/kind/rnews/type/new</item>
@@ -134,75 +93,6 @@
     	<item>http://www.appledaily.com.tw/rss/newcreate/kind/sec/type/10</item>
     	<item>http://www.appledaily.com.tw/rss/newcreate/kind/sec/type/31488836</item>
     	<item>http://www.appledaily.com.tw/rss/newcreate/kind/sec/type/forum</item>
-		<!--
-    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/1077</item>
-    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/11</item>
-    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/151</item>
-    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/1066</item>
-    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/2724</item>
-    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/152</item>
-    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/1076</item>
-    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/9499</item>
-    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/16287</item>
-    	
-    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/31488833</item>
-    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/1697</item>
-    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/13</item>
-    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/1945241</item>
-   	
-    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/14</item>
-    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/1052</item>
-    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/1028</item>
-    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/1048</item>
-    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/1078</item>
-    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/3847</item>
-    	<item>http://www.appledaily.com.tw/rss/create/kind/col/type/3536666</item>
-    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/5050</item>
-    	
-    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/1061</item>
-    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/31425399</item>
-    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/31477866</item>
-    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/31477901</item>
-    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/31477902</item>
-    	
-    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/1600</item>
-    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/26153</item>
-    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/2890</item>
-    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/6270</item>
-    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/1403917</item>
-    	<item>http://www.appledaily.com.tw/rss/create/kind/col/type/1091735</item>
-    	<item>http://www.appledaily.com.tw/rss/create/kind/col/type/38905</item>
-    	<item>http://www.appledaily.com.tw/rss/create/kind/col/type/30354262</item>
-    	
-    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/2153</item>
-    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/16289</item>
-    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/16</item>
-    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/2154</item>
-    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/31320925</item>
-    	
-    	<item>http://www.appledaily.com.tw/rss/create/kind/col/type/974972</item>
-    	<item>http://www.appledaily.com.tw/rss/create/kind/col/type/1635487</item>
-    	<item>http://www.appledaily.com.tw/rss/create/kind/col/type/2262677</item>
-		<item>http://www.appledaily.com.tw/rss/create/kind/col/type/836825</item>
-		
-    	<item>http://www.appledaily.com.tw/rss/create/kind/col/type/960434</item>
-    	<item>http://www.appledaily.com.tw/rss/create/kind/col/type/1338739</item>
-    	<item>http://www.appledaily.com.tw/rss/create/kind/col/type/30674022</item>
-    	<item>http://www.appledaily.com.tw/rss/create/kind/col/type/30342177</item>
-    	<item>http://www.appledaily.com.tw/rss/create/kind/col/type/33638</item>
-    	<item>http://www.appledaily.com.tw/rss/create/kind/col/type/28856</item>
-    	<item>http://www.appledaily.com.tw/rss/create/kind/col/type/30643434</item>
-    	<item>http://www.appledaily.com.tw/rss/create/kind/col/type/870375</item>
-    	<item>http://www.appledaily.com.tw/rss/create/kind/col/type/31813514</item>
-    	<item>http://www.appledaily.com.tw/rss/create/kind/col/type/32042332</item>
-    	<item>http://www.appledaily.com.tw/rss/create/kind/col/type/32208716</item>
-   	
-    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/17</item>
-    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/ALL24</item>
-    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/19</item>
-    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/18</item>
-    	<item>http://www.appledaily.com.tw/rss/create/kind/sec/type/20</item>
-    	-->
     </string-array>
 
     <string-array name="newscatsUDN">
@@ -445,7 +335,7 @@
     	<item>http://feeds.feedburner.com/ettoday/fortune</item>
     </string-array>
     <string-array name="newscatsCNYes">
-    	<item>總覽</item>
+    	<!--<item>總覽</item>-->
     	<item>頭條</item>
     	<item>台股</item>
     	<item>美股</item>
@@ -471,7 +361,7 @@
     	<item>金屬</item>
     </string-array>
     <string-array name="newsfeedsCNYes">
-    	<item>http://news.cnyes.com/RSS/rollnews</item>
+    	<!--<item>http://news.cnyes.com/RSS/rollnews</item>-->
     	<item>http://news.cnyes.com/RSS/headline</item>
     	<item>http://news.cnyes.com/RSS/tw_stock</item>
     	<item>http://news.cnyes.com/RSS/us_stock</item>
