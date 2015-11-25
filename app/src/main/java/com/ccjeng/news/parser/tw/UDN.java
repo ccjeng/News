@@ -46,7 +46,10 @@ public class UDN implements INewsParser {
 
     private String cleaner(String rs) {
 
-        //rs = rs.replace("<img src=\"http://twimg.edgesuite.net/appledaily/images/twitterline.png\">", "");
+        rs = rs.replace("<div class=\"social_bar\"> ","<!--");
+        rs = rs.replace("<div id=\"set_font_size\" class=\"only_web\">","<!--");
+        rs = rs.replace("<a href=\"####\" class=\"photo_pop_icon\">","<!--");
+        rs = rs.replace("<div class=\"photo_pop\">","<!--");
 
         Whitelist wlist = new Whitelist();
 

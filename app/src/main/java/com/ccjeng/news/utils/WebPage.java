@@ -10,8 +10,13 @@ public class Webpage {
                 + "<div>" + time + "</div>";
 
         html = html + "<hr><br/>";
-        html = html + "<div><big>" + body + "</big></div>";
 
+        if (body.trim().equals("")) {
+          //get default parser
+
+        } else {
+            html = html + "<div><big>" + body + "</big></div>";
+        }
         return html;
     }
 }

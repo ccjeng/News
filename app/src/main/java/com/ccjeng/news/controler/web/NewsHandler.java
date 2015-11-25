@@ -62,7 +62,7 @@ public class NewsHandler {
                 try {
 
                     String newsContent = parser.parseHtml(url, response);
-                    webView.loadDataWithBaseURL(null, newsContent, mimeType, "uf-8", "about:blank");
+                    webView.loadDataWithBaseURL(null, newsContent, mimeType, "utf-8", "about:blank");
 
                     //image fit screen
                     final String js;

@@ -9,7 +9,12 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.safety.Whitelist;
 
+import java.io.BufferedReader;
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 
 /**
  * Created by andycheng on 2015/11/24.
@@ -20,15 +25,34 @@ public class MingPao implements INewsParser {
     @Override
     public String parseHtml(final String link, String content) throws IOException {
 
-        Document doc = Jsoup.parse(content);
+        StringBuilder sb = new StringBuilder();
 
         String title = "";
         String time = "";
         String body = "";
         try {
-            title = doc.select("div#maincontent > div.group > div.span_8_of_12 > div.incontent > hgroup").text();
-            time = doc.select("div#maincontent > div.group > div.span_8_of_12 > div#blockcontent > div#articleTop > div.date").text();
-            body = doc.select("div#maincontent > div.group > div.span_8_of_12 > div#blockcontent> span#advenueINTEXT > article").html();
+            InputStream is = new ByteArrayInputStream(content.getBytes());
+            InputStreamReader isr = new InputStreamReader(is);
+            BufferedReader br = new BufferedReader(isr);
+
+            boolean beginFind = false;
+            String s;
+
+            while (null != (s = br.readLine())) {
+                if (s.trim().contains("<hgroup>")) {
+                    beginFind = true;
+                } else if (s.trim().contains("</artcle>")) {
+                    break;
+                }
+                if (beginFind) {
+                    sb.append(s.trim());
+                }
+            }
+
+            body = sb.toString();
+
+            br.close();
+
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -6,10 +6,13 @@ import com.ccjeng.news.R;
 import com.ccjeng.news.parser.INewsParser;
 import com.ccjeng.news.parser.Standard;
 import com.ccjeng.news.parser.hk.HKAppleDaily;
+import com.ccjeng.news.parser.hk.HKEJ;
 import com.ccjeng.news.parser.hk.HKHeadline;
 import com.ccjeng.news.parser.hk.HKYahoo;
 import com.ccjeng.news.parser.hk.MingPao;
 import com.ccjeng.news.parser.hk.OrientalDaily;
+import com.ccjeng.news.parser.hk.RTHK;
+import com.ccjeng.news.parser.hk.Sun;
 import com.ccjeng.news.parser.tw.AppleDaily;
 import com.ccjeng.news.parser.tw.CNA;
 import com.ccjeng.news.parser.tw.CNYes;
@@ -251,16 +254,16 @@ public class Category {
                     parser = new MingPao();
                     break;
                 case 4:
-                    parser = new Standard();
+                    parser = new MingPao();
                     break;
                 case 5:
-                    parser = new Standard();
+                    parser = new HKEJ();
                     break;
                 case 6:
-                    parser = new Standard();
+                    parser = new RTHK();
                     break;
                 case 7:
-                    parser = new Standard();
+                    parser = new Sun();
                     break;
                 case 8:
                     parser = new Standard();

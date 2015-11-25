@@ -26,9 +26,9 @@ public class HKYahoo implements INewsParser {
         String time = "";
         String body = "";
         try {
-            title = doc.select("h1.headline").text();
-            time = doc.select("cite.byline").text();
-            body = doc.select("div#mediaarticlelead").html() + doc.select("div#mediaarticlebody").html();
+            title = doc.select("h1").text();
+            time = doc.select("div.info-group").text();
+            body = doc.select("div.bd").html();
         } catch (Exception e) {
             e.printStackTrace();
         }

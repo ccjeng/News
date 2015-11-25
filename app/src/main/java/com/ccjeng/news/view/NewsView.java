@@ -32,8 +32,6 @@ public class NewsView extends AppCompatActivity {
     Toolbar toolbar;
     @Bind(R.id.webView)
     WebView webView;
-    @Bind(R.id.progress_wheel)
-    ProgressWheel progressWheel;
 
     private String newsName;
     private String newsUrl;
