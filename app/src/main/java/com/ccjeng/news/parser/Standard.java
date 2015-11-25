@@ -34,8 +34,7 @@ public class Standard implements INewsParser {
 
     }
 
-    private String cleaner(String rs) {
-
+    public static String cleaner(String rs) {
 
         Whitelist wlist = null;
         try {

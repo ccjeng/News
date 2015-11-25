@@ -1,5 +1,7 @@
 package com.ccjeng.news.utils;
 
+import com.ccjeng.news.parser.Standard;
+
 /**
  * Created by andycheng on 2015/11/15.
  */
@@ -11,12 +13,8 @@ public class Webpage {
 
         html = html + "<hr><br/>";
 
-        if (body.trim().equals("")) {
-          //get default parser
+        html = html + "<div><big>" + body + "</big></div>";
 
-        } else {
-            html = html + "<div><big>" + body + "</big></div>";
-        }
         return html;
     }
 }

@@ -5,6 +5,7 @@ import android.content.Context;
 import com.ccjeng.news.R;
 import com.ccjeng.news.parser.INewsParser;
 import com.ccjeng.news.parser.Standard;
+import com.ccjeng.news.parser.hk.AM730;
 import com.ccjeng.news.parser.hk.HKAppleDaily;
 import com.ccjeng.news.parser.hk.HKEJ;
 import com.ccjeng.news.parser.hk.HKHeadline;
@@ -266,7 +267,7 @@ public class Category {
                     parser = new Sun();
                     break;
                 case 8:
-                    parser = new Standard();
+                    parser = new AM730();
                     break;
                 case 9:
                     parser = new HKHeadline();

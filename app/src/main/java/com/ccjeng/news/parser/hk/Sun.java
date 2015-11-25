@@ -37,7 +37,7 @@ public class Sun implements INewsParser {
 
         Log.d(TAG, "title = " + title);
         Log.d(TAG, "time = " + time);
-        //Log.d(TAG, "body = " + body);
+        Log.d(TAG, "body = " + body);
 
         String b = cleaner(body);
         Log.d(TAG, "html=" + b);

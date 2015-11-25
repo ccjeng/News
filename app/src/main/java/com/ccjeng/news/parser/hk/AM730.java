@@ -1,9 +1,8 @@
-package com.ccjeng.news.parser.tw;
+package com.ccjeng.news.parser.hk;
 
 import android.util.Log;
 
 import com.ccjeng.news.parser.INewsParser;
-import com.ccjeng.news.parser.Standard;
 import com.ccjeng.news.utils.Webpage;
 
 import org.jsoup.Jsoup;
@@ -13,10 +12,10 @@ import org.jsoup.safety.Whitelist;
 import java.io.IOException;
 
 /**
- * Created by andycheng on 2015/11/19.
+ * Created by andycheng on 2015/11/25.
  */
-public class UDN implements INewsParser {
-    private static final String TAG = "UDN";
+public class AM730 implements INewsParser {
+    private static final String TAG = "AM730";
 
     @Override
     public String parseHtml(final String link, String content) throws IOException {
@@ -27,9 +26,9 @@ public class UDN implements INewsParser {
         String time = "";
         String body = "";
         try {
-            title = doc.select("h2#story_art_title").text();
-            time = doc.select("div#story_bady_info h3").text();
-            body = doc.select("div#story_body_content").html();
+            title = doc.select("title").text();
+            time = ""; //doc.select("div#article_date").text();
+            body = doc.select("div#article_content").html() + doc.select("ul.slides").html();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -41,31 +40,22 @@ public class UDN implements INewsParser {
         String b = cleaner(body);
         Log.d(TAG, "html=" + b);
 
-        //if (b.trim().equals("")) {
-        //    b = Standard.cleaner(content);
-        //}
-
         return Webpage.htmlDrawer(title, time, b);
 
     }
 
     private String cleaner(String rs) {
 
-        rs = rs.replace("<div class=\"social_bar\"> ","<!--");
-        rs = rs.replace("<div id=\"set_font_size\" class=\"only_web\">","<!--");
-        rs = rs.replace("<a href=\"####\" class=\"photo_pop_icon\">","<!--");
-        rs = rs.replace("<div class=\"photo_pop\">","<!--");
+        rs = rs.replace("<img src=\"images/am730_article_logo.jpg\">","");
+        rs = rs.replace("<img src=\"uploads","<img src=\"http://www.am730.com.hk/uploads");
 
         Whitelist wlist = new Whitelist();
 
-        wlist.addTags("p","h4");
-        wlist.addTags("table","tbody","tr","td");
+        wlist.addTags("p");
+        //wlist.addTags("table","tbody","tr","td");
         wlist.addTags("img").addAttributes("img", "src");
-
 
         return Jsoup.clean(rs, wlist);
 
-
     }
-
 }
