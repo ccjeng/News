@@ -26,9 +26,16 @@ public class HKHeadline implements INewsParser {
         String time = "";
         String body = "";
         try {
-            title = doc.select("div.content_title").text();
-            time = doc.select("div.content_date").text() + "<br/>"+ doc.select("div.content_reporter").text();
-            body = doc.select("div#news_content").html();
+            if (link.contains("ent")) {
+                title = doc.select("td.bodytext > b").text();
+                time = doc.select("td.bodytext > font").text();
+                body = doc.select("div.hkadj").html(); //todo + "<p>" + doc.select("img.imgtop").html();
+
+            } else {
+                title = doc.select("div.headlinetitle").text();
+                time = doc.select("span.newsheadlinetime").text();
+                body = doc.select("div.bodytext_v1").html() + "<p>" + doc.select("td.news_line02").html();
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -46,10 +53,12 @@ public class HKHeadline implements INewsParser {
 
     private String cleaner(String rs) {
 
+        rs = rs.replace("www.hkheadline.com","");
+
         Whitelist wlist = new Whitelist();
 
-        wlist.addTags("p");
-        wlist.addTags("table","tbody","tr","td");
+        wlist.addTags("p","br");
+       // wlist.addTags("table","tbody","tr","td");
         wlist.addTags("img").addAttributes("img", "src");
 
         return Jsoup.clean(rs, wlist);

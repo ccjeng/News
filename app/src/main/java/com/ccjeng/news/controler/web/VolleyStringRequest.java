@@ -27,7 +27,7 @@ public class VolleyStringRequest extends StringRequest {
 
     @Override
     protected Response<String> parseNetworkResponse(NetworkResponse response) {
-        // TODO Auto-generated method stub
+
         String str = null;
         try {
 
@@ -41,7 +41,6 @@ public class VolleyStringRequest extends StringRequest {
                 str = new String(response.data, HttpHeaderParser.parseCharset(response.headers));
             }
         } catch (UnsupportedEncodingException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
             str = new String(response.data);
         }

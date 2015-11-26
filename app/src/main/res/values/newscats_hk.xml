@@ -232,7 +232,7 @@
         <item>http://feed43.com/7520030888508064.xml</item>
     </string-array>
     <string-array name="newscatsHKheadline">
-        <item>即時新聞</item>
+        <!-- <item>即時新聞</item>-->
         <!-- 	<item>日報新聞-全部</item> -->
         <item>日報新聞-港聞</item>
         <item>日報新聞-中國</item>
@@ -245,7 +245,7 @@
         <!-- <item>日報新聞-旅遊</item> -->
     </string-array>
     <string-array name="newsfeedsHKheadline">
-        <item>http://news.hkheadline.com/instantnews/xml/instant_news_xml.xml</item>
+        <!-- <item>http://news.hkheadline.com/instantnews/xml/instant_news_xml.xml</item>-->
         <!-- <item>http://news.hkheadline.com/dailynews/xml/daily_news_xml.xml</item> -->
         <item>http://www.feed43.com/5652083487268223.xml</item>
         <item>http://www.feed43.com/1650212611678040.xml</item>

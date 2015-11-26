@@ -9,5 +9,6 @@ import java.io.IOException;
 
 public interface INewsParser {
     public String parseHtml(final String link, String content) throws IOException;
+    // TODO: 2015/11/26 refactor to abs class. 
 }
 

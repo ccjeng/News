@@ -91,24 +91,18 @@ public class Category {
                     category = context.getResources().getStringArray(R.array.newscatsHKYahoo);
                     break;
                 case 3:
-                    category = context.getResources().getStringArray(R.array.newscatsHKMingRT);
-                    break;
-                case 4:
-                    category = context.getResources().getStringArray(R.array.newscatsHKMing);
-                    break;
-                case 5:
                     category = context.getResources().getStringArray(R.array.newscatsHKEJ);
                     break;
-                case 6:
+                case 4:
                     category = context.getResources().getStringArray(R.array.newscatsHKMetro);
                     break;
-                case 7:
+                case 5:
                     category = context.getResources().getStringArray(R.array.newscatsHKsun);
                     break;
-                case 8:
+                case 6:
                     category = context.getResources().getStringArray(R.array.newscatsHKam730);
                     break;
-                case 9:
+                case 7:
                     category = context.getResources().getStringArray(R.array.newscatsHKheadline);
                     break;
             }
@@ -171,24 +165,18 @@ public class Category {
                     feedURL = context.getResources().getStringArray(R.array.newsfeedsHKYahoo);
                     break;
                 case 3:
-                    feedURL = context.getResources().getStringArray(R.array.newsfeedsHKMingRT);
-                    break;
-                case 4:
-                    feedURL = context.getResources().getStringArray(R.array.newsfeedsHKMing);
-                    break;
-                case 5:
                     feedURL = context.getResources().getStringArray(R.array.newsfeedsHKEJ);
                     break;
-                case 6:
+                case 4:
                     feedURL = context.getResources().getStringArray(R.array.newsfeedsHKMetro);
                     break;
-                case 7:
+                case 5:
                     feedURL = context.getResources().getStringArray(R.array.newsfeedsHKsun);
                     break;
-                case 8:
+                case 6:
                     feedURL = context.getResources().getStringArray(R.array.newsfeedsHKam730);
                     break;
-                case 9:
+                case 7:
                     feedURL = context.getResources().getStringArray(R.array.newsfeedsHKheadline);
                     break;
             }
@@ -252,24 +240,18 @@ public class Category {
                     parser = new HKYahoo();
                     break;
                 case 3:
-                    parser = new MingPao();
-                    break;
-                case 4:
-                    parser = new MingPao();
-                    break;
-                case 5:
                     parser = new HKEJ();
                     break;
-                case 6:
+                case 4:
                     parser = new RTHK();
                     break;
-                case 7:
+                case 5:
                     parser = new Sun();
                     break;
-                case 8:
+                case 6:
                     parser = new AM730();
                     break;
-                case 9:
+                case 7:
                     parser = new HKHeadline();
                     break;
             }
@@ -307,10 +289,10 @@ public class Category {
                 case 4:
                 case 5:
                 case 6:
-                case 7:
-                case 8:
-                case 9:
                     encoding = "utf-8";
+                    break;
+                case 7:
+                    encoding = "big-5";
                     break;
             }
         }
