@@ -42,19 +42,20 @@ public class NewsHandler {
         Log.d(TAG, "url = " + url);
 
         final ProgressWheel progressWheel = (ProgressWheel) context.findViewById(R.id.progress_wheel);
-        final WebView webView = (WebView) context.findViewById(R.id.webView);
+        //final WebView webView = (WebView) context.findViewById(R.id.webView);
 
-        webView.getSettings().setJavaScriptEnabled(true);
+        context.webView.getSettings().setJavaScriptEnabled(true);
+        //webView.getSettings().setJavaScriptEnabled(true);
 
         progressWheel.setVisibility(View.VISIBLE);
-        webView.setVisibility(View.GONE);
+        context.webView.setVisibility(View.GONE);
 
         VolleyStringRequest req = new VolleyStringRequest(url, charset, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
 
                 progressWheel.setVisibility(View.GONE);
-                webView.setVisibility(View.VISIBLE);
+                context.webView.setVisibility(View.VISIBLE);
 
                 Category cat = new Category(context);
                 INewsParser parser = cat.getNewsParser(tab, position);
@@ -62,7 +63,8 @@ public class NewsHandler {
                 try {
 
                     String newsContent = parser.parseHtml(url, response);
-                    webView.loadDataWithBaseURL(null, newsContent, mimeType, "utf-8", "about:blank");
+
+                    context.webView.loadDataWithBaseURL(null, newsContent, mimeType, "utf-8", "about:blank");
 
                     //image fit screen
                     final String js;
@@ -75,10 +77,10 @@ public class NewsHandler {
                             " }" +
                             " })();";
 
-                    webView.setWebViewClient(new WebViewClient() {
+                    context.webView.setWebViewClient(new WebViewClient() {
                         @Override
                         public void onPageFinished(WebView view, String url) {
-                            webView.loadUrl(js);
+                            context.webView.loadUrl(js);
                         }
                     });
 

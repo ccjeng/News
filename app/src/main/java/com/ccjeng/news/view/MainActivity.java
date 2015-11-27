@@ -17,6 +17,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.ccjeng.news.R;
+import com.ccjeng.news.utils.Analytics;
 import com.mikepenz.aboutlibraries.Libs;
 import com.mikepenz.aboutlibraries.LibsBuilder;
 import com.mikepenz.community_material_typeface_library.CommunityMaterial;
@@ -28,6 +29,7 @@ import butterknife.ButterKnife;
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
+    //private Analytics ga;
 
     @Bind(R.id.tabs)
     TabLayout tabs;
@@ -49,6 +51,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+
+        //ga = new Analytics();
+        //ga.trackerPage(this);
 
         setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(new IconicsDrawable(this)

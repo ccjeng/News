@@ -14,6 +14,7 @@ import android.view.View;
 import com.ccjeng.news.R;
 import com.ccjeng.news.adapter.NewsCategoryAdapter;
 import com.ccjeng.news.adapter.RecyclerItemClickListener;
+import com.ccjeng.news.utils.Analytics;
 import com.ccjeng.news.utils.Category;
 import com.mikepenz.community_material_typeface_library.CommunityMaterial;
 import com.mikepenz.iconics.IconicsDrawable;
@@ -24,6 +25,7 @@ import butterknife.ButterKnife;
 public class NewsCategory extends AppCompatActivity {
 
     private static final String TAG = "NewsCategory";
+    //private Analytics ga;
 
     @Bind(R.id.toolbar)
     Toolbar toolbar;
@@ -40,6 +42,9 @@ public class NewsCategory extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category);
         ButterKnife.bind(this);
+
+        //ga = new Analytics();
+        //ga.trackerPage(this);
 
         setSupportActionBar(toolbar);
 

@@ -2,6 +2,12 @@ package com.ccjeng.news;
 
 import android.app.Application;
 
+//import com.google.android.gms.analytics.GoogleAnalytics;
+//import com.google.android.gms.analytics.Logger;
+//import com.google.android.gms.analytics.Tracker;
+
+import java.util.HashMap;
+
 /**
  * Created by andycheng on 2015/11/15.
  */
@@ -9,17 +15,19 @@ public class News extends Application {
 
     public static final boolean APPDEBUG = true;
 
+    public static final String AD_MoPub = "edc19146642e4017ae2b53cb17546691";
+    public static final String AD_Vpon  = "8a80818250d608d50151484e4c0a6a89";
+
+
 
     @Override
     public void onCreate() {
         super.onCreate();
     }
 
-
     /*
-
     // The following line should be changed to include the correct property id.
-    private static final String PROPERTY_ID = "UA-19743390-13";
+    private static final String PROPERTY_ID = "UA-19743390-22";
     public enum TrackerName {
         APP_TRACKER // Tracker used only in this app.
     }
@@ -40,7 +48,5 @@ public class News extends Application {
         }
         return mTrackers.get(trackerId);
     }
-     */
-
-
+    */
 }

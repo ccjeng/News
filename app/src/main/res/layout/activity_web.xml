@@ -18,13 +18,10 @@
             android:id="@+id/toolbar"
             layout="@layout/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            app:layout_scrollFlags="scroll|enterAlways"/>
 
     </android.support.design.widget.AppBarLayout>
-
-    <!--<android.support.v4.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="fill_parent">-->
 
     <com.pnikosis.materialishprogress.ProgressWheel
         android:id="@+id/progress_wheel"
@@ -35,19 +32,18 @@
         wheel:matProg_barColor="@color/colorProgress"
         wheel:matProg_progressIndeterminate="true" />
 
-    <RelativeLayout
+    <android.support.v4.widget.NestedScrollView
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <WebView
-            android:id="@+id/webView"
-            android:layout_width="fill_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical" />
-    </RelativeLayout>
+            <WebView
+                android:id="@+id/webView"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical" />
 
-    <!--</android.support.v4.widget.NestedScrollView>-->
+    </android.support.v4.widget.NestedScrollView>
 
 </android.support.design.widget.CoordinatorLayout>

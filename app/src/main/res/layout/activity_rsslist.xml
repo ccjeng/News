@@ -9,6 +9,7 @@
     android:fitsSystemWindows="true"
     tools:context="com.ccjeng.news.view.NewsRSSList">
 
+
     <android.support.design.widget.AppBarLayout
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
@@ -17,7 +18,8 @@
         <include layout="@layout/toolbar"
             android:id="@+id/toolbar"
             android:layout_height="wrap_content"
-            android:layout_width="match_parent"/>
+            android:layout_width="match_parent"
+            app:layout_scrollFlags="scroll|enterAlways"/>
 
     </android.support.design.widget.AppBarLayout>
 
@@ -38,10 +40,20 @@
         android:orientation="horizontal"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
 
-    <android.support.v7.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/recyclerView"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/recyclerView"
+            android:layout_above="@+id/adview"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+        <com.mopub.mobileads.MoPubView
+            android:id="@+id/adview"
+            android:layout_below="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|bottom"/>
+
 
 </android.support.design.widget.CoordinatorLayout>
