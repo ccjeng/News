@@ -17,6 +17,7 @@ import java.io.IOException;
  */
 public class HKEJ extends AbstractNews {
     private static final String TAG = "HKEJ";
+    private String body = "";
 
     @Override
     public String parseHtml(final String link, String content) throws IOException {
@@ -25,7 +26,7 @@ public class HKEJ extends AbstractNews {
 
         String title = "";
         String time = "";
-        String body = "";
+
         try {
             title = doc.select("h1#article-title").text();
             time = doc.select("span.date").text();
@@ -43,6 +44,14 @@ public class HKEJ extends AbstractNews {
 
         return Webpage.htmlDrawer(title, time, b);
 
+    }
+
+    @Override
+    public Boolean isEmptyContent() {
+        if (body.trim().equals(""))
+            return true;
+        else
+            return false;
     }
 
     protected String cleaner(String rs) {

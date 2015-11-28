@@ -98,11 +98,9 @@ public class NewsRSSList extends AppCompatActivity {
                     (ViewGroup) findViewById(R.id.croutonview)).show();
         }
 
-
         moPubView = (MoPubView) findViewById(R.id.adview);
         moPubView.setAdUnitId(News.AD_MoPub);
         moPubView.loadAd();
-
 
     }
 

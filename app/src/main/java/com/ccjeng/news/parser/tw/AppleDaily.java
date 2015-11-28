@@ -18,6 +18,7 @@ import java.io.IOException;
 public class AppleDaily extends AbstractNews {
 
     private static final String TAG = "AppleDaily";
+    private String body = "";
 
     @Override
     public String parseHtml(final String link, String content) throws IOException {
@@ -27,7 +28,6 @@ public class AppleDaily extends AbstractNews {
 
         String title = "";
         String time = "";
-        String body = "";
 
         try {
             title = doc.select("h1#h1").text();
@@ -44,6 +44,14 @@ public class AppleDaily extends AbstractNews {
 
         return Webpage.htmlDrawer(title, time, cleaner(body));
 
+    }
+
+    @Override
+    public Boolean isEmptyContent() {
+        if (body.trim().equals(""))
+            return true;
+        else
+            return false;
     }
 
     protected String cleaner(String rs) {

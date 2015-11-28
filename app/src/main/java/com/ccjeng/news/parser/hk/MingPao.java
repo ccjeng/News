@@ -22,6 +22,7 @@ import java.nio.charset.StandardCharsets;
  */
 public class MingPao extends AbstractNews {
     private static final String TAG = "MingPao";
+    private String body = "";
 
     @Override
     public String parseHtml(final String link, String content) throws IOException {
@@ -30,7 +31,7 @@ public class MingPao extends AbstractNews {
 
         String title = "";
         String time = "";
-        String body = "";
+
         try {
             InputStream is = new ByteArrayInputStream(content.getBytes());
             InputStreamReader isr = new InputStreamReader(is);
@@ -67,6 +68,14 @@ public class MingPao extends AbstractNews {
 
         return Webpage.htmlDrawer(title, time, b);
 
+    }
+
+    @Override
+    public Boolean isEmptyContent() {
+        if (body.trim().equals(""))
+            return true;
+        else
+            return false;
     }
 
     protected String cleaner(String rs) {

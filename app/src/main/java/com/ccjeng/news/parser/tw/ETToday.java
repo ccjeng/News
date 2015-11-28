@@ -17,8 +17,7 @@ import java.io.IOException;
  */
 public class ETToday extends AbstractNews {
     private static final String TAG = "ETToday";
-
-    private String body;
+    private String body = "";
 
     @Override
     public String parseHtml(final String link, String content) throws IOException {
@@ -27,7 +26,7 @@ public class ETToday extends AbstractNews {
 
         String title = "";
         String time = "";
-        body = "";
+
         try {
             if (link.contains("/star/")) { //影劇
                 title = doc.select("div.module_1 > h2.title").text();

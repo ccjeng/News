@@ -17,6 +17,7 @@ import java.io.IOException;
  */
 public class LibertyTimes extends AbstractNews {
     private static final String TAG = "LibertyTimes";
+    private String body = "";
 
     @Override
     public String parseHtml(final String link, String content) throws IOException {
@@ -25,7 +26,7 @@ public class LibertyTimes extends AbstractNews {
 
         String title = "";
         String time = "";
-        String body = "";
+
         try {
 
             if (link.contains("sports")) {
@@ -62,6 +63,14 @@ public class LibertyTimes extends AbstractNews {
 
         return Webpage.htmlDrawer(title, time, b);
 
+    }
+
+    @Override
+    public Boolean isEmptyContent() {
+        if (body.trim().equals(""))
+            return true;
+        else
+            return false;
     }
 
     protected String cleaner(String rs) {

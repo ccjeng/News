@@ -17,17 +17,17 @@ import java.io.IOException;
  */
 public class Yahoo extends AbstractNews {
     private static final String TAG = "Yahoo";
+    private String body = "";
 
     @Override
     public String parseHtml(final String link, String content) throws IOException {
 
         //replace url "news" to "mobi"
-
         Document doc = Jsoup.parse(content);
 
         String title = "";
         String time = "";//doc.select("div#image").first().text();
-        String body = "";
+
         try {
             title = doc.select("h1").text();
             time = "";
@@ -47,9 +47,15 @@ public class Yahoo extends AbstractNews {
 
     }
 
-    protected String cleaner(String rs) {
+    @Override
+    public Boolean isEmptyContent() {
+        if (body.trim().equals(""))
+            return true;
+        else
+            return false;
+    }
 
-        //rs = rs.replace("<img src=\"http://twimg.edgesuite.net/appledaily/images/twitterline.png\">", "");
+    protected String cleaner(String rs) {
 
         Whitelist wlist=new Whitelist();
 
