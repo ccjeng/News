@@ -2,6 +2,7 @@ package com.ccjeng.news.parser.hk;
 
 import android.util.Log;
 
+import com.ccjeng.news.parser.AbstractNews;
 import com.ccjeng.news.parser.INewsParser;
 import com.ccjeng.news.utils.Webpage;
 
@@ -14,7 +15,7 @@ import java.io.IOException;
 /**
  * Created by andycheng on 2015/11/25.
  */
-public class Sun implements INewsParser {
+public class Sun extends AbstractNews {
     private static final String TAG = "Sun";
 
     @Override
@@ -46,7 +47,7 @@ public class Sun implements INewsParser {
 
     }
 
-    private String cleaner(String rs) {
+    protected String cleaner(String rs) {
 
         rs = rs.replace("src=\"/cnt/","src=\"http://the-sun.on.cc/cnt/");
 

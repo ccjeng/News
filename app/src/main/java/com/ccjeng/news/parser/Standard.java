@@ -13,7 +13,7 @@ import java.io.IOException;
 /**
  * Created by andycheng on 2015/11/19.
  */
-public class Standard implements INewsParser {
+public class Standard extends AbstractNews {
 
     private static final String TAG = "Standard";
 
@@ -34,7 +34,7 @@ public class Standard implements INewsParser {
 
     }
 
-    public static String cleaner(String rs) {
+    protected String cleaner(String rs) {
 
         Whitelist wlist = null;
         try {

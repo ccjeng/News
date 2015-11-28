@@ -2,6 +2,7 @@ package com.ccjeng.news.parser.tw;
 
 import android.util.Log;
 
+import com.ccjeng.news.parser.AbstractNews;
 import com.ccjeng.news.parser.INewsParser;
 import com.ccjeng.news.utils.Webpage;
 
@@ -14,7 +15,7 @@ import java.io.IOException;
 /**
  * Created by andycheng on 2015/11/18.
  */
-public class Yahoo implements INewsParser {
+public class Yahoo extends AbstractNews {
     private static final String TAG = "Yahoo";
 
     @Override
@@ -46,7 +47,7 @@ public class Yahoo implements INewsParser {
 
     }
 
-    private String cleaner(String rs) {
+    protected String cleaner(String rs) {
 
         //rs = rs.replace("<img src=\"http://twimg.edgesuite.net/appledaily/images/twitterline.png\">", "");
 

@@ -1,16 +1,19 @@
 package com.ccjeng.news.controler.web;
 
 import android.content.res.Configuration;
+import android.graphics.Bitmap;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.ccjeng.news.R;
+import com.ccjeng.news.parser.AbstractNews;
 import com.ccjeng.news.parser.INewsParser;
 import com.ccjeng.news.utils.Category;
 import com.ccjeng.news.view.NewsView;
@@ -52,32 +55,68 @@ public class NewsHandler {
                 context.webView.setVisibility(View.VISIBLE);
 
                 Category cat = new Category(context);
-                INewsParser parser = cat.getNewsParser(tab, position);
+                AbstractNews parser = cat.getNewsParser(tab, position);
 
                 try {
 
                     String newsContent = parser.parseHtml(url, response);
 
-                    context.webView.loadDataWithBaseURL(null, newsContent, mimeType, "utf-8", "about:blank");
+                    if (parser.isEmptyContent()) {
+                        //if parse result is empty, then show webview directly..
+                        context.webView.loadUrl(url);
 
-                    //image fit screen
-                    final String js;
-                    js= "javascript:(function () { " +
-                            " var w = " + getWidth(context) + ";" +
-                            " for( var i = 0; i < document.images.length; i++ ) {" +
-                            " var img = document.images[i]; " +
-                            "   img.height = Math.round( img.height * ( w/img.width ) ); " +
-                            "   img.width = w; " +
-                            " }" +
-                            " })();";
+                        context.webView.setWebViewClient(new WebViewClient() {
 
-                    context.webView.setWebViewClient(new WebViewClient() {
-                        @Override
-                        public void onPageFinished(WebView view, String url) {
-                            context.webView.loadUrl(js);
-                        }
-                    });
+                            @Override
+                            public void onPageStarted(WebView view, String url, Bitmap favicon) {
+                                super.onPageStarted(view, url, favicon);
+                                progressWheel.setVisibility(View.VISIBLE);
+                                context.webView.setVisibility(View.GONE);
+                            }
 
+                            @Override
+                            public void onPageFinished(WebView view, String url) {
+                                super.onPageFinished(view, url);
+                                progressWheel.setVisibility(View.GONE);
+                                context.webView.setVisibility(View.VISIBLE);
+                            }
+                        });
+                        context.webView.setWebChromeClient(new WebChromeClient() {
+
+                            @Override
+                            public void onProgressChanged(WebView view, int newProgress) {
+                                super.onProgressChanged(view, newProgress);
+                                progressWheel.setProgress((float) newProgress / 100);
+
+                                if (newProgress > 90) {
+                                    progressWheel.setVisibility(View.GONE);
+                                    context.webView.setVisibility(View.VISIBLE);
+                                }
+                            }
+                        });
+
+                    } else {
+
+                        context.webView.loadDataWithBaseURL(null, newsContent, mimeType, "utf-8", "about:blank");
+
+                        //image fit screen
+                        final String js;
+                        js= "javascript:(function () { " +
+                                " var w = " + getWidth(context) + ";" +
+                                " for( var i = 0; i < document.images.length; i++ ) {" +
+                                " var img = document.images[i]; " +
+                                "   img.height = Math.round( img.height * ( w/img.width ) ); " +
+                                "   img.width = w; " +
+                                " }" +
+                                " })();";
+
+                        context.webView.setWebViewClient(new WebViewClient() {
+                            @Override
+                            public void onPageFinished(WebView view, String url) {
+                                context.webView.loadUrl(js);
+                            }
+                        });
+                    }
 
                 } catch (IOException e) {
                     e.printStackTrace();

@@ -2,6 +2,7 @@ package com.ccjeng.news.parser.hk;
 
 import android.util.Log;
 
+import com.ccjeng.news.parser.AbstractNews;
 import com.ccjeng.news.parser.INewsParser;
 import com.ccjeng.news.utils.Webpage;
 
@@ -14,7 +15,7 @@ import java.io.IOException;
 /**
  * Created by andycheng on 2015/11/24.
  */
-public class HKHeadline implements INewsParser {
+public class HKHeadline extends AbstractNews {
     private static final String TAG = "HKHeadline";
 
     @Override
@@ -51,7 +52,7 @@ public class HKHeadline implements INewsParser {
 
     }
 
-    private String cleaner(String rs) {
+    protected String cleaner(String rs) {
 
         rs = rs.replace("www.hkheadline.com","");
 

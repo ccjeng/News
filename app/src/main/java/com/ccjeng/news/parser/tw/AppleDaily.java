@@ -2,6 +2,7 @@ package com.ccjeng.news.parser.tw;
 
 import android.util.Log;
 
+import com.ccjeng.news.parser.AbstractNews;
 import com.ccjeng.news.parser.INewsParser;
 import com.ccjeng.news.utils.Webpage;
 
@@ -14,7 +15,7 @@ import java.io.IOException;
 /**
  * Created by andycheng on 2015/11/15.
  */
-public class AppleDaily implements INewsParser {
+public class AppleDaily extends AbstractNews {
 
     private static final String TAG = "AppleDaily";
 
@@ -45,7 +46,7 @@ public class AppleDaily implements INewsParser {
 
     }
 
-    private String cleaner(String rs) {
+    protected String cleaner(String rs) {
 
         rs = rs.replace("<img src=\"http://twimg.edgesuite.net/appledaily/images/twitterline.png\">", "");
         rs = rs.replace("/thumbnail/","/IphoneThumbnail/");

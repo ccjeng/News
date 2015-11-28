@@ -2,6 +2,7 @@ package com.ccjeng.news.parser.tw;
 
 import android.util.Log;
 
+import com.ccjeng.news.parser.AbstractNews;
 import com.ccjeng.news.parser.INewsParser;
 import com.ccjeng.news.utils.Webpage;
 
@@ -14,8 +15,10 @@ import java.io.IOException;
 /**
  * Created by andycheng on 2015/11/23.
  */
-public class ETToday implements INewsParser {
+public class ETToday extends AbstractNews {
     private static final String TAG = "ETToday";
+
+    private String body;
 
     @Override
     public String parseHtml(final String link, String content) throws IOException {
@@ -24,7 +27,7 @@ public class ETToday implements INewsParser {
 
         String title = "";
         String time = "";
-        String body = "";
+        body = "";
         try {
             if (link.contains("/star/")) { //影劇
                 title = doc.select("div.module_1 > h2.title").text();
@@ -60,7 +63,15 @@ public class ETToday implements INewsParser {
 
     }
 
-    private String cleaner(String rs) {
+    @Override
+    public Boolean isEmptyContent() {
+        if (body.trim().equals(""))
+            return true;
+        else
+            return false;
+    }
+
+    protected String cleaner(String rs) {
 
         rs = rs.replace("<div class=\"test-keyword\"> ", "<!--");
 

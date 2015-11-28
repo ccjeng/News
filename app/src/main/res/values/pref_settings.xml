@@ -16,12 +16,14 @@
         <item>白</item>
         <item>灰</item>
         <item>綠</item>
+        <item>黃</item>
     </string-array>
     <string-array name="font_color_code">
         <item>#000000</item>
         <item>#FFFFFF</item>
         <item>#ECECEC</item>
         <item>#00FF00</item>
+        <item>#FFFF00</item>
     </string-array>
 
     <string-array name="bg_color">

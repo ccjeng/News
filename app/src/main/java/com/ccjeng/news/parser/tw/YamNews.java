@@ -2,6 +2,7 @@ package com.ccjeng.news.parser.tw;
 
 import android.util.Log;
 
+import com.ccjeng.news.parser.AbstractNews;
 import com.ccjeng.news.parser.INewsParser;
 import com.ccjeng.news.utils.Webpage;
 
@@ -14,7 +15,7 @@ import java.io.IOException;
 /**
  * Created by andycheng on 2015/11/20.
  */
-public class YamNews implements INewsParser {
+public class YamNews extends AbstractNews {
     private static final String TAG = "YamNews";
 
     @Override
@@ -44,7 +45,7 @@ public class YamNews implements INewsParser {
 
     }
 
-    private String cleaner(String rs) {
+    protected String cleaner(String rs) {
 
         rs = rs.replace("<!-- 蕃plus + AD START -->", "<!-- 蕃plus + AD START ");
         rs = rs.replace("<!-- Customized -->", "<!-- Customized ");

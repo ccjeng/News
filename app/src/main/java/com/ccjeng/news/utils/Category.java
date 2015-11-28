@@ -3,6 +3,7 @@ package com.ccjeng.news.utils;
 import android.content.Context;
 
 import com.ccjeng.news.R;
+import com.ccjeng.news.parser.AbstractNews;
 import com.ccjeng.news.parser.INewsParser;
 import com.ccjeng.news.parser.Standard;
 import com.ccjeng.news.parser.hk.AM730;
@@ -186,8 +187,8 @@ public class Category {
         return feedURL;
     }
 
-    public INewsParser getNewsParser(String tab, int position) {
-        INewsParser parser = null;
+    public AbstractNews getNewsParser(String tab, int position) {
+        AbstractNews parser = null;
 
         if (tab.equals("TW")) {
             switch (position) {

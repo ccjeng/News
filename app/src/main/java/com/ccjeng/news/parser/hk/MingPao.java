@@ -2,6 +2,7 @@ package com.ccjeng.news.parser.hk;
 
 import android.util.Log;
 
+import com.ccjeng.news.parser.AbstractNews;
 import com.ccjeng.news.parser.INewsParser;
 import com.ccjeng.news.utils.Webpage;
 
@@ -19,7 +20,7 @@ import java.nio.charset.StandardCharsets;
 /**
  * Created by andycheng on 2015/11/24.
  */
-public class MingPao implements INewsParser {
+public class MingPao extends AbstractNews {
     private static final String TAG = "MingPao";
 
     @Override
@@ -68,7 +69,7 @@ public class MingPao implements INewsParser {
 
     }
 
-    private String cleaner(String rs) {
+    protected String cleaner(String rs) {
 
         rs = rs.replace("掌握最新消息，請Like「","<!--");
 

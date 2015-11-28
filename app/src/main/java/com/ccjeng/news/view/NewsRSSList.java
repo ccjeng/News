@@ -47,7 +47,7 @@ public class NewsRSSList extends AppCompatActivity {
     @Bind(R.id.progress_wheel)
     ProgressWheel progressWheel;
 
-    //private MoPubView moPubView;
+    private MoPubView moPubView;
 
     private int sourceNumber;
     private int itemNumber;
@@ -98,20 +98,20 @@ public class NewsRSSList extends AppCompatActivity {
                     (ViewGroup) findViewById(R.id.croutonview)).show();
         }
 
-/*
+
         moPubView = (MoPubView) findViewById(R.id.adview);
         moPubView.setAdUnitId(News.AD_MoPub);
         moPubView.loadAd();
-        */
+
 
     }
 
 
     @Override
     protected void onDestroy() {
-        //if (moPubView != null) {
-        //    moPubView.destroy();
-        //}
+        if (moPubView != null) {
+            moPubView.destroy();
+        }
         super.onDestroy();
     }
 

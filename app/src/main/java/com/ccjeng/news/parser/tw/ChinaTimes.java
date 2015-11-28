@@ -2,6 +2,7 @@ package com.ccjeng.news.parser.tw;
 
 import android.util.Log;
 
+import com.ccjeng.news.parser.AbstractNews;
 import com.ccjeng.news.parser.INewsParser;
 import com.ccjeng.news.utils.Webpage;
 
@@ -14,7 +15,7 @@ import java.io.IOException;
 /**
  * Created by andycheng on 2015/11/20.
  */
-public class ChinaTimes implements INewsParser {
+public class ChinaTimes extends AbstractNews {
     private static final String TAG = "ChinaTimes";
 
     @Override
@@ -44,7 +45,7 @@ public class ChinaTimes implements INewsParser {
 
     }
 
-    private String cleaner(String rs) {
+    protected String cleaner(String rs) {
 
         Whitelist wlist = new Whitelist();
 

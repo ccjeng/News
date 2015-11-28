@@ -19,6 +19,7 @@ import com.ccjeng.news.R;
 import com.ccjeng.news.controler.web.NewsHandler;
 import com.ccjeng.news.utils.Analytics;
 import com.ccjeng.news.utils.Network;
+import com.ccjeng.news.utils.PreferenceSetting;
 import com.mikepenz.community_material_typeface_library.CommunityMaterial;
 import com.mikepenz.iconics.IconicsDrawable;
 
@@ -62,6 +63,8 @@ public class NewsView extends AppCompatActivity {
                 .color(Color.WHITE)
                 .actionBarSize());
 
+        PreferenceSetting.getPreference(this);
+
         Bundle bundle = this.getIntent().getExtras();
         final int sourceNumber = Integer.parseInt(bundle.getString("SourceNum"));
         final String tabName = bundle.getString("SourceTab");
@@ -75,7 +78,6 @@ public class NewsView extends AppCompatActivity {
         getSupportActionBar().setSubtitle(newsName);
 
         main.setBackgroundColor(Color.parseColor(News.getPrefBGColor()));
-        //Log.d(TAG, News.getPrefBGColor());
 
         if (Network.isNetworkAvailable(this)) {
             NewsHandler.getNewsContent(this, newsUrl, tabName, sourceNumber);
@@ -119,6 +121,9 @@ public class NewsView extends AppCompatActivity {
                 break;
             case R.id.action_share:
                 menuShare();
+                break;
+            case R.id.action_setting:
+                startActivity(new Intent(NewsView.this, Preference.class));
                 break;
         }
 

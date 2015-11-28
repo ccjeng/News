@@ -2,6 +2,7 @@ package com.ccjeng.news.parser.hk;
 
 import android.util.Log;
 
+import com.ccjeng.news.parser.AbstractNews;
 import com.ccjeng.news.parser.INewsParser;
 import com.ccjeng.news.utils.Webpage;
 
@@ -14,7 +15,7 @@ import java.io.IOException;
 /**
  * Created by andycheng on 2015/11/25.
  */
-public class RTHK implements INewsParser {
+public class RTHK extends AbstractNews {
     private static final String TAG = "RTHK";
 
     @Override
@@ -44,7 +45,7 @@ public class RTHK implements INewsParser {
 
     }
 
-    private String cleaner(String rs) {
+    protected String cleaner(String rs) {
 
         rs = rs.replace("http://newsstatic.rthk.hk/frontend_images/images/rthk/internal/waiting.gif","");
         rs = rs.replace("<br>","<p>");

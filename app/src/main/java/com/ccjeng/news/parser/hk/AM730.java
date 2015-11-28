@@ -2,6 +2,7 @@ package com.ccjeng.news.parser.hk;
 
 import android.util.Log;
 
+import com.ccjeng.news.parser.AbstractNews;
 import com.ccjeng.news.parser.INewsParser;
 import com.ccjeng.news.utils.Webpage;
 
@@ -14,7 +15,7 @@ import java.io.IOException;
 /**
  * Created by andycheng on 2015/11/25.
  */
-public class AM730 implements INewsParser {
+public class AM730 extends AbstractNews {
     private static final String TAG = "AM730";
 
     @Override
@@ -44,7 +45,7 @@ public class AM730 implements INewsParser {
 
     }
 
-    private String cleaner(String rs) {
+    protected String cleaner(String rs) {
 
         rs = rs.replace("<img src=\"images/am730_article_logo.jpg\">","");
         rs = rs.replace("<img src=\"uploads","<img src=\"http://www.am730.com.hk/uploads");
