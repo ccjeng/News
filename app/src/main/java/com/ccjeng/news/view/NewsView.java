@@ -1,41 +1,42 @@
 package com.ccjeng.news.view;
 
 import android.content.Intent;
-import android.content.res.Configuration;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.widget.NestedScrollView;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
-import android.webkit.WebViewClient;
 
+import com.ccjeng.news.News;
 import com.ccjeng.news.R;
 import com.ccjeng.news.controler.web.NewsHandler;
 import com.ccjeng.news.utils.Analytics;
 import com.ccjeng.news.utils.Network;
-import com.liuguangqiang.swipeback.SwipeBackActivity;
-import com.liuguangqiang.swipeback.SwipeBackLayout;
 import com.mikepenz.community_material_typeface_library.CommunityMaterial;
 import com.mikepenz.iconics.IconicsDrawable;
-import com.pnikosis.materialishprogress.ProgressWheel;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import de.keyboardsurfer.android.widget.crouton.Crouton;
 import de.keyboardsurfer.android.widget.crouton.Style;
 
-public class NewsView extends SwipeBackActivity {
+public class NewsView extends AppCompatActivity {
+
+    private static final String TAG = "NewsView";
 
     @Bind(R.id.toolbar)
     Toolbar toolbar;
     @Bind(R.id.webView)
     public WebView webView;
+    @Bind(R.id.main)
+    NestedScrollView main;
 
     //private Analytics ga;
 
@@ -47,7 +48,6 @@ public class NewsView extends SwipeBackActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_web);
-        setDragEdge(SwipeBackLayout.DragEdge.LEFT);
         ButterKnife.bind(this);
 
         //ga = new Analytics();
@@ -73,6 +73,9 @@ public class NewsView extends SwipeBackActivity {
 
         getSupportActionBar().setTitle(newsTitle);
         getSupportActionBar().setSubtitle(newsName);
+
+        main.setBackgroundColor(Color.parseColor(News.getPrefBGColor()));
+        //Log.d(TAG, News.getPrefBGColor());
 
         if (Network.isNetworkAvailable(this)) {
             NewsHandler.getNewsContent(this, newsUrl, tabName, sourceNumber);

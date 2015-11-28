@@ -16,15 +16,13 @@ import com.ccjeng.news.adapter.NewsCategoryAdapter;
 import com.ccjeng.news.adapter.RecyclerItemClickListener;
 import com.ccjeng.news.utils.Analytics;
 import com.ccjeng.news.utils.Category;
-import com.liuguangqiang.swipeback.SwipeBackActivity;
-import com.liuguangqiang.swipeback.SwipeBackLayout;
 import com.mikepenz.community_material_typeface_library.CommunityMaterial;
 import com.mikepenz.iconics.IconicsDrawable;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class NewsCategory extends SwipeBackActivity /*AppCompatActivity,*/ {
+public class NewsCategory extends AppCompatActivity {
 
     private static final String TAG = "NewsCategory";
     //private Analytics ga;
@@ -43,7 +41,6 @@ public class NewsCategory extends SwipeBackActivity /*AppCompatActivity,*/ {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category);
-        setDragEdge(SwipeBackLayout.DragEdge.LEFT);
         ButterKnife.bind(this);
 
         //ga = new Analytics();

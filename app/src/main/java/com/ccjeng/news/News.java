@@ -19,11 +19,37 @@ public class News extends Application {
     public static final String AD_Vpon  = "8a80818250d608d50151484e4c0a6a89";
 
 
-
     @Override
     public void onCreate() {
         super.onCreate();
     }
+
+    /* Global Variables
+    * */
+    private static String mPrefFontSize;
+    public static String getPrefFontSize(){
+        return mPrefFontSize;
+    }
+    public static void setPrefFontSize(String s){
+        mPrefFontSize = s;
+    }
+
+    private static String mPrefFontColor;
+    public static String getPrefFontColor(){
+        return mPrefFontColor;
+    }
+    public static void setPrefFontColor(String s){
+        mPrefFontColor = s;
+    }
+
+    private static String mPrefBGColor;
+    public static String getPrefBGColor(){
+        return mPrefBGColor;
+    }
+    public static void setPretBGColor(String s){
+        mPrefBGColor = s;
+    }
+
 
     /*
     // The following line should be changed to include the correct property id.

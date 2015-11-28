@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="font_size">
+        <item>正常</item>
+        <item>較大</item>
+        <item>超大</item>
+    </string-array>
+    <string-array name="font_size_code">
+        <item>+0</item>
+        <item>+1</item>
+        <item>+2</item>
+    </string-array>
+
+    <string-array name="font_color">
+        <item>黑</item>
+        <item>白</item>
+        <item>灰</item>
+        <item>綠</item>
+    </string-array>
+    <string-array name="font_color_code">
+        <item>#000000</item>
+        <item>#FFFFFF</item>
+        <item>#ECECEC</item>
+        <item>#00FF00</item>
+    </string-array>
+
+    <string-array name="bg_color">
+        <item>黑</item>
+        <item>白</item>
+        <item>灰</item>
+        <item>深灰</item>
+    </string-array>
+    <string-array name="bg_color_code">
+        <item>#000000</item>
+        <item>#FFFFFF</item>
+        <item>#ECECEC</item>
+        <item>#808080</item>
+    </string-array>
+</resources>

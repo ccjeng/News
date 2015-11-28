@@ -1,8 +1,10 @@
 package com.ccjeng.news.view;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -16,6 +18,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.ccjeng.news.News;
 import com.ccjeng.news.R;
 import com.ccjeng.news.utils.Analytics;
 import com.mikepenz.aboutlibraries.Libs;
@@ -65,7 +68,14 @@ public class MainActivity extends AppCompatActivity {
         tabs.setupWithViewPager(pager);
 
         navDrawer();
+        getPrefs();
 
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        getPrefs();
     }
 
     @Override
@@ -145,5 +155,19 @@ public class MainActivity extends AppCompatActivity {
                 .icon(CommunityMaterial.Icon.cmd_information)
                 .color(Color.GRAY)
                 .sizeDp(24));
+    }
+
+
+    private void getPrefs() {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+
+        String fontSize = prefs.getString("font_size", "+0");
+        String fontColor = prefs.getString("font_color", "#000000");
+        String bgColor = prefs.getString("bg_color", "#FFFFFF");
+
+        News.setPrefFontSize(fontSize);
+        News.setPrefFontColor(fontColor);
+        News.setPretBGColor(bgColor);
+
     }
 }

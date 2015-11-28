@@ -8,14 +8,22 @@
 
     <string name="license">關於</string>
 
+    <!-- Tab -->
     <string name="tab_tw">台灣</string>
     <string name="tab_hk">香港</string>
 
     <string name="sharing_description">將內容分享到應用程式</string>
 
-    <string name="preference_js_title">停用新聞網頁的JavaScript</string>
-    <string name="preference_js_summary">停用JavaScript可以去除廣告，但可能會導致頁面排版不正常</string>
+    <!-- Preference -->
+    <string name="preference_content_group">新聞內文</string>
+    <string name="preference_content_font_size">設定文字大小</string>
+    <string name="preference_content_font_size_summary">設定新聞內文的文字大小</string>
+    <string name="preference_content_font_color">設定文字顏色</string>
+    <string name="preference_content_font_color_summary">設定新聞內文的文字顏色</string>
+    <string name="preference_content_bg_color">設定背景顏色</string>
+    <string name="preference_content_bg_color_summary">設定新聞內文的背景顏色</string>
 
+    <!-- Error -->
     <string name="network_error">無法連線，請檢查裝置是否正常連網</string>
     <string name="data_error">網路錯誤，請檢查裝置是否正常連網</string>
     <string name="no_data">沒有資料</string>

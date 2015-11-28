@@ -8,6 +8,12 @@
     <color name="colorAccent">@color/md_bluegray_700</color>
     <color name="colorProgress">@color/md_bluegray_400</color>
 
+    <color name="pref_font_white">#FFFFFF</color>
+    <color name="pref_font_black">#000000</color>
+    <color name="pref_font_gray">#ECECEC</color>
+    <color name="pref_font_deepgray">#808080</color>
+    <color name="pref_font_green">#00FF00</color>
+
 
     <!--blue-->
     <color name="md_blue_50">#E3F2FD</color>

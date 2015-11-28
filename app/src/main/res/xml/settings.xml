@@ -1,19 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen
-	xmlns:android="http://schemas.android.com/apk/res/android">
-	<CheckBoxPreference
-	 		android:key="disableJS"
-	 		android:title="@string/preference_js_title"
-            android:summary="@string/preference_js_summary"
-            android:defaultValue="false" />
-<!--
-    <ListPreference
-            android:title="@string/search_pref_title"
-            android:summary="@string/search_pref_summary"
-            android:key="search"
-            android:defaultValue="Google"
-            android:entries="@array/search_engine"
-            android:entryValues="@array/search_engine" />
-            -->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/preference_content_group">
+        <ListPreference
+            android:defaultValue="+0"
+            android:entries="@array/font_size"
+            android:entryValues="@array/font_size_code"
+            android:key="font_size"
+            android:summary="@string/preference_content_font_size_summary"
+            android:title="@string/preference_content_font_size" />
+        <ListPreference
+            android:defaultValue="#000000"
+            android:entries="@array/font_color"
+            android:entryValues="@array/font_color_code"
+            android:key="font_color"
+            android:summary="@string/preference_content_font_color_summary"
+            android:title="@string/preference_content_font_color" />
+        <ListPreference
+            android:defaultValue="#FFFFFF"
+            android:entries="@array/bg_color"
+            android:entryValues="@array/bg_color_code"
+            android:key="bg_color"
+            android:summary="@string/preference_content_bg_color_summary"
+            android:title="@string/preference_content_bg_color" />
+    </PreferenceCategory>
 
 </PreferenceScreen>

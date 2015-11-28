@@ -35,7 +35,7 @@ dependencies {
     //compile 'com.android.support:multidex:1.0.1'
     compile 'com.android.support:appcompat-v7:23.1.1'
     compile 'com.android.support:design:23.1.1'
-    //compile 'com.google.android.gms:play-services:8.3.0'
+    compile 'com.google.android.gms:play-services:8.3.0'
     compile 'com.jakewharton:butterknife:7.0.1'
     compile 'com.mikepenz:iconics-core:1.7.3@aar'
     compile 'com.mikepenz:community-material-typeface:1.1.70.3@aar'
@@ -54,5 +54,4 @@ dependencies {
     compile 'org.jsoup:jsoup:1.8.3'
     compile project(':volley')
     compile files('src/main/libs/vpadn-sdk-obf432-91015102-1510191638-e55b2d4.jar')
-    compile 'com.github.liuguangqiang.swipeback:library:1.0.2@aar'
 }
