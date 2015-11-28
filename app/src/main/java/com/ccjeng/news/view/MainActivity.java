@@ -32,7 +32,7 @@ import butterknife.ButterKnife;
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
-    //private Analytics ga;
+    private Analytics ga;
 
     @Bind(R.id.tabs)
     TabLayout tabs;
@@ -55,8 +55,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        //ga = new Analytics();
-        //ga.trackerPage(this);
+        ga = new Analytics();
+        ga.trackerPage(this);
 
         setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(new IconicsDrawable(this)

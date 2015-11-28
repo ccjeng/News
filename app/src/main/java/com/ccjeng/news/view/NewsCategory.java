@@ -25,7 +25,7 @@ import butterknife.ButterKnife;
 public class NewsCategory extends AppCompatActivity {
 
     private static final String TAG = "NewsCategory";
-    //private Analytics ga;
+    private Analytics ga;
 
     @Bind(R.id.toolbar)
     Toolbar toolbar;
@@ -43,8 +43,8 @@ public class NewsCategory extends AppCompatActivity {
         setContentView(R.layout.activity_category);
         ButterKnife.bind(this);
 
-        //ga = new Analytics();
-        //ga.trackerPage(this);
+        ga = new Analytics();
+        ga.trackerPage(this);
 
         setSupportActionBar(toolbar);
 

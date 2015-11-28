@@ -3,8 +3,8 @@ package com.ccjeng.news.utils;
 import android.app.Activity;
 
 import com.ccjeng.news.News;
-//import com.google.android.gms.analytics.HitBuilders;
-//import com.google.android.gms.analytics.Tracker;
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
 
 
 /**
@@ -12,7 +12,7 @@ import com.ccjeng.news.News;
  */
 public class Analytics {
 
-    /*
+
     public static void trackerPage(Activity activity) {
         Tracker t = ((News) activity.getApplication()).getTracker(
                 News.TrackerName.APP_TRACKER);
@@ -31,6 +31,6 @@ public class Analytics {
                 .setValue(value)
                 .build());
     }
-    */
+
 
 }

@@ -2,9 +2,9 @@ package com.ccjeng.news;
 
 import android.app.Application;
 
-//import com.google.android.gms.analytics.GoogleAnalytics;
-//import com.google.android.gms.analytics.Logger;
-//import com.google.android.gms.analytics.Tracker;
+import com.google.android.gms.analytics.GoogleAnalytics;
+import com.google.android.gms.analytics.Logger;
+import com.google.android.gms.analytics.Tracker;
 
 import java.util.HashMap;
 
@@ -51,7 +51,7 @@ public class News extends Application {
     }
 
 
-    /*
+
     // The following line should be changed to include the correct property id.
     private static final String PROPERTY_ID = "UA-19743390-22";
     public enum TrackerName {
@@ -74,5 +74,5 @@ public class News extends Application {
         }
         return mTrackers.get(trackerId);
     }
-    */
+
 }

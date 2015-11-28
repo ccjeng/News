@@ -8,11 +8,8 @@ import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.Volley;
-import com.ccjeng.news.News;
 import com.ccjeng.news.R;
 import com.ccjeng.news.parser.INewsParser;
 import com.ccjeng.news.utils.Category;
@@ -20,8 +17,6 @@ import com.ccjeng.news.view.NewsView;
 import com.pnikosis.materialishprogress.ProgressWheel;
 
 import java.io.IOException;
-import java.net.URLDecoder;
-import java.net.URLEncoder;
 
 import de.keyboardsurfer.android.widget.crouton.Crouton;
 import de.keyboardsurfer.android.widget.crouton.Style;
@@ -45,7 +40,6 @@ public class NewsHandler {
         //final WebView webView = (WebView) context.findViewById(R.id.webView);
 
         context.webView.getSettings().setJavaScriptEnabled(true);
-        //webView.getSettings().setJavaScriptEnabled(true);
 
         progressWheel.setVisibility(View.VISIBLE);
         context.webView.setVisibility(View.GONE);
@@ -69,7 +63,7 @@ public class NewsHandler {
                     //image fit screen
                     final String js;
                     js= "javascript:(function () { " +
-                            " var w = " + getWidth(context)/3 + ";" +
+                            " var w = " + getWidth(context) + ";" +
                             " for( var i = 0; i < document.images.length; i++ ) {" +
                             " var img = document.images[i]; " +
                             "   img.height = Math.round( img.height * ( w/img.width ) ); " +
@@ -107,14 +101,23 @@ public class NewsHandler {
         VolleySingleton.getInstance(context).addToRequestQueue(req);
     }
 
-    private static int getWidth(NewsView context) {
+    private static double getWidth(NewsView context) {
+        int width = 0;
         DisplayMetrics dm = new DisplayMetrics();
         context.getWindowManager().getDefaultDisplay().getMetrics(dm);
         Configuration config = context.getResources().getConfiguration();
         int vWidth = 0;
         if (config.orientation == Configuration.ORIENTATION_LANDSCAPE)
-            return dm.heightPixels;
+            width = dm.heightPixels;
         else
-            return dm.widthPixels;
+            width = dm.widthPixels;
+
+        int currentapiVersion = android.os.Build.VERSION.SDK_INT;
+        if (currentapiVersion >= android.os.Build.VERSION_CODES.LOLLIPOP){
+            return width/3;
+        } else{
+            return width*2/3;
+        }
+
     }
 }

@@ -38,7 +38,7 @@ public class NewsView extends AppCompatActivity {
     @Bind(R.id.main)
     NestedScrollView main;
 
-    //private Analytics ga;
+    private Analytics ga;
 
     private String newsName;
     private String newsUrl;
@@ -50,8 +50,8 @@ public class NewsView extends AppCompatActivity {
         setContentView(R.layout.activity_web);
         ButterKnife.bind(this);
 
-        //ga = new Analytics();
-        //ga.trackerPage(this);
+        ga = new Analytics();
+        ga.trackerPage(this);
 
         setSupportActionBar(toolbar);
         if (getSupportActionBar()!=null) {

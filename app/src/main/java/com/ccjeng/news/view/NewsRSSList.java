@@ -38,7 +38,7 @@ import de.keyboardsurfer.android.widget.crouton.Style;
 public class NewsRSSList extends AppCompatActivity {
 
     private static final String TAG = "NewsRSSList";
-    //private Analytics ga;
+    private Analytics ga;
 
     @Bind(R.id.toolbar)
     Toolbar toolbar;
@@ -63,8 +63,8 @@ public class NewsRSSList extends AppCompatActivity {
         setContentView(R.layout.activity_rsslist);
         ButterKnife.bind(this);
 
-        //ga = new Analytics();
-        //ga.trackerPage(this);
+        ga = new Analytics();
+        ga.trackerPage(this);
 
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
