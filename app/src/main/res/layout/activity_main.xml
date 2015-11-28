@@ -11,7 +11,8 @@
 
     <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/windowBackground">
 
         <android.support.design.widget.AppBarLayout
             android:layout_width="match_parent"
@@ -50,6 +51,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:theme="@style/NavigationDrawerStyle"
+        android:background="@color/windowBackground"
         app:itemIconTint="#333"
         app:itemTextColor="#333"
         app:headerLayout="@layout/nav_header"

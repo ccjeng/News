@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/windowBackground"
     tools:context="com.ccjeng.news.view.NewsCategory">
 
     <android.support.design.widget.AppBarLayout
@@ -21,10 +22,16 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+    <com.liuguangqiang.swipeback.SwipeBackLayout
+        android:id="@+id/swipeBackLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+    </com.liuguangqiang.swipeback.SwipeBackLayout>
 
 </android.support.design.widget.CoordinatorLayout>

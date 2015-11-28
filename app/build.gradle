@@ -20,6 +20,13 @@ android {
     }
     productFlavors {
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+
+
 }
 
 dependencies {
@@ -47,4 +54,5 @@ dependencies {
     compile 'org.jsoup:jsoup:1.8.3'
     compile project(':volley')
     compile files('src/main/libs/vpadn-sdk-obf432-91015102-1510191638-e55b2d4.jar')
+    compile 'com.github.liuguangqiang.swipeback:library:1.0.2@aar'
 }

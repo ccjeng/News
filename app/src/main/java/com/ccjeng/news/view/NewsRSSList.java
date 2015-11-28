@@ -22,6 +22,8 @@ import com.ccjeng.news.controler.rss.RSSService;
 import com.ccjeng.news.utils.Analytics;
 import com.ccjeng.news.utils.Category;
 import com.ccjeng.news.utils.Network;
+import com.liuguangqiang.swipeback.SwipeBackActivity;
+import com.liuguangqiang.swipeback.SwipeBackLayout;
 import com.mikepenz.community_material_typeface_library.CommunityMaterial;
 import com.mikepenz.iconics.IconicsDrawable;
 import com.mopub.mobileads.MoPubView;
@@ -35,7 +37,7 @@ import butterknife.ButterKnife;
 import de.keyboardsurfer.android.widget.crouton.Crouton;
 import de.keyboardsurfer.android.widget.crouton.Style;
 
-public class NewsRSSList extends AppCompatActivity {
+public class NewsRSSList extends SwipeBackActivity {
 
     private static final String TAG = "NewsRSSList";
     //private Analytics ga;
@@ -47,7 +49,7 @@ public class NewsRSSList extends AppCompatActivity {
     @Bind(R.id.progress_wheel)
     ProgressWheel progressWheel;
 
-    private MoPubView moPubView;
+    //private MoPubView moPubView;
 
     private int sourceNumber;
     private int itemNumber;
@@ -57,11 +59,11 @@ public class NewsRSSList extends AppCompatActivity {
     private String[] feedURL;
     private String rssFeedURL = null;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rsslist);
+        setDragEdge(SwipeBackLayout.DragEdge.LEFT);
         ButterKnife.bind(this);
 
         //ga = new Analytics();
@@ -99,19 +101,20 @@ public class NewsRSSList extends AppCompatActivity {
                     (ViewGroup) findViewById(R.id.croutonview)).show();
         }
 
-
+/*
         moPubView = (MoPubView) findViewById(R.id.adview);
         moPubView.setAdUnitId(News.AD_MoPub);
         moPubView.loadAd();
+        */
 
     }
 
 
     @Override
     protected void onDestroy() {
-        if (moPubView != null) {
-            moPubView.destroy();
-        }
+        //if (moPubView != null) {
+        //    moPubView.destroy();
+        //}
         super.onDestroy();
     }
 

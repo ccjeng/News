@@ -19,6 +19,8 @@ import com.ccjeng.news.R;
 import com.ccjeng.news.controler.web.NewsHandler;
 import com.ccjeng.news.utils.Analytics;
 import com.ccjeng.news.utils.Network;
+import com.liuguangqiang.swipeback.SwipeBackActivity;
+import com.liuguangqiang.swipeback.SwipeBackLayout;
 import com.mikepenz.community_material_typeface_library.CommunityMaterial;
 import com.mikepenz.iconics.IconicsDrawable;
 import com.pnikosis.materialishprogress.ProgressWheel;
@@ -28,7 +30,7 @@ import butterknife.ButterKnife;
 import de.keyboardsurfer.android.widget.crouton.Crouton;
 import de.keyboardsurfer.android.widget.crouton.Style;
 
-public class NewsView extends AppCompatActivity {
+public class NewsView extends SwipeBackActivity {
 
     @Bind(R.id.toolbar)
     Toolbar toolbar;
@@ -45,7 +47,7 @@ public class NewsView extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_web);
-
+        setDragEdge(SwipeBackLayout.DragEdge.LEFT);
         ButterKnife.bind(this);
 
         //ga = new Analytics();
