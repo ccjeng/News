@@ -18,14 +18,14 @@ public class Webpage {
 
         String htmlTagEnd = "</font></body>";
 
-        String fontSize = "<font size="+ News.getPrefFontSize() +">";
+        String fontSize = "<font size=+"+ News.getPrefFontSize() +">";
 
         String html = htmlTagStart + "<h2>" + title + "</h2>"
                 + "<div>" + time + "</div>";
 
         html = html + "<hr>";
 
-        html = html + fontSize + "<div><big>" + body + "</big></div></font>" + htmlTagEnd;
+        html = html + fontSize + body + "</font>" + htmlTagEnd;
 
         return html;
     }

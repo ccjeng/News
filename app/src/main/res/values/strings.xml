@@ -6,7 +6,7 @@
     <string name="setting">設定</string>
     <string name="about">關於</string>
 
-    <string name="license">關於</string>
+    <string name="license">本軟件提供各大華文網站新聞資訊服務，新聞圖片與新聞文字內容，其著作權與版權皆屬該新聞網站所有</string>
 
     <!-- Tab -->
     <string name="tab_tw">台灣</string>
@@ -27,6 +27,7 @@
     <string name="network_error">無法連線，請檢查裝置是否正常連網</string>
     <string name="data_error">網路錯誤，請檢查裝置是否正常連網</string>
     <string name="no_data">沒有資料</string>
+
 
 
 </resources>

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
     <string-array name="newsSourceTW">
-		<item>中央社即時新聞</item>
-    	<item>Yahoo奇摩新聞</item>
+		<item>中央社新聞</item>
+    	<item>奇摩新聞</item>
     	<item>聯合新聞網</item>
     	<item>蕃薯藤新聞</item>
     	<item>中時電子報</item>
     	<item>風傳媒</item>
     	<item>工商時報</item>
-    	<item>ETtoday新聞雲</item>
+    	<item>ETtoday</item>
     	<item>鉅亨網</item>
-     	<item>新頭殼NewTalk</item>
+     	<item>新頭殼</item>
      	<item>自由時報</item>
     	<item>蘋果日報</item>
    	</string-array>

@@ -22,15 +22,6 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <com.pnikosis.materialishprogress.ProgressWheel
-        android:id="@+id/progress_wheel"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_gravity="center_horizontal|center_vertical"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        wheel:matProg_barColor="@color/colorProgress"
-        wheel:matProg_progressIndeterminate="true" />
-
     <android.support.v4.widget.NestedScrollView
         android:id="@+id/main"
         android:layout_width="match_parent"
@@ -38,11 +29,29 @@
         android:background="@color/windowBackground"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <WebView
-            android:id="@+id/webView"
-            android:layout_width="fill_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+            <com.pnikosis.materialishprogress.ProgressWheel
+                android:id="@+id/progress_wheel"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_horizontal|center_vertical"
+                wheel:matProg_barColor="@color/colorProgress"
+                wheel:matProg_progressIndeterminate="true" />
+
+            <WebView
+                android:id="@+id/webView"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical" />
+
+        </RelativeLayout>
 
     </android.support.v4.widget.NestedScrollView>
+
 </android.support.design.widget.CoordinatorLayout>

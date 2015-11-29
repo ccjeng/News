@@ -3,8 +3,6 @@ package com.ccjeng.news.parser.tw;
 import android.util.Log;
 
 import com.ccjeng.news.parser.AbstractNews;
-import com.ccjeng.news.parser.INewsParser;
-import com.ccjeng.news.parser.Standard;
 import com.ccjeng.news.utils.Webpage;
 
 import org.jsoup.Jsoup;

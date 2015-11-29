@@ -14,7 +14,6 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.ccjeng.news.R;
 import com.ccjeng.news.parser.AbstractNews;
-import com.ccjeng.news.parser.INewsParser;
 import com.ccjeng.news.utils.Category;
 import com.ccjeng.news.view.NewsView;
 import com.pnikosis.materialishprogress.ProgressWheel;
@@ -39,19 +38,23 @@ public class NewsHandler {
         Log.d(TAG, "charset = " + charset);
         Log.d(TAG, "url = " + url);
 
-        final ProgressWheel progressWheel = (ProgressWheel) context.findViewById(R.id.progress_wheel);
+        //final ProgressWheel progressWheel = (ProgressWheel) context.findViewById(R.id.progress_wheel);
         //final WebView webView = (WebView) context.findViewById(R.id.webView);
 
         context.webView.getSettings().setJavaScriptEnabled(true);
+        //context.webView.getSettings().setSupportZoom(true);
+        //context.webView.getSettings().setBuiltInZoomControls(true);
+        //context.webView.getSettings().setCacheMode(2); //LOAD_NO_CACHE
+        context.webView.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
 
-        progressWheel.setVisibility(View.VISIBLE);
-        context.webView.setVisibility(View.GONE);
+        //context.progressWheel.setVisibility(View.VISIBLE);
+        //context.webView.setVisibility(View.GONE);
 
         VolleyStringRequest req = new VolleyStringRequest(url, charset, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
 
-                progressWheel.setVisibility(View.GONE);
+                context.progressWheel.setVisibility(View.GONE);
                 context.webView.setVisibility(View.VISIBLE);
 
                 Category cat = new Category(context);
@@ -63,6 +66,7 @@ public class NewsHandler {
 
                     if (parser.isEmptyContent()) {
                         //if parse result is empty, then show webview directly..
+
                         context.webView.loadUrl(url);
 
                         context.webView.setWebViewClient(new WebViewClient() {
@@ -70,14 +74,14 @@ public class NewsHandler {
                             @Override
                             public void onPageStarted(WebView view, String url, Bitmap favicon) {
                                 super.onPageStarted(view, url, favicon);
-                                progressWheel.setVisibility(View.VISIBLE);
+                                context.progressWheel.setVisibility(View.VISIBLE);
                                 context.webView.setVisibility(View.GONE);
                             }
 
                             @Override
                             public void onPageFinished(WebView view, String url) {
                                 super.onPageFinished(view, url);
-                                progressWheel.setVisibility(View.GONE);
+                                context.progressWheel.setVisibility(View.GONE);
                                 context.webView.setVisibility(View.VISIBLE);
                             }
                         });
@@ -86,10 +90,10 @@ public class NewsHandler {
                             @Override
                             public void onProgressChanged(WebView view, int newProgress) {
                                 super.onProgressChanged(view, newProgress);
-                                progressWheel.setProgress((float) newProgress / 100);
+                                context.progressWheel.setProgress((float) newProgress / 100);
 
                                 if (newProgress > 90) {
-                                    progressWheel.setVisibility(View.GONE);
+                                    context.progressWheel.setVisibility(View.GONE);
                                     context.webView.setVisibility(View.VISIBLE);
                                 }
                             }
@@ -155,7 +159,7 @@ public class NewsHandler {
         if (currentapiVersion >= android.os.Build.VERSION_CODES.LOLLIPOP){
             return width/3;
         } else{
-            return width*2/3;
+            return width*3/4;
         }
 
     }

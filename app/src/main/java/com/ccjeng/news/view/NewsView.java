@@ -22,6 +22,7 @@ import com.ccjeng.news.utils.Network;
 import com.ccjeng.news.utils.PreferenceSetting;
 import com.mikepenz.community_material_typeface_library.CommunityMaterial;
 import com.mikepenz.iconics.IconicsDrawable;
+import com.pnikosis.materialishprogress.ProgressWheel;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -36,6 +37,8 @@ public class NewsView extends AppCompatActivity {
     Toolbar toolbar;
     @Bind(R.id.webView)
     public WebView webView;
+    @Bind(R.id.progress_wheel)
+    public ProgressWheel progressWheel;
     @Bind(R.id.main)
     NestedScrollView main;
 
@@ -80,6 +83,9 @@ public class NewsView extends AppCompatActivity {
         main.setBackgroundColor(Color.parseColor(News.getPrefBGColor()));
 
         if (Network.isNetworkAvailable(this)) {
+
+            progressWheel.setVisibility(View.VISIBLE);
+            webView.setVisibility(View.GONE);
             NewsHandler.getNewsContent(this, newsUrl, tabName, sourceNumber);
 
         } else {

@@ -4,14 +4,11 @@ import android.content.Context;
 
 import com.ccjeng.news.R;
 import com.ccjeng.news.parser.AbstractNews;
-import com.ccjeng.news.parser.INewsParser;
-import com.ccjeng.news.parser.Standard;
 import com.ccjeng.news.parser.hk.AM730;
 import com.ccjeng.news.parser.hk.HKAppleDaily;
 import com.ccjeng.news.parser.hk.HKEJ;
 import com.ccjeng.news.parser.hk.HKHeadline;
 import com.ccjeng.news.parser.hk.HKYahoo;
-import com.ccjeng.news.parser.hk.MingPao;
 import com.ccjeng.news.parser.hk.OrientalDaily;
 import com.ccjeng.news.parser.hk.RTHK;
 import com.ccjeng.news.parser.hk.Sun;
