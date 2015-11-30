@@ -22,6 +22,16 @@
             android:key="bg_color"
             android:summary="@string/preference_content_bg_color_summary"
             android:title="@string/preference_content_bg_color" />
+        <CheckBoxPreference
+            android:key="smart_save"
+            android:title="@string/preference_content_smartsave"
+            android:summary="@string/preference_content_smartsave_summary"
+            android:defaultValue="false" />
     </PreferenceCategory>
+
+    <!--
+    <PreferenceCategory android:title="@string/preference_testing_group">
+    </PreferenceCategory>
+    -->
 
 </PreferenceScreen>

@@ -50,6 +50,13 @@ public class News extends Application {
         mPrefBGColor = s;
     }
 
+    private static Boolean mPrefSmartSave;
+    public static Boolean getPrefSmartSave(){
+        return mPrefSmartSave;
+    }
+    public static void setPretSmartSave(Boolean s){
+        mPrefSmartSave = s;
+    }
 
 
     // The following line should be changed to include the correct property id.

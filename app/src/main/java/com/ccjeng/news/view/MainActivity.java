@@ -1,5 +1,8 @@
 package com.ccjeng.news.view;
 
+import android.app.Dialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -13,6 +16,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -22,6 +26,7 @@ import com.ccjeng.news.News;
 import com.ccjeng.news.R;
 import com.ccjeng.news.utils.Analytics;
 import com.ccjeng.news.utils.PreferenceSetting;
+import com.ccjeng.news.utils.Version;
 import com.mikepenz.aboutlibraries.Libs;
 import com.mikepenz.aboutlibraries.LibsBuilder;
 import com.mikepenz.community_material_typeface_library.CommunityMaterial;
@@ -50,6 +55,9 @@ public class MainActivity extends AppCompatActivity {
     @Bind(R.id.drawerlayout)
     DrawerLayout drawerLayout;
 
+    private static final int DIALOG_WELCOME = 1;
+    private static final int DIALOG_UPDATE = 2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,6 +78,14 @@ public class MainActivity extends AppCompatActivity {
 
         navDrawer();
         PreferenceSetting.getPreference(this);
+
+        if (Version.isNewInstallation(this)) {
+            this.showDialog(DIALOG_WELCOME);
+        } else
+        if (Version.newVersionInstalled(this)) {
+            this.showDialog(DIALOG_UPDATE);
+        }
+
 
     }
 
@@ -158,5 +174,44 @@ public class MainActivity extends AppCompatActivity {
                 .sizeDp(24));
     }
 
+    protected final Dialog onCreateDialog(final int id) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        builder.setIcon(new IconicsDrawable(this)
+                .icon(CommunityMaterial.Icon.cmd_information)
+                .color(Color.GRAY)
+                .sizeDp(24));
+
+        builder.setCancelable(true);
+        builder.setPositiveButton(android.R.string.ok, null);
+
+        //final Context context = this;
+
+        switch (id) {
+            case DIALOG_WELCOME:
+                builder.setTitle(getResources().getString(R.string.welcome_title));
+                builder.setMessage(getResources().getString(R.string.welcome_message));
+                builder.setNeutralButton(getText(R.string.setting),
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(final DialogInterface d, final int which) {
+                                Intent i = new Intent(MainActivity.this, Preference.class);
+                                startActivity(i);
+                            }
+                        });
+                break;
+            case DIALOG_UPDATE:
+                builder.setTitle(getString(R.string.changelog_title));
+                final String[] changes = getResources().getStringArray(R.array.updates);
+                final StringBuilder buf = new StringBuilder();
+                for (int i = 0; i < changes.length; i++) {
+                    buf.append("\n\n");
+                    buf.append(changes[i]);
+                }
+                builder.setMessage(buf.toString().trim());
+                break;
+        }
+        return builder.create();
+    }
 
 }

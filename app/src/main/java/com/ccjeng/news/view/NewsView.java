@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
+import android.widget.RelativeLayout;
 
 import com.ccjeng.news.News;
 import com.ccjeng.news.R;
@@ -82,7 +83,7 @@ public class NewsView extends AppCompatActivity {
 
         main.setBackgroundColor(Color.parseColor(News.getPrefBGColor()));
 
-        if (Network.isNetworkAvailable(this)) {
+        if (Network.isNetworkConnected(this)) {
 
             progressWheel.setVisibility(View.VISIBLE);
             webView.setVisibility(View.GONE);
@@ -90,9 +91,8 @@ public class NewsView extends AppCompatActivity {
 
         } else {
             Crouton.makeText(NewsView.this, R.string.network_error, Style.ALERT,
-                    (ViewGroup) findViewById(R.id.main)).show();
+                    (ViewGroup) findViewById(R.id.croutonview)).show();
         }
-
 
     }
 

@@ -12,6 +12,7 @@ import android.webkit.WebViewClient;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.ccjeng.news.News;
 import com.ccjeng.news.R;
 import com.ccjeng.news.parser.AbstractNews;
 import com.ccjeng.news.utils.Category;
@@ -35,9 +36,10 @@ public class NewsHandler {
         final String mimeType = "text/html";
         final String charset = Category.getEncoding(tab, position);//"utf-8";
 
-        Log.d(TAG, "charset = " + charset);
-        Log.d(TAG, "url = " + url);
-
+        if (News.APPDEBUG) {
+            Log.d(TAG, "charset = " + charset);
+            Log.d(TAG, "url = " + url);
+        }
         //final ProgressWheel progressWheel = (ProgressWheel) context.findViewById(R.id.progress_wheel);
         //final WebView webView = (WebView) context.findViewById(R.id.webView);
 
@@ -137,7 +139,7 @@ public class NewsHandler {
                 Log.d(TAG, error.getMessage());
 
                 Crouton.makeText(context, R.string.data_error, Style.ALERT,
-                        (ViewGroup) context.findViewById(R.id.main)).show();
+                        (ViewGroup) context.findViewById(R.id.croutonview)).show();
             }
         });
 

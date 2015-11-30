@@ -12,7 +12,7 @@ public class Network {
 
     private static ConnectivityManager connMgr;
 
-    public static boolean isNetworkAvailable(Context context){
+    public static boolean isNetworkConnected(Context context){
         if(null == connMgr){
             connMgr = (ConnectivityManager)context.getSystemService(Context.CONNECTIVITY_SERVICE);
         }
@@ -26,4 +26,16 @@ public class Network {
         }
 
     }
+
+    public static boolean isWifiAvailable(Context context) {
+        if(null == connMgr) {
+            connMgr = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        }
+
+        if (connMgr.getActiveNetworkInfo().isAvailable())
+            return true;
+        else
+            return false;
+    }
+
 }

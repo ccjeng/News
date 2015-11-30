@@ -2,6 +2,7 @@ package com.ccjeng.news.parser.tw;
 
 import android.util.Log;
 
+import com.ccjeng.news.News;
 import com.ccjeng.news.parser.AbstractNews;
 import com.ccjeng.news.utils.Webpage;
 
@@ -37,10 +38,16 @@ public class AppleDaily extends AbstractNews {
             e.printStackTrace();
         }
 
-        Log.d(TAG, "title = " + title);
-        Log.d(TAG, "time = " + time);
-        Log.d(TAG, "body = " + cleaner(body));
+        if (News.APPDEBUG) {
+            Log.d(TAG, "title = " + title);
+            Log.d(TAG, "time = " + time);
+            Log.d(TAG, "body = " + body);
+        }
+        String b = cleaner(body);
 
+        if (News.APPDEBUG) {
+            Log.d(TAG, "html=" + b);
+        }
         return Webpage.htmlDrawer(title, time, cleaner(body));
 
     }

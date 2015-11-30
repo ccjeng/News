@@ -73,7 +73,7 @@ public class NewsWeb extends AppCompatActivity {
 
         getPrefs();
 
-        if (Network.isNetworkAvailable(this)) {
+        if (Network.isNetworkConnected(this)) {
             webView.loadUrl(newsUrl, null);
             //webView.getSettings().setJavaScriptEnabled(true);
             //webView.getSettings().setBuiltInZoomControls(true);

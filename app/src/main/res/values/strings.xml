@@ -6,7 +6,7 @@
     <string name="setting">設定</string>
     <string name="about">關於</string>
 
-    <string name="license">本軟件提供各大華文網站新聞資訊服務，新聞圖片與新聞文字內容，其著作權與版權皆屬該新聞網站所有</string>
+    <string name="license">本軟件提供各大網站新聞資訊服務，新聞圖片與新聞文字內容，其著作權與版權皆屬該新聞網站所有</string>
 
     <!-- Tab -->
     <string name="tab_tw">台灣</string>
@@ -22,12 +22,20 @@
     <string name="preference_content_font_color_summary">設定新聞內文的文字顏色</string>
     <string name="preference_content_bg_color">設定背景顏色</string>
     <string name="preference_content_bg_color_summary">設定新聞內文的背景顏色</string>
+    <string name="preference_content_smartsave">開啟智能節費模式</string>
+    <string name="preference_content_smartsave_summary">根據連線類型(wifi/行動網路)自動啟動/關閉圖片下載功能</string>
+    <string name="preference_testing_group">實驗功能</string>
 
     <!-- Error -->
     <string name="network_error">無法連線，請檢查裝置是否正常連網</string>
     <string name="data_error">網路錯誤，請檢查裝置是否正常連網</string>
     <string name="no_data">沒有資料</string>
 
-
+    <!-- Welcome -->
+    <string name="changelog_title">更新記錄</string>
+    <string name="welcome_title">歡迎</string>
+    <string name="welcome_message">歡迎使用樹懶新聞，超好用的新聞閱讀器\n\n建議使用wifi，以獲得最佳瀏覽速度。
+    \n\n請按下方的設定按鈕，自訂最佳的瀏覽狀態。
+    </string>
 
 </resources>

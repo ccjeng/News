@@ -25,6 +25,12 @@ public class Webpage {
 
         html = html + "<hr>";
 
+
+        if (News.getPrefSmartSave()) {
+            Log.d(TAG, "enable smart save");
+            String smartSaveTag = "<small><small>[這是圖片，已啟用智能節費，停止圖片下載]</small></small></br></br>";
+            body = body.replace("<img src", smartSaveTag + "<imgsrc");
+        }
         html = html + fontSize + body + "</font>" + htmlTagEnd;
 
         return html;

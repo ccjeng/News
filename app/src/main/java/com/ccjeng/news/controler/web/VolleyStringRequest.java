@@ -6,6 +6,7 @@ import com.android.volley.NetworkResponse;
 import com.android.volley.Response;
 import com.android.volley.toolbox.HttpHeaderParser;
 import com.android.volley.toolbox.StringRequest;
+import com.ccjeng.news.News;
 import com.ccjeng.news.utils.Category;
 
 import java.io.UnsupportedEncodingException;
@@ -31,9 +32,11 @@ public class VolleyStringRequest extends StringRequest {
         String str = null;
         try {
 
-            Log.d(TAG, "content-type=" + response.headers.get("content - type"));
-            Log.d(TAG, "header=" + HttpHeaderParser.parseCharset(response.headers));
-            Log.d(TAG, "charset=" + charset);
+            if (News.APPDEBUG) {
+                Log.d(TAG, "content-type=" + response.headers.get("content - type"));
+                Log.d(TAG, "header=" + HttpHeaderParser.parseCharset(response.headers));
+                Log.d(TAG, "charset=" + charset);
+            }
 
             if(charset != null) {
                 str = new String(response.data, charset);

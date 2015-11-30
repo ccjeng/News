@@ -91,7 +91,7 @@ public class NewsRSSList extends AppCompatActivity {
         getSupportActionBar().setTitle(categoryName);
         getSupportActionBar().setSubtitle(newsName);
 
-        if (Network.isNetworkAvailable(this)) {
+        if (Network.isNetworkConnected(this)) {
             showResult(tabName, sourceNumber);
         } else {
             Crouton.makeText(NewsRSSList.this, R.string.network_error, Style.ALERT,
