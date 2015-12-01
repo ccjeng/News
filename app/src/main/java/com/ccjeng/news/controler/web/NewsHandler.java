@@ -40,17 +40,12 @@ public class NewsHandler {
             Log.d(TAG, "charset = " + charset);
             Log.d(TAG, "url = " + url);
         }
-        //final ProgressWheel progressWheel = (ProgressWheel) context.findViewById(R.id.progress_wheel);
-        //final WebView webView = (WebView) context.findViewById(R.id.webView);
 
         context.webView.getSettings().setJavaScriptEnabled(true);
         //context.webView.getSettings().setSupportZoom(true);
         //context.webView.getSettings().setBuiltInZoomControls(true);
         //context.webView.getSettings().setCacheMode(2); //LOAD_NO_CACHE
         context.webView.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
-
-        //context.progressWheel.setVisibility(View.VISIBLE);
-        //context.webView.setVisibility(View.GONE);
 
         VolleyStringRequest req = new VolleyStringRequest(url, charset, new Response.Listener<String>() {
             @Override
@@ -68,6 +63,9 @@ public class NewsHandler {
 
                     if (parser.isEmptyContent()) {
                         //if parse result is empty, then show webview directly..
+
+                        Crouton.makeText(context, R.string.parsing_error_transfer, Style.INFO,
+                                (ViewGroup) context.findViewById(R.id.croutonview)).show();
 
                         context.webView.loadUrl(url);
 

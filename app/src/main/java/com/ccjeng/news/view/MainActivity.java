@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
         toolbar.setNavigationIcon(new IconicsDrawable(this)
                 .icon(CommunityMaterial.Icon.cmd_menu)
                 .color(Color.WHITE)
-                .actionBarSize());
+                .actionBar());
 
         pager.setAdapter(new ViewPagerAdapter(getSupportFragmentManager()));
         tabs.setupWithViewPager(pager);

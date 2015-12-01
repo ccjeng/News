@@ -73,7 +73,7 @@ public class NewsRSSList extends AppCompatActivity {
         toolbar.setNavigationIcon(new IconicsDrawable(this)
                 .icon(CommunityMaterial.Icon.cmd_keyboard_backspace)
                 .color(Color.WHITE)
-                .actionBarSize());
+                .actionBar());
 
         LinearLayoutManager llm = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(llm);

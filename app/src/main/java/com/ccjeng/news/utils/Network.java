@@ -31,11 +31,18 @@ public class Network {
         if(null == connMgr) {
             connMgr = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         }
+        NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
 
-        if (connMgr.getActiveNetworkInfo().isAvailable())
-            return true;
-        else
+        if (networkInfo.getTypeName().equalsIgnoreCase("WIFI")) {
+            if (networkInfo.isConnected()) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
             return false;
+        }
+
     }
 
 }

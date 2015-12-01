@@ -80,7 +80,7 @@ public class Version {
         } else if (o instanceof Boolean) {
             editor.putBoolean(constant, (Boolean) o);
         }
-        editor.commit();
+        editor.apply();
     }
 
 

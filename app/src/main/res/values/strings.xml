@@ -30,6 +30,7 @@
     <string name="network_error">無法連線，請檢查裝置是否正常連網</string>
     <string name="data_error">網路錯誤，請檢查裝置是否正常連網</string>
     <string name="no_data">沒有資料</string>
+    <string name="parsing_error_transfer">新聞內容解析異常，即將載入原始新聞網頁</string>
 
     <!-- Welcome -->
     <string name="changelog_title">更新記錄</string>

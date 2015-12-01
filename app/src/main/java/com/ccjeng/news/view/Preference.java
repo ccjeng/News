@@ -36,7 +36,7 @@ public class Preference extends PreferenceActivity {
         mActionBar.setNavigationIcon(new IconicsDrawable(this)
                 .icon(CommunityMaterial.Icon.cmd_keyboard_backspace)
                 .color(Color.WHITE)
-                .actionBarSize());
+                .actionBar());
 
         mActionBar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override

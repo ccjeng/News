@@ -65,7 +65,7 @@ public class NewsView extends AppCompatActivity {
         toolbar.setNavigationIcon(new IconicsDrawable(this)
                 .icon(CommunityMaterial.Icon.cmd_keyboard_backspace)
                 .color(Color.WHITE)
-                .actionBarSize());
+                .actionBar());
 
         PreferenceSetting.getPreference(this);
 
@@ -111,7 +111,7 @@ public class NewsView extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_web, menu);
 
         MenuItem menuItem1 = menu.findItem(R.id.action_browser);
-        menuItem1.setIcon(new IconicsDrawable(this, CommunityMaterial.Icon.cmd_web).actionBarSize().color(Color.WHITE));
+        menuItem1.setIcon(new IconicsDrawable(this, CommunityMaterial.Icon.cmd_web).actionBar().color(Color.WHITE));
 
         return true;
     }
