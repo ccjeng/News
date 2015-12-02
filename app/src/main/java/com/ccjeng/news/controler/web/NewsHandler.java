@@ -52,7 +52,7 @@ public class NewsHandler {
             public void onResponse(String response) {
 
                 context.progressWheel.setVisibility(View.GONE);
-                context.webView.setVisibility(View.VISIBLE);
+                context.main.setVisibility(View.VISIBLE);
 
                 Category cat = new Category(context);
                 AbstractNews parser = cat.getNewsParser(tab, position);
@@ -75,14 +75,14 @@ public class NewsHandler {
                             public void onPageStarted(WebView view, String url, Bitmap favicon) {
                                 super.onPageStarted(view, url, favicon);
                                 context.progressWheel.setVisibility(View.VISIBLE);
-                                context.webView.setVisibility(View.GONE);
+                                context.main.setVisibility(View.GONE);
                             }
 
                             @Override
                             public void onPageFinished(WebView view, String url) {
                                 super.onPageFinished(view, url);
                                 context.progressWheel.setVisibility(View.GONE);
-                                context.webView.setVisibility(View.VISIBLE);
+                                context.main.setVisibility(View.VISIBLE);
                             }
                         });
                         context.webView.setWebChromeClient(new WebChromeClient() {
@@ -94,7 +94,7 @@ public class NewsHandler {
 
                                 if (newProgress > 90) {
                                     context.progressWheel.setVisibility(View.GONE);
-                                    context.webView.setVisibility(View.VISIBLE);
+                                    context.main.setVisibility(View.VISIBLE);
                                 }
                             }
                         });

@@ -41,7 +41,7 @@ public class NewsView extends AppCompatActivity {
     @Bind(R.id.progress_wheel)
     public ProgressWheel progressWheel;
     @Bind(R.id.main)
-    NestedScrollView main;
+    public NestedScrollView main;
 
     private Analytics ga;
 
@@ -86,7 +86,7 @@ public class NewsView extends AppCompatActivity {
         if (Network.isNetworkConnected(this)) {
 
             progressWheel.setVisibility(View.VISIBLE);
-            webView.setVisibility(View.GONE);
+            main.setVisibility(View.GONE);
             NewsHandler.getNewsContent(this, newsUrl, tabName, sourceNumber);
 
         } else {

@@ -42,7 +42,7 @@ class MoPubVpadnBanner extends CustomEventBanner {
         mBannerListener = customEventBannerListener;
         String adUnitId = null;
 
-        //adUnitId = AD_UNIT_ID_KEY;
+        adUnitId = AD_UNIT_ID_KEY;
 
         if (serverExtras.containsKey(AD_UNIT_ID_KEY)) {
             adUnitId = serverExtras.get(AD_UNIT_ID_KEY);

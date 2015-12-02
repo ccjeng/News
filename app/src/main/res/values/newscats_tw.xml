@@ -387,22 +387,26 @@
     	<item>http://news.cnyes.com/RSS/metal</item>   	
     </string-array>  
     <string-array name="newscatsNewsTalk">
-    	<item>要聞</item>
-    	<item>國際</item>
-    	<item>政治</item>
-    	<item>經濟</item>
-    	<item>司法</item>
-    	<item>生活</item>
-    	<item>科技</item>
+    	<item>全部</item>
+		<item>政治經濟</item>
+    	<item>國際中國</item>
+    	<item>生活科技</item>
+    	<item>司法人權</item>
+    	<item>藝文媒體</item>
+    	<item>評論</item>
+		<item>開講無疆界</item>
+		<item>公民連線</item>
     </string-array>
     <string-array name="newsfeedsNewsTalk">
     	<item>http://newtalk.tw/rss/all</item>
+		<item>http://newtalk.tw/rss/category/1</item>
     	<item>http://newtalk.tw/rss/category/2</item>
-    	<item>http://newtalk.tw/rss/category/1</item>
     	<item>http://newtalk.tw/rss/category/3</item>
     	<item>http://newtalk.tw/rss/category/4</item>
     	<item>http://newtalk.tw/rss/category/5</item>
-    	<item>http://newtalk.tw/rss/category/8</item>
+    	<item>http://newtalk.tw/rss/opinion_news</item>
+		<item>http://newtalk.tw/rss/opinion_uservoice</item>
+		<item>http://newtalk.tw/rss/citizen</item>
     </string-array>
     <string-array name="newscatsLibertyTimes">
     	<item>焦點新聞</item>
