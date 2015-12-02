@@ -26,7 +26,7 @@ public class News extends Application {
 
     /* Global Variables
     * */
-    private static String mPrefFontSize;
+    private static String mPrefFontSize = "";
     public static String getPrefFontSize(){
         return mPrefFontSize;
     }
@@ -34,7 +34,7 @@ public class News extends Application {
         mPrefFontSize = s;
     }
 
-    private static String mPrefFontColor;
+    private static String mPrefFontColor = "";
     public static String getPrefFontColor(){
         return mPrefFontColor;
     }
@@ -42,7 +42,7 @@ public class News extends Application {
         mPrefFontColor = s;
     }
 
-    private static String mPrefBGColor;
+    private static String mPrefBGColor = "";
     public static String getPrefBGColor(){
         return mPrefBGColor;
     }
@@ -50,7 +50,7 @@ public class News extends Application {
         mPrefBGColor = s;
     }
 
-    private static Boolean mPrefSmartSave;
+    private static Boolean mPrefSmartSave = false;
     public static Boolean getPrefSmartSave(){
         return mPrefSmartSave;
     }

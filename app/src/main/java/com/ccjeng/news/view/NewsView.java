@@ -21,6 +21,7 @@ import com.ccjeng.news.controler.web.NewsHandler;
 import com.ccjeng.news.utils.Analytics;
 import com.ccjeng.news.utils.Network;
 import com.ccjeng.news.utils.PreferenceSetting;
+import com.google.android.gms.analytics.GoogleAnalytics;
 import com.mikepenz.community_material_typeface_library.CommunityMaterial;
 import com.mikepenz.iconics.IconicsDrawable;
 import com.pnikosis.materialishprogress.ProgressWheel;
@@ -94,6 +95,18 @@ public class NewsView extends AppCompatActivity {
                     (ViewGroup) findViewById(R.id.croutonview)).show();
         }
 
+    }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        PreferenceSetting.getPreference(this);
+        GoogleAnalytics.getInstance(this).reportActivityStart(this);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        GoogleAnalytics.getInstance(this).reportActivityStop(this);
     }
 
     @Override
