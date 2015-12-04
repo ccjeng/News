@@ -38,6 +38,10 @@
         <activity android:name=".view.NewsView" >
         </activity>
 
+        <service android:name="com.google.android.gms.analytics.AnalyticsService"
+             android:enabled="true"
+             android:exported="false"/>    
+
         <!-- Vpon -->
         <activity
             android:name="com.vpadn.widget.VpadnActivity"
