@@ -30,7 +30,7 @@ public class OrientalDaily extends AbstractNews {
         try {
             title = doc.select("div#leadin > h1").text();
             time = "";
-            body = doc.select("div#leadin > div.leadin").html();
+            body = doc.select("div#leadin > div.leadin").html() + doc.select("div#contentCTN > div#contentCTN-right").html();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -59,10 +59,16 @@ public class OrientalDaily extends AbstractNews {
 
     protected String cleaner(String rs) {
 
+        rs = rs.replace("src=\"/cnt", "src=\"http://orientaldaily.on.cc/cnt");
+        rs = rs.replace("<h3>","<p><b>");
+        rs = rs.replace("</h3>","</b></p>");
+        rs = rs.replace("<!--AD-->","<!--");
+        rs = rs.replace("<div id=\"articleNav\">","<!--");
+
         Whitelist wlist = new Whitelist();
 
-        wlist.addTags("p");
-        wlist.addTags("table","tbody","tr","td");
+        wlist.addTags("p","b");
+        //wlist.addTags("table","tbody","tr","td");
         wlist.addTags("img").addAttributes("img", "src");
 
         return Jsoup.clean(rs, wlist);

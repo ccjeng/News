@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="updates">
-    	<item>v1.0.0\n
-    	    -第一版釋出
+    	<item>v1.0.1\n
+    	    -修正東方日報新聞內文
     	</item>
 	</string-array>
 </resources>

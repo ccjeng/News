@@ -31,13 +31,15 @@ public class HKHeadline extends AbstractNews {
             if (link.contains("ent")) {
                 title = doc.select("td.bodytext > b").text();
                 time = doc.select("td.bodytext > font").text();
-                body = doc.select("div.hkadj").html(); //todo + "<p>" + doc.select("img.imgtop").html();
+                body = doc.select("div.hkadj").html();  //todo + "<p>" + doc.select("img.imgtop").html();
 
             } else {
                 title = doc.select("div.headlinetitle").text();
                 time = doc.select("span.newsheadlinetime").text();
                 body = doc.select("div.bodytext_v1").html() + "<p>" + doc.select("td.news_line02").html();
             }
+
+
         } catch (Exception e) {
             e.printStackTrace();
         }

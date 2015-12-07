@@ -234,15 +234,14 @@
     <string-array name="newscatsHKheadline">
         <!-- <item>即時新聞</item>-->
         <!-- 	<item>日報新聞-全部</item> -->
-        <item>日報新聞-港聞</item>
-        <item>日報新聞-中國</item>
-        <item>日報新聞-國際</item>
-        <item>日報新聞-地產</item>
-        <item>日報新聞-體育</item>
-        <item>日報新聞-副刊</item>
-        <item>日報新聞-娛樂 最新本地</item>
-        <item>日報新聞-娛樂 最新外娛</item>
-        <!-- <item>日報新聞-旅遊</item> -->
+        <item>港聞</item>
+        <item>中國</item>
+        <item>國際</item>
+        <item>地產</item>
+        <item>體育</item>
+        <item>副刊</item>
+        <item>娛樂 最新本地</item>
+        <item>娛樂 最新外娛</item>
     </string-array>
     <string-array name="newsfeedsHKheadline">
         <!-- <item>http://news.hkheadline.com/instantnews/xml/instant_news_xml.xml</item>-->
@@ -255,6 +254,6 @@
         <item>http://www.feed43.com/2016532758715585.xml</item>
         <item>http://www.feed43.com/1074704207872608.xml</item>
         <item>http://www.feed43.com/7074545008260156.xml</item>
-        <!--<item>http://www.feed43.com/0455766384530424.xml</item> -->
     </string-array>
+
 </resources>

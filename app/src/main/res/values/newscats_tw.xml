@@ -434,4 +434,14 @@
     	<item>http://news.ltn.com.tw/rss/local.xml</item>
     	<item>http://news.ltn.com.tw/rss/supplement.xml</item>
     </string-array>
+	<string-array name="newsCatsTheNewsLens">
+		<item>新聞</item>
+		<item>評論</item>
+		<item>香港</item>
+	</string-array>
+	<string-array name="newsFeedsTheNewsLens">
+		<item>http://feeds.feedburner.com/thenewslens/news</item>
+		<item>http://feeds.feedburner.com/thenewslens/review</item>
+		<item>http://feeds.feedburner.com/thenewslens/hk</item>
+	</string-array>
 </resources>

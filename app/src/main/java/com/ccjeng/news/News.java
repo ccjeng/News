@@ -13,11 +13,11 @@ import java.util.HashMap;
  */
 public class News extends Application {
 
-    public static final boolean APPDEBUG = true;
+    public static final boolean APPDEBUG = false;
 
     public static final String AD_MoPub = "edc19146642e4017ae2b53cb17546691";
     public static final String AD_Vpon  = "8a80818250d608d50151484e4c0a6a89";
-
+    public static final String AD_FBBanner = "1191229907573061_1192764994086219";
 
     @Override
     public void onCreate() {

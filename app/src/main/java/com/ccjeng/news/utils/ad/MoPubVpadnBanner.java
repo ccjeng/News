@@ -1,4 +1,4 @@
-package com.ccjeng.news.utils;
+package com.ccjeng.news.utils.ad;
 
 /**
  * Created by andycheng on 2015/11/27.

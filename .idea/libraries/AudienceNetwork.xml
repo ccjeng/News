@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="AudienceNetwork">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/app/src/main/libs/AudienceNetwork.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

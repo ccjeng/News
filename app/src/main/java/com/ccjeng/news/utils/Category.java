@@ -20,6 +20,7 @@ import com.ccjeng.news.parser.tw.ETToday;
 import com.ccjeng.news.parser.tw.LibertyTimes;
 import com.ccjeng.news.parser.tw.NewTalk;
 import com.ccjeng.news.parser.tw.Storm;
+import com.ccjeng.news.parser.tw.TheNewsLens;
 import com.ccjeng.news.parser.tw.UDN;
 import com.ccjeng.news.parser.tw.Yahoo;
 import com.ccjeng.news.parser.tw.YamNews;
@@ -75,6 +76,9 @@ public class Category {
                     break;
                 case 11:
                     category = context.getResources().getStringArray(R.array.newscatsAppDaily);
+                    break;
+                case 12:
+                    category = context.getResources().getStringArray(R.array.newsCatsTheNewsLens);
                     break;
             }
         } else if (tab.equals("HK")) {
@@ -149,6 +153,9 @@ public class Category {
                     break;
                 case 11:
                     feedURL = context.getResources().getStringArray(R.array.newsfeedsAppDaily);
+                    break;
+                case 12:
+                    feedURL = context.getResources().getStringArray(R.array.newsFeedsTheNewsLens);
                     break;
             }
         } else if (tab.equals("HK")) {
@@ -225,6 +232,9 @@ public class Category {
                 case 11:
                     parser = new AppleDaily();
                     break;
+                case 12:
+                    parser = new TheNewsLens();
+                    break;
             }
         } else if (tab.equals("HK")) {
             switch (position) {
@@ -274,7 +284,9 @@ public class Category {
                 case 7:
                 case 8:
                 case 9:
-                case 10://Apple Daily
+                case 10:
+                case 11://Apple Daily
+                case 12:
                     encoding = "utf-8";
                     break;
             }

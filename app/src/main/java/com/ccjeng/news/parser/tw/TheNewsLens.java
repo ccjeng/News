@@ -1,4 +1,4 @@
-package com.ccjeng.news.parser.hk;
+package com.ccjeng.news.parser.tw;
 
 import android.util.Log;
 
@@ -13,10 +13,11 @@ import org.jsoup.safety.Whitelist;
 import java.io.IOException;
 
 /**
- * Created by andycheng on 2015/11/25.
+ * Created by andycheng on 2015/12/7.
  */
-public class AM730 extends AbstractNews {
-    private static final String TAG = "AM730";
+public class TheNewsLens extends AbstractNews {
+
+    private static final String TAG = "TheNewsLens";
     private String body = "";
 
     @Override
@@ -28,19 +29,18 @@ public class AM730 extends AbstractNews {
         String time = "";
 
         try {
-            //// TODO: 2015/12/1 title & time
-            title = doc.select("title").text();
-            time = doc.select("div#date").text();
-            body = doc.select("div#article_content").html() + doc.select("ul.slides").html();
+            title = doc.select("h1").get(0).text();
+            time = doc.select("h5").get(0).text();
+            body = doc.select("div#pcontent").html();
         } catch (Exception e) {
             e.printStackTrace();
         }
+
         if (News.APPDEBUG) {
             Log.d(TAG, "title = " + title);
             Log.d(TAG, "time = " + time);
             Log.d(TAG, "body = " + body);
         }
-
         String b = cleaner(body);
         if (News.APPDEBUG) {
             Log.d(TAG, "html=" + b);
@@ -59,16 +59,15 @@ public class AM730 extends AbstractNews {
 
     protected String cleaner(String rs) {
 
-        rs = rs.replace("<img src=\"images/am730_article_logo.jpg\">","");
-        rs = rs.replace("<img src=\"uploads","<img src=\"http://www.am730.com.hk/uploads");
-
         Whitelist wlist = new Whitelist();
 
-        wlist.addTags("p","br","strong");
-        //wlist.addTags("table","tbody","tr","td");
+        wlist.addTags("p","ul","li","div");
+        wlist.addTags("table","tbody","tr","td");
         wlist.addTags("img").addAttributes("img", "src");
 
         return Jsoup.clean(rs, wlist);
 
+
     }
+
 }
