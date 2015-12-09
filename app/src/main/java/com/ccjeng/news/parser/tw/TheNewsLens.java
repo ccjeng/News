@@ -59,6 +59,9 @@ public class TheNewsLens extends AbstractNews {
 
     protected String cleaner(String rs) {
 
+        rs = rs.replace("src=","xxx=");
+        rs = rs.replace("src-og=","src=");
+
         Whitelist wlist = new Whitelist();
 
         wlist.addTags("p","ul","li","div");
