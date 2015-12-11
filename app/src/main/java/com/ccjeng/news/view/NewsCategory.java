@@ -17,6 +17,8 @@ import com.ccjeng.news.adapter.RecyclerItemClickListener;
 import com.ccjeng.news.utils.Analytics;
 import com.ccjeng.news.utils.Category;
 import com.google.android.gms.analytics.GoogleAnalytics;
+import com.hannesdorfmann.swipeback.Position;
+import com.hannesdorfmann.swipeback.SwipeBack;
 import com.mikepenz.community_material_typeface_library.CommunityMaterial;
 import com.mikepenz.iconics.IconicsDrawable;
 
@@ -41,7 +43,14 @@ public class NewsCategory extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_category);
+        //setContentView(R.layout.activity_category);
+
+        // Init the swipe back
+        SwipeBack.attach(this, Position.LEFT)
+                .setContentView(R.layout.activity_category)
+                .setSwipeBackView(R.layout.swipeback)
+                .setSwipeBackContainerBackgroundColor(Color.WHITE);
+
         ButterKnife.bind(this);
 
         ga = new Analytics();
@@ -82,6 +91,13 @@ public class NewsCategory extends AppCompatActivity {
     public void onStop() {
         super.onStop();
         GoogleAnalytics.getInstance(this).reportActivityStop(this);
+    }
+
+    @Override
+    public void onBackPressed(){
+        super.onBackPressed();
+        overridePendingTransition(R.anim.swipeback_stack_to_front,
+                R.anim.swipeback_stack_right_out);
     }
 
     @Override

@@ -22,6 +22,8 @@ import com.ccjeng.news.utils.Analytics;
 import com.ccjeng.news.utils.Network;
 import com.ccjeng.news.utils.PreferenceSetting;
 import com.google.android.gms.analytics.GoogleAnalytics;
+import com.hannesdorfmann.swipeback.Position;
+import com.hannesdorfmann.swipeback.SwipeBack;
 import com.mikepenz.community_material_typeface_library.CommunityMaterial;
 import com.mikepenz.iconics.IconicsDrawable;
 import com.pnikosis.materialishprogress.ProgressWheel;
@@ -53,7 +55,14 @@ public class NewsView extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_web);
+        //setContentView(R.layout.activity_web);
+
+        // Init the swipe back
+        SwipeBack.attach(this, Position.LEFT)
+                .setContentView(R.layout.activity_web)
+                .setSwipeBackView(R.layout.swipeback)
+                .setSwipeBackContainerBackgroundColor(Color.WHITE);
+
         ButterKnife.bind(this);
 
         ga = new Analytics();
@@ -117,6 +126,13 @@ public class NewsView extends AppCompatActivity {
             webView.removeAllViews();
             webView.destroy();
         }
+    }
+
+    @Override
+    public void onBackPressed(){
+        super.onBackPressed();
+        overridePendingTransition(R.anim.swipeback_stack_to_front,
+                R.anim.swipeback_stack_right_out);
     }
 
     @Override
