@@ -48,5 +48,4 @@ dependencies {
     compile files('src/main/libs/vpadn-sdk-obf432-91015102-1510191638-e55b2d4.jar')
     compile files('src/main/libs/AudienceNetwork.jar')
     compile 'com.hannesdorfmann:swipeback:1.0.2'
-
 }

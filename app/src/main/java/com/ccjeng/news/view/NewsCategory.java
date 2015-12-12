@@ -49,7 +49,7 @@ public class NewsCategory extends AppCompatActivity {
         SwipeBack.attach(this, Position.LEFT)
                 .setContentView(R.layout.activity_category)
                 .setSwipeBackView(R.layout.swipeback)
-                .setSwipeBackContainerBackgroundColor(Color.WHITE);
+                .setSwipeBackContainerBackgroundColor(Color.TRANSPARENT);
 
         ButterKnife.bind(this);
 

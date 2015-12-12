@@ -7,13 +7,11 @@ import android.os.Bundle;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
-import android.widget.RelativeLayout;
 
 import com.ccjeng.news.News;
 import com.ccjeng.news.R;
@@ -61,7 +59,7 @@ public class NewsView extends AppCompatActivity {
         SwipeBack.attach(this, Position.LEFT)
                 .setContentView(R.layout.activity_web)
                 .setSwipeBackView(R.layout.swipeback)
-                .setSwipeBackContainerBackgroundColor(Color.WHITE);
+                .setSwipeBackContainerBackgroundColor(Color.TRANSPARENT);
 
         ButterKnife.bind(this);
 
@@ -174,7 +172,6 @@ public class NewsView extends AppCompatActivity {
     }
 
     private void menuShare() {
-
         final Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setType("text/plain");
         intent.putExtra(Intent.EXTRA_SUBJECT, "");

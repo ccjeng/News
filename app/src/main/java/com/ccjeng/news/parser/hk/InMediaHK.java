@@ -13,10 +13,10 @@ import org.jsoup.safety.Whitelist;
 import java.io.IOException;
 
 /**
- * Created by andycheng on 2015/11/24.
+ * Created by andycheng on 2015/12/12.
  */
-public class HKHeadline extends AbstractNews {
-    private static final String TAG = "HKHeadline";
+public class InMediaHK extends AbstractNews {
+    private static final String TAG = "InMediaHK";
     private String body = "";
 
     @Override
@@ -28,17 +28,10 @@ public class HKHeadline extends AbstractNews {
         String time = "";
 
         try {
-            if (link.contains("ent")) {
-                title = doc.select("td.bodytext > b").text();
-                time = doc.select("td.bodytext > font").text();
-                body = doc.select("div.hkadj").html();  //todo + "<p>" + doc.select("img.imgtop").html();
-
-            } else {
-                title = doc.select("title").text();
-                time = doc.select("table span.newsheadlinetime").text();
-                body = doc.select("div.bodytext_v1").html() + "<p>" + doc.select("table tr td.news_line02").html();
-            }
-
+            title = doc.select("h1").text();
+            time = doc.select("span.date").text();
+            //body = doc.select("div.post-content").html();
+            body =  doc.select("div.post-desc").html();
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -49,8 +42,8 @@ public class HKHeadline extends AbstractNews {
             Log.d(TAG, "time = " + time);
             Log.d(TAG, "body = " + body);
         }
-
         String b = cleaner(body);
+
         if (News.APPDEBUG) {
             Log.d(TAG, "html=" + b);
         }
@@ -68,17 +61,15 @@ public class HKHeadline extends AbstractNews {
 
     protected String cleaner(String rs) {
 
-        rs = rs.replace("www.hkheadline.com","");
-        rs = rs.replace("&nbsp;","");
-
         Whitelist wlist = new Whitelist();
 
         wlist.addTags("p","br");
-       // wlist.addTags("table","tbody","tr","td");
+        wlist.addTags("table","tbody","tr","td");
         wlist.addTags("img").addAttributes("img", "src");
 
         return Jsoup.clean(rs, wlist);
 
     }
+
 
 }

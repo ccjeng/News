@@ -4,13 +4,17 @@
     	<item>生果日報</item>
     	<item>東方日報</item>
     	<item>雅虎新聞</item>
-    	<!--<item>x明報即時新聞</item>
-    	<item>x明報新聞網</item>-->
     	<item>信報</item>
     	<item>香港電台新聞頻道</item>
     	<item>太陽報</item>
     	<item>AM730</item>
     	<item>頭條日報</item>
+		<item>經濟通ETNet</item>
+		<item>立場新聞</item>
+		<item>獨立媒體</item>
+		<!--本土新聞 http://www.localpresshk.com/-->
+		<!--<item>x明報即時新聞</item>
+			<item>x明報新聞網</item>-->
 		<!--<item>晴報</item>-->
 		<!--<item>Now新聞</item>-->
    </string-array>

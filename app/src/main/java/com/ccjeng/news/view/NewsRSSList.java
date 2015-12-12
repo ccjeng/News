@@ -69,7 +69,7 @@ public class NewsRSSList extends AppCompatActivity {
         SwipeBack.attach(this, Position.LEFT)
                 .setContentView(R.layout.activity_rsslist)
                 .setSwipeBackView(R.layout.swipeback)
-                .setSwipeBackContainerBackgroundColor(Color.WHITE);
+                .setSwipeBackContainerBackgroundColor(Color.TRANSPARENT);
 
         ButterKnife.bind(this);
 

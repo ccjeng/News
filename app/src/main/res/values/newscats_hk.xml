@@ -255,5 +255,63 @@
         <item>http://www.feed43.com/1074704207872608.xml</item>
         <item>http://www.feed43.com/7074545008260156.xml</item>
     </string-array>
+    <string-array name="newscatsETNet">
+        <item>精選新聞</item>
+        <item>焦點專題</item>
+        <item>股市傳聞</item>
+        <item>股票評論</item>
+    </string-array>
+    <string-array name="newsfeedsETNet">
+        <item>https://www.etnet.com.hk/www/tc/news/rss.php?section=editor</item>
+        <item>https://www.etnet.com.hk/www/tc/news/rss.php?section=special</item>
+        <item>https://www.etnet.com.hk/www/tc/news/rss.php?section=rumour</item>
+        <item>https://www.etnet.com.hk/www/tc/news/rss.php?section=commentary</item>
+    </string-array>
+    <string-array name="newscatsTheStandNews">
+        <item>政治</item>
+        <item>社會</item>
+        <item>文化</item>
+        <item>藝術</item>
+        <item>Green</item>
+        <item>生活</item>
+        <item>體育</item>
+        <item>LGBTQ</item>
+        <item>國際</item>
+        <item>財經</item>
+        <item>Cosmos</item>
+    </string-array>
+    <string-array name="newsfeedsTheStandNews">
+        <item>https://www.thestandnews.com/politics/rss/</item>
+        <item>https://www.thestandnews.com/society/rss/</item>
+        <item>https://www.thestandnews.com/culture/rss/</item>
+        <item>https://www.thestandnews.com/art/rss/</item>
+        <item>https://www.thestandnews.com/nature/rss/</item>
+        <item>https://www.thestandnews.com/personal/rss/</item>
+        <item>https://www.thestandnews.com/sport/rss/</item>
+        <item>https://www.thestandnews.com/lgbtq/rss/</item>
+        <item>https://www.thestandnews.com/international/rss/</item>
+        <item>https://www.thestandnews.com/finance/rss/</item>
+        <item>https://www.thestandnews.com/cosmos/rss/</item>
+    </string-array>
+    <string-array name="newscatsInMediaHK">
+        <item>政經</item>
+        <item>社運</item>
+        <item>媒體</item>
+        <item>保育</item>
+        <item>國際</item>
+        <item>生活</item>
+        <item>動物</item>
+        <item>體育</item>
+    </string-array>
+    <string-array name="newsfeedsInMediaHK">
+        <item>http://www.inmediahk.net/taxonomy/term/5030/all/feed</item>
+        <item>http://www.inmediahk.net/taxonomy/term/5034/all/feed</item>
+        <item>http://www.inmediahk.net/taxonomy/term/5018/all/feed</item>
+        <item>http://www.inmediahk.net/taxonomy/term/513024/all/feed</item>
+        <item>http://www.inmediahk.net/taxonomy/term/5027/all/feed</item>
+        <item>http://www.inmediahk.net/taxonomy/term/513025/all/feed</item>
+        <item>http://www.inmediahk.net/taxonomy/term/5043/all/feed</item>
+        <item>http://www.inmediahk.net/taxonomy/term/510975/all/feed</item>
+    </string-array>
 
 </resources>

@@ -5,13 +5,16 @@ import android.content.Context;
 import com.ccjeng.news.R;
 import com.ccjeng.news.parser.AbstractNews;
 import com.ccjeng.news.parser.hk.AM730;
+import com.ccjeng.news.parser.hk.ETNet;
 import com.ccjeng.news.parser.hk.HKAppleDaily;
 import com.ccjeng.news.parser.hk.HKEJ;
 import com.ccjeng.news.parser.hk.HKHeadline;
 import com.ccjeng.news.parser.hk.HKYahoo;
+import com.ccjeng.news.parser.hk.InMediaHK;
 import com.ccjeng.news.parser.hk.OrientalDaily;
 import com.ccjeng.news.parser.hk.RTHK;
 import com.ccjeng.news.parser.hk.Sun;
+import com.ccjeng.news.parser.hk.TheStandNews;
 import com.ccjeng.news.parser.tw.AppleDaily;
 import com.ccjeng.news.parser.tw.CNA;
 import com.ccjeng.news.parser.tw.CNYes;
@@ -107,6 +110,15 @@ public class Category {
                 case 7:
                     category = context.getResources().getStringArray(R.array.newscatsHKheadline);
                     break;
+                case 8:
+                    category = context.getResources().getStringArray(R.array.newscatsETNet);
+                    break;
+                case 9:
+                    category = context.getResources().getStringArray(R.array.newscatsTheStandNews);
+                    break;
+                case 10:
+                    category = context.getResources().getStringArray(R.array.newscatsInMediaHK);
+                    break;
             }
         }
 
@@ -183,6 +195,15 @@ public class Category {
                     break;
                 case 7:
                     feedURL = context.getResources().getStringArray(R.array.newsfeedsHKheadline);
+                    break;
+                case 8:
+                    feedURL = context.getResources().getStringArray(R.array.newsfeedsETNet);
+                    break;
+                case 9:
+                    feedURL = context.getResources().getStringArray(R.array.newsfeedsTheStandNews);
+                    break;
+                case 10:
+                    feedURL = context.getResources().getStringArray(R.array.newsfeedsInMediaHK);
                     break;
             }
         }
@@ -262,6 +283,15 @@ public class Category {
                 case 7:
                     parser = new HKHeadline();
                     break;
+                case 8:
+                    parser = new ETNet();
+                    break;
+                case 9:
+                    parser = new TheStandNews();
+                    break;
+                case 10:
+                    parser = new InMediaHK();
+                    break;
             }
         }
 
@@ -272,36 +302,9 @@ public class Category {
     public static String getEncoding(String tab, int position) {
         String encoding = "utf-8";
 
-        if (tab.equals("TW")) {
+        if (tab.equals("HK")) {
             switch (position) {
-                case 0://Yahoo
-                case 1://UDN
-                case 2:
-                case 3:
-                case 4:
-                case 5:
-                case 6:
-                case 7:
-                case 8:
-                case 9:
-                case 10:
-                case 11://Apple Daily
-                case 12:
-                    encoding = "utf-8";
-                    break;
-            }
-        } else if (tab.equals("HK")) {
-            switch (position) {
-                case 0:
-                case 1:
-                case 2:
-                case 3:
-                case 4:
-                case 5:
-                case 6:
-                    encoding = "utf-8";
-                    break;
-                case 7:
+                case 7: //HKHeadline
                     encoding = "big-5";
                     break;
             }
