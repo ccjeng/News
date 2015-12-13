@@ -7,8 +7,8 @@ android {
         applicationId "com.ccjeng.news"
         minSdkVersion 15
         targetSdkVersion 23
-        versionCode 4
-        versionName '1.0.2.120915SN'
+        versionCode 5
+        versionName '1.1.0.121315SN'
     }
     buildTypes {
         release {
