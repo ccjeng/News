@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="newscatsZaobao">
+        <item>即时报道</item>
+        <item>中国新闻</item>
+        <item>国际新闻</item>
+        <item>东南亚新闻</item>
+        <item>新加坡新闻</item>
+        <item>今日观点</item>
+        <item>中国财经</item>
+        <item>狮城财经</item>
+        <item>全球财经</item>
+        <item>早报体育</item>
+        <item>早报副刊</item>
+        <item>世界报刊文萃</item>
+    </string-array>
+    <string-array name="newsfeedsZaobao">
+        <item>http://www.zaobao.com/ssi/rss/news.xml</item>
+        <item>http://www.zaobao.com/ssi/rss/zg.xml</item>
+        <item>http://www.zaobao.com/ssi/rss/gj.xml</item>
+        <item>http://www.zaobao.com/ssi/rss/yx.xml</item>
+        <item>http://www.zaobao.com/ssi/rss/sp.xml</item>
+        <item>http://www.zaobao.com/ssi/rss/yl.xml</item>
+        <item>http://www.zaobao.com/ssi/rss/cz.xml</item>
+        <item>http://www.zaobao.com/ssi/rss/cs.xml</item>
+        <item>http://www.zaobao.com/ssi/rss/cg.xml</item>
+        <item>http://www.zaobao.com/ssi/rss/ty.xml</item>
+        <item>http://www.zaobao.com/ssi/rss/fk.xml</item>
+        <item>http://www.zaobao.com/ssi/rss/wencui.xml</item>
+    </string-array>
+    <string-array name="newscatsGuangming">
+        <item>即時新聞</item>
+        <item>要聞</item>
+        <item>專題</item>
+        <item>評論</item>
+        <item>光明專欄</item>
+        <item>地方</item>
+        <item>良醫</item>
+        <item>副刊</item>
+    </string-array>
+    <string-array name="newsfeedsGuangming">
+        <item>http://www.guangming.com.my/taxonomy/term/84/0/feed</item>
+        <item>http://www.guangming.com.my/taxonomy/term/3/0/feed</item>
+        <item>http://www.guangming.com.my/taxonomy/term/5/0/feed</item>
+        <item>http://www.guangming.com.my/taxonomy/term/6/0/feed</item>
+        <item>http://www.guangming.com.my/taxonomy/term/2/0/feed</item>
+        <item>http://www.guangming.com.my/taxonomy/term/7/0/feed</item>
+        <item>http://www.guangming.com.my/taxonomy/term/8/0/feed</item>
+        <item>view-source:http://www.guangming.com.my/taxonomy/term/9</item>
+    </string-array>
+    <string-array name="newscatsKwongwah">
+        <item>北马新闻</item>
+        <item>国内新闻</item>
+        <item>国际新闻</item>
+        <item>娱乐新闻</item>
+        <item>体育新闻</item>
+        <item>中南马新闻</item>
+        <item>城镇直通车</item>
+        <item>经济新闻</item>
+        <item>言论</item>
+        <item>求医</item>
+    </string-array>
+    <string-array name="newsfeedsKwongwah">
+        <item>http://www.kwongwah.com.my/?feed=rss2&amp;cat=24</item>
+        <item>http://www.kwongwah.com.my/?feed=rss2&amp;cat=25</item>
+        <item>http://www.kwongwah.com.my/?feed=rss2&amp;cat=26</item>
+        <item>http://www.kwongwah.com.my/?feed=rss2&amp;cat=28</item>
+        <item>http://www.kwongwah.com.my/?feed=rss2&amp;cat=23</item>
+        <item>http://www.kwongwah.com.my/?feed=rss2&amp;cat=22</item>
+        <item>http://www.kwongwah.com.my/?feed=rss2&amp;cat=27</item>
+        <item>http://www.kwongwah.com.my/?feed=rss2&amp;cat=32</item>
+        <item>http://www.kwongwah.com.my/?feed=rss2&amp;cat=33</item>
+        <item>http://www.kwongwah.com.my/?feed=rss2&amp;cat=31</item>
+    </string-array>
+</resources>

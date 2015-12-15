@@ -4,6 +4,7 @@ import android.content.Context;
 
 import com.ccjeng.news.R;
 import com.ccjeng.news.parser.AbstractNews;
+import com.ccjeng.news.parser.Standard;
 import com.ccjeng.news.parser.hk.AM730;
 import com.ccjeng.news.parser.hk.ETNet;
 import com.ccjeng.news.parser.hk.HKAppleDaily;
@@ -120,6 +121,18 @@ public class Category {
                     category = context.getResources().getStringArray(R.array.newscatsInMediaHK);
                     break;
             }
+        } else if (tab.equals("SG")) {
+            switch (position) {
+                case 0:
+                    category = context.getResources().getStringArray(R.array.newscatsZaobao);
+                    break;
+                case 1:
+                    category = context.getResources().getStringArray(R.array.newscatsGuangming);
+                    break;
+                case 2:
+                    category = context.getResources().getStringArray(R.array.newscatsKwongwah);
+                    break;
+            }
         }
 
         return category;
@@ -206,8 +219,19 @@ public class Category {
                     feedURL = context.getResources().getStringArray(R.array.newsfeedsInMediaHK);
                     break;
             }
+        } else if (tab.equals("SG")) {
+            switch (position) {
+                case 0:
+                    feedURL = context.getResources().getStringArray(R.array.newsfeedsZaobao);
+                    break;
+                case 1:
+                    feedURL = context.getResources().getStringArray(R.array.newsfeedsGuangming);
+                    break;
+                case 2:
+                    feedURL = context.getResources().getStringArray(R.array.newsfeedsKwongwah);
+                    break;
+            }
         }
-
 
         return feedURL;
     }
@@ -291,6 +315,18 @@ public class Category {
                     break;
                 case 10:
                     parser = new InMediaHK();
+                    break;
+            }
+        } else if (tab.equals("SG")) {
+            switch (position) {
+                case 0:
+                    parser = new Standard();
+                    break;
+                case 1:
+                    parser = new Standard();
+                    break;
+                case 2:
+                    parser = new Standard();
                     break;
             }
         }

@@ -21,6 +21,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.ccjeng.news.News;
 import com.ccjeng.news.R;
@@ -87,7 +88,9 @@ public class MainActivity extends AppCompatActivity {
             this.showDialog(DIALOG_UPDATE);
         }
 
-
+        if (News.APPDEBUG) {
+            Toast.makeText(this, "Debug Mode", Toast.LENGTH_LONG).show();
+        }
     }
 
     @Override
@@ -121,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
 
     public class ViewPagerAdapter extends FragmentPagerAdapter {
 
-        private final String[] TITLES = { getString(R.string.tab_tw), getString(R.string.tab_hk)};
+        private final String[] TITLES = { getString(R.string.tab_tw), getString(R.string.tab_hk),  getString(R.string.tab_sg)};
 
         public ViewPagerAdapter(FragmentManager fm) {
             super(fm);

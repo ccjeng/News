@@ -57,7 +57,6 @@ public class TabFragment extends Fragment {
         v.setLayoutManager(llm);
         v.setHasFixedSize(true);
 
-
         switch (position) {
             case 0:
                 newsSource = getResources().getStringArray(R.array.newsSourceTW);
@@ -66,6 +65,10 @@ public class TabFragment extends Fragment {
             case 1:
                 newsSource = getResources().getStringArray(R.array.newsSourceHK);
                 tabName = "HK";
+                break;
+            case 2:
+                newsSource = getResources().getStringArray(R.array.newsSourceSG);
+                tabName = "SG";
                 break;
         }
 

@@ -11,6 +11,7 @@
     <!-- Tab -->
     <string name="tab_tw">台灣</string>
     <string name="tab_hk">香港</string>
+    <string name="tab_sg">星馬</string>
 
     <string name="sharing_description">將內容分享到應用程式</string>
 

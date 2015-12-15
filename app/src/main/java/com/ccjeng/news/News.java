@@ -13,7 +13,7 @@ import java.util.HashMap;
  */
 public class News extends Application {
 
-    public static final boolean APPDEBUG = true;
+    public static final boolean APPDEBUG = BuildConfig.DEBUG;
 
     public static final String AD_MoPub = "edc19146642e4017ae2b53cb17546691";
     public static final String AD_Vpon  = "8a80818250d608d50151484e4c0a6a89";
