@@ -114,6 +114,8 @@ public class NewsRSSList extends AppCompatActivity {
             moPubView.loadAd();
         }
 
+        ga.trackEvent(this, "Click", "Category", newsName + "-" + categoryName, 0);
+
     }
 
     @Override

@@ -79,6 +79,9 @@ public class NewsCategory extends AppCompatActivity {
         //set toolbar title
         getSupportActionBar().setTitle(categoryName);
         showResult(tabName, sourceNumber);
+
+        ga.trackEvent(this, "Click", "News", categoryName, 0);
+
     }
 
     @Override

@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="updates">
-    	<item>v1.1.0\n
-    	    -增加右滑關閉功能\n
-			-增加香港經濟通ETNet\n
-			-增加香港立場新聞
+    	<item>v1.2.0\n
+    	    -增加星馬新聞
     	</item>
 	</string-array>
 </resources>

@@ -91,6 +91,7 @@ public class TabFragment extends Fragment {
 
 
     private void goIntent(String tabName, int itemnumber, String itemname) {
+
         Intent intent = new Intent();
         intent.setClass(getActivity(), NewsCategory.class);
 

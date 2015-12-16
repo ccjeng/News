@@ -16,6 +16,8 @@ import com.ccjeng.news.parser.hk.OrientalDaily;
 import com.ccjeng.news.parser.hk.RTHK;
 import com.ccjeng.news.parser.hk.Sun;
 import com.ccjeng.news.parser.hk.TheStandNews;
+import com.ccjeng.news.parser.sg.Kwongwah;
+import com.ccjeng.news.parser.sg.Zaobao;
 import com.ccjeng.news.parser.tw.AppleDaily;
 import com.ccjeng.news.parser.tw.CNA;
 import com.ccjeng.news.parser.tw.CNYes;
@@ -127,11 +129,11 @@ public class Category {
                     category = context.getResources().getStringArray(R.array.newscatsZaobao);
                     break;
                 case 1:
-                    category = context.getResources().getStringArray(R.array.newscatsGuangming);
-                    break;
-                case 2:
                     category = context.getResources().getStringArray(R.array.newscatsKwongwah);
                     break;
+/*                case 2:
+                    category = context.getResources().getStringArray(R.array.newscatsGuangming);
+                    break;*/
             }
         }
 
@@ -225,11 +227,11 @@ public class Category {
                     feedURL = context.getResources().getStringArray(R.array.newsfeedsZaobao);
                     break;
                 case 1:
-                    feedURL = context.getResources().getStringArray(R.array.newsfeedsGuangming);
-                    break;
-                case 2:
                     feedURL = context.getResources().getStringArray(R.array.newsfeedsKwongwah);
                     break;
+                /*case 2:
+                    feedURL = context.getResources().getStringArray(R.array.newsfeedsGuangming);
+                    break;*/
             }
         }
 
@@ -320,14 +322,14 @@ public class Category {
         } else if (tab.equals("SG")) {
             switch (position) {
                 case 0:
-                    parser = new Standard();
+                    parser = new Zaobao();
                     break;
                 case 1:
-                    parser = new Standard();
+                    parser = new Kwongwah();
                     break;
-                case 2:
+               /* case 2:
                     parser = new Standard();
-                    break;
+                    break;*/
             }
         }
 

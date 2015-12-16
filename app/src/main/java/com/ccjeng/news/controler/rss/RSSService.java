@@ -113,10 +113,6 @@ public class RSSService {
                   //  || url.toString().contains("mingpao")
                     ) {
                 streamReader = new InputStreamReader(in, "big5");
-            } else if (url.toString().contains("ent.163.com")
-                    || url.toString().contains("tech.163.com/")
-                    || url.toString().contains("money.163.com")) {
-                streamReader = new InputStreamReader(in, "GB2312");
             } else {
                 streamReader = new InputStreamReader(in, "utf-8");
             }

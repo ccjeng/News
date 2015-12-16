@@ -88,9 +88,9 @@ public class MainActivity extends AppCompatActivity {
             this.showDialog(DIALOG_UPDATE);
         }
 
-        if (News.APPDEBUG) {
-            Toast.makeText(this, "Debug Mode", Toast.LENGTH_LONG).show();
-        }
+        //if (News.APPDEBUG) {
+        //    Toast.makeText(this, "Debug Mode", Toast.LENGTH_LONG).show();
+        //}
     }
 
     @Override

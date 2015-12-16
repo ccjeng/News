@@ -136,11 +136,11 @@ public class NewsHandler {
             public void onErrorResponse(VolleyError error) {
                 //Log.d(TAG, error.getMessage());
 
-                //Crouton.makeText(context, R.string.data_error, Style.ALERT,
-                //        (ViewGroup) context.findViewById(R.id.croutonview)).show();
+                Crouton.makeText(context, R.string.data_error, Style.ALERT,
+                        (ViewGroup) context.findViewById(R.id.croutonview)).show();
 
-                Crouton.makeText(context, error.getMessage(), Style.ALERT,
-                               (ViewGroup) context.findViewById(R.id.croutonview)).show();
+                //Crouton.makeText(context, error.getMessage(), Style.ALERT,
+                //               (ViewGroup) context.findViewById(R.id.croutonview)).show();
             }
         });
 

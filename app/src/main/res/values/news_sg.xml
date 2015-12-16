@@ -2,8 +2,8 @@
 <resources>
     <string-array name="newsSourceSG">
         <item>聯合早報</item>
-        <item>光明日報</item>
         <item>光華日報</item>
+        <!--<item>光明日報</item>-->
     </string-array>
 
 </resources>

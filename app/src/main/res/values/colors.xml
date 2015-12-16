@@ -5,7 +5,7 @@
     <color name="textColorPrimary">#FFFFFF</color>
     <color name="windowBackground">#FFFFFF</color>
     <color name="navigationBarColor">#000000</color>
-    <color name="colorAccent">@color/md_bluegray_700</color>
+    <color name="colorAccent">#FFFFFF</color>
     <color name="colorProgress">@color/md_bluegray_400</color>
 
     <!--
