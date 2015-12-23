@@ -16,7 +16,9 @@ import com.ccjeng.news.parser.hk.OrientalDaily;
 import com.ccjeng.news.parser.hk.RTHK;
 import com.ccjeng.news.parser.hk.Sun;
 import com.ccjeng.news.parser.hk.TheStandNews;
+import com.ccjeng.news.parser.sg.Guangming;
 import com.ccjeng.news.parser.sg.Kwongwah;
+import com.ccjeng.news.parser.sg.Sinchew;
 import com.ccjeng.news.parser.sg.Zaobao;
 import com.ccjeng.news.parser.tw.AppleDaily;
 import com.ccjeng.news.parser.tw.CNA;
@@ -334,10 +336,10 @@ public class Category {
                     parser = new Kwongwah();
                     break;
                 case 2:
-                    parser = new Standard();
+                    parser = new Sinchew();
                     break;
                 case 3:
-                    parser = new Standard();
+                    parser = new Guangming();
                     break;
             }
         }

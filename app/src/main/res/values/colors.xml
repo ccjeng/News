@@ -17,7 +17,7 @@
     <color name="windowBackground">#FFFFFF</color>
     <color name="navigationBarColor">#C8E6C9</color>
     <color name="colorAccent">#009688</color>
-    <color name="colorProgress">#727272</color>
+    <color name="colorProgress">#4CAF50</color>
 
     <!--
     <color name="pref_font_white">#FFFFFF</color>

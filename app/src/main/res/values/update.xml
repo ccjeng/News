@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="updates">
-    	<item>v1.2.0\n
-    	    -增加星馬新聞
+    	<item>v1.3.0\n
+    	    -調整介面配色
+			-增加星洲日報
+			-增加光明日報
     	</item>
 	</string-array>
 </resources>

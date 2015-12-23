@@ -55,7 +55,6 @@ public class RSSService {
                     if (response.isSuccessful()) {
 
                         //InputStreamReader streamReader = StreamReader(url, response.body().byteStream());
-
                         InputSource inputSource = new InputSource();
                         inputSource.setEncoding("ISO-8859-1");
                         inputSource.setCharacterStream(new StringReader(response.body().string().trim()));
