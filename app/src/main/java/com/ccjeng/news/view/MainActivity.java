@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.design.widget.NavigationView;
@@ -167,6 +168,10 @@ public class MainActivity extends AppCompatActivity {
                                 .withAboutDescription(getString(R.string.license))
                                 .start(MainActivity.this);
                         break;
+                    case R.id.navSuggest:
+                        startActivity(new Intent(Intent.ACTION_VIEW,
+                                Uri.parse("market://details?id=com.ccjeng.news")));
+                        break;
 
                 }
                 return false;
@@ -181,6 +186,11 @@ public class MainActivity extends AppCompatActivity {
 
         navigation.getMenu().findItem(R.id.navAbout).setIcon(new IconicsDrawable(this)
                 .icon(CommunityMaterial.Icon.cmd_information)
+                .color(Color.GRAY)
+                .sizeDp(24));
+
+        navigation.getMenu().findItem(R.id.navSuggest).setIcon(new IconicsDrawable(this)
+                .icon(CommunityMaterial.Icon.cmd_thumb_up)
                 .color(Color.GRAY)
                 .sizeDp(24));
     }

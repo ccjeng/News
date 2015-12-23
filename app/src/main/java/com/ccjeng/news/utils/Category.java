@@ -131,9 +131,12 @@ public class Category {
                 case 1:
                     category = context.getResources().getStringArray(R.array.newscatsKwongwah);
                     break;
-/*                case 2:
+                case 2:
+                    category = context.getResources().getStringArray(R.array.newscatsSinchew);
+                    break;
+                case 3:
                     category = context.getResources().getStringArray(R.array.newscatsGuangming);
-                    break;*/
+                    break;
             }
         }
 
@@ -229,9 +232,12 @@ public class Category {
                 case 1:
                     feedURL = context.getResources().getStringArray(R.array.newsfeedsKwongwah);
                     break;
-                /*case 2:
+                case 2:
+                    feedURL = context.getResources().getStringArray(R.array.newsfeedsSinchew);
+                    break;
+                case 3:
                     feedURL = context.getResources().getStringArray(R.array.newsfeedsGuangming);
-                    break;*/
+                    break;
             }
         }
 
@@ -327,9 +333,12 @@ public class Category {
                 case 1:
                     parser = new Kwongwah();
                     break;
-               /* case 2:
+                case 2:
                     parser = new Standard();
-                    break;*/
+                    break;
+                case 3:
+                    parser = new Standard();
+                    break;
             }
         }
 

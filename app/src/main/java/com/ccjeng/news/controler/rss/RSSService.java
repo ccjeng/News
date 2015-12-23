@@ -12,12 +12,14 @@ import com.squareup.okhttp.Response;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.StringReader;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;
+import org.xml.sax.helpers.DefaultHandler;
 
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
@@ -52,7 +54,11 @@ public class RSSService {
                 try {
                     if (response.isSuccessful()) {
 
-                        InputStreamReader streamReader = StreamReader(url, response.body().byteStream());
+                        //InputStreamReader streamReader = StreamReader(url, response.body().byteStream());
+
+                        InputSource inputSource = new InputSource();
+                        inputSource.setEncoding("ISO-8859-1");
+                        inputSource.setCharacterStream(new StringReader(response.body().string().trim()));
 
                         try {
                             SAXParserFactory spf = SAXParserFactory.newInstance();
@@ -61,7 +67,8 @@ public class RSSService {
                             RSSHandler mRSSHandler = new RSSHandler();
 
                             xr.setContentHandler(mRSSHandler);
-                            xr.parse(new InputSource(streamReader));
+                            //xr.parse(new InputSource(streamReader));
+                            xr.parse(inputSource);
 
                             final RSSFeed rssFeed = mRSSHandler.getParsedData();
 

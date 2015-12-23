@@ -40,7 +40,7 @@
 
         <service android:name="com.google.android.gms.analytics.AnalyticsService"
              android:enabled="true"
-             android:exported="false"/>    
+             android:exported="false"/>
 
         <!-- Vpon -->
         <activity

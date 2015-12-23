@@ -1,6 +1,5 @@
 package com.ccjeng.news.view;
 
-
 import android.graphics.Color;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
@@ -22,8 +21,7 @@ public class Preference extends PreferenceActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.settings);
-        mActionBar.setTitle(R.string.setting);
-        mActionBar.setTitleTextColor(Color.WHITE);
+
     }
 
 
@@ -37,6 +35,9 @@ public class Preference extends PreferenceActivity {
                 .icon(CommunityMaterial.Icon.cmd_keyboard_backspace)
                 .color(Color.WHITE)
                 .actionBar());
+
+        mActionBar.setTitle(R.string.setting);
+        mActionBar.setTitleTextColor(Color.WHITE);
 
         mActionBar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override

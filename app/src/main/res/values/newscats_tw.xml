@@ -41,7 +41,6 @@
 		<item>影劇新聞</item>
 		<item>旅遊新聞</item>
 		<item>生活新聞</item>
-		<!--
 	    <item>實用心情新聞</item>
 		<item>感人心情新聞</item>
 		<item>開心心情新聞</item>
@@ -49,7 +48,6 @@
 		<item>害怕心情新聞</item>
 		<item>難過心情新聞</item>
 		<item>火大心情新聞</item>
-		-->
     </string-array>
     <string-array name="newsfeedsYahoo">
   	    <item>https://tw.news.yahoo.com/rss/politics</item>
@@ -64,7 +62,6 @@
 	  	<item>https://tw.news.yahoo.com/rss/entertainment</item>
 		<item>https://tw.news.yahoo.com/rss/travel</item>
 		<item>https://tw.news.yahoo.com/rss/lifestyle</item>
-		<!--
 		<item>https://tw.news.yahoo.com/sentiment/informative/rss/</item>
 		<item>https://tw.news.yahoo.com/sentiment/warm/rss/</item>
 		<item>https://tw.news.yahoo.com/sentiment/happy/rss/</item>
@@ -72,7 +69,6 @@
 		<item>https://tw.news.yahoo.com/sentiment/worried/rss/</item>
 		<item>https://tw.news.yahoo.com/sentiment/depressing/rss/</item>
 		<item>https://tw.news.yahoo.com/sentiment/angry/rss/</item>
-		-->
     </string-array>
     <string-array name="newscatsAppDaily">
     	<item>即時新聞</item>
@@ -299,7 +295,7 @@
 		<item>http://feeds.feedburner.com/chinatimes/commercial-special</item>
 	</string-array>
 	<string-array name="newscatsEttoday">
-		<item>即時新聞</item>
+		<!--<item>即時新聞</item>-->
 		<item>政治新聞</item>
 		<item>財經新聞</item>
 		<item>國際新聞</item>
@@ -317,7 +313,7 @@
 		<item>開運新聞</item>
 	</string-array>
 	<string-array name="newsfeedsEttoday">
-    	<item>http://feeds.feedburner.com/ettoday/realtime</item>
+    	<!--<item>http://feeds.feedburner.com/ettoday/realtime</item>-->
     	<item>http://feeds.feedburner.com/ettoday/news</item>
 		<item>http://feeds.feedburner.com/ettoday/finance</item>
     	<item>http://feeds.feedburner.com/ettoday/global</item>

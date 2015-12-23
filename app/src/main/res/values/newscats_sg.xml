@@ -52,6 +52,14 @@
         <item>http://www.kwongwah.com.my/?feed=rss2&amp;cat=33</item>
         <item>http://www.kwongwah.com.my/?feed=rss2&amp;cat=31</item>
     </string-array>
+    <string-array name="newscatsSinchew">
+        <item>新聞</item>
+        <item>生活誌</item>
+    </string-array>
+    <string-array name="newsfeedsSinchew">
+        <item>http://news.sinchew.com.my/taxonomy/term/1/0/feed</item>
+        <item>http://life.sinchew.com.my/rss.xml</item>
+    </string-array>
     <string-array name="newscatsGuangming">
         <item>即時新聞</item>
         <item>要聞</item>
