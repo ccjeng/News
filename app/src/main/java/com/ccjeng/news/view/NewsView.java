@@ -31,6 +31,9 @@ import butterknife.ButterKnife;
 import de.keyboardsurfer.android.widget.crouton.Crouton;
 import de.keyboardsurfer.android.widget.crouton.Style;
 
+//todo 加上新聞小幫手檢核 sample: https://github.com/g0v/newshelper-extension/blob/master/background.js
+//todo add AD banner
+
 public class NewsView extends AppCompatActivity {
 
     private static final String TAG = "NewsView";

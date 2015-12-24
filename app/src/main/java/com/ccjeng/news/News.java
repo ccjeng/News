@@ -60,6 +60,13 @@ public class News extends Application {
         mPrefSmartSave = s;
     }
 
+    private static Integer mPrefDefaultTab = 0;
+    public static Integer getPrefDefaultTab(){
+        return mPrefDefaultTab;
+    }
+    public static void setPretDefaultTab(Integer s){
+        mPrefDefaultTab = s;
+    }
 
     // The following line should be changed to include the correct property id.
     private static final String PROPERTY_ID = "UA-19743390-22";

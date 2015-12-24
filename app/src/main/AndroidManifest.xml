@@ -33,7 +33,8 @@
         </activity>
         <activity android:name=".view.NewsWeb" >
         </activity>
-        <activity android:name=".view.Preference" >
+        <activity android:name=".view.Preference"
+            android:label="@string/setting">
         </activity>
         <activity android:name=".view.NewsView" >
         </activity>

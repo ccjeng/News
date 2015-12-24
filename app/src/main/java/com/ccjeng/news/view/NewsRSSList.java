@@ -38,6 +38,8 @@ import butterknife.ButterKnife;
 import de.keyboardsurfer.android.widget.crouton.Crouton;
 import de.keyboardsurfer.android.widget.crouton.Style;
 
+//todo change to cardview with image and pubDate info
+
 public class NewsRSSList extends AppCompatActivity {
 
     private static final String TAG = "NewsRSSList";

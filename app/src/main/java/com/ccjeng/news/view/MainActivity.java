@@ -82,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
         navDrawer();
         PreferenceSetting.getPreference(this);
 
+        //todo use dailog fragment
         if (Version.isNewInstallation(this)) {
             this.showDialog(DIALOG_WELCOME);
         } else
@@ -89,9 +90,16 @@ public class MainActivity extends AppCompatActivity {
             this.showDialog(DIALOG_UPDATE);
         }
 
-        //if (News.APPDEBUG) {
-        //    Toast.makeText(this, "Debug Mode", Toast.LENGTH_LONG).show();
-        //}
+        //default tab selection
+        TabLayout.Tab tab = tabs.getTabAt(News.getPrefDefaultTab());
+        if (tab != null) {
+            tab.select();
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
     }
 
     @Override

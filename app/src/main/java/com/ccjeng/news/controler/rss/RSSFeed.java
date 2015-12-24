@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RSSFeed {
+	//todo add image link and pubDate
 
 	private String title = null; //news title
 	private String pubdate = null;

@@ -3,6 +3,7 @@
     <string-array name="updates">
     	<item>v1.3.0\n
     	    -調整介面配色
+			-新增自訂首頁設定
 			-增加星洲日報
 			-增加光明日報
     	</item>

@@ -27,6 +27,10 @@
     <string name="preference_content_smartsave">開啟智能節費模式</string>
     <string name="preference_content_smartsave_summary">根據連線類型(wifi/行動網路)自動啟動/關閉圖片下載功能</string>
     <string name="preference_testing_group">實驗功能</string>
+    <string name="preference_others_group">其他功能</string>
+    <string name="preference_others_defaulttab">自訂首頁</string>
+    <string name="preference_others_defaulttab_summary">設定開啟應用程式後進入的頁籤</string>
+
 
     <!-- Error -->
     <string name="network_error">無法連線，請檢查裝置是否正常連網</string>

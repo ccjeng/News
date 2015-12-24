@@ -23,6 +23,8 @@ public class PreferenceSetting {
         Boolean smartSave = prefs.getBoolean("smart_save", false);
         Boolean enableSmartSave = false;
 
+        Integer defaultTab = Integer.valueOf(prefs.getString("defaulttab", "0"));
+
         if (smartSave) {
             if (!Network.isWifiAvailable(context)) {
                 enableSmartSave = true;
@@ -32,6 +34,7 @@ public class PreferenceSetting {
         News.setPrefFontColor(fontColor);
         News.setPretBGColor(bgColor);
         News.setPretSmartSave(enableSmartSave);
+        News.setPretDefaultTab(defaultTab);
 
     }
 }

@@ -38,4 +38,15 @@
         <item>#ECECEC</item>
         <item>#808080</item>
     </string-array>
+
+    <string-array name="defaulttab">
+        <item>台灣</item>
+        <item>香港</item>
+        <item>星馬</item>
+    </string-array>
+    <string-array name="defaulttab_code">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
 </resources>

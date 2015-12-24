@@ -34,7 +34,6 @@ public class Preference extends AppCompatActivity {
                 .color(Color.WHITE)
                 .actionBar());
 
-        toolbar.setTitle(R.string.setting);
         toolbar.setTitleTextColor(Color.WHITE);
 
         FragmentManager manager = getFragmentManager();

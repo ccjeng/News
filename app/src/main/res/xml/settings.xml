@@ -6,22 +6,22 @@
             android:entries="@array/font_size"
             android:entryValues="@array/font_size_code"
             android:key="font_size"
-            android:summary="@string/preference_content_font_size_summary"
-            android:title="@string/preference_content_font_size" />
+            android:title="@string/preference_content_font_size"
+            android:summary="@string/preference_content_font_size_summary" />
         <ListPreference
             android:defaultValue="#000000"
             android:entries="@array/font_color"
             android:entryValues="@array/font_color_code"
             android:key="font_color"
-            android:summary="@string/preference_content_font_color_summary"
-            android:title="@string/preference_content_font_color" />
+            android:title="@string/preference_content_font_color"
+            android:summary="@string/preference_content_font_color_summary" />
         <ListPreference
             android:defaultValue="#FFFFFF"
             android:entries="@array/bg_color"
             android:entryValues="@array/bg_color_code"
             android:key="bg_color"
-            android:summary="@string/preference_content_bg_color_summary"
-            android:title="@string/preference_content_bg_color" />
+            android:title="@string/preference_content_bg_color"
+            android:summary="@string/preference_content_bg_color_summary" />
         <CheckBoxPreference
             android:key="smart_save"
             android:title="@string/preference_content_smartsave"
@@ -29,9 +29,15 @@
             android:defaultValue="false" />
     </PreferenceCategory>
 
-    <!--
-    <PreferenceCategory android:title="@string/preference_testing_group">
+    <PreferenceCategory android:title="@string/preference_others_group">
+        <ListPreference
+            android:defaultValue="0"
+            android:entries="@array/defaulttab"
+            android:entryValues="@array/defaulttab_code"
+            android:key="defaulttab"
+            android:title="@string/preference_others_defaulttab"
+            android:summary="@string/preference_others_defaulttab_summary" />
     </PreferenceCategory>
-    -->
+
 
 </PreferenceScreen>
