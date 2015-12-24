@@ -33,7 +33,7 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.Custom
 	public void onBindViewHolder(CustomViewHolder customViewHolder, int i) {
 
 		//Setting text view title
-		customViewHolder.textView.setText(items.getItem(i).getTitle());
+		customViewHolder.textView.setText(items.getItem(i).getTitle() + "-" + items.getItem(i).getPubDate() );
 	}
 
 	@Override

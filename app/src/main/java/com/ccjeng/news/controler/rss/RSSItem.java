@@ -1,5 +1,7 @@
 package com.ccjeng.news.controler.rss;
 
+import com.ccjeng.news.utils.DateTimeFormater;
+
 public class RSSItem {
 
 	public static final String TITLE = "title";
@@ -10,6 +12,7 @@ public class RSSItem {
 	private String pubDate = null;
 	private String description = null;
 	private String category = null;
+	private String img = null;
 	
 	public String getTitle() {
 		return title;
@@ -25,8 +28,10 @@ public class RSSItem {
 	}
 	
 	public String getPubDate() {
+
+		return DateTimeFormater.parse(pubDate);
 		//return DateUtil.getSimpleDateFormat(pubDate);
-		return pubDate;
+		//return pubDate;
 	}
 	public void setPubDate(String pubDate) {
 		this.pubDate = pubDate;
@@ -51,6 +56,7 @@ public class RSSItem {
 		{
 			return title.substring(0, 42) + "...";
 		}*/
-		return title;
+
+		return getTitle();
 	}
 }

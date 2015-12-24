@@ -22,7 +22,7 @@
             android:key="bg_color"
             android:title="@string/preference_content_bg_color"
             android:summary="@string/preference_content_bg_color_summary" />
-        <CheckBoxPreference
+        <SwitchPreference
             android:key="smart_save"
             android:title="@string/preference_content_smartsave"
             android:summary="@string/preference_content_smartsave_summary"
