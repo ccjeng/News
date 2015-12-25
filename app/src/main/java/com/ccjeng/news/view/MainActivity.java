@@ -115,6 +115,18 @@ public class MainActivity extends AppCompatActivity {
         GoogleAnalytics.getInstance(this).reportActivityStop(this);
     }
 
+    private long lastMillis;
+
+    @Override
+    public void onBackPressed() {
+        if ((System.currentTimeMillis() - lastMillis) > 2000) {
+            Toast.makeText(this, R.string.quit_tip, Toast.LENGTH_SHORT).show();
+            lastMillis = System.currentTimeMillis();
+        } else {
+            finish();
+        }
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);

@@ -20,9 +20,9 @@ public class DateTimeFormater {
         }
 
         //todo format error: 1. ETToday Thu,24 Dec 2015 12:51:00  +0800 2. format error: 新頭殼 hide
-
+        datetime = datetime.replace(", ",","); //Fix ETToday format issue: Thu,24 Dec 2015 12:51:00
         //String dateFromatFrom = "EEE, dd MMM yyyy HH:mm:ss zzz";
-        String dateFromatFrom = "EEE, dd MMM yyyy HH:mm:ss";
+        String dateFromatFrom = "EEE,dd MMM yyyy HH:mm:ss";
         String dateFromatTo = "yyyy-MM-dd HH:mm";
         SimpleDateFormat sdfFrom = new SimpleDateFormat(dateFromatFrom, Locale.US);
         SimpleDateFormat sdfTo = new SimpleDateFormat(dateFromatTo, Locale.US);
@@ -33,7 +33,7 @@ public class DateTimeFormater {
             //if not valid, it will throw ParseException
             Date date = sdfFrom.parse(datetime);
             strDT = sdfTo.format(date);
-            Log.d(TAG, datetime +"--" +strDT);
+            //Log.d(TAG, datetime +"--" +strDT);
             return strDT;
 
         } catch (ParseException e) {
