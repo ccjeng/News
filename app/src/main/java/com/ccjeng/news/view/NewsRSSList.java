@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -41,7 +42,7 @@ import de.keyboardsurfer.android.widget.crouton.Crouton;
 import de.keyboardsurfer.android.widget.crouton.Style;
 
 public class NewsRSSList extends AppCompatActivity
-        implements SwipeRefreshLayout.OnRefreshListener {
+       /* implements SwipeRefreshLayout.OnRefreshListener*/ {
 
     private static final String TAG = "NewsRSSList";
     private Analytics ga;
@@ -54,7 +55,7 @@ public class NewsRSSList extends AppCompatActivity
     ProgressWheel progressWheel;
 
     private MoPubView moPubView;
-    private SwipeRefreshLayout mSwipeLayout;
+    //private SwipeRefreshLayout mSwipeLayout;
 
     private int sourceNumber;
     private int itemNumber;
@@ -91,7 +92,8 @@ public class NewsRSSList extends AppCompatActivity
 
         LinearLayoutManager llm = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(llm);
-        recyclerView.setHasFixedSize(true);
+        recyclerView.setHasFixedSize(false);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
 
         //get intent values
         Bundle bunde = this.getIntent().getExtras();
@@ -104,14 +106,14 @@ public class NewsRSSList extends AppCompatActivity
         //set toolbar title
         getSupportActionBar().setTitle(categoryName);
         getSupportActionBar().setSubtitle(newsName);
-
+/*
         mSwipeLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_container);
         mSwipeLayout.setOnRefreshListener(this);
         mSwipeLayout.setColorSchemeResources(android.R.color.holo_red_light,
                 android.R.color.holo_blue_light,
                 android.R.color.holo_green_light,
                 android.R.color.holo_orange_light);
-
+*/
         if (Network.isNetworkConnected(this)) {
             showResult(tabName, sourceNumber);
         } else {
@@ -158,6 +160,7 @@ public class NewsRSSList extends AppCompatActivity
 
 /* SwipeRefreshLayout
 * */
+    /*
     @Override
     public void onRefresh() {
         new Handler().postDelayed(new Runnable() {
@@ -168,7 +171,7 @@ public class NewsRSSList extends AppCompatActivity
                 mSwipeLayout.setRefreshing(false);
             }
         }, 3000);
-    }
+    }*/
 
         @Override
     public boolean onCreateOptionsMenu(Menu menu) {

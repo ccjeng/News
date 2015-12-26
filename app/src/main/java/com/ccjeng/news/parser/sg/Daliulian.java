@@ -28,9 +28,9 @@ public class Daliulian extends AbstractNews {
         String time = "";
 
         try {
-            title = doc.select("h2").text();
-            time = doc.select("div.submitted").text();
-            body = doc.select("div.content_wrapper").html();
+            title = doc.select("title").text();
+            time = doc.select("div.ref").get(0).text().replace("檢舉","");
+            body = doc.select("div#article-content").html();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -58,6 +58,9 @@ public class Daliulian extends AbstractNews {
     }
 
     protected String cleaner(String rs) {
+
+        rs = rs.replace("<img src=\"/imgs/","<img src=\"http://ww.daliulian.net/imgs/");
+        rs = rs.replace("sponsored ads","");
 
         Whitelist wlist = new Whitelist();
 
