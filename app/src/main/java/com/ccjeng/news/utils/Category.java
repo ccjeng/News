@@ -16,8 +16,11 @@ import com.ccjeng.news.parser.hk.OrientalDaily;
 import com.ccjeng.news.parser.hk.RTHK;
 import com.ccjeng.news.parser.hk.Sun;
 import com.ccjeng.news.parser.hk.TheStandNews;
+import com.ccjeng.news.parser.sg.Daliulian;
 import com.ccjeng.news.parser.sg.Guangming;
 import com.ccjeng.news.parser.sg.Kwongwah;
+import com.ccjeng.news.parser.sg.Malaysiakini;
+import com.ccjeng.news.parser.sg.MyPaper;
 import com.ccjeng.news.parser.sg.Sinchew;
 import com.ccjeng.news.parser.sg.Zaobao;
 import com.ccjeng.news.parser.tw.AppleDaily;
@@ -131,13 +134,22 @@ public class Category {
                     category = context.getResources().getStringArray(R.array.newscatsZaobao);
                     break;
                 case 1:
-                    category = context.getResources().getStringArray(R.array.newscatsKwongwah);
+                    category = context.getResources().getStringArray(R.array.newscatsMyPaper);
                     break;
                 case 2:
-                    category = context.getResources().getStringArray(R.array.newscatsSinchew);
+                    category = context.getResources().getStringArray(R.array.newscatsDaliulian);
                     break;
                 case 3:
+                    category = context.getResources().getStringArray(R.array.newscatsKwongwah);
+                    break;
+                case 4:
+                    category = context.getResources().getStringArray(R.array.newscatsSinchew);
+                    break;
+                case 5:
                     category = context.getResources().getStringArray(R.array.newscatsGuangming);
+                    break;
+                case 6:
+                    category = context.getResources().getStringArray(R.array.newscatsMalaysiakini);
                     break;
             }
         }
@@ -232,13 +244,22 @@ public class Category {
                     feedURL = context.getResources().getStringArray(R.array.newsfeedsZaobao);
                     break;
                 case 1:
-                    feedURL = context.getResources().getStringArray(R.array.newsfeedsKwongwah);
+                    feedURL = context.getResources().getStringArray(R.array.newsfeedsMyPaper);
                     break;
                 case 2:
-                    feedURL = context.getResources().getStringArray(R.array.newsfeedsSinchew);
+                    feedURL = context.getResources().getStringArray(R.array.newsfeedsDaliulian);
                     break;
                 case 3:
+                    feedURL = context.getResources().getStringArray(R.array.newsfeedsKwongwah);
+                    break;
+                case 4:
+                    feedURL = context.getResources().getStringArray(R.array.newsfeedsSinchew);
+                    break;
+                case 5:
                     feedURL = context.getResources().getStringArray(R.array.newsfeedsGuangming);
+                    break;
+                case 6:
+                    feedURL = context.getResources().getStringArray(R.array.newsfeedsMalaysiakini);
                     break;
             }
         }
@@ -333,13 +354,22 @@ public class Category {
                     parser = new Zaobao();
                     break;
                 case 1:
-                    parser = new Kwongwah();
+                    parser = new MyPaper();
                     break;
                 case 2:
-                    parser = new Sinchew();
+                    parser = new Daliulian();
                     break;
                 case 3:
+                    parser = new Kwongwah();
+                    break;
+                case 4:
+                    parser = new Sinchew();
+                    break;
+                case 5:
                     parser = new Guangming();
+                    break;
+                case 6:
+                    parser = new Malaysiakini();
                     break;
             }
         }

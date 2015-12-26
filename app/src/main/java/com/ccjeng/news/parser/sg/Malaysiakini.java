@@ -1,4 +1,4 @@
-package com.ccjeng.news.parser.hk;
+package com.ccjeng.news.parser.sg;
 
 import android.util.Log;
 
@@ -13,10 +13,10 @@ import org.jsoup.safety.Whitelist;
 import java.io.IOException;
 
 /**
- * Created by andycheng on 2015/12/12.
+ * Created by andycheng on 2015/12/26.
  */
-public class TheStandNews extends AbstractNews {
-    private static final String TAG = "TheStandNews";
+public class Malaysiakini extends AbstractNews {
+    private static final String TAG = "Malaysiakini";
     private String body = "";
 
     @Override
@@ -28,11 +28,9 @@ public class TheStandNews extends AbstractNews {
         String time = "";
 
         try {
-            title = doc.select("h1.article-name").text();
-            time = doc.select("p.date").text();
-            body = doc.select("div.article-content").html() + "<p>"
-                    + doc.select("div.article-photo").html() + "<p>"
-                    + doc.select("p.caption").html();
+            title = doc.select("h2").text();
+            time = doc.select("div.submitted").text();
+            body = doc.select("div.content_wrapper").html();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -70,5 +68,4 @@ public class TheStandNews extends AbstractNews {
         return Jsoup.clean(rs, wlist);
 
     }
-
 }

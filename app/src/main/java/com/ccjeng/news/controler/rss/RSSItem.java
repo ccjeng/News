@@ -50,6 +50,7 @@ public class RSSItem {
 		Document doc = Jsoup.parse(description);
 		Element image = doc.select("img").first();
 		String descr = doc.text().trim();
+
 		if (descr.length()>0) {
 			descr = descr.replace("-- Delivered by Feed43 service","");
 			if (descr.length() > maxDescrLength) {

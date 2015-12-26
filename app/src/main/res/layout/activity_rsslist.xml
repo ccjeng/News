@@ -27,7 +27,8 @@
                 android:id="@+id/toolbar"
                 layout="@layout/toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                app:layout_scrollFlags="scroll|enterAlways"/>
 
         </android.support.design.widget.AppBarLayout>
 
@@ -43,25 +44,32 @@
             wheel:matProg_barColor="@color/colorProgress"
             wheel:matProg_progressIndeterminate="true" />
 
-        <LinearLayout
+        <android.support.v4.widget.NestedScrollView
             android:id="@+id/home_layout"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
             android:layout_above="@+id/footerLayout"
-            android:layout_below="@+id/toolbarLayout"
-            android:orientation="vertical">
-            <LinearLayout
-                android:id="@+id/croutonview"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_gravity="top"/>
+            android:layout_below="@+id/toolbarLayout">
 
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/recyclerView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-        </LinearLayout>
+           <LinearLayout
+                android:id="@+id/croutonview"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <android.support.v4.widget.SwipeRefreshLayout
+                    android:id="@+id/swipe_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/recyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                </android.support.v4.widget.SwipeRefreshLayout>
+           </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
 
         <LinearLayout
             android:id="@+id/footerLayout"
@@ -70,7 +78,8 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:gravity="bottom"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
             <com.mopub.mobileads.MoPubView
                 android:id="@+id/adview"
                 android:layout_width="match_parent"

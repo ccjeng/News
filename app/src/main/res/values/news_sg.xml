@@ -2,11 +2,13 @@
 <resources>
     <string-array name="newsSourceSG">
         <item>联合早报</item>
+        <item>我报</item>
+        <item>大榴莲</item>
         <item>光华日报</item>
         <item>星洲日報</item>
         <item>光明日報</item>
-        <!--我报-->
-        <!--大榴莲-->
+        <item>當今大馬</item>
+
        <!-- <item>當今大馬</item>-->
     </string-array>
 

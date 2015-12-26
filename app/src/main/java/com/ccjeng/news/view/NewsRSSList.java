@@ -3,6 +3,8 @@ package com.ccjeng.news.view;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -38,9 +40,8 @@ import butterknife.ButterKnife;
 import de.keyboardsurfer.android.widget.crouton.Crouton;
 import de.keyboardsurfer.android.widget.crouton.Style;
 
-//todo change to cardview with image and pubDate info
-
-public class NewsRSSList extends AppCompatActivity {
+public class NewsRSSList extends AppCompatActivity
+        implements SwipeRefreshLayout.OnRefreshListener {
 
     private static final String TAG = "NewsRSSList";
     private Analytics ga;
@@ -53,6 +54,7 @@ public class NewsRSSList extends AppCompatActivity {
     ProgressWheel progressWheel;
 
     private MoPubView moPubView;
+    private SwipeRefreshLayout mSwipeLayout;
 
     private int sourceNumber;
     private int itemNumber;
@@ -103,6 +105,13 @@ public class NewsRSSList extends AppCompatActivity {
         getSupportActionBar().setTitle(categoryName);
         getSupportActionBar().setSubtitle(newsName);
 
+        mSwipeLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_container);
+        mSwipeLayout.setOnRefreshListener(this);
+        mSwipeLayout.setColorSchemeResources(android.R.color.holo_red_light,
+                android.R.color.holo_blue_light,
+                android.R.color.holo_green_light,
+                android.R.color.holo_orange_light);
+
         if (Network.isNetworkConnected(this)) {
             showResult(tabName, sourceNumber);
         } else {
@@ -147,7 +156,21 @@ public class NewsRSSList extends AppCompatActivity {
                 R.anim.swipeback_stack_right_out);
     }
 
+/* SwipeRefreshLayout
+* */
     @Override
+    public void onRefresh() {
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                //refresh data
+                showResult(tabName, sourceNumber);
+                mSwipeLayout.setRefreshing(false);
+            }
+        }, 3000);
+    }
+
+        @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
         getMenuInflater().inflate(R.menu.menu_main, menu);
@@ -168,24 +191,33 @@ public class NewsRSSList extends AppCompatActivity {
 
     public void setListView(final RSSFeed rssList) {
 
-        NewsListAdapter adapter = new NewsListAdapter(this, rssList);
-        recyclerView.setAdapter(adapter);
-
-        if (rssList.getItemCount() == 0) {
-            Crouton.makeText(NewsRSSList.this, R.string.no_data, Style.CONFIRM,
+        if (rssList == null) {
+        //response Error
+            progressWheel.setVisibility(View.GONE);
+            Crouton.makeText(NewsRSSList.this, R.string.data_error, Style.ALERT,
                     (ViewGroup) findViewById(R.id.croutonview)).show();
+
+        } else {
+        //response Success
+            NewsListAdapter adapter = new NewsListAdapter(this, rssList);
+            recyclerView.setAdapter(adapter);
+
+            if (rssList.getItemCount() == 0) {
+                Crouton.makeText(NewsRSSList.this, R.string.no_data, Style.CONFIRM,
+                        (ViewGroup) findViewById(R.id.croutonview)).show();
+            }
+
+            progressWheel.setVisibility(View.GONE);
+
+            recyclerView.addOnItemTouchListener(
+                    new RecyclerItemClickListener(this, new RecyclerItemClickListener.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(View view, int position) {
+                            showDetail(position, rssList);
+                        }
+                    })
+            );
         }
-
-        progressWheel.setVisibility(View.GONE);
-
-        recyclerView.addOnItemTouchListener(
-                new RecyclerItemClickListener(this, new RecyclerItemClickListener.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(View view, int position) {
-                        showDetail(position, rssList);
-                    }
-                })
-        );
 
     }
 

@@ -28,6 +28,34 @@
         <item>http://www.zaobao.com/ssi/rss/fk.xml</item>-->
         <item>http://www.zaobao.com/ssi/rss/wencui.xml</item>
     </string-array>
+    <string-array name="newscatsMyPaper">
+        <item>新闻</item>
+        <item>观点</item>
+        <item>生活</item>
+        <item>娱乐</item>
+        <item>特辑</item>
+    </string-array>
+    <string-array name="newsfeedsMyPaper">
+        <item>http://mypaper.sg/taxonomy/term/23/feed/55339</item>
+        <item>http://mypaper.sg/taxonomy/term/35/feed/55350</item>
+        <item>http://mypaper.sg/taxonomy/term/22/feed/55352</item>
+        <item>http://mypaper.sg/taxonomy/term/20/feed/55361</item>
+        <item>http://mypaper.sg/taxonomy/term/21/feed/55354</item>
+    </string-array>
+    <string-array name="newscatsDaliulian">
+        <item>新闻</item>
+        <item>生活</item>
+        <item>奇葩</item>
+        <item>兴趣</item>
+        <item>博学</item>
+    </string-array>
+    <string-array name="newsfeedsDaliulian">
+        <item>http://ww.daliulian.net/cat46?format=rss</item>
+        <item>http://ww.daliulian.net/cat48?format=rss</item>
+        <item>http://ww.daliulian.net/cat47?format=rss</item>
+        <item>http://ww.daliulian.net/cat91?format=rss</item>
+        <item>http://ww.daliulian.net/cat95?format=rss</item>
+    </string-array>
     <string-array name="newscatsKwongwah">
         <item>北马新闻</item>
         <item>国内新闻</item>
@@ -79,5 +107,15 @@
         <item>http://www.guangming.com.my/taxonomy/term/7/0/feed</item>
         <item>http://www.guangming.com.my/taxonomy/term/8/0/feed</item>
         <item>http://www.guangming.com.my/taxonomy/term/9/0/feed</item>
+    </string-array>
+    <string-array name="newscatsMalaysiakini">
+        <item>最新要闻</item>
+        <item>专栏</item>
+        <item>来函</item>
+    </string-array>
+    <string-array name="newsfeedsMalaysiakini">
+        <item>http://www.malaysiakini.com/zh/news.rss</item>
+        <item>http://www.malaysiakini.com/zh/columns.rss</item>
+        <item>http://www.malaysiakini.com/zh/letters.rss</item>
     </string-array>
 </resources>

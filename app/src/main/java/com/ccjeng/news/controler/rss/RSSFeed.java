@@ -4,18 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RSSFeed {
-	//todo add image link and pubDate
 
 	private String title = null; //news title
-	/*private String pubdate = null;
-	public String getPubdate() {
-		return pubdate;
-	}
-
-	public void setPubdate(String date) {
-		this.pubdate = date;
-	}*/
-
 	private int itemCount; //count
 	private List<RSSItem> itemList; //all items
 	

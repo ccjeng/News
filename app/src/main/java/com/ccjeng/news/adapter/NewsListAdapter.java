@@ -57,8 +57,7 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.Custom
 			Picasso.with(context)
 					.load(items.getItem(i).getImg())
 					.resize(72,72)
-					.centerCrop()
-					//.placeholder(R.drawable.process)
+					.centerInside()
 					.into(customViewHolder.imageView);
 		}
 	}

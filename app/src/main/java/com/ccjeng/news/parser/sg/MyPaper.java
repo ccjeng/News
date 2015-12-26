@@ -1,4 +1,4 @@
-package com.ccjeng.news.parser.hk;
+package com.ccjeng.news.parser.sg;
 
 import android.util.Log;
 
@@ -13,10 +13,10 @@ import org.jsoup.safety.Whitelist;
 import java.io.IOException;
 
 /**
- * Created by andycheng on 2015/12/12.
+ * Created by andycheng on 2015/12/26.
  */
-public class TheStandNews extends AbstractNews {
-    private static final String TAG = "TheStandNews";
+public class MyPaper extends AbstractNews {
+    private static final String TAG = "MyPaper";
     private String body = "";
 
     @Override
@@ -28,11 +28,10 @@ public class TheStandNews extends AbstractNews {
         String time = "";
 
         try {
-            title = doc.select("h1.article-name").text();
-            time = doc.select("p.date").text();
-            body = doc.select("div.article-content").html() + "<p>"
-                    + doc.select("div.article-photo").html() + "<p>"
-                    + doc.select("p.caption").html();
+            title = doc.select("h2.story-title").text();
+            time = doc.select("div.published-on-field").text();
+            body = doc.select("div.field-name-body").html()
+                    + doc.select("div.field-group-format-wrapper").html();//todo image not yet
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -61,6 +60,9 @@ public class TheStandNews extends AbstractNews {
 
     protected String cleaner(String rs) {
 
+        //rs = rs.replace("<h3","</h3>");
+        //rs = rs.replace("</h3>","</b>");
+
         Whitelist wlist = new Whitelist();
 
         wlist.addTags("p");
@@ -70,5 +72,4 @@ public class TheStandNews extends AbstractNews {
         return Jsoup.clean(rs, wlist);
 
     }
-
 }

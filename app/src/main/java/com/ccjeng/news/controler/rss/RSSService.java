@@ -19,7 +19,6 @@ import java.util.concurrent.TimeUnit;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;
-import org.xml.sax.helpers.DefaultHandler;
 
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
@@ -88,24 +87,34 @@ public class RSSService {
                         } catch (SAXException e) {
                             e.printStackTrace();
                             Log.d(TAG, "SAXException error = " + e.toString());
-
                         }
 
                         Log.d(TAG, "onResponse");
                     } else {
                         Log.d(TAG, "response failed");
+                        responseError(context);
                     }
                 } catch (IOException e) {
                     e.printStackTrace();
                     Log.d(TAG, "onResponse error = " + e.toString());
+                    responseError(context);
+
                 }
 
             }
         });
 
-
     }
 
+    private void responseError(final NewsRSSList context){
+        context.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                context.setListView(null);
+            }
+        });
+
+    }
 
     private InputStreamReader StreamReader(URL url, InputStream in) {
 
