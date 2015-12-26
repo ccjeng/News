@@ -31,7 +31,7 @@ public class MyPaper extends AbstractNews {
             title = doc.select("h2.story-title").text();
             time = doc.select("div.published-on-field").text();
             body = doc.select("div.field-name-body").html()
-                    + doc.select("div.field-group-format-wrapper").html();//todo image not yet
+                    + doc.select("div.field-group-format-wrapper div.content").html();
         } catch (Exception e) {
             e.printStackTrace();
         }
