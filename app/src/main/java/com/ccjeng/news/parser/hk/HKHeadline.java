@@ -28,15 +28,16 @@ public class HKHeadline extends AbstractNews {
         String time = "";
 
         try {
-            if (link.contains("ent")) {
+            if (link.contains("ent/")) {
                 title = doc.select("td.bodytext > b").text();
                 time = doc.select("td.bodytext > font").text();
                 body = doc.select("div.hkadj").html();  //todo + "<p>" + doc.select("img.imgtop").html();
 
             } else {
-                title = doc.select("title").text();
+                title = doc.select("div.headlinetitle").text();
                 time = doc.select("table span.newsheadlinetime").text();
                 body = doc.select("div.bodytext_v1").html() + "<p>" + doc.select("table tr td.news_line02").html();
+
             }
 
 

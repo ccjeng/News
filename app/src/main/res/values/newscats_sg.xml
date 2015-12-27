@@ -43,18 +43,32 @@
         <item>http://mypaper.sg/taxonomy/term/21/feed/55354</item>
     </string-array>
     <string-array name="newscatsDaliulian">
-        <item>新闻</item>
-        <item>生活</item>
-        <item>奇葩</item>
-        <item>兴趣</item>
-        <item>博学</item>
+        <item>台湾新闻</item>
+        <item>大马新闻</item>
+        <item>香港新闻</item>
+        <item>狮城新闻</item>
+        <item>中国新闻</item>
+        <item>国际新闻</item>
+        <item>趣闻新闻</item>
+        <item>娱乐新闻</item>
+        <item>历史新闻</item>
+        <item>军事新闻</item>
+        <item>创业新闻</item>
+        <item>财经新闻</item>
     </string-array>
     <string-array name="newsfeedsDaliulian">
-        <item>http://ww.daliulian.net/cat46?format=rss</item>
-        <item>http://ww.daliulian.net/cat48?format=rss</item>
-        <item>http://ww.daliulian.net/cat47?format=rss</item>
-        <item>http://ww.daliulian.net/cat91?format=rss</item>
-        <item>http://ww.daliulian.net/cat95?format=rss</item>
+        <item>http://ww.daliulian.net/cat46/79?format=rss</item>
+        <item>http://ww.daliulian.net/cat46/98?format=rss</item>
+        <item>http://ww.daliulian.net/cat46/99?format=rss</item>
+        <item>http://ww.daliulian.net/cat46/39?format=rss</item>
+        <item>http://ww.daliulian.net/cat46/34?format=rss</item>
+        <item>http://ww.daliulian.net/cat46/37?format=rss</item>
+        <item>http://ww.daliulian.net/cat46/43?format=rss</item>
+        <item>http://ww.daliulian.net/cat46/18?format=rss</item>
+        <item>http://ww.daliulian.net/cat46/77?format=rss</item>
+        <item>http://ww.daliulian.net/cat46/35?format=rss</item>
+        <item>http://ww.daliulian.net/cat46/15?format=rss</item>
+        <item>http://ww.daliulian.net/cat46/22?format=rss</item>
     </string-array>
     <string-array name="newscatsKwongwah">
         <item>北马新闻</item>
@@ -107,15 +121,5 @@
         <item>http://www.guangming.com.my/taxonomy/term/7/0/feed</item>
         <item>http://www.guangming.com.my/taxonomy/term/8/0/feed</item>
         <item>http://www.guangming.com.my/taxonomy/term/9/0/feed</item>
-    </string-array>
-    <string-array name="newscatsMalaysiakini">
-        <item>最新要闻</item>
-        <item>专栏</item>
-        <item>来函</item>
-    </string-array>
-    <string-array name="newsfeedsMalaysiakini">
-        <item>http://www.malaysiakini.com/zh/news.rss</item>
-        <item>http://www.malaysiakini.com/zh/columns.rss</item>
-        <item>http://www.malaysiakini.com/zh/letters.rss</item>
     </string-array>
 </resources>

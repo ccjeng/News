@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:background="@color/windowBackground"
             android:padding="5dp"
-            android:textAppearance="?android:attr/textAppearanceLarge"/>
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"/>
     </android.support.v7.widget.CardView>
 
 </LinearLayout>

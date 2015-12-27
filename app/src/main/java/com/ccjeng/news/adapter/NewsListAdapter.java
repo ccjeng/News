@@ -11,14 +11,15 @@ import android.widget.TextView;
 
 import com.ccjeng.news.R;
 import com.ccjeng.news.controler.rss.RSSFeed;
+import com.ccjeng.news.view.NewsRSSList;
 import com.squareup.picasso.Picasso;
 
 public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.CustomViewHolder> {
 	private static final String TAG = "NewsListAdapter";
-	private final Activity context;
+	private final NewsRSSList context;
 	private final RSSFeed items;
 	
-	public NewsListAdapter(Activity context, RSSFeed list) {
+	public NewsListAdapter(NewsRSSList context, RSSFeed list) {
 		  this.context = context;
 		  this.items = list;
 	 }
@@ -67,12 +68,11 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.Custom
 		return (null != items ? items.getItemCount() : 0);
 	}
 
-	public class CustomViewHolder extends RecyclerView.ViewHolder {
+	public class CustomViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 		protected ImageView imageView;
 		protected TextView titleView;
 		protected TextView dateView;
 		protected TextView descrView;
-
 
 		public CustomViewHolder(View view) {
 			super(view);
@@ -80,8 +80,15 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.Custom
 			this.titleView = (TextView) view.findViewById(R.id.title);
 			this.dateView = (TextView) view.findViewById(R.id.date);
 			this.descrView = (TextView) view.findViewById(R.id.descr);
-
+            view.setOnClickListener(this);
 		}
+
+        // Handles the row item being clicked
+        @Override
+        public void onClick(View view) {
+            int position = getLayoutPosition(); // gets item position
+            context.showDetail(position, items);
+        }
 	}
 
 }

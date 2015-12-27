@@ -35,7 +35,7 @@ public class DateTimeFormater {
             //if not valid, it will throw ParseException
             Date date = sdfFrom.parse(datetime);
             strDT = sdfTo.format(date);
-            Log.d(TAG, datetime +"--" +strDT);
+            //Log.d(TAG, datetime +"--" +strDT);
             return strDT;
 
         } catch (ParseException e) {

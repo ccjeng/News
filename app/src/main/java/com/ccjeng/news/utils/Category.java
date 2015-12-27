@@ -4,7 +4,6 @@ import android.content.Context;
 
 import com.ccjeng.news.R;
 import com.ccjeng.news.parser.AbstractNews;
-import com.ccjeng.news.parser.Standard;
 import com.ccjeng.news.parser.hk.AM730;
 import com.ccjeng.news.parser.hk.ETNet;
 import com.ccjeng.news.parser.hk.HKAppleDaily;
@@ -19,7 +18,6 @@ import com.ccjeng.news.parser.hk.TheStandNews;
 import com.ccjeng.news.parser.sg.Daliulian;
 import com.ccjeng.news.parser.sg.Guangming;
 import com.ccjeng.news.parser.sg.Kwongwah;
-import com.ccjeng.news.parser.sg.Malaysiakini;
 import com.ccjeng.news.parser.sg.MyPaper;
 import com.ccjeng.news.parser.sg.Sinchew;
 import com.ccjeng.news.parser.sg.Zaobao;
@@ -148,9 +146,6 @@ public class Category {
                 case 5:
                     category = context.getResources().getStringArray(R.array.newscatsGuangming);
                     break;
-                case 6:
-                    category = context.getResources().getStringArray(R.array.newscatsMalaysiakini);
-                    break;
             }
         }
 
@@ -258,9 +253,6 @@ public class Category {
                 case 5:
                     feedURL = context.getResources().getStringArray(R.array.newsfeedsGuangming);
                     break;
-                case 6:
-                    feedURL = context.getResources().getStringArray(R.array.newsfeedsMalaysiakini);
-                    break;
             }
         }
 
@@ -367,9 +359,6 @@ public class Category {
                     break;
                 case 5:
                     parser = new Guangming();
-                    break;
-                case 6:
-                    parser = new Malaysiakini();
                     break;
             }
         }
