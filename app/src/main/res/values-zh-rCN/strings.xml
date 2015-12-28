@@ -1,0 +1,50 @@
+<resources xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingTranslation">
+
+    <string name="app_name">树懒新闻</string>
+    <string name="action_settings">设定</string>
+    <string name="open_browser">开启浏览器</string>
+    <string name="share">分享</string>
+    <string name="setting">设定</string>
+    <string name="about">关於</string>
+    <string name="suggest">建议与评价</string>
+    <string name="license">本软件提供各大网站新闻资讯服务，新闻图片与新闻文字内容，其着作权与版权皆属该新闻网站所有</string>
+    <string name="quit_tip">再按一次退出</string>
+
+    <!-- Tab -->
+    <string name="tab_tw">台湾</string>
+    <string name="tab_hk">香港</string>
+    <string name="tab_sg">星马</string>
+
+    <string name="sharing_description">将内容分享到应用程式</string>
+
+    <!-- Preference -->
+    <string name="preference_content_group">新闻内文</string>
+    <string name="preference_content_font_size">设定文字大小</string>
+    <string name="preference_content_font_size_summary">设定新闻内文的文字大小</string>
+    <string name="preference_content_font_color">设定文字颜色</string>
+    <string name="preference_content_font_color_summary">设定新闻内文的文字颜色</string>
+    <string name="preference_content_bg_color">设定背景颜色</string>
+    <string name="preference_content_bg_color_summary">设定新闻内文的背景颜色</string>
+    <string name="preference_content_smartsave">开启智能节费模式</string>
+    <string name="preference_content_smartsave_summary">根据连线类型(wifi/行动网路)自动启动/关闭图片下载功能</string>
+    <string name="preference_testing_group">实验功能</string>
+    <string name="preference_others_group">其他功能</string>
+    <string name="preference_others_defaulttab">自订首页</string>
+    <string name="preference_others_defaulttab_summary">设定开启应用程式後进入的页签</string>
+
+
+    <!-- Error -->
+    <string name="network_error">无法连线，请检查装置是否正常连网</string>
+    <string name="data_error">网路错误，请检查装置是否正常连网</string>
+    <string name="no_data">没有资料</string>
+    <string name="parsing_error_transfer">新闻内容解析异常，即将载入原始新闻网页</string>
+
+    <!-- Welcome -->
+    <string name="changelog_title">更新记录</string>
+    <string name="welcome_title">欢迎</string>
+    <string name="welcome_message">欢迎使用树懒新闻，超好用的新闻阅读器。\n\n建议使用wifi，以获得最佳浏览速度。
+    \n\n请按下方的设定按钮，自订最佳的浏览状态。
+    </string>
+
+</resources>

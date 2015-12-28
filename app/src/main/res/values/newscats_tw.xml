@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools"
+	tools:ignore="MissingTranslation">
+
 	<string-array name="newscatsCNA">
 		<item>重點新聞</item>
 		<item>新聞圖輯</item>
