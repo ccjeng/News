@@ -15,6 +15,7 @@ import com.android.volley.VolleyError;
 import com.ccjeng.news.News;
 import com.ccjeng.news.R;
 import com.ccjeng.news.parser.AbstractNews;
+import com.ccjeng.news.utils.Analytics;
 import com.ccjeng.news.utils.Category;
 import com.ccjeng.news.view.NewsView;
 import com.pnikosis.materialishprogress.ProgressWheel;
@@ -63,6 +64,8 @@ public class NewsHandler {
 
                     if (parser.isEmptyContent()) {
                         //if parse result is empty, then show webview directly..
+                        Analytics ga = new Analytics();
+                        ga.trackEvent(context, "Error", "Empty Content", url, 0);
 
                         Crouton.makeText(context, R.string.parsing_error_transfer, Style.INFO,
                                 (ViewGroup) context.findViewById(R.id.croutonview)).show();

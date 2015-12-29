@@ -15,12 +15,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 
 import com.ccjeng.news.News;
 import com.ccjeng.news.R;
 import com.ccjeng.news.adapter.NewsListAdapter;
-import com.ccjeng.news.adapter.RecyclerItemClickListener;
 import com.ccjeng.news.controler.rss.RSSFeed;
 import com.ccjeng.news.controler.rss.RSSService;
 import com.ccjeng.news.utils.Analytics;

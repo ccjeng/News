@@ -10,6 +10,9 @@
         android:id="@+id/cv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:focusable="true"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
         card_view:cardCornerRadius="2dp"
         card_view:cardElevation="2dp">
         <TextView

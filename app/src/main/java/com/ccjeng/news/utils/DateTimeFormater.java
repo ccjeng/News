@@ -22,6 +22,12 @@ public class DateTimeFormater {
 
         //todo format error: format error: 新頭殼 hide
         datetime = datetime.replace(", ",",").replace("  +"," +"); //Fix ETToday format issue: Thu,24 Dec 2015 12:51:00
+
+        //Storm
+        //if(datetime.substring(datetime.length()-3, datetime.length()-2).equals(":")){
+        //    datetime = datetime.trim() + " +0800";
+        //};
+
         //String dateFromatFrom = "EEE, dd MMM yyyy HH:mm:ss zzz";
         String dateFromatFrom = "EEE,dd MMM yyyy HH:mm:ss zzz";
         String dateFromatTo = "yyyy-MM-dd HH:mm";
@@ -40,6 +46,8 @@ public class DateTimeFormater {
 
         } catch (ParseException e) {
             Log.d(TAG, "ParseException=" + e.toString());
+            Log.d(TAG, datetime);
+
             //        e.printStackTrace();
             return datetime;
         }
