@@ -26,7 +26,7 @@ import java.util.Map;
  * Tested with Facebook SDK 4.8.1.
  */
 public class FacebookBanner extends CustomEventBanner implements AdListener {
-    public static final String PLACEMENT_ID_KEY = News.AD_FBBanner;
+    public static final String PLACEMENT_ID_KEY = "placement_id";
 
     private AdView mFacebookBanner;
     private CustomEventBannerListener mBannerListener;
@@ -44,13 +44,14 @@ public class FacebookBanner extends CustomEventBanner implements AdListener {
 
         String placementId = null;
 
-        placementId = PLACEMENT_ID_KEY;
+        //placementId = PLACEMENT_ID_KEY;
 
         if (serverExtrasAreValid(serverExtras)) {
             placementId = serverExtras.get(PLACEMENT_ID_KEY);
         } else {
-            //mBannerListener.onBannerFailed(MoPubErrorCode.ADAPTER_CONFIGURATION_ERROR);
-            //return;
+            Log.e("FAN", "onBannerFailed serverExtrasAreValid");
+            mBannerListener.onBannerFailed(MoPubErrorCode.ADAPTER_CONFIGURATION_ERROR);
+            return;
         }
 
         int width;
@@ -59,12 +60,14 @@ public class FacebookBanner extends CustomEventBanner implements AdListener {
             width = (Integer) localExtras.get(DataKeys.AD_WIDTH);
             height = (Integer) localExtras.get(DataKeys.AD_HEIGHT);
         } else {
+            Log.e("FAN", "onBannerFailed localExtrasAreValid");
             mBannerListener.onBannerFailed(MoPubErrorCode.ADAPTER_CONFIGURATION_ERROR);
             return;
         }
 
         AdSize adSize = calculateAdSize(width, height);
         if (adSize == null) {
+            Log.e("FAN", "onBannerFailed adSize == null");
             mBannerListener.onBannerFailed(MoPubErrorCode.ADAPTER_CONFIGURATION_ERROR);
             return;
         }

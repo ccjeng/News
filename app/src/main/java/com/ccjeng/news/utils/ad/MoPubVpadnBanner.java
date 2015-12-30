@@ -25,7 +25,7 @@ class MoPubVpadnBanner extends CustomEventBanner {
     /*
      * These keys are intended for MoPub internal use. Do not modify.
      */
-    private static final String AD_UNIT_ID_KEY = News.AD_Vpon;
+    private static final String AD_UNIT_ID_KEY = "adUnitID";
 
 
     private CustomEventBannerListener mBannerListener;
@@ -42,7 +42,7 @@ class MoPubVpadnBanner extends CustomEventBanner {
         mBannerListener = customEventBannerListener;
         String adUnitId = null;
 
-        adUnitId = AD_UNIT_ID_KEY;
+        //adUnitId = AD_UNIT_ID_KEY;
 
         if (serverExtras.containsKey(AD_UNIT_ID_KEY)) {
             adUnitId = serverExtras.get(AD_UNIT_ID_KEY);
