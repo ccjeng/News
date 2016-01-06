@@ -93,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
         if (tab != null) {
             tab.select();
         }
+
     }
 
     @Override

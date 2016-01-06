@@ -16,6 +16,7 @@ public class News extends Application {
     public static final boolean APPDEBUG = BuildConfig.DEBUG;
 
     public static final String AD_MoPub = "edc19146642e4017ae2b53cb17546691";
+
     public static final String GooglShorten = "";
 
     @Override

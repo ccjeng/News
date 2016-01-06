@@ -29,7 +29,7 @@ public class TheStandNews extends AbstractNews {
 
         try {
             title = doc.select("h1.article-name").text();
-            time = doc.select("p.date").text();
+            time = doc.select("p.date").get(4).text();
             body = doc.select("div.article-content").html() + "<p>"
                     + doc.select("div.article-photo").html() + "<p>"
                     + doc.select("p.caption").html();

@@ -3,8 +3,8 @@
 	tools:ignore="MissingTranslation">
 
     <string-array name="updates">
-    	<item>v1.4.1\n
-    	    -增加简体中文版本
+    	<item>v1.4.2\n
+    	    -修正一些错误
     	</item>
 	</string-array>
 </resources>

@@ -23,8 +23,7 @@ import com.hannesdorfmann.swipeback.Position;
 import com.hannesdorfmann.swipeback.SwipeBack;
 import com.mikepenz.community_material_typeface_library.CommunityMaterial;
 import com.mikepenz.iconics.IconicsDrawable;
-
-import java.util.ArrayList;
+import com.mopub.mobileads.MoPubView;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -39,6 +38,7 @@ public class NewsCategory extends AppCompatActivity {
     @Bind(R.id.recyclerView)
     RecyclerView recyclerView;
 
+    private MoPubView moPubView;
     private int sourceNumber;
     private String tabName;
     private String categoryName;
@@ -54,6 +54,7 @@ public class NewsCategory extends AppCompatActivity {
                 .setContentView(R.layout.activity_category)
                 .setSwipeBackView(R.layout.swipeback)
                 .setSwipeBackContainerBackgroundColor(Color.TRANSPARENT);
+
 
         ButterKnife.bind(this);
 
@@ -84,6 +85,13 @@ public class NewsCategory extends AppCompatActivity {
         getSupportActionBar().setTitle(categoryName);
         showResult(tabName, sourceNumber);
 
+
+        moPubView = (MoPubView) findViewById(R.id.adview);
+        moPubView.setAdUnitId(News.AD_MoPub);
+        if (!News.APPDEBUG) {
+            moPubView.loadAd();
+        }
+
         ga.trackEvent(this, "Click", "News", categoryName, 0);
 
     }
@@ -98,6 +106,14 @@ public class NewsCategory extends AppCompatActivity {
     public void onStop() {
         super.onStop();
         GoogleAnalytics.getInstance(this).reportActivityStop(this);
+    }
+
+    @Override
+    protected void onDestroy() {
+        if (moPubView != null) {
+            moPubView.destroy();
+        }
+        super.onDestroy();
     }
 
     @Override
