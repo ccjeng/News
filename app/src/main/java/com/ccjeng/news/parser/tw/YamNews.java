@@ -28,9 +28,16 @@ public class YamNews extends AbstractNews {
         String time = "";
 
         try {
-            title = doc.select("li.title > h2").text();
-            time = doc.select("li.info > time").text() + "<br/>" + doc.select("li.info > span").text();
-            body = doc.select("li.photo").html() +  doc.select("li.photoData > h3").text() + doc.select("div#news_content").html();
+            if (link.contains("video.")) { //todo video content
+                title = doc.select("li.title > h2").text();
+                time = doc.select("li.info > time").text() + "<br/>" + doc.select("li.info > span").text();
+                body = doc.select("li.photo").html() + doc.select("li.photoData > h3").text() + doc.select("div#news_content").html();
+            }
+            else {
+                title = doc.select("li.title > h2").text();
+                time = doc.select("li.info > time").text() + "<br/>" + doc.select("li.info > span").text();
+                body = doc.select("li.photo").html() + doc.select("li.photoData > h3").text() + doc.select("div#news_content").html();
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
