@@ -155,18 +155,26 @@ public class NewsHandler {
         DisplayMetrics dm = new DisplayMetrics();
         context.getWindowManager().getDefaultDisplay().getMetrics(dm);
         Configuration config = context.getResources().getConfiguration();
-        int vWidth = 0;
+        //int vWidth = 0;
         if (config.orientation == Configuration.ORIENTATION_LANDSCAPE)
             width = dm.heightPixels;
         else
             width = dm.widthPixels;
 
         int currentapiVersion = android.os.Build.VERSION.SDK_INT;
-        if (currentapiVersion >= android.os.Build.VERSION_CODES.LOLLIPOP){
+
+        //Log.d(TAG, "currentapiVersion = " + currentapiVersion);
+        //Log.d(TAG, "width = " + width);
+
+        if (currentapiVersion >= android.os.Build.VERSION_CODES.LOLLIPOP){ //5.0
             return width/3;
         } else{
-            return width*3/4;
+            if (width<800)
+                return width/2;
+            else
+                return width*3/4;
         }
+
 
     }
 }
