@@ -5,10 +5,10 @@ android {
     buildToolsVersion "22.0.1"
     defaultConfig {
         applicationId "com.ccjeng.news"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 23
-        versionCode 11
-        versionName '1.4.3.011916SN'
+        versionCode 12
+        versionName '1.4.4.012216SN'
     }
     buildTypes {
         release {

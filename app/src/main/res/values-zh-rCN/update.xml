@@ -3,8 +3,8 @@
 	tools:ignore="MissingTranslation">
 
     <string-array name="updates">
-    	<item>v1.4.3\n
-    	    -修正Android4.x图片解析度的问题
+    	<item>v1.4.4\n
+    	    -停止支援Android 4.0.X (Ice Cream Sandwich)
     	</item>
 	</string-array>
 </resources>
