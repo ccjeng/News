@@ -85,13 +85,14 @@ public class NewsCategory extends AppCompatActivity {
         getSupportActionBar().setTitle(categoryName);
         showResult(tabName, sourceNumber);
 
-
+/*
         moPubView = (MoPubView) findViewById(R.id.adview);
         moPubView.setAdUnitId(News.AD_MoPub);
+
         if (!News.APPDEBUG) {
             moPubView.loadAd();
         }
-
+*/
         ga.trackEvent(this, "Click", "News", categoryName, 0);
 
     }

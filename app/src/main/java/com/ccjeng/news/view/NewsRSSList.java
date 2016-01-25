@@ -119,13 +119,14 @@ public class NewsRSSList extends AppCompatActivity
             Crouton.makeText(NewsRSSList.this, R.string.network_error, Style.ALERT,
                     (ViewGroup) findViewById(R.id.croutonview)).show();
         }
-
+/*
         moPubView = (MoPubView) findViewById(R.id.adview);
         moPubView.setAdUnitId(News.AD_MoPub);
+
         if (!News.APPDEBUG) {
             moPubView.loadAd();
         }
-
+*/
         ga.trackEvent(this, "Click", "Category", newsName + "-" + categoryName, 0);
 
     }

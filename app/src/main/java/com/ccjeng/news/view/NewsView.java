@@ -24,6 +24,7 @@ import com.hannesdorfmann.swipeback.Position;
 import com.hannesdorfmann.swipeback.SwipeBack;
 import com.mikepenz.community_material_typeface_library.CommunityMaterial;
 import com.mikepenz.iconics.IconicsDrawable;
+import com.mopub.mobileads.MoPubView;
 import com.pnikosis.materialishprogress.ProgressWheel;
 
 import butterknife.Bind;
@@ -52,6 +53,7 @@ public class NewsView extends AppCompatActivity {
     private String newsName;
     private String newsUrl;
     private String newsTitle;
+    private MoPubView moPubView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,11 +96,17 @@ public class NewsView extends AppCompatActivity {
 
         main.setBackgroundColor(Color.parseColor(News.getPrefBGColor()));
 
+        moPubView = (MoPubView) findViewById(R.id.adview);
+        moPubView.setAdUnitId(News.AD_MoPub);
+
+
         if (Network.isNetworkConnected(this)) {
 
             progressWheel.setVisibility(View.VISIBLE);
             main.setVisibility(View.GONE);
             NewsHandler.getNewsContent(this, newsUrl, tabName, sourceNumber);
+
+            moPubView.loadAd();
 
         } else {
             Crouton.makeText(NewsView.this, R.string.network_error, Style.ALERT,
@@ -121,6 +129,10 @@ public class NewsView extends AppCompatActivity {
 
     @Override
     protected void onDestroy() {
+        if (moPubView != null) {
+            moPubView.destroy();
+        }
+
         super.onDestroy();
         if (webView != null) {
             webView.setVisibility(View.GONE);

@@ -8,52 +8,79 @@
     android:fitsSystemWindows="true"
     tools:context="com.ccjeng.news.view.NewsWeb">
 
-    <android.support.design.widget.AppBarLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <include
-            android:id="@+id/toolbar"
-            layout="@layout/toolbar"
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/toolbarLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_scrollFlags="scroll|enterAlways" />
+            android:theme="@style/AppTheme.AppBarOverlay">
 
-    </android.support.design.widget.AppBarLayout>
+            <include
+                android:id="@+id/toolbar"
+                layout="@layout/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_scrollFlags="scroll|enterAlways" />
 
-
-    <com.pnikosis.materialishprogress.ProgressWheel
-        android:id="@+id/progress_wheel"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_gravity="center_horizontal|center_vertical"
-        wheel:matProg_barColor="@color/colorProgress"
-        wheel:matProg_progressIndeterminate="true"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+        </android.support.design.widget.AppBarLayout>
 
 
-    <android.support.v4.widget.NestedScrollView
-        android:id="@+id/main"
-        android:layout_width="match_parent"
-        android:layout_height="fill_parent"
-        android:background="@color/windowBackground"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <com.pnikosis.materialishprogress.ProgressWheel
+            android:id="@+id/progress_wheel"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            wheel:matProg_barColor="@color/colorProgress"
+            wheel:matProg_progressIndeterminate="true" />
 
-        <LinearLayout
-            android:id="@+id/croutonview"
+
+        <android.support.v4.widget.NestedScrollView
+            android:id="@+id/main"
             android:layout_width="match_parent"
             android:layout_height="fill_parent"
-            android:orientation="vertical"
+            android:layout_above="@+id/footerLayout"
+            android:layout_below="@+id/toolbarLayout"
+            android:background="@color/windowBackground"
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-            <WebView
-                android:id="@+id/webView"
-                android:layout_width="fill_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical" />
+            <LinearLayout
+                android:id="@+id/croutonview"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
+                <WebView
+                    android:id="@+id/webView"
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" />
+
+            </LinearLayout>
+
+        </android.support.v4.widget.NestedScrollView>
+
+        <LinearLayout
+            android:id="@+id/footerLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="bottom"
+            android:orientation="horizontal"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <com.mopub.mobileads.MoPubView
+                android:id="@+id/adview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
         </LinearLayout>
-
-    </android.support.v4.widget.NestedScrollView>
+    </RelativeLayout>
 </android.support.design.widget.CoordinatorLayout>
