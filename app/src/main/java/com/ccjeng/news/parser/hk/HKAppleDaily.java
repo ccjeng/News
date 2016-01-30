@@ -29,8 +29,10 @@ public class HKAppleDaily extends AbstractNews {
 
         try {
             title = doc.select("h1").text();
-            time = doc.select("body > b").get(0).text();
-            body = doc.select("body").html();
+            time = "";
+            //time = doc.select("body > b").get(0).text();
+            //body = doc.select("body").html();
+            body = doc.select("div#content-article").html();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -58,10 +60,14 @@ public class HKAppleDaily extends AbstractNews {
     }
 
     protected String cleaner(String rs) {
-
+/*
         rs = rs.replace("<h2>","<p>");
         rs = rs.replace("</h2>","</p>");
         rs = rs.replace("#video_player{width:100%; height:100%;}","");
+*/
+
+        rs = rs.replace("<h1>","<!--");
+        rs = rs.replace("</h1>","-->");
 
         Whitelist wlist = new Whitelist();
 

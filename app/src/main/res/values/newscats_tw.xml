@@ -125,6 +125,27 @@
 		<item>http://udn.com/rssfeed/news/2/7226</item>
 		<item>http://udn.com/rssfeed/news/2/6643</item>
     </string-array>
+
+	<string-array name="newscatsUDNFN">
+		<item>國際</item>
+		<item>兩岸</item>
+		<item>證券</item>
+		<item>理財</item>
+		<item>房產</item>
+		<item>觀點</item>
+		<item>品味</item>
+		<item>商情</item>
+	</string-array>
+	<string-array name="newsfeedsUDNFN">
+		<item>http://money.udn.com/rssfeed/news/1001/5588</item>
+		<item>http://money.udn.com/rssfeed/news/1001/5589</item>
+		<item>http://money.udn.com/rssfeed/news/1001/5590</item>
+		<item>http://money.udn.com/rssfeed/news/1001/5592</item>
+		<item>http://money.udn.com/rssfeed/news/1001/5593</item>
+		<item>http://money.udn.com/rssfeed/news/1001/5595</item>
+		<item>http://money.udn.com/rssfeed/news/1001/5596</item>
+		<item>http://money.udn.com/rssfeed/news/1001/5597</item>
+	</string-array>
     <string-array name="newscatsYam">
     	<item>政治新聞</item>
     	<item>社會新聞</item>

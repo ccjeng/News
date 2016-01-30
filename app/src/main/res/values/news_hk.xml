@@ -3,7 +3,7 @@
 	tools:ignore="MissingTranslation">
 
     <string-array name="newsSourceHK">
-    	<item>生果日報</item>
+    	<item>香港蘋果日報</item>
     	<item>東方日報</item>
     	<item>雅虎新聞</item>
     	<item>信報</item>

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="MissingTranslation">
-
     <string-array name="newscatsHKYahoo">
         <item>港聞</item>
         <item>國際</item>
@@ -141,6 +140,27 @@
 
     <string-array name="newscatsHKAppleDaily">
         <item>要聞港聞</item>
+        <item>兩岸國際</item>
+        <item>娛樂</item>
+        <item>果籽</item>
+        <item>財經</item>
+        <item>體育</item>
+        <item>壹週刊</item>
+        <item>飲食男女</item>
+    </string-array>
+    <string-array name="newsfeedsHKAppleDaily">
+        <item>http://feed43.com/8467602437008668.xml</item>
+        <item>http://feed43.com/0104300651552310.xml</item>
+        <item>http://feed43.com/8037821550603588.xml</item>
+        <item>http://feed43.com/4316756456356141.xml</item>
+        <item>http://feed43.com/4475152203773631.xml</item>
+        <item>http://feed43.com/5041650614854808.xml</item>
+        <item>http://feed43.com/7336622850523210.xml</item>
+        <item>http://feed43.com/2176071852758205.xml</item>
+    </string-array>
+    <!--
+    <string-array name="newscatsHKAppleDaily">
+        <item>要聞港聞</item>
         <item>財經地產</item>
         <item>兩岸國際</item>
         <item>娛樂名人</item>
@@ -171,6 +191,7 @@
         <item>http://feed43.com/hkappledaily-13.xml</item>
         <item>http://feed43.com/hkappledaily-14.xml</item>
     </string-array>
+    -->
     <string-array name="newscatsHKEJ">
         <item>即時財訊</item>
     </string-array>

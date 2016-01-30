@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebChromeClient;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
@@ -17,6 +18,7 @@ import com.ccjeng.news.R;
 import com.ccjeng.news.parser.AbstractNews;
 import com.ccjeng.news.utils.Analytics;
 import com.ccjeng.news.utils.Category;
+import com.ccjeng.news.utils.Webpage;
 import com.ccjeng.news.view.NewsView;
 import com.pnikosis.materialishprogress.ProgressWheel;
 
@@ -47,6 +49,9 @@ public class NewsHandler {
         //context.webView.getSettings().setBuiltInZoomControls(true);
         //context.webView.getSettings().setCacheMode(2); //LOAD_NO_CACHE
         context.webView.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
+
+        //context.webView.getSettings().setLoadWithOverviewMode(true);
+        //context.webView.getSettings().setUseWideViewPort(true);
 
         VolleyStringRequest req = new VolleyStringRequest(url, charset, new Response.Listener<String>() {
             @Override
@@ -161,20 +166,13 @@ public class NewsHandler {
         else
             width = dm.widthPixels;
 
-        int currentapiVersion = android.os.Build.VERSION.SDK_INT;
+        //int currentapiVersion = android.os.Build.VERSION.SDK_INT;
 
         //Log.d(TAG, "currentapiVersion = " + currentapiVersion);
-        //Log.d(TAG, "width = " + width);
+        //Log.d(TAG, "width px = " + width);
+        //Log.d(TAG, "width dip = " + Webpage.px2dip(context, width));
 
-        if (currentapiVersion >= android.os.Build.VERSION_CODES.LOLLIPOP){ //5.0
-            return width/3;
-        } else{
-            if (width<800)
-                return width/2;
-            else
-                return width*3/4;
-        }
-
+        return Webpage.px2dip(context, width);
 
     }
 }
