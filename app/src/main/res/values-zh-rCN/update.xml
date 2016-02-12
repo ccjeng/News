@@ -4,10 +4,7 @@
 
     <string-array name="updates">
     	<item>v1.4.5\n
-    	    改变广告位置\n
-    	    修正图片大小\n
-			增加联合理财网\n
-			生果日报改香港苹果日报
+    	    联合财经网新增产业和热点两个类别
     	</item>
 	</string-array>
 </resources>

@@ -127,6 +127,8 @@
     </string-array>
 
 	<string-array name="newscatsUDNFN">
+		<item>熱點</item>
+		<item>產業</item>
 		<item>國際</item>
 		<item>兩岸</item>
 		<item>證券</item>
@@ -137,6 +139,8 @@
 		<item>商情</item>
 	</string-array>
 	<string-array name="newsfeedsUDNFN">
+		<item>http://money.udn.com/rssfeed/news/1001/5587</item>
+		<item>http://money.udn.com/rssfeed/news/1001/5591</item>
 		<item>http://money.udn.com/rssfeed/news/1001/5588</item>
 		<item>http://money.udn.com/rssfeed/news/1001/5589</item>
 		<item>http://money.udn.com/rssfeed/news/1001/5590</item>
