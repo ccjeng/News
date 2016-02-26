@@ -23,6 +23,7 @@ import com.ccjeng.news.controler.rss.RSSFeed;
 import com.ccjeng.news.controler.rss.RSSService;
 import com.ccjeng.news.utils.Analytics;
 import com.ccjeng.news.utils.Category;
+import com.ccjeng.news.utils.Constant;
 import com.ccjeng.news.utils.Network;
 import com.google.android.gms.analytics.GoogleAnalytics;
 import com.hannesdorfmann.swipeback.Position;
@@ -119,14 +120,10 @@ public class NewsRSSList extends AppCompatActivity
             Crouton.makeText(NewsRSSList.this, R.string.network_error, Style.ALERT,
                     (ViewGroup) findViewById(R.id.croutonview)).show();
         }
-/*
-        moPubView = (MoPubView) findViewById(R.id.adview);
-        moPubView.setAdUnitId(News.AD_MoPub);
 
-        if (!News.APPDEBUG) {
-            moPubView.loadAd();
-        }
-*/
+        moPubView = (MoPubView) findViewById(R.id.adview);
+        Network.AdView(this, moPubView, Constant.Ad_MoPub_RSS);
+
         ga.trackEvent(this, "Click", "Category", newsName + "-" + categoryName, 0);
 
     }

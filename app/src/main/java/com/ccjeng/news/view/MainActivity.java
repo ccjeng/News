@@ -28,6 +28,7 @@ import com.ccjeng.news.News;
 import com.ccjeng.news.R;
 import com.ccjeng.news.utils.Analytics;
 import com.ccjeng.news.utils.Constant;
+import com.ccjeng.news.utils.Network;
 import com.ccjeng.news.utils.PreferenceSetting;
 import com.ccjeng.news.utils.Version;
 import com.google.android.gms.analytics.GoogleAnalytics;
@@ -98,8 +99,8 @@ public class MainActivity extends AppCompatActivity {
         if (tab != null) {
             tab.select();
         }
-
-        AdView();
+        moPubView = (MoPubView) findViewById(R.id.adview);
+        Network.AdView(this, moPubView, Constant.Ad_MoPub_Main);
     }
 
     @Override
@@ -272,12 +273,6 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
         return builder.create();
-    }
-
-    private void AdView() {
-        moPubView = (MoPubView) findViewById(R.id.adview);
-        moPubView.setAdUnitId(Constant.Ad_MoPub_Main);
-        moPubView.loadAd();
     }
 
 }

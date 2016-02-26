@@ -31,9 +31,9 @@
             android:id="@+id/recyclerView"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:layout_above="@+id/footerLayout"
             android:layout_below="@+id/toolbarLayout" />
 
-<!--
         <LinearLayout
             android:id="@+id/footerLayout"
             android:layout_width="fill_parent"
@@ -41,16 +41,14 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:gravity="bottom"
-            android:orientation="horizontal"
-            android:visibility="gone"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+            android:orientation="horizontal">
 
             <com.mopub.mobileads.MoPubView
                 android:id="@+id/adview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </LinearLayout>
--->
+
     </RelativeLayout>
 
 </android.support.design.widget.CoordinatorLayout>

@@ -4,6 +4,11 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.util.Log;
+import android.view.View;
+
+import com.ccjeng.news.News;
+import com.mopub.mobileads.MoPubErrorCode;
+import com.mopub.mobileads.MoPubView;
 
 /**
  * Created by andycheng on 2015/11/15.
@@ -43,6 +48,40 @@ public class Network {
             return false;
         }
 
+    }
+
+    public static void AdView(Context context, MoPubView adView, String AdUnitID) {
+        adView.setAdUnitId(AdUnitID);
+      //  if (News.APPDEBUG) {
+      //      adView.setTesting(true);
+      //  }
+        adView.loadAd();
+        adView.setBannerAdListener(new MoPubView.BannerAdListener() {
+            @Override
+            public void onBannerLoaded(MoPubView banner) {
+
+            }
+
+            @Override
+            public void onBannerFailed(MoPubView banner, MoPubErrorCode errorCode) {
+
+            }
+
+            @Override
+            public void onBannerClicked(MoPubView banner) {
+
+            }
+
+            @Override
+            public void onBannerExpanded(MoPubView banner) {
+
+            }
+
+            @Override
+            public void onBannerCollapsed(MoPubView banner) {
+
+            }
+        });
     }
 
 }

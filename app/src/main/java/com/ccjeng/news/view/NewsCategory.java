@@ -18,6 +18,8 @@ import com.ccjeng.news.adapter.NewsCategoryAdapter;
 import com.ccjeng.news.adapter.RecyclerItemClickListener;
 import com.ccjeng.news.utils.Analytics;
 import com.ccjeng.news.utils.Category;
+import com.ccjeng.news.utils.Constant;
+import com.ccjeng.news.utils.Network;
 import com.google.android.gms.analytics.GoogleAnalytics;
 import com.hannesdorfmann.swipeback.Position;
 import com.hannesdorfmann.swipeback.SwipeBack;
@@ -85,14 +87,10 @@ public class NewsCategory extends AppCompatActivity {
         getSupportActionBar().setTitle(categoryName);
         showResult(tabName, sourceNumber);
 
-/*
-        moPubView = (MoPubView) findViewById(R.id.adview);
-        moPubView.setAdUnitId(News.AD_MoPub);
 
-        if (!News.APPDEBUG) {
-            moPubView.loadAd();
-        }
-*/
+        moPubView = (MoPubView) findViewById(R.id.adview);
+        Network.AdView(this, moPubView, Constant.Ad_MoPub_Category);
+
         ga.trackEvent(this, "Click", "News", categoryName, 0);
 
     }

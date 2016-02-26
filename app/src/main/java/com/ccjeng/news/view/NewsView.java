@@ -99,42 +99,13 @@ public class NewsView extends AppCompatActivity {
         main.setBackgroundColor(Color.parseColor(News.getPrefBGColor()));
 
         moPubView = (MoPubView) findViewById(R.id.adview);
-        moPubView.setAdUnitId(Constant.AD_MoPub);
-
 
         if (Network.isNetworkConnected(this)) {
 
             progressWheel.setVisibility(View.VISIBLE);
             main.setVisibility(View.GONE);
             NewsHandler.getNewsContent(this, newsUrl, tabName, sourceNumber);
-
-            moPubView.loadAd();
-            moPubView.setBannerAdListener(new MoPubView.BannerAdListener() {
-                @Override
-                public void onBannerLoaded(MoPubView banner) {
-
-                }
-
-                @Override
-                public void onBannerFailed(MoPubView banner, MoPubErrorCode errorCode) {
-
-                }
-
-                @Override
-                public void onBannerClicked(MoPubView banner) {
-
-                }
-
-                @Override
-                public void onBannerExpanded(MoPubView banner) {
-
-                }
-
-                @Override
-                public void onBannerCollapsed(MoPubView banner) {
-
-                }
-            });
+            Network.AdView(this, moPubView, Constant.AD_MoPub_View);
 
         } else {
             Crouton.makeText(NewsView.this, R.string.network_error, Style.ALERT,
