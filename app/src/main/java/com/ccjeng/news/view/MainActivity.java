@@ -18,13 +18,16 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.ccjeng.news.News;
 import com.ccjeng.news.R;
 import com.ccjeng.news.utils.Analytics;
+import com.ccjeng.news.utils.Constant;
 import com.ccjeng.news.utils.PreferenceSetting;
 import com.ccjeng.news.utils.Version;
 import com.google.android.gms.analytics.GoogleAnalytics;
@@ -32,6 +35,7 @@ import com.mikepenz.aboutlibraries.Libs;
 import com.mikepenz.aboutlibraries.LibsBuilder;
 import com.mikepenz.community_material_typeface_library.CommunityMaterial;
 import com.mikepenz.iconics.IconicsDrawable;
+import com.mopub.mobileads.MoPubView;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -58,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static final int DIALOG_WELCOME = 1;
     private static final int DIALOG_UPDATE = 2;
+    private MoPubView moPubView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,11 +99,26 @@ public class MainActivity extends AppCompatActivity {
             tab.select();
         }
 
+        AdView();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+    }
+
+    @Override
+    public void onDestroy() {
+        if (moPubView != null) {
+            moPubView.destroy();
+        }
+
+        super.onDestroy();
     }
 
     @Override
@@ -252,6 +272,12 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
         return builder.create();
+    }
+
+    private void AdView() {
+        moPubView = (MoPubView) findViewById(R.id.adview);
+        moPubView.setAdUnitId(Constant.Ad_MoPub_Main);
+        moPubView.loadAd();
     }
 
 }

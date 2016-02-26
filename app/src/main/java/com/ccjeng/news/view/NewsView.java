@@ -17,6 +17,7 @@ import com.ccjeng.news.News;
 import com.ccjeng.news.R;
 import com.ccjeng.news.controler.web.NewsHandler;
 import com.ccjeng.news.utils.Analytics;
+import com.ccjeng.news.utils.Constant;
 import com.ccjeng.news.utils.Network;
 import com.ccjeng.news.utils.PreferenceSetting;
 import com.google.android.gms.analytics.GoogleAnalytics;
@@ -24,6 +25,7 @@ import com.hannesdorfmann.swipeback.Position;
 import com.hannesdorfmann.swipeback.SwipeBack;
 import com.mikepenz.community_material_typeface_library.CommunityMaterial;
 import com.mikepenz.iconics.IconicsDrawable;
+import com.mopub.mobileads.MoPubErrorCode;
 import com.mopub.mobileads.MoPubView;
 import com.pnikosis.materialishprogress.ProgressWheel;
 
@@ -97,7 +99,7 @@ public class NewsView extends AppCompatActivity {
         main.setBackgroundColor(Color.parseColor(News.getPrefBGColor()));
 
         moPubView = (MoPubView) findViewById(R.id.adview);
-        moPubView.setAdUnitId(News.AD_MoPub);
+        moPubView.setAdUnitId(Constant.AD_MoPub);
 
 
         if (Network.isNetworkConnected(this)) {
@@ -107,6 +109,32 @@ public class NewsView extends AppCompatActivity {
             NewsHandler.getNewsContent(this, newsUrl, tabName, sourceNumber);
 
             moPubView.loadAd();
+            moPubView.setBannerAdListener(new MoPubView.BannerAdListener() {
+                @Override
+                public void onBannerLoaded(MoPubView banner) {
+
+                }
+
+                @Override
+                public void onBannerFailed(MoPubView banner, MoPubErrorCode errorCode) {
+
+                }
+
+                @Override
+                public void onBannerClicked(MoPubView banner) {
+
+                }
+
+                @Override
+                public void onBannerExpanded(MoPubView banner) {
+
+                }
+
+                @Override
+                public void onBannerCollapsed(MoPubView banner) {
+
+                }
+            });
 
         } else {
             Crouton.makeText(NewsView.this, R.string.network_error, Style.ALERT,
