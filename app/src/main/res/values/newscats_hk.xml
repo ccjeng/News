@@ -158,7 +158,7 @@
         <item>http://feed43.com/7336622850523210.xml</item>
         <item>http://feed43.com/2176071852758205.xml</item>
     </string-array>
-    <!--
+<!--
     <string-array name="newscatsHKAppleDaily">
         <item>要聞港聞</item>
         <item>財經地產</item>
@@ -191,7 +191,7 @@
         <item>http://feed43.com/hkappledaily-13.xml</item>
         <item>http://feed43.com/hkappledaily-14.xml</item>
     </string-array>
-    -->
+-->
     <string-array name="newscatsHKEJ">
         <item>即時財訊</item>
     </string-array>
