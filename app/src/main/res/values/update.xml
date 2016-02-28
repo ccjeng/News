@@ -3,9 +3,8 @@
 	tools:ignore="MissingTranslation">
 
     <string-array name="updates">
-    	<item>v1.4.7\n
-			修正一些錯誤\n
-			增加廣告單元
+    	<item>v1.4.8\n
+			修正功能表不正常縮合的問題
     	</item>
 	</string-array>
 </resources>
