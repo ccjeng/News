@@ -79,10 +79,6 @@ public class MainActivity extends AppCompatActivity {
         ga.trackerPage(this);
 
         setSupportActionBar(toolbar);
-        toolbar.setNavigationIcon(new IconicsDrawable(this)
-                .icon(CommunityMaterial.Icon.cmd_menu)
-                .color(Color.WHITE)
-                .actionBar());
 
         pager.setAdapter(new ViewPagerAdapter(getSupportFragmentManager()));
         tabs.setupWithViewPager(pager);
@@ -169,12 +165,6 @@ public class MainActivity extends AppCompatActivity {
         if (actionBarDrawerToggle.onOptionsItemSelected(item)) {
             return true;
         }
-        /*
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                drawerLayout.openDrawer(GravityCompat.START);
-                return true;
-        }*/
         return super.onOptionsItemSelected(item);
     }
 
