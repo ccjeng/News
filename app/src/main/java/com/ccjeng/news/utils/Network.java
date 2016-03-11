@@ -3,10 +3,6 @@ package com.ccjeng.news.utils;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.util.Log;
-import android.view.View;
-
-import com.ccjeng.news.News;
 import com.mopub.mobileads.MoPubErrorCode;
 import com.mopub.mobileads.MoPubView;
 
@@ -38,7 +34,7 @@ public class Network {
         }
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
 
-        if (networkInfo.getTypeName().equalsIgnoreCase("WIFI")) {
+        if (networkInfo != null && networkInfo.getTypeName().equalsIgnoreCase("WIFI")) {
             if (networkInfo.isConnected()) {
                 return true;
             } else {
