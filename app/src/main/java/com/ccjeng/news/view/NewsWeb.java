@@ -54,10 +54,6 @@ public class NewsWeb extends AppCompatActivity {
         if (getSupportActionBar()!=null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
-        toolbar.setNavigationIcon(new IconicsDrawable(this)
-                .icon(CommunityMaterial.Icon.cmd_keyboard_backspace)
-                .color(Color.WHITE)
-                .actionBarSize());
 
         Bundle bundle = this.getIntent().getExtras();
         final int sourceNumber = Integer.parseInt(bundle.getString("SourceNum"));

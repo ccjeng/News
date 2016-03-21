@@ -16,11 +16,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.ccjeng.news.News;
 import com.ccjeng.news.R;
 import com.ccjeng.news.adapter.NewsListAdapter;
 import com.ccjeng.news.controler.rss.RSSFeed;
 import com.ccjeng.news.controler.rss.RSSService;
+import com.ccjeng.news.controler.rss.IRSSCallback;
 import com.ccjeng.news.utils.Analytics;
 import com.ccjeng.news.utils.Category;
 import com.ccjeng.news.utils.Constant;
@@ -85,10 +85,6 @@ public class NewsRSSList extends AppCompatActivity
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
-        toolbar.setNavigationIcon(new IconicsDrawable(this)
-                .icon(CommunityMaterial.Icon.cmd_keyboard_backspace)
-                .color(Color.WHITE)
-                .actionBar());
 
         LinearLayoutManager llm = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(llm);
@@ -233,10 +229,20 @@ public class NewsRSSList extends AppCompatActivity
         if (feedURL != null) {
             rssFeedURL = feedURL[itemNumber];
 
+
+            IRSSCallback callback = new IRSSCallback() {
+                @Override
+                public void onRSSReceived(RSSFeed rssFeed) {
+                    setListView(rssFeed);
+                }
+            };
+
+
             try {
                 final URL feedURL = new URL(rssFeedURL);
-                RSSService srv = new RSSService();
-                srv.requestRSS(NewsRSSList.this, feedURL);
+
+                RSSService srv = new RSSService(this);
+                srv.requestRSS(feedURL, callback);
 
             } catch (IOException e) {
                 e.printStackTrace();

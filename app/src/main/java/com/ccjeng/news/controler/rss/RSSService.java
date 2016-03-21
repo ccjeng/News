@@ -1,5 +1,6 @@
 package com.ccjeng.news.controler.rss;
 
+import android.content.Context;
 import android.util.Log;
 
 import com.ccjeng.news.view.NewsRSSList;
@@ -29,7 +30,12 @@ public class RSSService {
 
     private static final String TAG = "RSSService";
 
-    public void requestRSS(final NewsRSSList context, final URL url) throws IOException {
+    private NewsRSSList context;
+
+    public RSSService(NewsRSSList context){
+        this.context = context;
+    }
+    public void requestRSS(final URL url, final IRSSCallback callback) throws IOException {
 
         OkHttpClient client = new OkHttpClient();
         client.setConnectTimeout(15, TimeUnit.SECONDS);
@@ -74,10 +80,10 @@ public class RSSService {
                             context.runOnUiThread(new Runnable() {
                                                       @Override
                                                       public void run() {
-                                                              context.setListView(rssFeed);
+                                                          callback.onRSSReceived(rssFeed);
+
                                                       }
                                                   });
-
 
 
                         } catch (ParserConfigurationException e) {
@@ -92,12 +98,12 @@ public class RSSService {
                         Log.d(TAG, "onResponse");
                     } else {
                         Log.d(TAG, "response failed");
-                        responseError(context);
+                        //responseError(context);
                     }
                 } catch (IOException e) {
                     e.printStackTrace();
                     Log.d(TAG, "onResponse error = " + e.toString());
-                    responseError(context);
+                    //responseError(context);
 
                 }
 
@@ -106,6 +112,7 @@ public class RSSService {
 
     }
 
+    /*
     private void responseError(final NewsRSSList context){
         context.runOnUiThread(new Runnable() {
             @Override
@@ -114,7 +121,7 @@ public class RSSService {
             }
         });
 
-    }
+    }*/
 
     private InputStreamReader StreamReader(URL url, InputStream in) {
 
@@ -122,10 +129,10 @@ public class RSSService {
         // perform the synchronous parse
         try {
             if (url.toString().contains("stgloballink")
-                  //  || url.toString().contains("nownews")
+                    //  || url.toString().contains("nownews")
                     || url.toString().contains("hkheadline")
-                  //  || url.toString().contains("rthk.hk")
-                  //  || url.toString().contains("mingpao")
+                //  || url.toString().contains("rthk.hk")
+                //  || url.toString().contains("mingpao")
                     ) {
                 streamReader = new InputStreamReader(in, "big5");
             } else {

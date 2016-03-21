@@ -68,10 +68,6 @@ public class NewsCategory extends AppCompatActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
-        toolbar.setNavigationIcon(new IconicsDrawable(this)
-                .icon(CommunityMaterial.Icon.cmd_keyboard_backspace)
-                .color(Color.WHITE)
-                .actionBar());
 
         LinearLayoutManager llm = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(llm);

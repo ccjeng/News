@@ -77,10 +77,6 @@ public class NewsView extends AppCompatActivity {
         if (getSupportActionBar()!=null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
-        toolbar.setNavigationIcon(new IconicsDrawable(this)
-                .icon(CommunityMaterial.Icon.cmd_keyboard_backspace)
-                .color(Color.WHITE)
-                .actionBar());
 
         PreferenceSetting.getPreference(this);
 
