@@ -30,11 +30,9 @@ public class RSSService {
 
     private static final String TAG = "RSSService";
 
-    private NewsRSSList context;
-
-    public RSSService(NewsRSSList context){
-        this.context = context;
+    public RSSService(){
     }
+
     public void requestRSS(final URL url, final IRSSCallback callback) throws IOException {
 
         OkHttpClient client = new OkHttpClient();
@@ -74,16 +72,9 @@ public class RSSService {
                             //xr.parse(new InputSource(streamReader));
                             xr.parse(inputSource);
 
-                            final RSSFeed rssFeed = mRSSHandler.getParsedData();
+                            RSSFeed rssFeed = mRSSHandler.getParsedData();
 
-                            // Run view-related code back on the main thread
-                            context.runOnUiThread(new Runnable() {
-                                                      @Override
-                                                      public void run() {
-                                                          callback.onRSSReceived(rssFeed);
-
-                                                      }
-                                                  });
+                            callback.onRSSReceived(rssFeed);
 
 
                         } catch (ParserConfigurationException e) {

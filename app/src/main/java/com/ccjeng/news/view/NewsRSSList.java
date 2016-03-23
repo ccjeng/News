@@ -232,16 +232,22 @@ public class NewsRSSList extends AppCompatActivity
 
             IRSSCallback callback = new IRSSCallback() {
                 @Override
-                public void onRSSReceived(RSSFeed rssFeed) {
-                    setListView(rssFeed);
+                public void onRSSReceived(final RSSFeed rssFeed) {
+                    // Run view-related code back on the main thread
+                    NewsRSSList.this.runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            setListView(rssFeed);
+                        }
+                    });
                 }
             };
 
 
             try {
-                final URL feedURL = new URL(rssFeedURL);
+                URL feedURL = new URL(rssFeedURL);
 
-                RSSService srv = new RSSService(this);
+                RSSService srv = new RSSService();
                 srv.requestRSS(feedURL, callback);
 
             } catch (IOException e) {
