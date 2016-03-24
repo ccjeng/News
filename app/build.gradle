@@ -7,8 +7,8 @@ android {
         applicationId "com.ccjeng.news"
         minSdkVersion 16
         targetSdkVersion 23
-        versionCode 18
-        versionName '1.4.9.030716SN'
+        versionCode 19
+        versionName '1.5.0.032416SN'
     }
     buildTypes {
         release {
@@ -33,7 +33,6 @@ dependencies {
     compile 'com.mikepenz:community-material-typeface:1.1.70.3@aar'
     compile 'com.pnikosis:materialish-progress:1.5'
     compile 'com.squareup.okhttp:okhttp:2.5.0'
-
     compile('com.mikepenz:aboutlibraries:5.2.1@aar') {
         transitive = true
     }
