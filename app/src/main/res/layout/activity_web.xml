@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:wheel="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/coordinator"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
@@ -49,22 +50,11 @@
             android:layout_below="@+id/toolbarLayout"
             android:background="@color/windowBackground"
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
-            <LinearLayout
-                android:id="@+id/croutonview"
-                android:layout_width="match_parent"
-                android:layout_height="fill_parent"
-                android:orientation="vertical"
-                app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
                 <WebView
                     android:id="@+id/webView"
                     android:layout_width="fill_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical" />
-
-            </LinearLayout>
-
         </android.support.v4.widget.NestedScrollView>
 
         <LinearLayout

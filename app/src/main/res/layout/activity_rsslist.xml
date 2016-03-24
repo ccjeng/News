@@ -51,14 +51,6 @@
             android:fillViewport="true"
             android:layout_above="@+id/footerLayout"
             android:layout_below="@+id/toolbarLayout">
-
-           <LinearLayout
-                android:id="@+id/croutonview"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
                <android.support.v4.widget.SwipeRefreshLayout
                     android:id="@+id/swipe_container"
                     android:layout_width="match_parent"
@@ -68,7 +60,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
                 </android.support.v4.widget.SwipeRefreshLayout>
-           </LinearLayout>
         </android.support.v4.widget.NestedScrollView>
 
 

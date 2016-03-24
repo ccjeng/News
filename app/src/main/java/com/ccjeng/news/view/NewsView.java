@@ -1,41 +1,48 @@
 package com.ccjeng.news.view;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
+import android.webkit.WebChromeClient;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 import com.ccjeng.news.News;
 import com.ccjeng.news.R;
+import com.ccjeng.news.controler.web.IWebCallback;
 import com.ccjeng.news.controler.web.NewsHandler;
+import com.ccjeng.news.parser.AbstractNews;
 import com.ccjeng.news.utils.Analytics;
+import com.ccjeng.news.utils.Category;
 import com.ccjeng.news.utils.Constant;
 import com.ccjeng.news.utils.Network;
 import com.ccjeng.news.utils.PreferenceSetting;
+import com.ccjeng.news.utils.UI;
+import com.ccjeng.news.utils.Webpage;
 import com.google.android.gms.analytics.GoogleAnalytics;
 import com.hannesdorfmann.swipeback.Position;
 import com.hannesdorfmann.swipeback.SwipeBack;
 import com.mikepenz.community_material_typeface_library.CommunityMaterial;
 import com.mikepenz.iconics.IconicsDrawable;
-import com.mopub.mobileads.MoPubErrorCode;
 import com.mopub.mobileads.MoPubView;
 import com.pnikosis.materialishprogress.ProgressWheel;
 
+import java.io.IOException;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import de.keyboardsurfer.android.widget.crouton.Crouton;
-import de.keyboardsurfer.android.widget.crouton.Style;
 
 //todo 加上新聞小幫手檢核 sample: https://github.com/g0v/newshelper-extension/blob/master/background.js
-//todo add AD banner
 
 public class NewsView extends AppCompatActivity {
 
@@ -49,6 +56,8 @@ public class NewsView extends AppCompatActivity {
     public ProgressWheel progressWheel;
     @Bind(R.id.main)
     public NestedScrollView main;
+    @Bind(R.id.coordinator)
+    CoordinatorLayout coordinator;
 
     private Analytics ga;
 
@@ -56,6 +65,8 @@ public class NewsView extends AppCompatActivity {
     private String newsUrl;
     private String newsTitle;
     private MoPubView moPubView;
+    private int sourceNumber;
+    private String tabName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,10 +92,10 @@ public class NewsView extends AppCompatActivity {
         PreferenceSetting.getPreference(this);
 
         Bundle bundle = this.getIntent().getExtras();
-        final int sourceNumber = Integer.parseInt(bundle.getString("SourceNum"));
-        final String tabName = bundle.getString("SourceTab");
+        sourceNumber = Integer.parseInt(bundle.getString("SourceNum"));
+        tabName = bundle.getString("SourceTab");
         newsName = bundle.getString("NewsName");
-        final String categoryName = bundle.getString("CategoryName");
+        //final String categoryName = bundle.getString("CategoryName");
 
         newsUrl = bundle.getString("newsUrl");
         newsTitle = bundle.getString("newsTitle");
@@ -100,12 +111,28 @@ public class NewsView extends AppCompatActivity {
 
             progressWheel.setVisibility(View.VISIBLE);
             main.setVisibility(View.GONE);
-            NewsHandler.getNewsContent(this, newsUrl, tabName, sourceNumber);
+
+            IWebCallback callback = new IWebCallback() {
+                @Override
+                public void onWebContentReceived(String html) {
+                    drawHtmlPage(html);
+                }
+            };
+
+            String charset = Category.getEncoding(tabName, sourceNumber);//"utf-8";
+
+            if (News.APPDEBUG) {
+                Log.d(TAG, "charset = " + charset);
+                Log.d(TAG, "url = " + newsUrl);
+            }
+
+            NewsHandler newsHandler = new NewsHandler(callback, this);
+            newsHandler.getNewsContent(newsUrl, charset);
+
             Network.AdView(this, moPubView, Constant.AD_MoPub_View);
 
         } else {
-            Crouton.makeText(NewsView.this, R.string.network_error, Style.ALERT,
-                    (ViewGroup) findViewById(R.id.croutonview)).show();
+            UI.showErrorSnackBar(coordinator, R.string.network_error);
         }
 
     }
@@ -190,6 +217,93 @@ public class NewsView extends AppCompatActivity {
 
     }
 
+    private void drawHtmlPage(String html) {
 
+        webView.getSettings().setJavaScriptEnabled(true);
+        //context.webView.getSettings().setSupportZoom(true);
+        //context.webView.getSettings().setBuiltInZoomControls(true);
+        //context.webView.getSettings().setCacheMode(2); //LOAD_NO_CACHE
+        webView.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
+
+        //context.webView.getSettings().setLoadWithOverviewMode(true);
+        //context.webView.getSettings().setUseWideViewPort(true);
+
+        progressWheel.setVisibility(View.GONE);
+        main.setVisibility(View.VISIBLE);
+
+        Category cat = new Category(NewsView.this);
+        AbstractNews parser = cat.getNewsParser(tabName, sourceNumber);
+
+        try {
+
+            String newsContent = parser.parseHtml(newsUrl, html);
+
+            if (parser.isEmptyContent()) {
+                //if parse result is empty, then show webview directly..
+                Analytics ga = new Analytics();
+                ga.trackEvent(NewsView.this, "Error", "Empty Content", newsUrl, 0);
+
+                UI.showErrorSnackBar(coordinator, R.string.parsing_error_transfer);
+
+                webView.loadUrl(newsUrl);
+
+                webView.setWebViewClient(new WebViewClient() {
+
+                    @Override
+                    public void onPageStarted(WebView view, String url, Bitmap favicon) {
+                        super.onPageStarted(view, url, favicon);
+                        progressWheel.setVisibility(View.VISIBLE);
+                        main.setVisibility(View.GONE);
+                    }
+
+                    @Override
+                    public void onPageFinished(WebView view, String url) {
+                        super.onPageFinished(view, url);
+                        progressWheel.setVisibility(View.GONE);
+                        main.setVisibility(View.VISIBLE);
+                    }
+                });
+                webView.setWebChromeClient(new WebChromeClient() {
+
+                    @Override
+                    public void onProgressChanged(WebView view, int newProgress) {
+                        super.onProgressChanged(view, newProgress);
+                        progressWheel.setProgress((float) newProgress / 100);
+
+                        if (newProgress > 90) {
+                            progressWheel.setVisibility(View.GONE);
+                            main.setVisibility(View.VISIBLE);
+                        }
+                    }
+                });
+
+            } else {
+
+                webView.loadDataWithBaseURL(null, newsContent, "text/html", "utf-8", "about:blank");
+
+                //image fit screen
+                final String js;
+                js= "javascript:(function () { " +
+                        " var w = " + Webpage.getWidth(NewsView.this) + ";" +
+                        " for( var i = 0; i < document.images.length; i++ ) {" +
+                        " var img = document.images[i]; " +
+                        "   img.height = Math.round( img.height * ( w/img.width ) ); " +
+                        "   img.width = w; " +
+                        " }" +
+                        " })();";
+
+                webView.setWebViewClient(new WebViewClient() {
+                    @Override
+                    public void onPageFinished(WebView view, String url) {
+                        webView.loadUrl(js);
+                    }
+                });
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
 
 }

@@ -1,10 +1,13 @@
 package com.ccjeng.news.utils;
 
 import android.content.Context;
+import android.content.res.Configuration;
+import android.util.DisplayMetrics;
 import android.util.Log;
 
 import com.ccjeng.news.News;
 import com.ccjeng.news.parser.Standard;
+import com.ccjeng.news.view.NewsView;
 
 /**
  * Created by andycheng on 2015/11/15.
@@ -59,4 +62,24 @@ public class Webpage {
     }
 
 
+    public static double getWidth(NewsView context) {
+        int width = 0;
+        DisplayMetrics dm = new DisplayMetrics();
+        context.getWindowManager().getDefaultDisplay().getMetrics(dm);
+        Configuration config = context.getResources().getConfiguration();
+        //int vWidth = 0;
+        if (config.orientation == Configuration.ORIENTATION_LANDSCAPE)
+            width = dm.heightPixels;
+        else
+            width = dm.widthPixels;
+
+        //int currentapiVersion = android.os.Build.VERSION.SDK_INT;
+
+        //Log.d(TAG, "currentapiVersion = " + currentapiVersion);
+        //Log.d(TAG, "width px = " + width);
+        //Log.d(TAG, "width dip = " + Webpage.px2dip(context, width));
+
+        return Webpage.px2dip(context, width);
+
+    }
 }

@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -26,8 +27,6 @@ import com.pnikosis.materialishprogress.ProgressWheel;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import de.keyboardsurfer.android.widget.crouton.Crouton;
-import de.keyboardsurfer.android.widget.crouton.Style;
 
 public class NewsWeb extends AppCompatActivity {
 
@@ -74,8 +73,8 @@ public class NewsWeb extends AppCompatActivity {
             //webView.getSettings().setJavaScriptEnabled(true);
             //webView.getSettings().setBuiltInZoomControls(true);
         } else {
-            Crouton.makeText(NewsWeb.this, R.string.network_error, Style.ALERT,
-                    (ViewGroup) findViewById(R.id.main)).show();
+            Snackbar.make(findViewById(android.R.id.content), R.string.network_error, Snackbar.LENGTH_LONG)
+                    .show();
         }
 
 

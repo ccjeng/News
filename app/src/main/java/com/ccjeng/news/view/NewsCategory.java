@@ -12,7 +12,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.ccjeng.news.News;
 import com.ccjeng.news.R;
 import com.ccjeng.news.adapter.NewsCategoryAdapter;
 import com.ccjeng.news.adapter.RecyclerItemClickListener;
@@ -23,8 +22,6 @@ import com.ccjeng.news.utils.Network;
 import com.google.android.gms.analytics.GoogleAnalytics;
 import com.hannesdorfmann.swipeback.Position;
 import com.hannesdorfmann.swipeback.SwipeBack;
-import com.mikepenz.community_material_typeface_library.CommunityMaterial;
-import com.mikepenz.iconics.IconicsDrawable;
 import com.mopub.mobileads.MoPubView;
 
 import butterknife.Bind;

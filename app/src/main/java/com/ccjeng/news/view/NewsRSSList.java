@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -14,7 +15,6 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 
 import com.ccjeng.news.R;
 import com.ccjeng.news.adapter.NewsListAdapter;
@@ -25,11 +25,10 @@ import com.ccjeng.news.utils.Analytics;
 import com.ccjeng.news.utils.Category;
 import com.ccjeng.news.utils.Constant;
 import com.ccjeng.news.utils.Network;
+import com.ccjeng.news.utils.UI;
 import com.google.android.gms.analytics.GoogleAnalytics;
 import com.hannesdorfmann.swipeback.Position;
 import com.hannesdorfmann.swipeback.SwipeBack;
-import com.mikepenz.community_material_typeface_library.CommunityMaterial;
-import com.mikepenz.iconics.IconicsDrawable;
 import com.mopub.mobileads.MoPubView;
 import com.pnikosis.materialishprogress.ProgressWheel;
 
@@ -38,8 +37,6 @@ import java.net.URL;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import de.keyboardsurfer.android.widget.crouton.Crouton;
-import de.keyboardsurfer.android.widget.crouton.Style;
 
 public class NewsRSSList extends AppCompatActivity
         implements SwipeRefreshLayout.OnRefreshListener {
@@ -53,6 +50,8 @@ public class NewsRSSList extends AppCompatActivity
     RecyclerView recyclerView;
     @Bind(R.id.progress_wheel)
     ProgressWheel progressWheel;
+    @Bind(R.id.coordinator)
+    CoordinatorLayout coordinator;
 
     private MoPubView moPubView;
     private SwipeRefreshLayout mSwipeLayout;
@@ -113,9 +112,9 @@ public class NewsRSSList extends AppCompatActivity
         if (Network.isNetworkConnected(this)) {
             showResult(tabName, sourceNumber);
         } else {
-            Crouton.makeText(NewsRSSList.this, R.string.network_error, Style.ALERT,
-                    (ViewGroup) findViewById(R.id.croutonview)).show();
+            UI.showErrorSnackBar(coordinator, R.string.network_error);
         }
+
 
         moPubView = (MoPubView) findViewById(R.id.adview);
         Network.AdView(this, moPubView, Constant.Ad_MoPub_RSS);
@@ -189,8 +188,7 @@ public class NewsRSSList extends AppCompatActivity
         if (rssList == null) {
         //response Error
             progressWheel.setVisibility(View.GONE);
-            Crouton.makeText(NewsRSSList.this, R.string.data_error, Style.ALERT,
-                    (ViewGroup) findViewById(R.id.croutonview)).show();
+            UI.showErrorSnackBar(coordinator, R.string.data_error);
 
         } else {
         //response Success
@@ -198,8 +196,7 @@ public class NewsRSSList extends AppCompatActivity
             recyclerView.setAdapter(adapter);
 
             if (rssList.getItemCount() == 0) {
-                Crouton.makeText(NewsRSSList.this, R.string.no_data, Style.CONFIRM,
-                        (ViewGroup) findViewById(R.id.croutonview)).show();
+                UI.showErrorSnackBar(coordinator, R.string.no_data);
             }
 
             progressWheel.setVisibility(View.GONE);
@@ -259,8 +256,7 @@ public class NewsRSSList extends AppCompatActivity
         }
 
         if (rssFeedURL == null) {
-            Crouton.makeText(NewsRSSList.this, R.string.network_error, Style.ALERT,
-                    (ViewGroup) findViewById(R.id.croutonview)).show();
+            UI.showErrorSnackBar(coordinator, R.string.network_error);
         }
 
 
