@@ -18,13 +18,12 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import com.ccjeng.news.News;
+import com.ccjeng.news.view.base.News;
 import com.ccjeng.news.R;
 import com.ccjeng.news.utils.Analytics;
 import com.ccjeng.news.utils.Constant;
@@ -43,7 +42,7 @@ import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String TAG = "MainActivity";
+    private static final String TAG = MainActivity.class.getName();
     private Analytics ga;
 
     @Bind(R.id.tabs)

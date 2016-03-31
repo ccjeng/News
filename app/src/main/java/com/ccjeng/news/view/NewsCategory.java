@@ -29,7 +29,7 @@ import butterknife.ButterKnife;
 
 public class NewsCategory extends AppCompatActivity {
 
-    private static final String TAG = "NewsCategory";
+    private static final String TAG = NewsCategory.class.getName();
     private Analytics ga;
 
     @Bind(R.id.toolbar)

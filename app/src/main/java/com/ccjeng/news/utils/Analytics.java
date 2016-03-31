@@ -2,7 +2,7 @@ package com.ccjeng.news.utils;
 
 import android.app.Activity;
 
-import com.ccjeng.news.News;
+import com.ccjeng.news.view.base.News;
 import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
 

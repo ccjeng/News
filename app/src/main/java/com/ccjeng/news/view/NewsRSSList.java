@@ -41,7 +41,7 @@ import butterknife.ButterKnife;
 public class NewsRSSList extends AppCompatActivity
         implements SwipeRefreshLayout.OnRefreshListener {
 
-    private static final String TAG = "NewsRSSList";
+    private static final String TAG = NewsRSSList.class.getName();
     private Analytics ga;
 
     @Bind(R.id.toolbar)

@@ -17,7 +17,7 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-import com.ccjeng.news.News;
+import com.ccjeng.news.view.base.News;
 import com.ccjeng.news.R;
 import com.ccjeng.news.controler.web.IWebCallback;
 import com.ccjeng.news.controler.web.NewsHandler;
@@ -46,7 +46,7 @@ import butterknife.ButterKnife;
 
 public class NewsView extends AppCompatActivity {
 
-    private static final String TAG = "NewsView";
+    private static final String TAG = NewsView.class.getName();
 
     @Bind(R.id.toolbar)
     Toolbar toolbar;

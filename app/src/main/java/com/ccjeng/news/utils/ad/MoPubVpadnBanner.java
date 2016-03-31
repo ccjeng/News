@@ -7,7 +7,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.util.Log;
 
-import com.ccjeng.news.News;
 import com.vpadn.ads.VpadnAd;
 import com.vpadn.ads.VpadnAdListener;
 import com.vpadn.ads.VpadnAdRequest;

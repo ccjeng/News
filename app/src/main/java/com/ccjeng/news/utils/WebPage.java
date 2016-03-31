@@ -5,8 +5,7 @@ import android.content.res.Configuration;
 import android.util.DisplayMetrics;
 import android.util.Log;
 
-import com.ccjeng.news.News;
-import com.ccjeng.news.parser.Standard;
+import com.ccjeng.news.view.base.News;
 import com.ccjeng.news.view.NewsView;
 
 /**

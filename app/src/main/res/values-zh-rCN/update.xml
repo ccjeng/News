@@ -3,8 +3,8 @@
 	tools:ignore="MissingTranslation">
 
     <string-array name="updates">
-    	<item>v1.5.0\n
-    	    新闻载入效能优化
+    	<item>v1.5.1\n
+    	    修復奇摩新聞
     	</item>
 	</string-array>
 </resources>

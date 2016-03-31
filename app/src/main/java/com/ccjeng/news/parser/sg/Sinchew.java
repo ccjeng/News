@@ -2,7 +2,7 @@ package com.ccjeng.news.parser.sg;
 
 import android.util.Log;
 
-import com.ccjeng.news.News;
+import com.ccjeng.news.view.base.News;
 import com.ccjeng.news.parser.AbstractNews;
 import com.ccjeng.news.utils.Webpage;
 

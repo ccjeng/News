@@ -6,8 +6,7 @@ import com.android.volley.NetworkResponse;
 import com.android.volley.Response;
 import com.android.volley.toolbox.HttpHeaderParser;
 import com.android.volley.toolbox.StringRequest;
-import com.ccjeng.news.News;
-import com.ccjeng.news.utils.Category;
+import com.ccjeng.news.view.base.News;
 
 import java.io.UnsupportedEncodingException;
 

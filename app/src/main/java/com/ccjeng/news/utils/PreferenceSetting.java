@@ -3,9 +3,8 @@ package com.ccjeng.news.utils;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
-import android.util.Log;
 
-import com.ccjeng.news.News;
+import com.ccjeng.news.view.base.News;
 
 /**
  * Created by andycheng on 2015/11/28.

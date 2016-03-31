@@ -2,7 +2,7 @@ package com.ccjeng.news.parser.tw;
 
 import android.util.Log;
 
-import com.ccjeng.news.News;
+import com.ccjeng.news.view.base.News;
 import com.ccjeng.news.parser.AbstractNews;
 import com.ccjeng.news.utils.Webpage;
 
@@ -30,8 +30,8 @@ public class Yahoo extends AbstractNews {
 
         try {
             title = doc.select("h1").text();
-            time = "";
-            body = doc.select("div#main-2-Story").html();
+            time = doc.select("div.provider").text() + doc.select("div.publish").text();
+            body = doc.select("div.bd").html();
         } catch (Exception e) {
             e.printStackTrace();
         }
