@@ -3,6 +3,8 @@ package com.ccjeng.news.utils;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.util.Log;
+
 import com.mopub.mobileads.MoPubErrorCode;
 import com.mopub.mobileads.MoPubView;
 
@@ -10,6 +12,8 @@ import com.mopub.mobileads.MoPubView;
  * Created by andycheng on 2015/11/15.
  */
 public class Network {
+
+    private final static String TAG = Network.class.getName();
 
     private static ConnectivityManager connMgr;
 
@@ -80,4 +84,19 @@ public class Network {
         });
     }
 
+
+    public static String checkNewsViewURL(String url) {
+
+        //force change TW / HK yahoo url to mobile version.
+        if (url.contains("news.yahoo.com") ) {
+
+            url = url.replace("news","mobi");
+
+            Log.d(TAG, "New URL =" + url);
+
+        }
+
+        return url;
+
+    }
 }

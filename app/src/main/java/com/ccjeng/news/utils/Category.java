@@ -111,21 +111,18 @@ public class Category {
                     category = context.getResources().getStringArray(R.array.newscatsHKMetro);
                     break;
                 case 5:
-                    category = context.getResources().getStringArray(R.array.newscatsHKsun);
-                    break;
-                case 6:
                     category = context.getResources().getStringArray(R.array.newscatsHKam730);
                     break;
-                case 7:
+                case 6:
                     category = context.getResources().getStringArray(R.array.newscatsHKheadline);
                     break;
-                case 8:
+                case 7:
                     category = context.getResources().getStringArray(R.array.newscatsETNet);
                     break;
-                case 9:
+                case 8:
                     category = context.getResources().getStringArray(R.array.newscatsTheStandNews);
                     break;
-                case 10:
+                case 9:
                     category = context.getResources().getStringArray(R.array.newscatsInMediaHK);
                     break;
             }
@@ -221,21 +218,18 @@ public class Category {
                     feedURL = context.getResources().getStringArray(R.array.newsfeedsHKMetro);
                     break;
                 case 5:
-                    feedURL = context.getResources().getStringArray(R.array.newsfeedsHKsun);
-                    break;
-                case 6:
                     feedURL = context.getResources().getStringArray(R.array.newsfeedsHKam730);
                     break;
-                case 7:
+                case 6:
                     feedURL = context.getResources().getStringArray(R.array.newsfeedsHKheadline);
                     break;
-                case 8:
+                case 7:
                     feedURL = context.getResources().getStringArray(R.array.newsfeedsETNet);
                     break;
-                case 9:
+                case 8:
                     feedURL = context.getResources().getStringArray(R.array.newsfeedsTheStandNews);
                     break;
-                case 10:
+                case 9:
                     feedURL = context.getResources().getStringArray(R.array.newsfeedsInMediaHK);
                     break;
             }
@@ -329,21 +323,18 @@ public class Category {
                     parser = new RTHK();
                     break;
                 case 5:
-                    parser = new Sun();
-                    break;
-                case 6:
                     parser = new AM730();
                     break;
-                case 7:
+                case 6:
                     parser = new HKHeadline();
                     break;
-                case 8:
+                case 7:
                     parser = new ETNet();
                     break;
-                case 9:
+                case 8:
                     parser = new TheStandNews();
                     break;
-                case 10:
+                case 9:
                     parser = new InMediaHK();
                     break;
             }
@@ -379,7 +370,7 @@ public class Category {
 
         if (tab.equals("HK")) {
             switch (position) {
-                case 7: //HKHeadline
+                case 6: //HKHeadline
                     encoding = "big-5";
                     break;
             }

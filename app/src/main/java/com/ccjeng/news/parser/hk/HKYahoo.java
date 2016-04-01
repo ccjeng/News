@@ -29,7 +29,7 @@ public class HKYahoo extends AbstractNews {
 
         try {
             title = doc.select("h1").text();
-            time = doc.select("div.info-group").text();
+            time = doc.select("div.provider").text() + doc.select("div.publish").text();
             body = doc.select("div.bd").html();
         } catch (Exception e) {
             e.printStackTrace();

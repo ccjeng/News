@@ -126,6 +126,8 @@ public class NewsView extends AppCompatActivity {
                 Log.d(TAG, "url = " + newsUrl);
             }
 
+            newsUrl = Network.checkNewsViewURL(newsUrl);
+
             NewsHandler newsHandler = new NewsHandler(callback, this);
             newsHandler.getNewsContent(newsUrl, charset);
 
