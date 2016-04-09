@@ -4,7 +4,8 @@
 
     <string-array name="newsSourceHK">
     	<item>香港蘋果日報</item>
-    	<item>東方日報</item>
+		<item>香港蘋果日報 即時新聞</item>
+		<item>東方日報</item>
     	<item>雅虎新聞</item>
     	<item>信報</item>
     	<item>香港電台新聞頻道</item>

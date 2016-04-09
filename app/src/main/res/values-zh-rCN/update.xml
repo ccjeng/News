@@ -3,10 +3,10 @@
 	tools:ignore="MissingTranslation">
 
     <string-array name="updates">
-    	<item>v1.5.1\n
-    	    修复台湾奇摩新闻\n
-			修复香港雅虎新闻\n
-			移除香港太阳报(已停刊)
+    	<item>v1.5.2\n
+    	    修复香港苹果日报即时性\n
+			修复AM370即时性\n
+			新增香港苹果日报即时新闻
     	</item>
 	</string-array>
 </resources>

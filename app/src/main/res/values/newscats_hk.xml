@@ -149,49 +149,41 @@
         <item>飲食男女</item>
     </string-array>
     <string-array name="newsfeedsHKAppleDaily">
-        <item>http://feed43.com/8467602437008668.xml</item>
-        <item>http://feed43.com/0104300651552310.xml</item>
-        <item>http://feed43.com/8037821550603588.xml</item>
-        <item>http://feed43.com/4316756456356141.xml</item>
-        <item>http://feed43.com/4475152203773631.xml</item>
-        <item>http://feed43.com/5041650614854808.xml</item>
-        <item>http://feed43.com/7336622850523210.xml</item>
-        <item>http://feed43.com/2176071852758205.xml</item>
+        <item>http://hkm.appledaily.com/list.php?category_guid=4104&amp;category=daily</item>
+        <item>http://hkm.appledaily.com/list.php?category_guid=15335&amp;category=daily</item>
+        <item>http://hkm.appledaily.com/list.php?category_guid=462&amp;category=daily</item>
+        <item>http://hkm.appledaily.com/list.php?category_guid=vice&amp;category=daily</item>
+        <item>http://hkm.appledaily.com/list.php?category_guid=15307&amp;category=daily</item>
+        <item>http://hkm.appledaily.com/list.php?category_guid=25391&amp;category=daily</item>
+        <item>http://hkm.appledaily.com/list.php?category_guid=16632792&amp;category=daily</item>
+        <item>http://hkm.appledaily.com/list.php?category_guid=16632793&amp;category=daily</item>
     </string-array>
-<!--
-    <string-array name="newscatsHKAppleDaily">
-        <item>要聞港聞</item>
-        <item>財經地產</item>
-        <item>兩岸國際</item>
-        <item>娛樂名人</item>
+
+    <string-array name="newscatsHKAppleDailyRT">
+        <item>要聞</item>
+        <item>突發</item>
+        <item>娛樂</item>
+        <item>兩岸</item>
+        <item>國際</item>
+        <item>財經</item>
+        <item>果籽</item>
         <item>體育</item>
-        <item>專題</item>
-        <item>旅遊</item>
-        <item>科技</item>
-        <item>飲食</item>
-        <item>汽車</item>
-        <item>親子</item>
-        <item>品味</item>
-        <item>名采</item>
-        <item>運程</item>
+        <item>周刊</item>
+        <item>馬經</item>
     </string-array>
-    <string-array name="newsfeedsHKAppleDaily">
-        <item>http://feed43.com/hkappledaily-01.xml</item>
-        <item>http://feed43.com/hkappledaily-02.xml</item>
-        <item>http://feed43.com/hkappledaily-03.xml</item>
-        <item>http://feed43.com/hkappledaily-04.xml</item>
-        <item>http://feed43.com/hkappledaily-05.xml</item>
-        <item>http://feed43.com/hkappledaily-06.xml</item>
-        <item>http://feed43.com/hkappledaily-07.xml</item>
-        <item>http://feed43.com/hkappledaily-08.xml</item>
-        <item>http://feed43.com/hkappledaily-09.xml</item>
-        <item>http://feed43.com/hkappledaily-10.xml</item>
-        <item>http://feed43.com/hkappledaily-11.xml</item>
-        <item>http://feed43.com/hkappledaily-12.xml</item>
-        <item>http://feed43.com/hkappledaily-13.xml</item>
-        <item>http://feed43.com/hkappledaily-14.xml</item>
+    <string-array name="newsfeedsHKAppleDailyRT">
+        <item>http://hkm.appledaily.com/list.php?category_guid=6996647&amp;category=instant</item>
+        <item>http://hkm.appledaily.com/list.php?category_guid=10829391&amp;category=instant</item>
+        <item>http://hkm.appledaily.com/list.php?category_guid=7018882&amp;category=instant</item>
+        <item>http://hkm.appledaily.com/list.php?category_guid=10793096&amp;category=instant</item>
+        <item>http://hkm.appledaily.com/list.php?category_guid=10793140&amp;category=instant</item>
+        <item>http://hkm.appledaily.com/list.php?category_guid=7015342&amp;category=instant</item>
+        <item>http://hkm.appledaily.com/list.php?category_guid=10829392&amp;category=instant</item>
+        <item>http://hkm.appledaily.com/list.php?category_guid=7032049&amp;category=instant</item>
+        <item>http://hkm.appledaily.com/list.php?category_guid=10890993&amp;category=instant</item>
+        <item>http://hkm.appledaily.com/list.php?category_guid=10860680&amp;category=instant</item>
     </string-array>
--->
+
     <string-array name="newscatsHKEJ">
         <item>即時財訊</item>
     </string-array>
@@ -227,17 +219,17 @@
         <item>遊樂 </item>
     </string-array>
     <string-array name="newsfeedsHKam730">
-        <item>http://feed43.com/6837465783746248.xml</item>
-        <item>http://feed43.com/4256550767731704.xml</item>
-        <item>http://feed43.com/1104430416276431.xml</item>
-        <item>http://feed43.com/6485536800681520.xml</item>
-        <item>http://feed43.com/1144208663656355.xml</item>
-        <item>http://feed43.com/0518810451173117.xml</item>
-        <item>http://feed43.com/5401245011828043.xml</item>
-        <item>http://feed43.com/7564127326106444.xml</item>
-        <item>http://feed43.com/4423231820863214.xml</item>
-        <item>http://feed43.com/6836443172662354.xml</item>
-        <item>http://feed43.com/7520030888508064.xml</item>
+        <item>http://www.am730.com.hk/section_index-1</item>
+        <item>http://www.am730.com.hk/section_index-2</item>
+        <item>http://www.am730.com.hk/section_index-4</item>
+        <item>http://www.am730.com.hk/section_index-13</item>
+        <item>http://www.am730.com.hk/section_index-6</item>
+        <item>http://www.am730.com.hk/section_index-3</item>
+        <item>http://www.am730.com.hk/section_index-11</item>
+        <item>http://www.am730.com.hk/section_index-9</item>
+        <item>http://www.am730.com.hk/section_index-8</item>
+        <item>http://www.am730.com.hk/section_index-12</item>
+        <item>http://www.am730.com.hk/section_index-10</item>
     </string-array>
     <string-array name="newscatsHKheadline">
         <!-- <item>即時新聞</item>-->

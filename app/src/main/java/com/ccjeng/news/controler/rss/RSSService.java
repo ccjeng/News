@@ -1,9 +1,9 @@
 package com.ccjeng.news.controler.rss;
 
-import android.content.Context;
 import android.util.Log;
 
-import com.ccjeng.news.view.NewsRSSList;
+import com.ccjeng.news.parser.rss.CustomFeedParser;
+import com.ccjeng.news.utils.Category;
 import com.squareup.okhttp.Call;
 import com.squareup.okhttp.Callback;
 import com.squareup.okhttp.OkHttpClient;
@@ -57,36 +57,51 @@ public class RSSService {
                 try {
                     if (response.isSuccessful()) {
 
-                        //InputStreamReader streamReader = StreamReader(url, response.body().byteStream());
-                        InputSource inputSource = new InputSource();
-                        inputSource.setEncoding("ISO-8859-1");
-                        inputSource.setCharacterStream(new StringReader(response.body().string().trim()));
+                        RSSFeed rssFeed;
 
-                        try {
-                            SAXParserFactory spf = SAXParserFactory.newInstance();
-                            SAXParser sp = spf.newSAXParser();
-                            XMLReader xr = sp.getXMLReader();
-                            RSSHandler mRSSHandler = new RSSHandler();
+                        if (Category.customRSSFeed(url.toString())){
 
-                            xr.setContentHandler(mRSSHandler);
-                            //xr.parse(new InputSource(streamReader));
-                            xr.parse(inputSource);
-
-                            RSSFeed rssFeed = mRSSHandler.getParsedData();
+                            //Custom RSS Parser
+                            CustomFeedParser feedParser = new CustomFeedParser();
+                            rssFeed = feedParser.getFeeds(url.toString(), response.body().string().trim());
 
                             callback.onRSSReceived(rssFeed);
 
+                        }  else {
+                            //Standard RSS Parser
+                            InputSource inputSource = new InputSource();
+                            inputSource.setEncoding("ISO-8859-1");
+                            inputSource.setCharacterStream(new StringReader(response.body().string().trim()));
 
-                        } catch (ParserConfigurationException e) {
-                            e.printStackTrace();
-                            Log.d(TAG, "ParserConfigurationException error = " + e.toString());
+                            try {
 
-                        } catch (SAXException e) {
-                            e.printStackTrace();
-                            Log.d(TAG, "SAXException error = " + e.toString());
+                                //RSS
+                                SAXParserFactory spf = SAXParserFactory.newInstance();
+                                SAXParser sp = spf.newSAXParser();
+                                XMLReader xr = sp.getXMLReader();
+                                RSSHandler mRSSHandler = new RSSHandler();
+
+                                xr.setContentHandler(mRSSHandler);
+                                xr.parse(inputSource);
+
+                                rssFeed = mRSSHandler.getParsedData();
+                                callback.onRSSReceived(rssFeed);
+
+
+                            } catch (ParserConfigurationException e) {
+                                e.printStackTrace();
+                                Log.d(TAG, "ParserConfigurationException error = " + e.toString());
+
+                            } catch (SAXException e) {
+                                e.printStackTrace();
+                                Log.d(TAG, "SAXException error = " + e.toString());
+                            }
+
+                            Log.d(TAG, "onResponse");
+
+
                         }
 
-                        Log.d(TAG, "onResponse");
                     } else {
                         Log.d(TAG, "response failed");
                         //responseError(context);

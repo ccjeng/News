@@ -99,30 +99,33 @@ public class Category {
                     category = context.getResources().getStringArray(R.array.newscatsHKAppleDaily);
                     break;
                 case 1:
-                    category = context.getResources().getStringArray(R.array.newscatsHKOrientalDaily);
+                    category = context.getResources().getStringArray(R.array.newscatsHKAppleDailyRT);
                     break;
                 case 2:
-                    category = context.getResources().getStringArray(R.array.newscatsHKYahoo);
+                    category = context.getResources().getStringArray(R.array.newscatsHKOrientalDaily);
                     break;
                 case 3:
-                    category = context.getResources().getStringArray(R.array.newscatsHKEJ);
+                    category = context.getResources().getStringArray(R.array.newscatsHKYahoo);
                     break;
                 case 4:
-                    category = context.getResources().getStringArray(R.array.newscatsHKMetro);
+                    category = context.getResources().getStringArray(R.array.newscatsHKEJ);
                     break;
                 case 5:
-                    category = context.getResources().getStringArray(R.array.newscatsHKam730);
+                    category = context.getResources().getStringArray(R.array.newscatsHKMetro);
                     break;
                 case 6:
-                    category = context.getResources().getStringArray(R.array.newscatsHKheadline);
+                    category = context.getResources().getStringArray(R.array.newscatsHKam730);
                     break;
                 case 7:
-                    category = context.getResources().getStringArray(R.array.newscatsETNet);
+                    category = context.getResources().getStringArray(R.array.newscatsHKheadline);
                     break;
                 case 8:
-                    category = context.getResources().getStringArray(R.array.newscatsTheStandNews);
+                    category = context.getResources().getStringArray(R.array.newscatsETNet);
                     break;
                 case 9:
+                    category = context.getResources().getStringArray(R.array.newscatsTheStandNews);
+                    break;
+                case 10:
                     category = context.getResources().getStringArray(R.array.newscatsInMediaHK);
                     break;
             }
@@ -206,30 +209,33 @@ public class Category {
                     feedURL = context.getResources().getStringArray(R.array.newsfeedsHKAppleDaily);
                     break;
                 case 1:
-                    feedURL = context.getResources().getStringArray(R.array.newsfeedsHKOrientalDaily);
+                    feedURL = context.getResources().getStringArray(R.array.newsfeedsHKAppleDailyRT);
                     break;
                 case 2:
-                    feedURL = context.getResources().getStringArray(R.array.newsfeedsHKYahoo);
+                    feedURL = context.getResources().getStringArray(R.array.newsfeedsHKOrientalDaily);
                     break;
                 case 3:
-                    feedURL = context.getResources().getStringArray(R.array.newsfeedsHKEJ);
+                    feedURL = context.getResources().getStringArray(R.array.newsfeedsHKYahoo);
                     break;
                 case 4:
-                    feedURL = context.getResources().getStringArray(R.array.newsfeedsHKMetro);
+                    feedURL = context.getResources().getStringArray(R.array.newsfeedsHKEJ);
                     break;
                 case 5:
-                    feedURL = context.getResources().getStringArray(R.array.newsfeedsHKam730);
+                    feedURL = context.getResources().getStringArray(R.array.newsfeedsHKMetro);
                     break;
                 case 6:
-                    feedURL = context.getResources().getStringArray(R.array.newsfeedsHKheadline);
+                    feedURL = context.getResources().getStringArray(R.array.newsfeedsHKam730);
                     break;
                 case 7:
-                    feedURL = context.getResources().getStringArray(R.array.newsfeedsETNet);
+                    feedURL = context.getResources().getStringArray(R.array.newsfeedsHKheadline);
                     break;
                 case 8:
-                    feedURL = context.getResources().getStringArray(R.array.newsfeedsTheStandNews);
+                    feedURL = context.getResources().getStringArray(R.array.newsfeedsETNet);
                     break;
                 case 9:
+                    feedURL = context.getResources().getStringArray(R.array.newsfeedsTheStandNews);
+                    break;
+                case 10:
                     feedURL = context.getResources().getStringArray(R.array.newsfeedsInMediaHK);
                     break;
             }
@@ -308,33 +314,34 @@ public class Category {
         } else if (tab.equals("HK")) {
             switch (position) {
                 case 0:
+                case 1:
                     parser = new HKAppleDaily();
                     break;
-                case 1:
+                case 2:
                     parser = new OrientalDaily();
                     break;
-                case 2:
+                case 3:
                     parser = new HKYahoo();
                     break;
-                case 3:
+                case 4:
                     parser = new HKEJ();
                     break;
-                case 4:
+                case 5:
                     parser = new RTHK();
                     break;
-                case 5:
+                case 6:
                     parser = new AM730();
                     break;
-                case 6:
+                case 7:
                     parser = new HKHeadline();
                     break;
-                case 7:
+                case 8:
                     parser = new ETNet();
                     break;
-                case 8:
+                case 9:
                     parser = new TheStandNews();
                     break;
-                case 9:
+                case 10:
                     parser = new InMediaHK();
                     break;
             }
@@ -370,12 +377,23 @@ public class Category {
 
         if (tab.equals("HK")) {
             switch (position) {
-                case 6: //HKHeadline
+                case 7: //HKHeadline
                     encoding = "big-5";
                     break;
             }
         }
 
         return encoding;
+    }
+
+    public static boolean customRSSFeed(String url) {
+
+        if (url.contains("hkm.appledaily.com") ||
+                url.contains("am730.com.hk") ){
+            return true;
+        } else {
+            return false;
+        }
+
     }
 }
