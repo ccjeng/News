@@ -3,10 +3,8 @@
 	tools:ignore="MissingTranslation">
 
     <string-array name="updates">
-    	<item>v1.5.2\n
-    	    修复香港苹果日报即时性\n
-			修复AM370即时性\n
-			新增香港苹果日报即时新闻
+    	<item>v1.5.3\n
+    	    修正台湾苹果日报内容
     	</item>
 	</string-array>
 </resources>
