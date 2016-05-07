@@ -3,8 +3,8 @@
 	tools:ignore="MissingTranslation">
 
     <string-array name="updates">
-    	<item>v1.5.3\n
-    	    修正台湾苹果日报内容
+    	<item>v1.5.4\n
+    	   修正新闻标题乱码的问题
     	</item>
 	</string-array>
 </resources>

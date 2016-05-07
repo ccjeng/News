@@ -1,8 +1,7 @@
 package com.ccjeng.news.adapter;
 
-import android.app.Activity;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,7 +36,7 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.Custom
 	public void onBindViewHolder(CustomViewHolder customViewHolder, int i) {
 
 		//Setting text view title
-		customViewHolder.titleView.setText(items.getItem(i).getTitle());
+		customViewHolder.titleView.setText(Html.fromHtml(items.getItem(i).getTitle()));
 
 		if (items.getItem(i).getPubDate().length()==0) {
 			customViewHolder.dateView.setVisibility(View.GONE);
