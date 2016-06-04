@@ -29,9 +29,9 @@ public class TheNewsLens extends AbstractNews {
         String time = "";
 
         try {
-            title = doc.select("h1").get(0).text();
-            time = doc.select("h5").get(0).text();
-            body = doc.select("div#pcontent").html();
+            title = doc.select("h1.article-title").get(0).text().trim();
+            time = doc.select("div.article-info").get(0).text().trim();
+            body = doc.select("div.article-content").html();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -60,7 +60,7 @@ public class TheNewsLens extends AbstractNews {
     protected String cleaner(String rs) {
 
         rs = rs.replace("src=","xxx=");
-        rs = rs.replace("src-og=","src=");
+        rs = rs.replace("src-lg=","src=");
 
         Whitelist wlist = new Whitelist();
 
