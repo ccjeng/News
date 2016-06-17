@@ -3,8 +3,9 @@
 	tools:ignore="MissingTranslation">
 
     <string-array name="updates">
-    	<item>v1.5.6\n
-    	   修正東森新聞雲不能阅读的问题
+    	<item>v1.6.0\n
+    	  	-强化滑动关闭效果\n
+			-增加暗黑模式(当新闻内文背景颜色设置为黑或灰色，APP重启後自动进入暗黑模式)
     	</item>
 	</string-array>
 </resources>

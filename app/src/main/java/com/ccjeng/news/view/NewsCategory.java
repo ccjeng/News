@@ -1,13 +1,10 @@
 package com.ccjeng.news.view;
 
 import android.content.Intent;
-import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,15 +16,14 @@ import com.ccjeng.news.utils.Analytics;
 import com.ccjeng.news.utils.Category;
 import com.ccjeng.news.utils.Constant;
 import com.ccjeng.news.utils.Network;
+import com.ccjeng.news.view.base.BaseActivity;
 import com.google.android.gms.analytics.GoogleAnalytics;
-import com.hannesdorfmann.swipeback.Position;
-import com.hannesdorfmann.swipeback.SwipeBack;
 import com.mopub.mobileads.MoPubView;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class NewsCategory extends AppCompatActivity {
+public class NewsCategory extends BaseActivity {
 
     private static final String TAG = NewsCategory.class.getName();
     private Analytics ga;
@@ -46,15 +42,7 @@ public class NewsCategory extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_category);
-
-        // Init the swipe back
-        SwipeBack.attach(this, Position.LEFT)
-                .setContentView(R.layout.activity_category)
-                .setSwipeBackView(R.layout.swipeback)
-                .setSwipeBackContainerBackgroundColor(Color.TRANSPARENT);
-
-
+        setContentView(R.layout.activity_category);
         ButterKnife.bind(this);
 
         ga = new Analytics();
@@ -108,12 +96,6 @@ public class NewsCategory extends AppCompatActivity {
         super.onDestroy();
     }
 
-    @Override
-    public void onBackPressed(){
-        super.onBackPressed();
-        overridePendingTransition(R.anim.swipeback_stack_to_front,
-                R.anim.swipeback_stack_right_out);
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

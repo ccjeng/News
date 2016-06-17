@@ -1,12 +1,10 @@
 package com.ccjeng.news.view;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -18,17 +16,16 @@ import android.view.View;
 
 import com.ccjeng.news.R;
 import com.ccjeng.news.adapter.NewsListAdapter;
+import com.ccjeng.news.controler.rss.IRSSCallback;
 import com.ccjeng.news.controler.rss.RSSFeed;
 import com.ccjeng.news.controler.rss.RSSService;
-import com.ccjeng.news.controler.rss.IRSSCallback;
 import com.ccjeng.news.utils.Analytics;
 import com.ccjeng.news.utils.Category;
 import com.ccjeng.news.utils.Constant;
 import com.ccjeng.news.utils.Network;
 import com.ccjeng.news.utils.UI;
+import com.ccjeng.news.view.base.BaseActivity;
 import com.google.android.gms.analytics.GoogleAnalytics;
-import com.hannesdorfmann.swipeback.Position;
-import com.hannesdorfmann.swipeback.SwipeBack;
 import com.mopub.mobileads.MoPubView;
 import com.pnikosis.materialishprogress.ProgressWheel;
 
@@ -38,7 +35,7 @@ import java.net.URL;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class NewsRSSList extends AppCompatActivity
+public class NewsRSSList extends BaseActivity
         implements SwipeRefreshLayout.OnRefreshListener {
 
     private static final String TAG = NewsRSSList.class.getName();
@@ -67,14 +64,7 @@ public class NewsRSSList extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_rsslist);
-
-        // Init the swipe back
-        SwipeBack.attach(this, Position.LEFT)
-                .setContentView(R.layout.activity_rsslist)
-                .setSwipeBackView(R.layout.swipeback)
-                .setSwipeBackContainerBackgroundColor(Color.TRANSPARENT);
-
+        setContentView(R.layout.activity_rsslist);
         ButterKnife.bind(this);
 
         ga = new Analytics();
@@ -143,12 +133,6 @@ public class NewsRSSList extends AppCompatActivity
         super.onDestroy();
     }
 
-    @Override
-    public void onBackPressed(){
-        super.onBackPressed();
-        overridePendingTransition(R.anim.swipeback_stack_to_front,
-                R.anim.swipeback_stack_right_out);
-    }
 
 /* SwipeRefreshLayout
 * */
@@ -201,15 +185,6 @@ public class NewsRSSList extends AppCompatActivity
 
             progressWheel.setVisibility(View.GONE);
 
-            /*
-            recyclerView.addOnItemTouchListener(
-                    new RecyclerItemClickListener(this, new RecyclerItemClickListener.OnItemClickListener() {
-                        @Override
-                        public void onItemClick(View view, int position) {
-                            showDetail(position, rssList);
-                        }
-                    })
-            );*/
         }
 
 

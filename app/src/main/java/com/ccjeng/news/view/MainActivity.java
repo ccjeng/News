@@ -16,20 +16,21 @@ import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import com.ccjeng.news.view.base.News;
 import com.ccjeng.news.R;
 import com.ccjeng.news.utils.Analytics;
 import com.ccjeng.news.utils.Constant;
 import com.ccjeng.news.utils.Network;
 import com.ccjeng.news.utils.PreferenceSetting;
 import com.ccjeng.news.utils.Version;
+import com.ccjeng.news.view.base.BaseActivity;
+import com.ccjeng.news.view.base.News;
 import com.google.android.gms.analytics.GoogleAnalytics;
 import com.mikepenz.aboutlibraries.Libs;
 import com.mikepenz.aboutlibraries.LibsBuilder;
@@ -40,7 +41,7 @@ import com.mopub.mobileads.MoPubView;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     private static final String TAG = MainActivity.class.getName();
     private Analytics ga;
@@ -68,19 +69,26 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
         ga = new Analytics();
         ga.trackerPage(this);
 
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+
         setSupportActionBar(toolbar);
+
+        getSwipeBackLayout().setEnableGesture(false);
 
         pager.setAdapter(new ViewPagerAdapter(getSupportFragmentManager()));
         tabs.setupWithViewPager(pager);
 
         navDrawer();
+
         PreferenceSetting.getPreference(this);
+        changeTheme(savedInstanceState);
 
         //todo use dailog fragment
         if (Version.isNewInstallation(this)) {
@@ -309,4 +317,18 @@ public class MainActivity extends AppCompatActivity {
         return builder.create();
     }
 
+    //Change Day/Night Theme
+    private void changeTheme(Bundle savedInstanceState) {
+        if (savedInstanceState == null) {
+            if (News.getPrefBGColor().equals("#FFFFFF")) {
+                AppCompatDelegate.setDefaultNightMode(
+                        AppCompatDelegate.MODE_NIGHT_NO);
+
+            } else {
+                AppCompatDelegate.setDefaultNightMode(
+                        AppCompatDelegate.MODE_NIGHT_YES);
+            }
+            recreate();
+        }
+    }
 }

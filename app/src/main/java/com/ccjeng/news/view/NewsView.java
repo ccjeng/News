@@ -7,7 +7,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.widget.NestedScrollView;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
@@ -17,7 +16,6 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-import com.ccjeng.news.view.base.News;
 import com.ccjeng.news.R;
 import com.ccjeng.news.controler.web.IWebCallback;
 import com.ccjeng.news.controler.web.NewsHandler;
@@ -29,9 +27,9 @@ import com.ccjeng.news.utils.Network;
 import com.ccjeng.news.utils.PreferenceSetting;
 import com.ccjeng.news.utils.UI;
 import com.ccjeng.news.utils.Webpage;
+import com.ccjeng.news.view.base.BaseActivity;
+import com.ccjeng.news.view.base.News;
 import com.google.android.gms.analytics.GoogleAnalytics;
-import com.hannesdorfmann.swipeback.Position;
-import com.hannesdorfmann.swipeback.SwipeBack;
 import com.mikepenz.community_material_typeface_library.CommunityMaterial;
 import com.mikepenz.iconics.IconicsDrawable;
 import com.mopub.mobileads.MoPubView;
@@ -44,7 +42,7 @@ import butterknife.ButterKnife;
 
 //todo 加上新聞小幫手檢核 sample: https://github.com/g0v/newshelper-extension/blob/master/background.js
 
-public class NewsView extends AppCompatActivity {
+public class NewsView extends BaseActivity {
 
     private static final String TAG = NewsView.class.getName();
 
@@ -71,14 +69,7 @@ public class NewsView extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_web);
-
-        // Init the swipe back
-        SwipeBack.attach(this, Position.LEFT)
-                .setContentView(R.layout.activity_web)
-                .setSwipeBackView(R.layout.swipeback)
-                .setSwipeBackContainerBackgroundColor(Color.TRANSPARENT);
-
+        setContentView(R.layout.activity_web);
         ButterKnife.bind(this);
 
         ga = new Analytics();
@@ -163,13 +154,6 @@ public class NewsView extends AppCompatActivity {
             webView.removeAllViews();
             webView.destroy();
         }
-    }
-
-    @Override
-    public void onBackPressed(){
-        super.onBackPressed();
-        overridePendingTransition(R.anim.swipeback_stack_to_front,
-                R.anim.swipeback_stack_right_out);
     }
 
     @Override
