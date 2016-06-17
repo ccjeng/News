@@ -45,7 +45,7 @@ public class ETToday extends AbstractNews {
             } else {
                 title = doc.select("div.subjcet_news header h2").text();
                 time = doc.select("span.news-time").text();
-                body = doc.select("div.story > sectione").html();
+                body = doc.select("div.story > section").html();
             }
         } catch (Exception e) {
             e.printStackTrace();
