@@ -25,7 +25,7 @@
     <string name="preference_content_font_color">设定文字颜色</string>
     <string name="preference_content_font_color_summary">设定新闻内文的文字颜色</string>
     <string name="preference_content_bg_color">设定背景颜色</string>
-    <string name="preference_content_bg_color_summary">设定新闻内文的背景颜色</string>
+    <string name="preference_content_bg_color_summary">设定新闻内文的背景颜色 (颜色设置为黑或灰色，APP重启後自动进入暗黑模式)</string>
     <string name="preference_content_smartsave">开启智能节费模式</string>
     <string name="preference_content_smartsave_summary">根据连线类型(wifi/行动网路)自动启动/关闭图片下载功能</string>
     <string name="preference_testing_group">实验功能</string>
