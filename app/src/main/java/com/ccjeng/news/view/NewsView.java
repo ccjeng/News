@@ -153,6 +153,7 @@ public class NewsView extends BaseActivity {
             webView.setVisibility(View.GONE);
             webView.removeAllViews();
             webView.destroy();
+            webView = null;
         }
     }
 
