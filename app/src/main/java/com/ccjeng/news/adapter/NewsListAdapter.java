@@ -5,11 +5,13 @@ import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.DecelerateInterpolator;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.ccjeng.news.R;
 import com.ccjeng.news.controler.rss.RSSFeed;
+import com.ccjeng.news.utils.ScreenUtil;
 import com.ccjeng.news.view.NewsRSSList;
 import com.squareup.picasso.Picasso;
 
@@ -60,6 +62,8 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.Custom
 					.centerInside()
 					.into(customViewHolder.imageView);
 		}
+
+		//runEnterAnimation(customViewHolder.itemView, i);
 	}
 
 	@Override
@@ -90,4 +94,13 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.Custom
         }
 	}
 
+	private void runEnterAnimation(View view, int position) {
+		view.setTranslationY(ScreenUtil.getScreenHight(context));
+		view.animate()
+				.translationY(0)
+				.setStartDelay(100 * (position % 5))
+				.setInterpolator(new DecelerateInterpolator(3.f))
+				.setDuration(700)
+				.start();
+	}
 }
