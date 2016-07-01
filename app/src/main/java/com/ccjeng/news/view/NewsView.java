@@ -119,8 +119,8 @@ public class NewsView extends BaseActivity {
 
             newsUrl = Network.checkNewsViewURL(newsUrl);
 
-            NewsHandler newsHandler = new NewsHandler(callback, this);
-            newsHandler.getNewsContent(newsUrl, charset);
+            NewsHandler newsHandler = new NewsHandler(callback, this, newsUrl);
+            newsHandler.getNewsContent(charset);
 
             Network.AdView(this, moPubView, Constant.AD_MoPub_View);
 

@@ -5,20 +5,25 @@ import android.content.Context;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 
+
 /**
  * Created by andycheng on 2015/11/15.
  */
 public class NewsHandler {
 
     private static final String TAG = "NewsHandler";
+
     private IWebCallback callback;
+    private String url;
     private Context context;
 
-    public NewsHandler(IWebCallback callback, Context context) {
+
+    public NewsHandler(IWebCallback callback, Context context, String url) {
         this.callback = callback;
         this.context = context;
+        this.url = url;
     }
-    public void getNewsContent(String url, String charset) {
+    public void getNewsContent(String charset) {
 
         VolleyStringRequest req = new VolleyStringRequest(url, charset, new Response.Listener<String>() {
             @Override
@@ -43,7 +48,8 @@ public class NewsHandler {
         });
 
         VolleySingleton.getInstance(context).addToRequestQueue(req);
-    }
 
+
+    }
 
 }

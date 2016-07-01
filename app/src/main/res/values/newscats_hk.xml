@@ -219,17 +219,17 @@
         <item>遊樂 </item>
     </string-array>
     <string-array name="newsfeedsHKam730">
-        <item>http://www.am730.com.hk/section_index-1</item>
-        <item>http://www.am730.com.hk/section_index-2</item>
-        <item>http://www.am730.com.hk/section_index-4</item>
-        <item>http://www.am730.com.hk/section_index-13</item>
-        <item>http://www.am730.com.hk/section_index-6</item>
-        <item>http://www.am730.com.hk/section_index-3</item>
-        <item>http://www.am730.com.hk/section_index-11</item>
-        <item>http://www.am730.com.hk/section_index-9</item>
-        <item>http://www.am730.com.hk/section_index-8</item>
-        <item>http://www.am730.com.hk/section_index-12</item>
-        <item>http://www.am730.com.hk/section_index-10</item>
+        <item>http://www.am730.com.hk/section_index-1?mobile=pc</item>
+        <item>http://www.am730.com.hk/section_index-2?mobile=pc</item>
+        <item>http://www.am730.com.hk/section_index-4?mobile=pc</item>
+        <item>http://www.am730.com.hk/section_index-13?mobile=pc</item>
+        <item>http://www.am730.com.hk/section_index-6?mobile=pc</item>
+        <item>http://www.am730.com.hk/section_index-3?mobile=pc</item>
+        <item>http://www.am730.com.hk/section_index-11?mobile=pc</item>
+        <item>http://www.am730.com.hk/section_index-9?mobile=pc</item>
+        <item>http://www.am730.com.hk/section_index-8?mobile=pc</item>
+        <item>http://www.am730.com.hk/section_index-12?mobile=pc</item>
+        <item>http://www.am730.com.hk/section_index-10?mobile=pc</item>
     </string-array>
     <string-array name="newscatsHKheadline">
         <!-- <item>即時新聞</item>-->

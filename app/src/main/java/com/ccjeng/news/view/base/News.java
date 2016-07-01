@@ -7,6 +7,7 @@ import com.ccjeng.news.R;
 import com.google.android.gms.analytics.GoogleAnalytics;
 import com.google.android.gms.analytics.Logger;
 import com.google.android.gms.analytics.Tracker;
+import com.yolanda.nohttp.NoHttp;
 
 import java.util.HashMap;
 
@@ -22,6 +23,7 @@ public class News extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        NoHttp.initialize(this);
     }
 
     /* Global Variables

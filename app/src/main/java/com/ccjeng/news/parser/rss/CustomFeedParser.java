@@ -1,5 +1,7 @@
 package com.ccjeng.news.parser.rss;
 
+import android.util.Log;
+
 import com.ccjeng.news.controler.rss.RSSFeed;
 import com.ccjeng.news.controler.rss.RSSItem;
 
@@ -53,6 +55,7 @@ public class CustomFeedParser {
                 root = "http://www.am730.com.hk/";
 
                 for (Element k : links) {
+                    Log.d("AM730", k.select("div#news_index_title").text());
                     item = new RSSItem();
                     item.setTitle(k.select("div#news_index_title").text());
                     item.setLink(root + k.select("div#news_index_title a").attr("href"));

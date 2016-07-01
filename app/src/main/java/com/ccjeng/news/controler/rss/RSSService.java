@@ -4,22 +4,22 @@ import android.util.Log;
 
 import com.ccjeng.news.parser.rss.CustomFeedParser;
 import com.ccjeng.news.utils.Category;
-import com.squareup.okhttp.Call;
-import com.squareup.okhttp.Callback;
-import com.squareup.okhttp.OkHttpClient;
-import com.squareup.okhttp.Request;
-import com.squareup.okhttp.Response;
+import com.yolanda.nohttp.NoHttp;
+import com.yolanda.nohttp.RequestMethod;
+import com.yolanda.nohttp.rest.OnResponseListener;
+import com.yolanda.nohttp.rest.Request;
+import com.yolanda.nohttp.rest.RequestQueue;
+import com.yolanda.nohttp.rest.Response;
+
+import org.xml.sax.InputSource;
+import org.xml.sax.SAXException;
+import org.xml.sax.XMLReader;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.StringReader;
 import java.net.URL;
-import java.util.concurrent.TimeUnit;
-
-import org.xml.sax.InputSource;
-import org.xml.sax.SAXException;
-import org.xml.sax.XMLReader;
 
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
@@ -29,49 +29,54 @@ import javax.xml.parsers.SAXParserFactory;
 public class RSSService {
 
     private static final String TAG = "RSSService";
+    private static final int NOHTTP_WHAT_TEST = 0x001;
+    private URL mUrl;
+    private IRSSCallback mCallback;
 
-    public RSSService(){
+    public RSSService(URL url, IRSSCallback callback){
+        this.mUrl = url;
+        this.mCallback = callback;
     }
 
-    public void requestRSS(final URL url, final IRSSCallback callback) throws IOException {
+    public void requestRSS() throws IOException {
 
-        OkHttpClient client = new OkHttpClient();
-        client.setConnectTimeout(15, TimeUnit.SECONDS);
+        RequestQueue requestQueue = NoHttp.newRequestQueue();
 
-        Request request = new Request.Builder()
-                .url(url)
-                .build();
+        Request<String> request = NoHttp.createStringRequest(mUrl.toString(), RequestMethod.GET);
+        requestQueue.add(NOHTTP_WHAT_TEST, request, onResponseListener);
 
-        Call call = client.newCall(request);
+    }
 
 
-        call.enqueue(new Callback() {
-            @Override
-            public void onFailure(Request request, IOException e) {
-                Log.d(TAG, "onFailure error = " + e.toString());
-            }
-
-            @Override
-            public void onResponse(Response response) throws IOException {
+    private OnResponseListener<String> onResponseListener = new OnResponseListener<String>() {
+        @SuppressWarnings("unused")
+        @Override
+        public void onSucceed(int what, Response<String> response) {
+            if (what == NOHTTP_WHAT_TEST) {// 判断what是否是刚才指定的请求
+                // 请求成功
+                //String result = response.get();// 响应结果
+                // 响应头
+                //Headers headers = response.getHeaders();
+                //headers.getResponseCode();// 响应码
+                //response.getNetworkMillis();// 请求花费的时间
 
                 try {
-                    if (response.isSuccessful()) {
 
                         RSSFeed rssFeed;
 
-                        if (Category.customRSSFeed(url.toString())){
+                        if (Category.customRSSFeed(mUrl.toString())){
 
                             //Custom RSS Parser
                             CustomFeedParser feedParser = new CustomFeedParser();
-                            rssFeed = feedParser.getFeeds(url.toString(), response.body().string().trim());
+                            rssFeed = feedParser.getFeeds(mUrl.toString(), response.get().trim());
 
-                            callback.onRSSReceived(rssFeed);
+                            mCallback.onRSSReceived(rssFeed);
 
                         }  else {
                             //Standard RSS Parser
                             InputSource inputSource = new InputSource();
                             inputSource.setEncoding("ISO-8859-1");
-                            inputSource.setCharacterStream(new StringReader(response.body().string().trim()));
+                            inputSource.setCharacterStream(new StringReader(response.get().trim()));
 
                             try {
 
@@ -85,7 +90,7 @@ public class RSSService {
                                 xr.parse(inputSource);
 
                                 rssFeed = mRSSHandler.getParsedData();
-                                callback.onRSSReceived(rssFeed);
+                                mCallback.onRSSReceived(rssFeed);
 
 
                             } catch (ParserConfigurationException e) {
@@ -97,37 +102,38 @@ public class RSSService {
                                 Log.d(TAG, "SAXException error = " + e.toString());
                             }
 
-                            Log.d(TAG, "onResponse");
+                            Log.d(TAG, "onResponse =" + response.get());
 
 
                         }
 
-                    } else {
-                        Log.d(TAG, "response failed");
-                        //responseError(context);
-                    }
+
                 } catch (IOException e) {
                     e.printStackTrace();
-                    Log.d(TAG, "onResponse error = " + e.toString());
+                    Log.d(TAG, "onResponse");
                     //responseError(context);
 
                 }
-
             }
-        });
+        }
 
-    }
 
-    /*
-    private void responseError(final NewsRSSList context){
-        context.runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                context.setListView(null);
-            }
-        });
+        @Override
+        public void onStart(int what) {
 
-    }*/
+        }
+
+        @Override
+        public void onFinish(int what) {
+
+        }
+
+
+        @Override
+        public void onFailed(int what, String url, Object tag, Exception exception, int responseCode, long networkMillis) {
+
+        }
+    };
 
     private InputStreamReader StreamReader(URL url, InputStream in) {
 

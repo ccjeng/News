@@ -205,13 +205,7 @@ public class NewsRSSList extends BaseActivity
             IRSSCallback callback = new IRSSCallback() {
                 @Override
                 public void onRSSReceived(final RSSFeed rssFeed) {
-                    // Run view-related code back on the main thread
-                    NewsRSSList.this.runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            setListView(rssFeed);
-                        }
-                    });
+                    setListView(rssFeed);
                 }
             };
 
@@ -219,8 +213,8 @@ public class NewsRSSList extends BaseActivity
             try {
                 URL feedURL = new URL(rssFeedURL);
 
-                RSSService srv = new RSSService();
-                srv.requestRSS(feedURL, callback);
+                RSSService srv = new RSSService(feedURL, callback);
+                srv.requestRSS();
 
             } catch (IOException e) {
                 e.printStackTrace();
