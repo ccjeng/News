@@ -3,9 +3,9 @@
 	tools:ignore="MissingTranslation">
 
     <string-array name="updates">
-    	<item>v1.6.0\n
-			-強化滑動關閉效果\n
-			-增加暗黑模式(當新聞內文背景顏色設置為黑或灰色，APP重啟後自動進入暗黑模式)
+    	<item>v1.6.1\n
+			-暫時移除星洲日報(因該報的RSS失效)\n
+			-改善新聞列表載入效能\n
     	</item>
 	</string-array>
 </resources>

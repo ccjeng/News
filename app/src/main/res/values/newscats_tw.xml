@@ -64,13 +64,13 @@
 	  	<item>https://tw.news.yahoo.com/rss/entertainment</item>
 		<item>https://tw.news.yahoo.com/rss/travel</item>
 		<item>https://tw.news.yahoo.com/rss/lifestyle</item>
-		<item>https://tw.news.yahoo.com/sentiment/informative/rss/</item>
-		<item>https://tw.news.yahoo.com/sentiment/warm/rss/</item>
-		<item>https://tw.news.yahoo.com/sentiment/happy/rss/</item>
-		<item>https://tw.news.yahoo.com/sentiment/odd/rss/</item>
-		<item>https://tw.news.yahoo.com/sentiment/worried/rss/</item>
-		<item>https://tw.news.yahoo.com/sentiment/depressing/rss/</item>
-		<item>https://tw.news.yahoo.com/sentiment/angry/rss/</item>
+		<item>http://feeds.feedburner.com/yahoo/HOzB</item>
+		<item>http://feeds.feedburner.com/yahoo/PJwg</item>
+		<item>http://feeds.feedburner.com/yahoo/vnjj</item>
+		<item>http://feeds.feedburner.com/yahoo/PldX</item>
+		<item>http://feeds.feedburner.com/yahoo/dPLS</item>
+		<item>http://feeds.feedburner.com/yahoo/qwHZ</item>
+		<item>http://feeds.feedburner.com/yahoo/eklF</item>
     </string-array>
     <string-array name="newscatsAppDaily">
     	<item>即時新聞</item>
@@ -95,7 +95,6 @@
 
     <string-array name="newscatsUDN">
     	<item>最新報導</item>
-    	<item>發燒新聞</item>
     	<item>要聞</item>
     	<item>娛樂</item>
     	<item>運動</item>
@@ -111,7 +110,6 @@
     </string-array>
     <string-array name="newsfeedsUDN">
     	<item>http://udn.com/rssfeed/latest</item>
-    	<item>http://udn.com/rssfeed/hottest</item>
 		<item>http://udn.com/rssfeed/news/2/6638</item>
     	<item>http://udn.com/rssfeed/news/2/6648</item>
     	<item>http://udn.com/rssfeed/news/2/7227</item>
