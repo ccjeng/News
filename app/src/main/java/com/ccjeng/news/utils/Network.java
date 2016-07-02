@@ -5,6 +5,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.util.Log;
 
+import com.ccjeng.news.view.base.News;
 import com.mopub.mobileads.MoPubErrorCode;
 import com.mopub.mobileads.MoPubView;
 
@@ -17,9 +18,9 @@ public class Network {
 
     private static ConnectivityManager connMgr;
 
-    public static boolean isNetworkConnected(Context context){
-        if(null == connMgr){
-            connMgr = (ConnectivityManager)context.getSystemService(Context.CONNECTIVITY_SERVICE);
+    public static boolean isNetworkConnected(Context context) {
+        if (null == connMgr) {
+            connMgr = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         }
 
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
@@ -33,7 +34,7 @@ public class Network {
     }
 
     public static boolean isWifiAvailable(Context context) {
-        if(null == connMgr) {
+        if (null == connMgr) {
             connMgr = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         }
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
@@ -52,45 +53,46 @@ public class Network {
 
     public static void AdView(Context context, MoPubView adView, String AdUnitID) {
         adView.setAdUnitId(AdUnitID);
-      //  if (News.APPDEBUG) {
-      //      adView.setTesting(true);
-      //  }
-        adView.loadAd();
-        adView.setBannerAdListener(new MoPubView.BannerAdListener() {
-            @Override
-            public void onBannerLoaded(MoPubView banner) {
+        if (!News.APPDEBUG) {
+            //adView.setTesting(true);
 
-            }
+            adView.loadAd();
+            adView.setBannerAdListener(new MoPubView.BannerAdListener() {
+                @Override
+                public void onBannerLoaded(MoPubView banner) {
 
-            @Override
-            public void onBannerFailed(MoPubView banner, MoPubErrorCode errorCode) {
+                }
 
-            }
+                @Override
+                public void onBannerFailed(MoPubView banner, MoPubErrorCode errorCode) {
 
-            @Override
-            public void onBannerClicked(MoPubView banner) {
+                }
 
-            }
+                @Override
+                public void onBannerClicked(MoPubView banner) {
 
-            @Override
-            public void onBannerExpanded(MoPubView banner) {
+                }
 
-            }
+                @Override
+                public void onBannerExpanded(MoPubView banner) {
 
-            @Override
-            public void onBannerCollapsed(MoPubView banner) {
+                }
 
-            }
-        });
+                @Override
+                public void onBannerCollapsed(MoPubView banner) {
+
+                }
+            });
+        }
     }
 
 
     public static String checkNewsViewURL(String url) {
 
         //force change TW / HK yahoo url to mobile version.
-        if (url.contains("news.yahoo.com") ) {
+        if (url.contains("news.yahoo.com")) {
 
-            url = url.replace("news","mobi");
+            url = url.replace("news", "mobi");
 
             Log.d(TAG, "New URL =" + url);
 

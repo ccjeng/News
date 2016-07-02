@@ -38,7 +38,7 @@ import butterknife.ButterKnife;
 public class NewsRSSList extends BaseActivity
         implements SwipeRefreshLayout.OnRefreshListener {
 
-    private static final String TAG = NewsRSSList.class.getName();
+    private static final String TAG = NewsRSSList.class.getSimpleName();
     private Analytics ga;
 
     @Bind(R.id.toolbar)
@@ -206,6 +206,11 @@ public class NewsRSSList extends BaseActivity
                 @Override
                 public void onRSSReceived(final RSSFeed rssFeed) {
                     setListView(rssFeed);
+                }
+                @Override
+                public void onRSSFailed(String error) {
+                    Log.e(TAG, error);
+                    UI.showErrorSnackBar(coordinator, R.string.data_error);
                 }
             };
 

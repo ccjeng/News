@@ -5,4 +5,5 @@ package com.ccjeng.news.controler.web;
  */
 public interface IWebCallback {
     public void onWebContentReceived(String html);
+    public void onWebContentError(String error);
 }

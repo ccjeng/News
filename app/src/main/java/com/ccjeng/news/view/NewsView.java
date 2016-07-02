@@ -44,7 +44,7 @@ import butterknife.ButterKnife;
 
 public class NewsView extends BaseActivity {
 
-    private static final String TAG = NewsView.class.getName();
+    private static final String TAG = NewsView.class.getSimpleName();
 
     @Bind(R.id.toolbar)
     Toolbar toolbar;
@@ -108,6 +108,12 @@ public class NewsView extends BaseActivity {
                 public void onWebContentReceived(String html) {
                     drawHtmlPage(html);
                 }
+
+                @Override
+                public void onWebContentError(String error) {
+                    Log.e(TAG, error);
+                    UI.showErrorSnackBar(coordinator, R.string.data_error);
+                }
             };
 
             String charset = Category.getEncoding(tabName, sourceNumber);//"utf-8";
@@ -119,7 +125,7 @@ public class NewsView extends BaseActivity {
 
             newsUrl = Network.checkNewsViewURL(newsUrl);
 
-            NewsHandler newsHandler = new NewsHandler(callback, this, newsUrl);
+            NewsHandler newsHandler = new NewsHandler(this, callback, newsUrl);
             newsHandler.getNewsContent(charset);
 
             Network.AdView(this, moPubView, Constant.AD_MoPub_View);

@@ -13,13 +13,11 @@ import com.ccjeng.news.parser.hk.HKYahoo;
 import com.ccjeng.news.parser.hk.InMediaHK;
 import com.ccjeng.news.parser.hk.OrientalDaily;
 import com.ccjeng.news.parser.hk.RTHK;
-import com.ccjeng.news.parser.hk.Sun;
 import com.ccjeng.news.parser.hk.TheStandNews;
 import com.ccjeng.news.parser.sg.Daliulian;
 import com.ccjeng.news.parser.sg.Guangming;
 import com.ccjeng.news.parser.sg.Kwongwah;
 import com.ccjeng.news.parser.sg.MyPaper;
-import com.ccjeng.news.parser.sg.Sinchew;
 import com.ccjeng.news.parser.sg.Zaobao;
 import com.ccjeng.news.parser.tw.AppleDaily;
 import com.ccjeng.news.parser.tw.CNA;
@@ -144,9 +142,6 @@ public class Category {
                     category = context.getResources().getStringArray(R.array.newscatsKwongwah);
                     break;
                 case 4:
-                    category = context.getResources().getStringArray(R.array.newscatsSinchew);
-                    break;
-                case 5:
                     category = context.getResources().getStringArray(R.array.newscatsGuangming);
                     break;
             }
@@ -254,9 +249,6 @@ public class Category {
                     feedURL = context.getResources().getStringArray(R.array.newsfeedsKwongwah);
                     break;
                 case 4:
-                    feedURL = context.getResources().getStringArray(R.array.newsfeedsSinchew);
-                    break;
-                case 5:
                     feedURL = context.getResources().getStringArray(R.array.newsfeedsGuangming);
                     break;
             }
@@ -360,9 +352,6 @@ public class Category {
                     parser = new Kwongwah();
                     break;
                 case 4:
-                    parser = new Sinchew();
-                    break;
-                case 5:
                     parser = new Guangming();
                     break;
             }

@@ -29,7 +29,7 @@ import javax.xml.parsers.SAXParserFactory;
 public class RSSService {
 
     private static final String TAG = "RSSService";
-    private static final int NOHTTP_WHAT_TEST = 0x001;
+    private static final int NOHTTP_WHAT_RSS = 0x001;
     private URL mUrl;
     private IRSSCallback mCallback;
 
@@ -43,7 +43,12 @@ public class RSSService {
         RequestQueue requestQueue = NoHttp.newRequestQueue();
 
         Request<String> request = NoHttp.createStringRequest(mUrl.toString(), RequestMethod.GET);
-        requestQueue.add(NOHTTP_WHAT_TEST, request, onResponseListener);
+
+        if (mUrl.toString().contains("www.am730.com.hk")) {
+            request.setUserAgent("Custom user agent");
+        }
+
+        requestQueue.add(NOHTTP_WHAT_RSS, request, onResponseListener);
 
     }
 
@@ -52,7 +57,7 @@ public class RSSService {
         @SuppressWarnings("unused")
         @Override
         public void onSucceed(int what, Response<String> response) {
-            if (what == NOHTTP_WHAT_TEST) {// 判断what是否是刚才指定的请求
+            if (what == NOHTTP_WHAT_RSS) {// 判断what是否是刚才指定的请求
                 // 请求成功
                 //String result = response.get();// 响应结果
                 // 响应头
@@ -102,17 +107,11 @@ public class RSSService {
                                 Log.d(TAG, "SAXException error = " + e.toString());
                             }
 
-                            Log.d(TAG, "onResponse =" + response.get());
-
-
                         }
 
 
                 } catch (IOException e) {
                     e.printStackTrace();
-                    Log.d(TAG, "onResponse");
-                    //responseError(context);
-
                 }
             }
         }
@@ -131,7 +130,7 @@ public class RSSService {
 
         @Override
         public void onFailed(int what, String url, Object tag, Exception exception, int responseCode, long networkMillis) {
-
+            mCallback.onRSSFailed(exception.getMessage());
         }
     };
 

@@ -37,10 +37,11 @@ public class VolleyStringRequest extends StringRequest {
                 Log.d(TAG, "charset=" + charset);
             }
 
-            if(charset != null) {
+            if(!charset.equals("utf-8")) {
                 str = new String(response.data, charset);
             } else {
-                str = new String(response.data, HttpHeaderParser.parseCharset(response.headers));
+                str = new String(response.data);
+                //str = new String(response.data, HttpHeaderParser.parseCharset(response.headers));
             }
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
