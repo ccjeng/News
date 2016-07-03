@@ -23,6 +23,7 @@ public class News extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        //LeakCanary.install(this);
         NoHttp.initialize(this);
     }
 

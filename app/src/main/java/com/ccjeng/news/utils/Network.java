@@ -5,7 +5,6 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.util.Log;
 
-import com.ccjeng.news.view.base.News;
 import com.mopub.mobileads.MoPubErrorCode;
 import com.mopub.mobileads.MoPubView;
 
@@ -53,7 +52,7 @@ public class Network {
 
     public static void AdView(Context context, MoPubView adView, String AdUnitID) {
         adView.setAdUnitId(AdUnitID);
-        if (!News.APPDEBUG) {
+        //if (!News.APPDEBUG) {
             //adView.setTesting(true);
 
             adView.loadAd();
@@ -83,7 +82,7 @@ public class Network {
 
                 }
             });
-        }
+       // }
     }
 
 

@@ -86,7 +86,6 @@ public class NewsView extends BaseActivity {
         sourceNumber = Integer.parseInt(bundle.getString("SourceNum"));
         tabName = bundle.getString("SourceTab");
         newsName = bundle.getString("NewsName");
-        //final String categoryName = bundle.getString("CategoryName");
 
         newsUrl = bundle.getString("newsUrl");
         newsTitle = bundle.getString("newsTitle");

@@ -52,4 +52,9 @@ dependencies {
     compile files('src/main/libs/vpadn-sdk-obf453-71606102-1606171046-2512837.jar')
     compile files('src/main/libs/AudienceNetwork.jar')
     compile project(path: ':swipebackactivity')
+
+    //debugCompile 'com.squareup.leakcanary:leakcanary-android:1.4-beta2'
+    //releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4-beta2'
+    //testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4-beta2'
+
 }
