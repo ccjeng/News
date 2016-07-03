@@ -104,7 +104,7 @@ public class MainActivity extends BaseActivity {
             tab.select();
         }
         moPubView = (MoPubView) findViewById(R.id.adview);
-        Network.AdView(this, moPubView, Constant.Ad_MoPub_Main);
+        Network.AdView(moPubView, Constant.Ad_MoPub_Main);
     }
 
     @Override

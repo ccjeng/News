@@ -107,7 +107,7 @@ public class NewsRSSList extends BaseActivity
 
 
         moPubView = (MoPubView) findViewById(R.id.adview);
-        Network.AdView(this, moPubView, Constant.Ad_MoPub_RSS);
+        Network.AdView(moPubView, Constant.Ad_MoPub_RSS);
 
         ga.trackEvent(this, "Click", "Category", newsName + "-" + categoryName, 0);
 

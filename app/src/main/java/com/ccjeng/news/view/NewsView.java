@@ -127,7 +127,7 @@ public class NewsView extends BaseActivity {
             NewsHandler newsHandler = new NewsHandler(this, callback, newsUrl);
             newsHandler.getNewsContent(charset);
 
-            Network.AdView(this, moPubView, Constant.AD_MoPub_View);
+            Network.AdView(moPubView, Constant.AD_MoPub_View);
 
         } else {
             UI.showErrorSnackBar(coordinator, R.string.network_error);

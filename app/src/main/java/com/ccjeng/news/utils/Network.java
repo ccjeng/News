@@ -50,7 +50,7 @@ public class Network {
 
     }
 
-    public static void AdView(Context context, MoPubView adView, String AdUnitID) {
+    public static void AdView(MoPubView adView, String AdUnitID) {
         adView.setAdUnitId(AdUnitID);
         //if (!News.APPDEBUG) {
             //adView.setTesting(true);
