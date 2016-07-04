@@ -50,6 +50,7 @@ dependencies {
     compile 'com.android.volley:volley:1.0.0'
     compile 'com.yolanda.nohttp:nohttp:1.0.3'
     compile files('src/main/libs/vpadn-sdk-obf453-71606102-1606171046-2512837.jar')
+
     compile files('src/main/libs/AudienceNetwork.jar')
     compile project(path: ':swipebackactivity')
     //debugCompile 'com.squareup.leakcanary:leakcanary-android:1.4-beta2'
