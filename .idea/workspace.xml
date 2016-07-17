@@ -45,12 +45,12 @@
     <favorites_list name="News" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="build.gradle" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.63350785">
-              <caret line="51" column="4" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="4" />
+            <state vertical-scroll-proportion="0.50236964">
+              <caret line="44" column="46" selection-start-line="44" selection-start-column="46" selection-end-line="44" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -616,29 +616,29 @@
                 <option name="name" value="prepareComGoogleAndroidExoplayerExoplayerR156Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Prepare com.google.android.gms:play-services-analytics:9.2.0" />
+                <option name="description" value="Prepare com.google.android.gms:play-services-analytics:9.2.1" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="prepareComGoogleAndroidGmsPlayServicesAnalytics920Library" />
+                <option name="name" value="prepareComGoogleAndroidGmsPlayServicesAnalytics921Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Prepare com.google.android.gms:play-services-analytics-impl:9.2.0" />
+                <option name="description" value="Prepare com.google.android.gms:play-services-analytics-impl:9.2.1" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="prepareComGoogleAndroidGmsPlayServicesAnalyticsImpl920Library" />
+                <option name="name" value="prepareComGoogleAndroidGmsPlayServicesAnalyticsImpl921Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Prepare com.google.android.gms:play-services-base:9.2.0" />
+                <option name="description" value="Prepare com.google.android.gms:play-services-base:9.2.1" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="prepareComGoogleAndroidGmsPlayServicesBase920Library" />
+                <option name="name" value="prepareComGoogleAndroidGmsPlayServicesBase921Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Prepare com.google.android.gms:play-services-basement:9.2.0" />
+                <option name="description" value="Prepare com.google.android.gms:play-services-basement:9.2.1" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="prepareComGoogleAndroidGmsPlayServicesBasement920Library" />
+                <option name="name" value="prepareComGoogleAndroidGmsPlayServicesBasement921Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Prepare com.google.android.gms:play-services-tasks:9.2.0" />
+                <option name="description" value="Prepare com.google.android.gms:play-services-tasks:9.2.1" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="prepareComGoogleAndroidGmsPlayServicesTasks920Library" />
+                <option name="name" value="prepareComGoogleAndroidGmsPlayServicesTasks921Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Prepare com.mikepenz:aboutlibraries:5.6.7" />
@@ -1401,29 +1401,29 @@
                 <option name="name" value="prepareComGoogleAndroidExoplayerExoplayerR156Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Prepare com.google.android.gms:play-services-analytics:9.2.0" />
+                <option name="description" value="Prepare com.google.android.gms:play-services-analytics:9.2.1" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
-                <option name="name" value="prepareComGoogleAndroidGmsPlayServicesAnalytics920Library" />
+                <option name="name" value="prepareComGoogleAndroidGmsPlayServicesAnalytics921Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Prepare com.google.android.gms:play-services-analytics-impl:9.2.0" />
+                <option name="description" value="Prepare com.google.android.gms:play-services-analytics-impl:9.2.1" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
-                <option name="name" value="prepareComGoogleAndroidGmsPlayServicesAnalyticsImpl920Library" />
+                <option name="name" value="prepareComGoogleAndroidGmsPlayServicesAnalyticsImpl921Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Prepare com.google.android.gms:play-services-base:9.2.0" />
+                <option name="description" value="Prepare com.google.android.gms:play-services-base:9.2.1" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
-                <option name="name" value="prepareComGoogleAndroidGmsPlayServicesBase920Library" />
+                <option name="name" value="prepareComGoogleAndroidGmsPlayServicesBase921Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Prepare com.google.android.gms:play-services-basement:9.2.0" />
+                <option name="description" value="Prepare com.google.android.gms:play-services-basement:9.2.1" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
-                <option name="name" value="prepareComGoogleAndroidGmsPlayServicesBasement920Library" />
+                <option name="name" value="prepareComGoogleAndroidGmsPlayServicesBasement921Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Prepare com.google.android.gms:play-services-tasks:9.2.0" />
+                <option name="description" value="Prepare com.google.android.gms:play-services-tasks:9.2.1" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
-                <option name="name" value="prepareComGoogleAndroidGmsPlayServicesTasks920Library" />
+                <option name="name" value="prepareComGoogleAndroidGmsPlayServicesTasks921Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Prepare com.mikepenz:aboutlibraries:5.6.7" />
@@ -2302,7 +2302,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="5867120923000" />
+        <entry key="$PROJECT_DIR$" value="5868314117000" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -2486,7 +2486,7 @@
                             <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/org/abego/treelayout/org.abego.treelayout.core/1.0.1/org.abego.treelayout.core-1.0.1.jar" />
                             <option value="$USER_HOME$/Library/Android/sdk/extras/android/m2repository/com/android/support/appcompat-v7/23.4.0/appcompat-v7-23.4.0.aar" />
                             <option value="$USER_HOME$/Library/Android/sdk/extras/android/m2repository/com/android/support/design/23.4.0/design-23.4.0.aar" />
-                            <option value="$USER_HOME$/Library/Android/sdk/extras/google/m2repository/com/google/android/gms/play-services-analytics/9.2.0/play-services-analytics-9.2.0.aar" />
+                            <option value="$USER_HOME$/Library/Android/sdk/extras/google/m2repository/com/google/android/gms/play-services-analytics/9.2.1/play-services-analytics-9.2.1.aar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jakewharton/butterknife/7.0.1/d5d13ea991eab0252e3710e5df3d6a9d4b21d461/butterknife-7.0.1.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.mikepenz/community-material-typeface/1.5.54.1/7b4c0edabdd1b767deeaa83949d24716dd055660/community-material-typeface-1.5.54.1.aar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.pnikosis/materialish-progress/1.5/f0c380cfd0afa8cd074d087ac88778a4adfc134/materialish-progress-1.5.aar" />
@@ -2500,14 +2500,14 @@
                             <option value="$USER_HOME$/Library/Android/sdk/extras/android/m2repository/com/android/support/support-v4/23.4.0/support-v4-23.4.0.aar" />
                             <option value="$USER_HOME$/Library/Android/sdk/extras/android/m2repository/com/android/support/support-vector-drawable/23.4.0/support-vector-drawable-23.4.0.aar" />
                             <option value="$USER_HOME$/Library/Android/sdk/extras/android/m2repository/com/android/support/recyclerview-v7/23.4.0/recyclerview-v7-23.4.0.aar" />
-                            <option value="$USER_HOME$/Library/Android/sdk/extras/google/m2repository/com/google/android/gms/play-services-analytics-impl/9.2.0/play-services-analytics-impl-9.2.0.aar" />
-                            <option value="$USER_HOME$/Library/Android/sdk/extras/google/m2repository/com/google/android/gms/play-services-base/9.2.0/play-services-base-9.2.0.aar" />
-                            <option value="$USER_HOME$/Library/Android/sdk/extras/google/m2repository/com/google/android/gms/play-services-basement/9.2.0/play-services-basement-9.2.0.aar" />
+                            <option value="$USER_HOME$/Library/Android/sdk/extras/google/m2repository/com/google/android/gms/play-services-analytics-impl/9.2.1/play-services-analytics-impl-9.2.1.aar" />
+                            <option value="$USER_HOME$/Library/Android/sdk/extras/google/m2repository/com/google/android/gms/play-services-base/9.2.1/play-services-base-9.2.1.aar" />
+                            <option value="$USER_HOME$/Library/Android/sdk/extras/google/m2repository/com/google/android/gms/play-services-basement/9.2.1/play-services-basement-9.2.1.aar" />
                             <option value="$USER_HOME$/Library/Android/sdk/extras/android/m2repository/com/android/support/cardview-v7/23.4.0/cardview-v7-23.4.0.aar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.mikepenz/fastadapter/1.5.2/2c69d8a9b88c47da19a4aafd66d8710dadc77cb/fastadapter-1.5.2.aar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.android.exoplayer/exoplayer/r1.5.6/a9992bb9045c3e518b9defbf5a39c24e2c157ab3/exoplayer-r1.5.6.aar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.mopub.volley/mopub-volley/1.1.0/4357bce66ae3bb9be50679e43df122fd0a8f3394/mopub-volley-1.1.0.jar" />
-                            <option value="$USER_HOME$/Library/Android/sdk/extras/google/m2repository/com/google/android/gms/play-services-tasks/9.2.0/play-services-tasks-9.2.0.aar" />
+                            <option value="$USER_HOME$/Library/Android/sdk/extras/google/m2repository/com/google/android/gms/play-services-tasks/9.2.1/play-services-tasks-9.2.1.aar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.mikepenz/iconics-core/2.6.0/3c473ee984682024a2499435c94555117800af65/iconics-core-2.6.0.aar" />
                             <option value="$USER_HOME$/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.4.0/support-annotations-23.4.0.jar" />
                             <option value="$MODULE_DIR$/src/main/libs/vpadn-sdk-obf453-71606102-1606171046-2512837.jar" />
@@ -2971,10 +2971,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="15" />
-    <option name="y" value="40" />
+    <option name="x" value="4" />
+    <option name="y" value="23" />
     <option name="width" value="1276" />
-    <option name="height" value="717" />
+    <option name="height" value="777" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -3001,6 +3001,55 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="AndroidView">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="News" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="News" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="News" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="News" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="manifests" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidManifestsGroupNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -3161,27 +3210,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="PackagesPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="News" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="News" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="Scope">
         <subPane subId="Project Files">
           <PATH>
@@ -3212,50 +3240,22 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="AndroidView">
+      <pane id="PackagesPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="News" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="News" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="News" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="News" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="manifests" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidManifestsGroupNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -3591,7 +3591,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="15" y="40" width="1276" height="717" extended-state="0" />
+    <frame x="4" y="23" width="1276" height="777" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39485627" sideWeight="0.48379254" order="6" side_tool="false" content_ui="tabs" />
@@ -3903,13 +3903,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/swipebackactivity/src/main/res/layout/swipeback_layout.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/swipebackactivity/src/main/java/com/example/swipebackactivity/Utils.java">
@@ -4044,14 +4044,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.63350785">
-          <caret line="51" column="4" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="4" />
+        <state vertical-scroll-proportion="0.50236964">
+          <caret line="44" column="46" selection-start-line="44" selection-start-column="46" selection-end-line="44" selection-end-column="46" />
           <folding />
         </state>
       </provider>
