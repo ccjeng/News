@@ -110,8 +110,8 @@ public class NewsView extends BaseActivity {
 
                 @Override
                 public void onWebContentError(String error) {
-                    Log.e(TAG, error);
                     UI.showErrorSnackBar(coordinator, R.string.data_error);
+                    Log.e(TAG, "error = " + error);
                 }
             };
 
@@ -211,14 +211,17 @@ public class NewsView extends BaseActivity {
 
     private void drawHtmlPage(String html) {
 
-        webView.getSettings().setJavaScriptEnabled(true);
-        //context.webView.getSettings().setSupportZoom(true);
-        //context.webView.getSettings().setBuiltInZoomControls(true);
-        //context.webView.getSettings().setCacheMode(2); //LOAD_NO_CACHE
-        webView.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
+        if (webView != null) {
+            webView.getSettings().setJavaScriptEnabled(true);
+            //context.webView.getSettings().setSupportZoom(true);
+            //context.webView.getSettings().setBuiltInZoomControls(true);
+            //context.webView.getSettings().setCacheMode(2); //LOAD_NO_CACHE
+            webView.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
 
-        //context.webView.getSettings().setLoadWithOverviewMode(true);
-        //context.webView.getSettings().setUseWideViewPort(true);
+            //context.webView.getSettings().setLoadWithOverviewMode(true);
+            //context.webView.getSettings().setUseWideViewPort(true);
+        }
+
 
         progressWheel.setVisibility(View.GONE);
         main.setVisibility(View.VISIBLE);
