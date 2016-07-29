@@ -3,9 +3,8 @@
 	tools:ignore="MissingTranslation">
 
     <string-array name="updates">
-    	<item>v1.6.1\n
-			-暫時移除星洲日報(因該報的RSS失效)\n
-			-改善新聞列表載入效能\n
+    	<item>v1.6.2\n
+			-修正新聞載入時強制關閉的問題
     	</item>
 	</string-array>
 </resources>
