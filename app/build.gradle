@@ -1,8 +1,8 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "22.0.1"
+    compileSdkVersion 24
+    buildToolsVersion "23.0.2"
     defaultConfig {
         applicationId "com.ccjeng.news"
         minSdkVersion 16
@@ -32,11 +32,11 @@ android {
 dependencies {
     //compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:23.4.0'
-    compile 'com.android.support:design:23.4.0'
+    compile 'com.android.support:appcompat-v7:24.1.1'
+    compile 'com.android.support:design:24.1.1'
     compile 'com.google.android.gms:play-services-analytics:9.2.1'
     compile 'com.jakewharton:butterknife:7.0.1'
-    compile 'com.mikepenz:iconics-core:2.5.11@aar'
+    compile "com.mikepenz:iconics-core:2.7.1@aar"
     compile 'com.mikepenz:community-material-typeface:1.5.54.1@aar'
     compile 'com.pnikosis:materialish-progress:1.5'
     compile('com.mikepenz:aboutlibraries:5.6.7@aar') {

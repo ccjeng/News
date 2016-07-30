@@ -4,10 +4,10 @@ import com.example.swipebackactivity.SwipeBackLayout;
 
 
 public interface SwipeBackActivityBase {
-     SwipeBackLayout getSwipeBackLayout();
+    SwipeBackLayout getSwipeBackLayout();
 
-      void setSwipeBackEnable(boolean enable);
+    void setSwipeBackEnable(boolean enable);
 
-     void scrollToFinishActivity();
+    void scrollToFinishActivity();
 
 }
