@@ -31,7 +31,6 @@ import com.ccjeng.news.utils.PreferenceSetting;
 import com.ccjeng.news.utils.Version;
 import com.ccjeng.news.view.base.BaseActivity;
 import com.ccjeng.news.view.base.News;
-import com.google.android.gms.analytics.GoogleAnalytics;
 import com.mikepenz.aboutlibraries.Libs;
 import com.mikepenz.aboutlibraries.LibsBuilder;
 import com.mikepenz.community_material_typeface_library.CommunityMaterial;
@@ -80,7 +79,7 @@ public class MainActivity extends BaseActivity {
 
         setSupportActionBar(toolbar);
 
-        getSwipeBackLayout().setEnableGesture(false);
+        setSwipeBackEnable(false);
 
         pager.setAdapter(new ViewPagerAdapter(getSupportFragmentManager()));
         tabs.setupWithViewPager(pager);
@@ -108,16 +107,6 @@ public class MainActivity extends BaseActivity {
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-    }
-
-    @Override
     public void onDestroy() {
         if (moPubView != null) {
             moPubView.destroy();
@@ -130,14 +119,8 @@ public class MainActivity extends BaseActivity {
     protected void onStart() {
         super.onStart();
         PreferenceSetting.getPreference(this);
-        GoogleAnalytics.getInstance(this).reportActivityStart(this);
     }
 
-    @Override
-    public void onStop() {
-        super.onStop();
-        GoogleAnalytics.getInstance(this).reportActivityStop(this);
-    }
 
     private long lastMillis;
 

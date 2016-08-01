@@ -11,6 +11,8 @@ import com.yolanda.nohttp.NoHttp;
 
 import java.util.HashMap;
 
+import me.majiajie.swipeback.utils.ActivityStack;
+
 /**
  * Created by andycheng on 2015/11/15.
  */
@@ -18,13 +20,12 @@ public class News extends Application {
 
     public static final boolean APPDEBUG = BuildConfig.DEBUG;
 
-    public static final String GooglShorten = "";
-
     @Override
     public void onCreate() {
         super.onCreate();
         //LeakCanary.install(this);
         NoHttp.initialize(this);
+        this.registerActivityLifecycleCallbacks(ActivityStack.getInstance());
     }
 
     /* Global Variables

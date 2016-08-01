@@ -12,5 +12,7 @@
         <item name="android:windowSharedElementEnterTransition">@android:transition/move</item>
         <item name="android:windowSharedElementExitTransition">@android:transition/move</item>
 
+        <!--侧滑滑动-在API21以上的(不是必要的，你可以自定义，但是推荐这个动画)-->
+        <item name="android:windowAnimationStyle">@style/Animation.Activity.Style</item>
     </style>
 </resources>

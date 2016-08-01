@@ -29,7 +29,6 @@ import com.ccjeng.news.utils.UI;
 import com.ccjeng.news.utils.Webpage;
 import com.ccjeng.news.view.base.BaseActivity;
 import com.ccjeng.news.view.base.News;
-import com.google.android.gms.analytics.GoogleAnalytics;
 import com.mikepenz.community_material_typeface_library.CommunityMaterial;
 import com.mikepenz.iconics.IconicsDrawable;
 import com.mopub.mobileads.MoPubView;
@@ -138,14 +137,8 @@ public class NewsView extends BaseActivity {
     protected void onStart() {
         super.onStart();
         PreferenceSetting.getPreference(this);
-        GoogleAnalytics.getInstance(this).reportActivityStart(this);
     }
 
-    @Override
-    public void onStop() {
-        super.onStop();
-        GoogleAnalytics.getInstance(this).reportActivityStop(this);
-    }
 
     @Override
     protected void onDestroy() {

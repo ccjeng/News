@@ -6,7 +6,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 
 import com.ccjeng.news.R;
@@ -17,7 +16,6 @@ import com.ccjeng.news.utils.Category;
 import com.ccjeng.news.utils.Constant;
 import com.ccjeng.news.utils.Network;
 import com.ccjeng.news.view.base.BaseActivity;
-import com.google.android.gms.analytics.GoogleAnalytics;
 import com.mopub.mobileads.MoPubView;
 
 import butterknife.Bind;
@@ -77,18 +75,6 @@ public class NewsCategory extends BaseActivity {
     }
 
     @Override
-    protected void onStart() {
-        super.onStart();
-        GoogleAnalytics.getInstance(this).reportActivityStart(this);
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        GoogleAnalytics.getInstance(this).reportActivityStop(this);
-    }
-
-    @Override
     protected void onDestroy() {
         if (moPubView != null) {
             moPubView.destroy();
@@ -101,17 +87,6 @@ public class NewsCategory extends BaseActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                finish();
-                break;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 
     private void showResult(String tabName, int sourceNumber) {

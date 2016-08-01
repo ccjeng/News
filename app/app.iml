@@ -106,6 +106,7 @@
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.mopub/mopub-sdk/4.7.0/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.pnikosis/materialish-progress/1.5/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.yolanda.nohttp/nohttp/1.0.3/jars" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/me.majiajie/swipe-back/1.0.0-alpha2/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/incremental" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/incremental-safeguard" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/instant-run-support" />
@@ -152,6 +153,6 @@
     <orderEntry type="library" exported="" scope="TEST" name="junit-4.12" level="project" />
     <orderEntry type="library" exported="" name="play-services-analytics-impl-9.2.1" level="project" />
     <orderEntry type="library" exported="" name="iconics-core-2.7.1" level="project" />
-    <orderEntry type="module" module-name="swipebackactivity" exported="" />
+    <orderEntry type="library" exported="" name="swipe-back-1.0.0-alpha2" level="project" />
   </component>
 </module>
