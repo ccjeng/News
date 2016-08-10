@@ -194,8 +194,13 @@ public class NewsView extends BaseActivity {
     }
 
     private void menuShare() {
+        //Todo Shorten URL
+        // https://www.learn2crack.com/2014/01/android-using-goo-gl-url-shortener-api.html
+        // http://jkoder.com/url-shortening-using-google-api/
+
         final Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setType("text/plain");
+
         intent.putExtra(Intent.EXTRA_SUBJECT, "");
         intent.putExtra(Intent.EXTRA_TEXT, "["+ newsName + "] " + newsTitle + " " + newsUrl);
         startActivity(Intent.createChooser(intent, getString(R.string.sharing_description)));

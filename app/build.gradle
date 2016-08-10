@@ -7,8 +7,8 @@ android {
         applicationId "com.ccjeng.news"
         minSdkVersion 16
         targetSdkVersion 23
-        versionCode 28
-        versionName '1.6.2.072916SN'
+        versionCode 29
+        versionName '1.6.3.081016SN'
         vectorDrawables.useSupportLibrary = true
     }
     buildTypes {
@@ -52,6 +52,7 @@ dependencies {
     compile files('src/main/libs/vpadn-sdk-obf453-71606102-1606171046-2512837.jar')
     compile files('src/main/libs/AudienceNetwork.jar')
     compile 'me.majiajie:swipe-back:1.0.0-alpha2'
+    //compile 'com.google.apis:google-api-services-urlshortener:v1-rev45-1.22.0'
     //compile project(path: ':swipebackactivity')
     //debugCompile 'com.squareup.leakcanary:leakcanary-android:1.4-beta2'
     //releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4-beta2'
