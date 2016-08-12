@@ -1,7 +1,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="MissingTranslation">
 
-    <string name="app_name">树懒新闻</string>
+    <string name="app_name">华文News</string>
     <string name="action_settings">设定</string>
     <string name="open_browser">开启浏览器</string>
     <string name="share">分享</string>

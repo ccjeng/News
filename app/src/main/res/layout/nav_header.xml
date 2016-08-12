@@ -8,13 +8,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:src="@drawable/rss_item"
-        android:scaleType="centerCrop" />-->
+        android:scaleType="centerCrop" />
    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/icon_72"
         android:layout_gravity="bottom|center_horizontal"
-        android:layout_marginBottom="36dp" />
+        android:layout_marginBottom="36dp" />-->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

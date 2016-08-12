@@ -3,9 +3,8 @@
 	tools:ignore="MissingTranslation">
 
     <string-array name="updates">
-    	<item>v1.6.3\n
-			-修正「大榴槤」沒有更新的問題\n
-			-改善右滑關閉功能
+    	<item>v1.7.0\n
+			-更名為「華文News」
     	</item>
 	</string-array>
 </resources>
