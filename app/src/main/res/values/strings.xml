@@ -43,7 +43,7 @@
     <!-- Welcome -->
     <string name="changelog_title">更新記錄</string>
     <string name="welcome_title">歡迎</string>
-    <string name="welcome_message">歡迎使用樹懶新聞，超好用的新聞閱讀器\n\n建議使用wifi，以獲得最佳瀏覽速度。
+    <string name="welcome_message">歡迎使用華文News，超好用的新聞閱讀器\n\n建議使用wifi，以獲得最佳瀏覽速度。
     \n\n請按下方的設定按鈕，自訂最佳的瀏覽狀態。
     </string>
 

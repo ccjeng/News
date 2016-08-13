@@ -29,10 +29,8 @@ public class Zaobao extends AbstractNews {
 
         try {
             title = doc.select("h1").text();
-            time = doc.select("p.time").text();
-            body = doc.select("div#article_content > span").html() + "<p>"
-                    + doc.select("div#a_image").html()+ "<p>"
-                    + doc.select("div.a_body").html();
+            time = doc.select("span.datestamp").text();
+            body = doc.select("div#FineDining").html();
         } catch (Exception e) {
             e.printStackTrace();
         }

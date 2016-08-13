@@ -4,7 +4,7 @@
 
     <string-array name="newscatsZaobao">
         <item>即时报道</item>
-        <!-- <item>中国新闻</item>
+        <item>中国新闻</item>
         <item>国际新闻</item>
         <item>东南亚新闻</item>
         <item>新加坡新闻</item>
@@ -13,13 +13,13 @@
         <item>狮城财经</item>
         <item>全球财经</item>
         <item>早报体育</item>
-        <item>早报副刊</item>-->
+        <item>早报副刊</item>
         <item>世界报刊文萃</item>
     </string-array>
     <string-array name="newsfeedsZaobao">
         <item>http://www.zaobao.com/ssi/rss/news.xml</item>
-        <!--  <item>http://www.zaobao.com/ssi/rss/zg.xml</item>
-           <item>http://www.zaobao.com/ssi/rss/gj.xml</item>
+        <item>http://www.zaobao.com/ssi/rss/zg.xml</item>
+        <item>http://www.zaobao.com/ssi/rss/gj.xml</item>
         <item>http://www.zaobao.com/ssi/rss/yx.xml</item>
         <item>http://www.zaobao.com/ssi/rss/sp.xml</item>
         <item>http://www.zaobao.com/ssi/rss/yl.xml</item>
@@ -27,7 +27,7 @@
         <item>http://www.zaobao.com/ssi/rss/cs.xml</item>
         <item>http://www.zaobao.com/ssi/rss/cg.xml</item>
         <item>http://www.zaobao.com/ssi/rss/ty.xml</item>
-        <item>http://www.zaobao.com/ssi/rss/fk.xml</item>-->
+        <item>http://www.zaobao.com/ssi/rss/fk.xml</item>
         <item>http://www.zaobao.com/ssi/rss/wencui.xml</item>
     </string-array>
     <string-array name="newscatsMyPaper">

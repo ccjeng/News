@@ -31,7 +31,11 @@ public class AM730 extends AbstractNews {
             //// TODO: 2015/12/1 title & time
             title = doc.select("title").text();
             time = doc.select("div#article_date").text();
-            body = doc.select("div#article_content").html() + doc.select("ul.slides").html();
+            body = doc.select("div#article_content").html() + doc.select("div#slider").html();
+
+                    //doc.select("ul.slides").get(0).html();
+
+            // > li.flex-active-slide
 
         } catch (Exception e) {
             e.printStackTrace();
