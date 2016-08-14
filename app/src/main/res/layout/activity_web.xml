@@ -48,7 +48,6 @@
             android:layout_height="fill_parent"
             android:layout_above="@+id/footerLayout"
             android:layout_below="@+id/toolbarLayout"
-            android:background="@color/windowBackground"
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
                 <WebView
                     android:id="@+id/webView"

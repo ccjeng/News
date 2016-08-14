@@ -220,16 +220,15 @@ public class NewsView extends BaseActivity {
             //context.webView.getSettings().setUseWideViewPort(true);
         }
 
-
-        progressWheel.setVisibility(View.GONE);
-        main.setVisibility(View.VISIBLE);
-
         Category cat = new Category(NewsView.this);
         AbstractNews parser = cat.getNewsParser(tabName, sourceNumber);
 
         try {
 
             String newsContent = parser.parseHtml(newsUrl, html);
+
+            progressWheel.setVisibility(View.GONE);
+            main.setVisibility(View.VISIBLE);
 
             if (parser.isEmptyContent()) {
                 //if parse result is empty, then show webview directly..
@@ -291,7 +290,9 @@ public class NewsView extends BaseActivity {
                         webView.loadUrl(js);
                     }
                 });
+
             }
+
 
         } catch (IOException e) {
             e.printStackTrace();

@@ -3,9 +3,10 @@
 	tools:ignore="MissingTranslation">
 
     <string-array name="updates">
-    	<item>v1.7.1\n
-			-修正「联合早报」不能阅读的问题\n
-			-修正「AM730」图片重复的问题
+    	<item>v1.7.2\n
+			-修复「联合新闻网」新闻标题\n
+			-修复「关键评论网」新闻列表没有更新的问题\n
+			-优化新闻列表载入速度
 		</item>
 	</string-array>
 </resources>

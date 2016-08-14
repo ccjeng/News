@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "499255335239",
+    "firebase_url": "https://news-bb816.firebaseio.com",
+    "project_id": "news-bb816",
+    "storage_bucket": "news-bb816.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:499255335239:android:01478dfd503e77d3",
+        "android_client_info": {
+          "package_name": "com.ccjeng.news"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "499255335239-kablb5ud28r9qn07i437dd85gsof218f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2IFil1FEpLnjbs5MInPQvgDwlfn_E-SY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

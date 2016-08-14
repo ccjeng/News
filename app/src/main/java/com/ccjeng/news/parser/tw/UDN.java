@@ -28,7 +28,12 @@ public class UDN extends AbstractNews {
         String time = "";
 
         try {
-            title = doc.select("h2#story_art_title").text();
+
+            if (link.contains("money.udn.com")) {
+                title = doc.select("h2#story_art_title").text();
+            } else {
+                title = doc.select("h1").text();
+            }
             time = doc.select("div#story_bady_info h3").text();
             body = doc.select("div#story_body_content").html();
         } catch (Exception e) {
