@@ -28,9 +28,9 @@ public class CNYes extends AbstractNews {
         String time = "";
 
         try {
-            title = doc.select("div.newsContent > h1").text();
-            time = doc.select("div.newsContent > div.info").text();
-            body = doc.select("div.newsContent > div#newsText").html();
+            title = doc.select("h1").text();
+            time = doc.select("time").text();
+            body = doc.select("article").html();
         } catch (Exception e) {
             e.printStackTrace();
         }

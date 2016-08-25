@@ -48,11 +48,11 @@ public class NewsView extends BaseActivity {
     @Bind(R.id.toolbar)
     Toolbar toolbar;
     @Bind(R.id.webView)
-    public WebView webView;
+    WebView webView;
     @Bind(R.id.progress_wheel)
-    public ProgressWheel progressWheel;
+    ProgressWheel progressWheel;
     @Bind(R.id.main)
-    public NestedScrollView main;
+    NestedScrollView main;
     @Bind(R.id.coordinator)
     CoordinatorLayout coordinator;
 
@@ -209,16 +209,19 @@ public class NewsView extends BaseActivity {
 
     private void drawHtmlPage(String html) {
 
-        if (webView != null) {
-            webView.getSettings().setJavaScriptEnabled(true);
+        if (webView == null) {
+            webView = (WebView) findViewById(R.id.webView);
+        }
+
+        webView.getSettings().setJavaScriptEnabled(true);
             //context.webView.getSettings().setSupportZoom(true);
             //context.webView.getSettings().setBuiltInZoomControls(true);
             //context.webView.getSettings().setCacheMode(2); //LOAD_NO_CACHE
-            webView.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
+        webView.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
 
             //context.webView.getSettings().setLoadWithOverviewMode(true);
             //context.webView.getSettings().setUseWideViewPort(true);
-        }
+
 
         Category cat = new Category(NewsView.this);
         AbstractNews parser = cat.getNewsParser(tabName, sourceNumber);
