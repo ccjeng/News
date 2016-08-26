@@ -3,10 +3,8 @@
 	tools:ignore="MissingTranslation">
 
     <string-array name="updates">
-    	<item>v1.7.2\n
-			-修復「聯合新聞網」新聞標題\n
-			-修復「關鍵評論網」新聞列表沒有更新的問題\n
-			-優化新聞列表載入速度
+    	<item>v1.7.3\n
+			-修復「鉅亨網」新聞錯誤\n
     	</item>
 	</string-array>
 </resources>

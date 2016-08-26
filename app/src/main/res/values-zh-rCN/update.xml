@@ -3,10 +3,8 @@
 	tools:ignore="MissingTranslation">
 
     <string-array name="updates">
-    	<item>v1.7.2\n
-			-修复「联合新闻网」新闻标题\n
-			-修复「关键评论网」新闻列表没有更新的问题\n
-			-优化新闻列表载入速度
+    	<item>v1.7.3\n
+			-修复「巨亨网」新闻错误\n
 		</item>
 	</string-array>
 </resources>
