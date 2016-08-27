@@ -33,7 +33,6 @@ public class NewsWeb extends AppCompatActivity {
 
     @Bind(R.id.toolbar)
     Toolbar toolbar;
-    @Bind(R.id.webView)
     WebView webView;
     @Bind(R.id.progress_wheel)
     ProgressWheel progressWheel;

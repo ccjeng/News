@@ -47,7 +47,7 @@ public class NewsView extends BaseActivity {
 
     @Bind(R.id.toolbar)
     Toolbar toolbar;
-    @Bind(R.id.webView)
+    //@Bind(R.id.webView)
     WebView webView;
     @Bind(R.id.progress_wheel)
     ProgressWheel progressWheel;
@@ -73,6 +73,10 @@ public class NewsView extends BaseActivity {
 
         ga = new Analytics();
         ga.trackerPage(this);
+
+        //webView = (WebView) findViewById(R.id.webView);
+        webView = new WebView(getApplicationContext());
+        main.addView(webView);
 
         setSupportActionBar(toolbar);
         if (getSupportActionBar()!=null) {
@@ -151,7 +155,7 @@ public class NewsView extends BaseActivity {
             webView.setVisibility(View.GONE);
             webView.removeAllViews();
             webView.destroy();
-            webView = null;
+            //webView = null;
         }
     }
 
@@ -209,19 +213,16 @@ public class NewsView extends BaseActivity {
 
     private void drawHtmlPage(String html) {
 
-        if (webView == null) {
-            webView = (WebView) findViewById(R.id.webView);
-        }
-
-        webView.getSettings().setJavaScriptEnabled(true);
+        if (webView != null) {
+            webView.getSettings().setJavaScriptEnabled(true);
             //context.webView.getSettings().setSupportZoom(true);
             //context.webView.getSettings().setBuiltInZoomControls(true);
             //context.webView.getSettings().setCacheMode(2); //LOAD_NO_CACHE
-        webView.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
+            webView.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
 
             //context.webView.getSettings().setLoadWithOverviewMode(true);
             //context.webView.getSettings().setUseWideViewPort(true);
-
+        }
 
         Category cat = new Category(NewsView.this);
         AbstractNews parser = cat.getNewsParser(tabName, sourceNumber);
@@ -274,25 +275,27 @@ public class NewsView extends BaseActivity {
 
             } else {
 
-                webView.loadDataWithBaseURL(null, newsContent, "text/html", "utf-8", "about:blank");
+                if (webView != null) {
+                    webView.loadDataWithBaseURL(null, newsContent, "text/html", "utf-8", "about:blank");
 
-                //image fit screen
-                final String js;
-                js= "javascript:(function () { " +
-                        " var w = " + Webpage.getWidth(NewsView.this) + ";" +
-                        " for( var i = 0; i < document.images.length; i++ ) {" +
-                        " var img = document.images[i]; " +
-                        "   img.height = Math.round( img.height * ( w/img.width ) ); " +
-                        "   img.width = w; " +
-                        " }" +
-                        " })();";
+                    //image fit screen
+                    final String js;
+                    js = "javascript:(function () { " +
+                            " var w = " + Webpage.getWidth(NewsView.this) + ";" +
+                            " for( var i = 0; i < document.images.length; i++ ) {" +
+                            " var img = document.images[i]; " +
+                            "   img.height = Math.round( img.height * ( w/img.width ) ); " +
+                            "   img.width = w; " +
+                            " }" +
+                            " })();";
 
-                webView.setWebViewClient(new WebViewClient() {
-                    @Override
-                    public void onPageFinished(WebView view, String url) {
-                        webView.loadUrl(js);
-                    }
-                });
+                    webView.setWebViewClient(new WebViewClient() {
+                        @Override
+                        public void onPageFinished(WebView view, String url) {
+                            webView.loadUrl(js);
+                        }
+                    });
+                }
 
             }
 
