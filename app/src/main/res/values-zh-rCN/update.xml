@@ -3,8 +3,8 @@
 	tools:ignore="MissingTranslation">
 
     <string-array name="updates">
-    	<item>v1.7.3\n
-			-修复「巨亨网」新闻错误\n
+    	<item>v1.7.4\n
+			-改善浏览新闻时记忆体过高的问题\n
 		</item>
 	</string-array>
 </resources>
