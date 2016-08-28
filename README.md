@@ -1,4 +1,7 @@
-#Quick News
+#華文 News
+
+[![Release](https://img.shields.io/github/release/ccjeng/News.svg)](https://github.com/ccjeng/News/releases)
+
 A Chinese News RSS Reader
 
 Library:
