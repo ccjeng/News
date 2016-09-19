@@ -7,8 +7,8 @@ android {
         applicationId "com.ccjeng.news"
         minSdkVersion 16
         targetSdkVersion 23
-        versionCode 34
-        versionName '1.7.4.082816SN'
+        versionCode 35
+        versionName '1.7.5.091916SN'
         vectorDrawables.useSupportLibrary = true
         multiDexEnabled true
     }
@@ -53,13 +53,11 @@ dependencies {
     compile 'org.jsoup:jsoup:1.9.2'
     compile 'com.github.bumptech.glide:glide:3.7.0'
     compile 'com.android.support:support-v4:24.2.0'
-
     compile 'com.android.volley:volley:1.0.0'
     compile 'com.yolanda.nohttp:nohttp:1.0.4'
     compile files('src/main/libs/vpadn-sdk-obf453-71606102-1606171046-2512837.jar')
     compile 'com.facebook.android:audience-network-sdk:4.14.1'
     compile 'me.majiajie:swipe-back:1.0.0-alpha2'
-
     //compile 'com.google.apis:google-api-services-urlshortener:v1-rev45-1.22.0'
     //debugCompile 'com.squareup.leakcanary:leakcanary-android:1.4-beta2'
     //releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4-beta2'
