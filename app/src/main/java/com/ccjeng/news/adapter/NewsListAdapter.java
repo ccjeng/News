@@ -9,11 +9,11 @@ import android.view.animation.DecelerateInterpolator;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.ccjeng.news.R;
 import com.ccjeng.news.controler.rss.RSSFeed;
 import com.ccjeng.news.utils.ScreenUtil;
 import com.ccjeng.news.view.NewsRSSList;
-import com.squareup.picasso.Picasso;
 
 public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.CustomViewHolder> {
 	private static final String TAG = "NewsListAdapter";
@@ -56,11 +56,14 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.Custom
 			customViewHolder.imageView.setVisibility(View.GONE);
 		} else {
 			//Load image
-			Picasso.with(context)
+			Glide.with(context)
 					.load(items.getItem(i).getImg())
-					.resize(72,72)
-					.centerInside()
-					.into(customViewHolder.imageView);
+					.override(72, 72) // resizes the image to these dimensions (in pixel)
+					.centerCrop() // this cropping technique scales the image so that it fills the requested bounds and then crops the extra.
+					.thumbnail( 0.1f )
+					.crossFade()
+					.into(customViewHolder.imageView)
+					;
 		}
 
 		//runEnterAnimation(customViewHolder.itemView, i);

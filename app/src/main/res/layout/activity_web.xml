@@ -29,7 +29,6 @@
 
         </android.support.design.widget.AppBarLayout>
 
-
         <com.pnikosis.materialishprogress.ProgressWheel
             android:id="@+id/progress_wheel"
             android:layout_width="80dp"
@@ -40,7 +39,6 @@
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
             wheel:matProg_barColor="@color/colorProgress"
             wheel:matProg_progressIndeterminate="true" />
-
 
         <android.support.v4.widget.NestedScrollView
             android:id="@+id/main"

@@ -10,6 +10,7 @@ android {
         versionCode 34
         versionName '1.7.4.082816SN'
         vectorDrawables.useSupportLibrary = true
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -42,7 +43,7 @@ dependencies {
     compile 'com.jakewharton:butterknife:7.0.1'
     compile 'com.mikepenz:iconics-core:2.7.1@aar'
     compile 'com.mikepenz:community-material-typeface:1.5.54.1@aar'
-    compile 'com.pnikosis:materialish-progress:1.5'
+    compile 'com.pnikosis:materialish-progress:1.7'
     compile('com.mikepenz:aboutlibraries:5.7.1@aar') {
         transitive = true
     }
@@ -50,12 +51,15 @@ dependencies {
         transitive = true
     }
     compile 'org.jsoup:jsoup:1.9.2'
-    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'com.android.support:support-v4:24.2.0'
+
     compile 'com.android.volley:volley:1.0.0'
     compile 'com.yolanda.nohttp:nohttp:1.0.4'
     compile files('src/main/libs/vpadn-sdk-obf453-71606102-1606171046-2512837.jar')
     compile 'com.facebook.android:audience-network-sdk:4.14.1'
     compile 'me.majiajie:swipe-back:1.0.0-alpha2'
+
     //compile 'com.google.apis:google-api-services-urlshortener:v1-rev45-1.22.0'
     //debugCompile 'com.squareup.leakcanary:leakcanary-android:1.4-beta2'
     //releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4-beta2'
