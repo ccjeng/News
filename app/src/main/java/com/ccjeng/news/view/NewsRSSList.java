@@ -179,12 +179,24 @@ public class NewsRSSList extends BaseActivity
             IRSSCallback callback = new IRSSCallback() {
                 @Override
                 public void onRSSReceived(final RSSFeed rssFeed) {
-                    setListView(rssFeed);
+
+                    NewsRSSList.this.runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            setListView(rssFeed);
+                        }
+                    });
                 }
                 @Override
                 public void onRSSFailed(String error) {
                     Log.e(TAG, error);
-                    UI.showErrorSnackBar(coordinator, R.string.data_error);
+
+                    NewsRSSList.this.runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            UI.showErrorSnackBar(coordinator, R.string.data_error);
+                        }
+                    });
                 }
             };
 
