@@ -2,39 +2,33 @@ package com.ccjeng.news.view;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 
 import com.ccjeng.news.R;
 import com.ccjeng.news.adapter.NewsListAdapter;
-import com.ccjeng.news.controler.rss.IRSSCallback;
 import com.ccjeng.news.controler.rss.RSSFeed;
-import com.ccjeng.news.controler.rss.RSSService;
+import com.ccjeng.news.presenter.NewsRSSListPresenter;
+import com.ccjeng.news.presenter.NewsRSSListView;
 import com.ccjeng.news.utils.Analytics;
-import com.ccjeng.news.utils.Category;
 import com.ccjeng.news.utils.Constant;
 import com.ccjeng.news.utils.Network;
 import com.ccjeng.news.utils.UI;
-import com.ccjeng.news.view.base.BaseActivity;
+import com.ccjeng.news.view.base.MVPBaseActivity;
 import com.mopub.mobileads.MoPubView;
 import com.pnikosis.materialishprogress.ProgressWheel;
-
-import java.io.IOException;
-import java.net.URL;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class NewsRSSList extends BaseActivity
-        implements SwipeRefreshLayout.OnRefreshListener {
+public class NewsRSSList extends MVPBaseActivity<NewsRSSListView, NewsRSSListPresenter>
+        implements NewsRSSListView {
 
     private static final String TAG = NewsRSSList.class.getSimpleName();
     private Analytics ga;
@@ -56,8 +50,6 @@ public class NewsRSSList extends BaseActivity
     private String tabName;
     private String newsName;
     private String categoryName;
-    private String[] feedURL;
-    private String rssFeedURL = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,16 +83,16 @@ public class NewsRSSList extends BaseActivity
         getSupportActionBar().setSubtitle(newsName);
 
         mSwipeLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_container);
-        mSwipeLayout.setOnRefreshListener(this);
+        mSwipeLayout.setOnRefreshListener(mPresenter);
         mSwipeLayout.setColorSchemeResources(android.R.color.holo_red_light,
                 android.R.color.holo_blue_light,
                 android.R.color.holo_green_light,
                 android.R.color.holo_orange_light);
 
         if (Network.isNetworkConnected(this)) {
-            showResult(tabName, sourceNumber);
+            this.refreshData();
         } else {
-            UI.showErrorSnackBar(coordinator, R.string.network_error);
+            this.showError(R.string.network_error);
         }
 
 
@@ -117,36 +109,37 @@ public class NewsRSSList extends BaseActivity
         if (moPubView != null) {
             moPubView.destroy();
         }
+        mPresenter.onDestroy();
         super.onDestroy();
     }
 
 
-/* SwipeRefreshLayout
-* */
     @Override
-    public void onRefresh() {
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                //refresh data
-                showResult(tabName, sourceNumber);
-                mSwipeLayout.setRefreshing(false);
-            }
-        }, 3000);
+    protected NewsRSSListPresenter createPresenter() {
+        return new NewsRSSListPresenter(this, this);
     }
 
-        @Override
+    @Override
+    public void refreshData() {
+        progressWheel.setVisibility(View.VISIBLE);
+        mPresenter.getRSSData(tabName, sourceNumber, itemNumber);
+        mSwipeLayout.setRefreshing(false);
+    }
+
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
-    public void setListView(final RSSFeed rssList) {
+    @Override
+    public void setListView(RSSFeed rssList) {
 
         if (rssList == null) {
         //response Error
             progressWheel.setVisibility(View.GONE);
-            UI.showErrorSnackBar(coordinator, R.string.data_error);
+            this.showError(R.string.data_error);
 
         } else {
         //response Success
@@ -154,72 +147,16 @@ public class NewsRSSList extends BaseActivity
             recyclerView.setAdapter(adapter);
 
             if (rssList.getItemCount() == 0) {
-                UI.showErrorSnackBar(coordinator, R.string.no_data);
+                this.showError(R.string.no_data);
             }
-
             progressWheel.setVisibility(View.GONE);
 
         }
-
-
     }
 
-    private void showResult(String tabName, int sourceNumber) {
-
-        progressWheel.setVisibility(View.VISIBLE);
-
-        Category cat = new Category(this);
-        feedURL = cat.getFeedURL(tabName, sourceNumber);
-
-        //get RSS Feed
-        if (feedURL != null) {
-            rssFeedURL = feedURL[itemNumber];
-
-
-            IRSSCallback callback = new IRSSCallback() {
-                @Override
-                public void onRSSReceived(final RSSFeed rssFeed) {
-
-                    NewsRSSList.this.runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            setListView(rssFeed);
-                        }
-                    });
-                }
-                @Override
-                public void onRSSFailed(String error) {
-                    Log.e(TAG, error);
-
-                    NewsRSSList.this.runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            UI.showErrorSnackBar(coordinator, R.string.data_error);
-                        }
-                    });
-                }
-            };
-
-
-            try {
-                URL feedURL = new URL(rssFeedURL);
-
-                RSSService srv = new RSSService(feedURL, callback);
-                srv.requestRSS();
-
-            } catch (IOException e) {
-                e.printStackTrace();
-                Log.d(TAG, "getFeed error = " + e.toString());
-            }
-
-
-        }
-
-        if (rssFeedURL == null) {
-            UI.showErrorSnackBar(coordinator, R.string.network_error);
-        }
-
-
+    @Override
+    public void showError(int message) {
+        UI.showErrorSnackBar(coordinator, message);
     }
 
     public void showDetail(int position, RSSFeed rssList) {
@@ -236,8 +173,6 @@ public class NewsRSSList extends BaseActivity
         bundle.putString("newsUrl", rssList.getItem(position).getLink());
         bundle.putString("newsTitle", rssList.getItem(position).getTitle());
 
-        //itemintent.putExtras(bundle);
-        //itemintent.putExtra("feed", info);
         intent.putExtras(bundle);
         startActivity(intent);
     }

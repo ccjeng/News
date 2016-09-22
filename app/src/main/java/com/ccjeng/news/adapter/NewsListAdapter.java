@@ -58,8 +58,8 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.Custom
 			//Load image
 			Glide.with(context)
 					.load(items.getItem(i).getImg())
-					.override(72, 72) // resizes the image to these dimensions (in pixel)
-					.centerCrop() // this cropping technique scales the image so that it fills the requested bounds and then crops the extra.
+					.override(72, 72)
+					.centerCrop()
 					.thumbnail( 0.1f )
 					.crossFade()
 					.into(customViewHolder.imageView)

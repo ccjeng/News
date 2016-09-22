@@ -5,44 +5,46 @@ import android.content.Context;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 
+import rx.Observable;
+import rx.Subscriber;
+
 /**
  * Created by andycheng on 2015/11/15.
  */
 public class NewsHandler {
 
     private static final String TAG = "NewsHandler";
-    //private static final int NOHTTP_WHAT_WEB = 0x002;
-
-    private IWebCallback callback;
     private String url;
     private Context context;
-    private String charset;
 
-
-    public NewsHandler(Context context, IWebCallback callback, String url) {
+    public NewsHandler(Context context,  String url) {
         this.context = context;
-        this.callback = callback;
         this.url = url;
     }
-    public void getNewsContent(String charset) {
+    public Observable<String> getNewsContent(final String charset) {
 
-        this.charset = charset;
-
-        VolleyStringRequest req = new VolleyStringRequest(url, charset, new Response.Listener<String>() {
+        return Observable.create(new Observable.OnSubscribe<String>(){
             @Override
-            public void onResponse(String response) {
-                callback.onWebContentReceived(response);
-            }
+            public void call(final Subscriber<? super String> subscriber) {
 
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                callback.onWebContentError(error.getMessage());
+                VolleyStringRequest req = new VolleyStringRequest(url, charset, new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        subscriber.onNext(response);
+                        subscriber.onCompleted();
+                    }
+
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        subscriber.onError(error);
+                    }
+                });
+
+                VolleySingleton.getInstance(context).addToRequestQueue(req);
+
             }
         });
-
-        VolleySingleton.getInstance(context).addToRequestQueue(req);
-
     }
 
 }

@@ -10,10 +10,10 @@ import android.widget.TextView;
  */
 public class UI {
 
-    public static void showErrorSnackBar(CoordinatorLayout coordinatorLayout, int message) {
+    public static void showErrorSnackBar(CoordinatorLayout container, int message) {
 
         Snackbar snackbar = Snackbar
-                .make(coordinatorLayout, message, Snackbar.LENGTH_LONG);
+                .make(container, message, Snackbar.LENGTH_LONG);
         snackbar.getView().setBackgroundColor(Color.RED);
 
         TextView tv = (TextView) snackbar.getView().findViewById(android.support.design.R.id.snackbar_text);

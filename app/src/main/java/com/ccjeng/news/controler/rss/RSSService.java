@@ -24,110 +24,97 @@ import okhttp3.Callback;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
+import rx.Observable;
+import rx.Subscriber;
 
 
 public class RSSService {
 
     private static final String TAG = "RSSService";
-    private URL mUrl;
-    private IRSSCallback mCallback;
+    private OkHttpClient client;
+    private String url;
 
-    public RSSService(URL url, IRSSCallback callback){
-        this.mUrl = url;
-        this.mCallback = callback;
+    public RSSService(String url){
+        this.url = url;
+        client = new OkHttpClient();
     }
 
-    public void requestRSS() throws IOException {
+    public Observable<String> request() {
 
-        OkHttpClient client = new OkHttpClient();
-
-
-        final Request request = new Request.Builder()
-                .url(mUrl.toString())
-                .build();
-
-        /*
-        if (mUrl.toString().contains("www.am730.com.hk")) {
-          //  request.setUserAgent("Custom user agent");
-            request = new Request.Builder()
-                    .url(mUrl.toString())
-                    .header("User-Agent", "Custom user agent")
-                    .build();
-        } else {
-            request = new Request.Builder()
-                    .url(mUrl.toString())
-                    .build();
-        }*/
-
-
-        // Get a handler that can be used to post to the main thread
-        client.newCall(request).enqueue(new Callback() {
+        return Observable.create(new Observable.OnSubscribe<String>(){
             @Override
-            public void onFailure(Call call, IOException e) {
-                mCallback.onRSSFailed(e.getMessage());
-                e.printStackTrace();
-            }
+            public void call(final Subscriber<? super String> subscriber) {
+                final Request request = new Request.Builder()
+                        .url(url)
+                        .build();
 
-            @Override
-            public void onResponse(Call call, final Response response) throws IOException {
-                if (!response.isSuccessful()) {
-                    Log.e(TAG, response.toString());
-                    //throw new IOException("Unexpected code " + response);
-                }
-
-                try {
-
-                    RSSFeed rssFeed;
-
-                    if (Category.customRSSFeed(mUrl.toString())){
-
-                        //Custom RSS Parser
-                        CustomFeedParser feedParser = new CustomFeedParser();
-                        rssFeed = feedParser.getFeeds(mUrl.toString(), response.body().string().trim());
-
-                        mCallback.onRSSReceived(rssFeed);
-
-                    }  else {
-                        //Standard RSS Parser
-                        InputSource inputSource = new InputSource();
-                        inputSource.setEncoding("ISO-8859-1");
-                        inputSource.setCharacterStream(new StringReader(response.body().string().trim()));
-
-                        try {
-
-                            //RSS
-                            SAXParserFactory spf = SAXParserFactory.newInstance();
-                            SAXParser sp = spf.newSAXParser();
-                            XMLReader xr = sp.getXMLReader();
-                            RSSHandler mRSSHandler = new RSSHandler();
-
-                            xr.setContentHandler(mRSSHandler);
-                            xr.parse(inputSource);
-
-                            rssFeed = mRSSHandler.getParsedData();
-                            mCallback.onRSSReceived(rssFeed);
-
-
-                        } catch (ParserConfigurationException e) {
-                            e.printStackTrace();
-                            Log.d(TAG, "ParserConfigurationException error = " + e.toString());
-
-                        } catch (SAXException e) {
-                            e.printStackTrace();
-                            Log.d(TAG, "SAXException error = " + e.toString());
-                        }
-
+                client.newCall(request).enqueue(new Callback() {
+                    @Override
+                    public void onFailure(Call call, IOException e) {
+                        subscriber.onError(e);
                     }
 
+                    @Override
+                    public void onResponse(Call call, Response response) throws IOException {
+                        if (response.isSuccessful()) {
+                            subscriber.onNext(response.body().string());
+                        }
+                        subscriber.onCompleted();
 
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                    }
+                });
+
             }
         });
-
     }
 
+    public RSSFeed parse(String response) {
+        RSSFeed rssFeed = null;
+
+        if (Category.customRSSFeed(url)){
+
+            //Custom RSS Parser
+            CustomFeedParser feedParser = new CustomFeedParser();
+            rssFeed = feedParser.getFeeds(url, response.trim());
+
+            return rssFeed;
+
+        }  else {
+            //Standard RSS Parser
+            InputSource inputSource = new InputSource();
+            inputSource.setEncoding("ISO-8859-1");
+            inputSource.setCharacterStream(new StringReader(response.trim()));
+
+            try {
+
+                //RSS
+                SAXParserFactory spf = SAXParserFactory.newInstance();
+                SAXParser sp = spf.newSAXParser();
+                XMLReader xr = sp.getXMLReader();
+                RSSHandler mRSSHandler = new RSSHandler();
+
+                xr.setContentHandler(mRSSHandler);
+                xr.parse(inputSource);
+
+                rssFeed = mRSSHandler.getParsedData();
+                return rssFeed;
+
+
+            } catch (ParserConfigurationException e) {
+                e.printStackTrace();
+                Log.d(TAG, "ParserConfigurationException error = " + e.toString());
+            } catch (SAXException e) {
+                e.printStackTrace();
+                Log.d(TAG, "SAXException error = " + e.toString());
+            } catch (IOException e) {
+                e.printStackTrace();
+                Log.d(TAG, "IOException error = " + e.toString());
+            }
+
+        }
+
+        return rssFeed;
+    }
 
     private InputStreamReader StreamReader(URL url, InputStream in) {
 
