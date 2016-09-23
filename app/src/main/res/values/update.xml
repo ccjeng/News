@@ -3,8 +3,8 @@
 	tools:ignore="MissingTranslation">
 
     <string-array name="updates">
-    	<item>v1.7.5\n
-			-改善新聞列表圖片載入之效能\n
+    	<item>v1.7.6\n
+			-大幅改善新聞載入之效能\n
     	</item>
 	</string-array>
 </resources>

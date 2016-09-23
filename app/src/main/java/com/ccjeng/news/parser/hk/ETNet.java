@@ -28,9 +28,9 @@ public class ETNet extends AbstractNews {
         String time = "";
 
         try {
-            title = doc.select("h3").text();
-            time = doc.select("div.date").text();
-            body = doc.select("div#NewsContent").html();
+            title = doc.select("p.ArticleHdr").text();
+            time = doc.select("p.date").text();
+            body = doc.select("div.DivArticleContent").html();
         } catch (Exception e) {
             e.printStackTrace();
         }
