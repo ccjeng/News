@@ -12,7 +12,7 @@ import android.view.Menu;
 import android.view.View;
 
 import com.ccjeng.news.R;
-import com.ccjeng.news.adapter.NewsListAdapter;
+import com.ccjeng.news.view.adapter.NewsListAdapter;
 import com.ccjeng.news.controler.rss.RSSFeed;
 import com.ccjeng.news.presenter.NewsRSSListPresenter;
 import com.ccjeng.news.presenter.NewsRSSListView;

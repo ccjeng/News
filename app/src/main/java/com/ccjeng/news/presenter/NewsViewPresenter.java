@@ -15,6 +15,7 @@ import com.ccjeng.news.view.base.News;
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
+import rx.subscriptions.CompositeSubscription;
 
 /**
  * Created by andycheng on 2016/9/22.
@@ -25,10 +26,12 @@ public class NewsViewPresenter extends BasePresenter<NewsViewView> {
     private static final String TAG = NewsViewPresenter.class.getSimpleName();
     private NewsViewView view;
     private Context context;
+    private CompositeSubscription subscriptions;
 
     public NewsViewPresenter(NewsViewView view, Context context) {
         this.view = view;
         this.context = context;
+        this.subscriptions = new CompositeSubscription();
     }
 
     public void getNews(String tabName, int sourceNumber, String url) {
@@ -41,26 +44,29 @@ public class NewsViewPresenter extends BasePresenter<NewsViewView> {
         }
 
         NewsHandler newsHandler = new NewsHandler(context, newsUrl);
-        newsHandler.getNewsContent(charset)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Subscriber<String>() {
-                    @Override
-                    public void onCompleted() {
 
-                    }
+        subscriptions.add(
+                newsHandler.getNewsContent(charset)
+                        .subscribeOn(Schedulers.io())
+                        .observeOn(AndroidSchedulers.mainThread())
+                        .subscribe(new Subscriber<String>() {
+                            @Override
+                            public void onCompleted() {
 
-                    @Override
-                    public void onError(Throwable e) {
-                        view.showError(R.string.data_error);
-                        Log.e(TAG, "error = " + e.getMessage());
-                    }
+                            }
 
-                    @Override
-                    public void onNext(String html) {
-                        view.drawHtmlPage(html);
-                    }
-                });
+                            @Override
+                            public void onError(Throwable e) {
+                                view.showError(R.string.data_error);
+                                Log.e(TAG, "error = " + e.getMessage());
+                            }
+
+                            @Override
+                            public void onNext(String html) {
+                                view.drawHtmlPage(html);
+                            }
+                        })
+        );
 
     }
 
@@ -85,6 +91,8 @@ public class NewsViewPresenter extends BasePresenter<NewsViewView> {
 
     @Override
     public void onDestroy() {
-
+        if (subscriptions != null) {
+            subscriptions.unsubscribe();
+        }
     }
 }

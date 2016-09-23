@@ -9,8 +9,8 @@ import android.view.Menu;
 import android.view.View;
 
 import com.ccjeng.news.R;
-import com.ccjeng.news.adapter.NewsCategoryAdapter;
-import com.ccjeng.news.adapter.RecyclerItemClickListener;
+import com.ccjeng.news.view.adapter.NewsCategoryAdapter;
+import com.ccjeng.news.view.adapter.RecyclerItemClickListener;
 import com.ccjeng.news.utils.Analytics;
 import com.ccjeng.news.utils.Category;
 import com.ccjeng.news.utils.Constant;

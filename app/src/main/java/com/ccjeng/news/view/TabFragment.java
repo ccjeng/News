@@ -13,8 +13,8 @@ import android.widget.FrameLayout;
 import android.widget.FrameLayout.LayoutParams;
 
 import com.ccjeng.news.R;
-import com.ccjeng.news.adapter.NewsCategoryAdapter;
-import com.ccjeng.news.adapter.RecyclerItemClickListener;
+import com.ccjeng.news.view.adapter.NewsCategoryAdapter;
+import com.ccjeng.news.view.adapter.RecyclerItemClickListener;
 
 /**
  * Created by andycheng on 2015/10/27.

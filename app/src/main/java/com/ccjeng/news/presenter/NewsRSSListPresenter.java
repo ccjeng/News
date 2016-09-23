@@ -14,6 +14,7 @@ import com.ccjeng.news.utils.Category;
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
+import rx.subscriptions.CompositeSubscription;
 
 /**
  * Created by andycheng on 2016/9/22.
@@ -26,12 +27,13 @@ public class NewsRSSListPresenter extends BasePresenter<NewsRSSListView>
 
     private NewsRSSListView view;
     private Context context;
+    private CompositeSubscription subscriptions;
 
     public NewsRSSListPresenter(NewsRSSListView view, Context context) {
         this.view = view;
         this.context = context;
+        this.subscriptions = new CompositeSubscription();
     }
-
 
     /* SwipeRefreshLayout
     * * */
@@ -48,7 +50,9 @@ public class NewsRSSListPresenter extends BasePresenter<NewsRSSListView>
 
     @Override
     public void onDestroy() {
-
+        if (subscriptions != null) {
+            subscriptions.unsubscribe();
+        }
     }
 
     public void getRSSData(String tabName, int sourceNumber, int itemNumber) {
@@ -62,32 +66,33 @@ public class NewsRSSListPresenter extends BasePresenter<NewsRSSListView>
             rssFeedURL = feedURLArray[itemNumber];
 
             final RSSService rssService = new RSSService(rssFeedURL);
+            subscriptions.add(
+                    rssService.request()
+                            .subscribeOn(Schedulers.io())
+                            .observeOn(AndroidSchedulers.mainThread())
+                            .subscribe(new Subscriber<String>() {
+                                @Override
+                                public void onCompleted() {
 
-            rssService.request()
-                    .subscribeOn(Schedulers.io())
-                    .observeOn(AndroidSchedulers.mainThread())
-                    .subscribe(new Subscriber<String>() {
-                        @Override
-                        public void onCompleted() {
+                                }
 
-                        }
+                                @Override
+                                public void onError(Throwable e) {
+                                    Log.e(TAG, e.toString());
+                                    view.showError(R.string.network_error);
+                                }
 
-                        @Override
-                        public void onError(Throwable e) {
-                            Log.e(TAG, e.toString());
-                            view.showError(R.string.network_error);
-                        }
-
-                        @Override
-                        public void onNext(String s) {
-                            RSSFeed rssFeed = rssService.parse(s);
-                            if (rssFeed != null) {
-                                view.setListView(rssFeed);
-                            } else {
-                                view.showError(R.string.data_error);
-                            }
-                        }
-                    });
+                                @Override
+                                public void onNext(String s) {
+                                    RSSFeed rssFeed = rssService.parse(s);
+                                    if (rssFeed != null) {
+                                        view.setListView(rssFeed);
+                                    } else {
+                                        view.showError(R.string.data_error);
+                                    }
+                                }
+                            })
+            );
 
         }
 

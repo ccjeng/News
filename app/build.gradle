@@ -28,7 +28,6 @@ android {
     }
 
     dexOptions {
-        incremental true
         javaMaxHeapSize "4g"
     }
 }
@@ -39,8 +38,7 @@ dependencies {
     compile 'com.android.support:appcompat-v7:24.2.1'
     compile 'com.android.support:design:24.2.1'
     compile 'com.google.android.gms:play-services-analytics:9.4.0'
-    compile 'com.google.android.gms:play-services-ads:9.4.0'
-    //for FAN, don't move
+    compile 'com.google.android.gms:play-services-ads:9.4.0'     //for FAN, don't move
     compile 'com.google.firebase:firebase-core:9.4.0'
     compile 'com.google.firebase:firebase-crash:9.4.0'
     compile 'com.jakewharton:butterknife:7.0.1'
@@ -50,21 +48,17 @@ dependencies {
     compile('com.mikepenz:aboutlibraries:5.7.1@aar') {
         transitive = true
     }
-    compile('com.mopub:mopub-sdk:4.8.0@aar') {
+    compile('com.mopub:mopub-sdk:4.9.0@aar') {
         transitive = true
     }
     compile 'org.jsoup:jsoup:1.9.2'
     compile 'com.github.bumptech.glide:glide:3.7.0'
-    compile 'com.android.support:support-v4:24.2.1'
+    //compile 'com.android.support:support-v4:24.2.1'
     compile 'com.android.volley:volley:1.0.0'
-    compile 'com.facebook.android:audience-network-sdk:4.14.1'
     compile 'me.majiajie:swipe-back:1.0.0-alpha2'
     compile files('src/main/libs/vpadn-sdk-obf460-20906102-1609021438-69c7670.jar')
     compile 'com.squareup.okhttp3:okhttp:3.4.1'
-    //compile 'com.google.apis:google-api-services-urlshortener:v1-rev45-1.22.0'
-    //debugCompile 'com.squareup.leakcanary:leakcanary-android:1.4-beta2'
-    //releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4-beta2'
-    //testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4-beta2'
+    compile 'com.facebook.android:audience-network-sdk:4.15.0'
     compile 'io.reactivex:rxjava:1.2.0'
     compile 'io.reactivex:rxandroid:1.2.1'
 }

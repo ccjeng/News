@@ -31,8 +31,6 @@
         </activity>
         <activity android:name=".view.NewsRSSList" >
         </activity>
-        <activity android:name=".view.NewsWeb" >
-        </activity>
         <activity android:name=".view.Preference"
             android:label="@string/setting">
         </activity>
