@@ -360,7 +360,6 @@ public class Category {
         return parser;
     }
 
-
     public static String getEncoding(String tab, int position) {
         String encoding = "utf-8";
 

@@ -52,7 +52,7 @@ public class Network {
 
     public static void AdView(MoPubView adView, String AdUnitID) {
         adView.setAdUnitId(AdUnitID);
-        //if (!News.APPDEBUG) {
+        //if (!BaseApplication.APPDEBUG) {
             //adView.setTesting(true);
 
             adView.loadAd();

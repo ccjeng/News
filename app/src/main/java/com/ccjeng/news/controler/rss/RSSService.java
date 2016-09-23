@@ -2,6 +2,7 @@ package com.ccjeng.news.controler.rss;
 
 import android.util.Log;
 
+import com.ccjeng.news.controler.HttpClient;
 import com.ccjeng.news.parser.rss.CustomFeedParser;
 import com.ccjeng.news.utils.Category;
 
@@ -21,7 +22,6 @@ import javax.xml.parsers.SAXParserFactory;
 
 import okhttp3.Call;
 import okhttp3.Callback;
-import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 import rx.Observable;
@@ -31,24 +31,22 @@ import rx.Subscriber;
 public class RSSService {
 
     private static final String TAG = "RSSService";
-    private OkHttpClient client;
     private String url;
 
     public RSSService(String url){
         this.url = url;
-        client = new OkHttpClient();
     }
 
-    public Observable<String> request() {
+    public Observable<RSSFeed> getData() {
 
-        return Observable.create(new Observable.OnSubscribe<String>(){
+        return Observable.create(new Observable.OnSubscribe<RSSFeed>(){
             @Override
-            public void call(final Subscriber<? super String> subscriber) {
+            public void call(final Subscriber<? super RSSFeed> subscriber) {
                 final Request request = new Request.Builder()
                         .url(url)
                         .build();
 
-                client.newCall(request).enqueue(new Callback() {
+                HttpClient.getHttpClient().newCall(request).enqueue(new Callback() {
                     @Override
                     public void onFailure(Call call, IOException e) {
                         subscriber.onError(e);
@@ -57,7 +55,8 @@ public class RSSService {
                     @Override
                     public void onResponse(Call call, Response response) throws IOException {
                         if (response.isSuccessful()) {
-                            subscriber.onNext(response.body().string());
+                            RSSFeed feed = parse(response.body().string());
+                            subscriber.onNext(feed);
                         }
                         subscriber.onCompleted();
 
@@ -68,7 +67,7 @@ public class RSSService {
         });
     }
 
-    public RSSFeed parse(String response) {
+    private RSSFeed parse(String response) {
         RSSFeed rssFeed = null;
 
         if (Category.customRSSFeed(url)){
@@ -76,8 +75,6 @@ public class RSSService {
             //Custom RSS Parser
             CustomFeedParser feedParser = new CustomFeedParser();
             rssFeed = feedParser.getFeeds(url, response.trim());
-
-            return rssFeed;
 
         }  else {
             //Standard RSS Parser
@@ -97,8 +94,6 @@ public class RSSService {
                 xr.parse(inputSource);
 
                 rssFeed = mRSSHandler.getParsedData();
-                return rssFeed;
-
 
             } catch (ParserConfigurationException e) {
                 e.printStackTrace();

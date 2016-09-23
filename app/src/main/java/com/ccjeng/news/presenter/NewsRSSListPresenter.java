@@ -67,13 +67,12 @@ public class NewsRSSListPresenter extends BasePresenter<NewsRSSListView>
 
             final RSSService rssService = new RSSService(rssFeedURL);
             subscriptions.add(
-                    rssService.request()
+                    rssService.getData()
                             .subscribeOn(Schedulers.io())
                             .observeOn(AndroidSchedulers.mainThread())
-                            .subscribe(new Subscriber<String>() {
+                            .subscribe(new Subscriber<RSSFeed>() {
                                 @Override
                                 public void onCompleted() {
-
                                 }
 
                                 @Override
@@ -83,8 +82,7 @@ public class NewsRSSListPresenter extends BasePresenter<NewsRSSListView>
                                 }
 
                                 @Override
-                                public void onNext(String s) {
-                                    RSSFeed rssFeed = rssService.parse(s);
+                                public void onNext(RSSFeed rssFeed) {
                                     if (rssFeed != null) {
                                         view.setListView(rssFeed);
                                     } else {

@@ -15,7 +15,7 @@ import me.majiajie.swipeback.utils.ActivityStack;
 /**
  * Created by andycheng on 2015/11/15.
  */
-public class News extends Application {
+public class BaseApplication extends Application {
 
     public static final boolean APPDEBUG = BuildConfig.DEBUG;
 

@@ -10,7 +10,7 @@ import com.ccjeng.news.controler.web.NewsHandler;
 import com.ccjeng.news.presenter.base.BasePresenter;
 import com.ccjeng.news.utils.Category;
 import com.ccjeng.news.utils.Network;
-import com.ccjeng.news.view.base.News;
+import com.ccjeng.news.view.base.BaseApplication;
 
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
@@ -38,12 +38,12 @@ public class NewsViewPresenter extends BasePresenter<NewsViewView> {
         String charset = Category.getEncoding(tabName, sourceNumber);//"utf-8";
         String newsUrl = Network.checkNewsViewURL(url);
 
-        if (News.APPDEBUG) {
+        if (BaseApplication.APPDEBUG) {
             Log.d(TAG, "charset = " + charset);
             Log.d(TAG, "url = " + newsUrl);
         }
 
-        NewsHandler newsHandler = new NewsHandler(context, newsUrl);
+        NewsHandler newsHandler = new NewsHandler(newsUrl);
 
         subscriptions.add(
                 newsHandler.getNewsContent(charset)

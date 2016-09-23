@@ -25,8 +25,8 @@ import com.ccjeng.news.utils.Network;
 import com.ccjeng.news.utils.PreferenceSetting;
 import com.ccjeng.news.utils.UI;
 import com.ccjeng.news.utils.Webpage;
+import com.ccjeng.news.view.base.BaseApplication;
 import com.ccjeng.news.view.base.MVPBaseActivity;
-import com.ccjeng.news.view.base.News;
 import com.mikepenz.community_material_typeface_library.CommunityMaterial;
 import com.mikepenz.iconics.IconicsDrawable;
 import com.mopub.mobileads.MoPubView;
@@ -91,7 +91,7 @@ public class NewsView extends MVPBaseActivity<NewsViewView, NewsViewPresenter> i
         getSupportActionBar().setTitle(newsTitle);
         getSupportActionBar().setSubtitle(newsName);
 
-        main.setBackgroundColor(Color.parseColor(News.getPrefBGColor()));
+        main.setBackgroundColor(Color.parseColor(BaseApplication.getPrefBGColor()));
 
         moPubView = (MoPubView) findViewById(R.id.adview);
 

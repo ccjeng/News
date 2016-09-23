@@ -1,20 +1,11 @@
 package com.ccjeng.news.controler.web;
 
-import android.util.Log;
-
-import com.android.volley.NetworkResponse;
-import com.android.volley.Response;
-import com.android.volley.toolbox.HttpHeaderParser;
-import com.android.volley.toolbox.StringRequest;
-import com.ccjeng.news.view.base.News;
-
-import java.io.UnsupportedEncodingException;
-
 /**
  * Created by andycheng on 2015/11/19.
  */
-public class VolleyStringRequest extends StringRequest {
+public class VolleyStringRequest /*extends StringRequest*/ {
 
+    /*
     private static final String TAG = "VolleyStringRequest";
 
     private String charset = null;
@@ -31,7 +22,7 @@ public class VolleyStringRequest extends StringRequest {
         String str = null;
         try {
 
-            if (News.APPDEBUG) {
+            if (BaseApplication.APPDEBUG) {
                 Log.d(TAG, "content-type=" + response.headers.get("content - type"));
                 Log.d(TAG, "header=" + HttpHeaderParser.parseCharset(response.headers));
                 Log.d(TAG, "charset=" + charset);
@@ -50,18 +41,12 @@ public class VolleyStringRequest extends StringRequest {
         return Response.success(str, HttpHeaderParser.parseCacheHeaders(response));
     }
 
-    /**
-     * @return the Parse Charset Encoding
-     */
     public String getCharset() {
         return charset;
     }
 
-    /**
-     * set the Parse Charset Encoding
-     * @param charset
-     */
     public void setCharset(String charset) {
         this.charset = charset;
     }
+    */
 }

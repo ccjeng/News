@@ -30,7 +30,7 @@ import com.ccjeng.news.utils.Network;
 import com.ccjeng.news.utils.PreferenceSetting;
 import com.ccjeng.news.utils.Version;
 import com.ccjeng.news.view.base.BaseActivity;
-import com.ccjeng.news.view.base.News;
+import com.ccjeng.news.view.base.BaseApplication;
 import com.mikepenz.aboutlibraries.Libs;
 import com.mikepenz.aboutlibraries.LibsBuilder;
 import com.mikepenz.community_material_typeface_library.CommunityMaterial;
@@ -98,7 +98,7 @@ public class MainActivity extends BaseActivity {
         }
 
         //default tab selection
-        TabLayout.Tab tab = tabs.getTabAt(News.getPrefDefaultTab());
+        TabLayout.Tab tab = tabs.getTabAt(BaseApplication.getPrefDefaultTab());
         if (tab != null) {
             tab.select();
         }
@@ -303,7 +303,7 @@ public class MainActivity extends BaseActivity {
     //Change Day/Night Theme
     private void changeTheme(Bundle savedInstanceState) {
         if (savedInstanceState == null) {
-            if (News.getPrefBGColor().equals("#FFFFFF")) {
+            if (BaseApplication.getPrefBGColor().equals("#FFFFFF")) {
                 AppCompatDelegate.setDefaultNightMode(
                         AppCompatDelegate.MODE_NIGHT_NO);
 

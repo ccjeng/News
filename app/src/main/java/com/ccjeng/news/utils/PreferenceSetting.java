@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
-import com.ccjeng.news.view.base.News;
+import com.ccjeng.news.view.base.BaseApplication;
 
 /**
  * Created by andycheng on 2015/11/28.
@@ -29,11 +29,11 @@ public class PreferenceSetting {
                 enableSmartSave = true;
             }
         }
-        News.setPrefFontSize(fontSize);
-        News.setPrefFontColor(fontColor);
-        News.setPretBGColor(bgColor);
-        News.setPretSmartSave(enableSmartSave);
-        News.setPretDefaultTab(defaultTab);
+        BaseApplication.setPrefFontSize(fontSize);
+        BaseApplication.setPrefFontColor(fontColor);
+        BaseApplication.setPretBGColor(bgColor);
+        BaseApplication.setPretSmartSave(enableSmartSave);
+        BaseApplication.setPretDefaultTab(defaultTab);
 
     }
 }

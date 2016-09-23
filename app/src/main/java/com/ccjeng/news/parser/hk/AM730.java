@@ -2,9 +2,9 @@ package com.ccjeng.news.parser.hk;
 
 import android.util.Log;
 
-import com.ccjeng.news.view.base.News;
 import com.ccjeng.news.parser.AbstractNews;
 import com.ccjeng.news.utils.Webpage;
+import com.ccjeng.news.view.base.BaseApplication;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -40,14 +40,14 @@ public class AM730 extends AbstractNews {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        if (News.APPDEBUG) {
+        if (BaseApplication.APPDEBUG) {
             Log.d(TAG, "title = " + title);
             Log.d(TAG, "time = " + time);
             Log.d(TAG, "body = " + body);
         }
 
         String b = cleaner(body);
-        if (News.APPDEBUG) {
+        if (BaseApplication.APPDEBUG) {
             Log.d(TAG, "html=" + b);
         }
         return Webpage.htmlDrawer(title, time, b);

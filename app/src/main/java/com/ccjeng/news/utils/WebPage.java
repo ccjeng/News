@@ -5,8 +5,8 @@ import android.content.res.Configuration;
 import android.util.DisplayMetrics;
 import android.util.Log;
 
-import com.ccjeng.news.view.base.News;
 import com.ccjeng.news.view.NewsView;
+import com.ccjeng.news.view.base.BaseApplication;
 
 /**
  * Created by andycheng on 2015/11/15.
@@ -16,12 +16,12 @@ public class Webpage {
 
     public static String htmlDrawer(String title, String time, String body) {
 
-        String htmlTagStart = "<body bgcolor=" + News.getPrefBGColor()
-                + "><font color="+ News.getPrefFontColor()+">";
+        String htmlTagStart = "<body bgcolor=" + BaseApplication.getPrefBGColor()
+                + "><font color="+ BaseApplication.getPrefFontColor()+">";
 
         String htmlTagEnd = "</font></body>";
 
-        String fontSize = "<font size=+"+ News.getPrefFontSize() +">";
+        String fontSize = "<font size=+"+ BaseApplication.getPrefFontSize() +">";
 
         String html = htmlTagStart + "<h2>" + title + "</h2>"
                 + "<div>" + time + "</div>";
@@ -29,7 +29,7 @@ public class Webpage {
         html = html + "<hr>";
 
 
-        if (News.getPrefSmartSave()) {
+        if (BaseApplication.getPrefSmartSave()) {
             Log.d(TAG, "enable smart save");
             String smartSaveTag = "<small><small>[這是圖片，已啟用智能節費，停止圖片下載]</small></small></br></br>";
             body = body.replace("<img src", smartSaveTag + "<imgsrc");

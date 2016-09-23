@@ -1,10 +1,15 @@
 package com.ccjeng.news.controler.web;
 
-import android.content.Context;
+import android.util.Log;
 
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
+import com.ccjeng.news.controler.HttpClient;
 
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.Request;
 import rx.Observable;
 import rx.Subscriber;
 
@@ -15,36 +20,64 @@ public class NewsHandler {
 
     private static final String TAG = "NewsHandler";
     private String url;
-    private Context context;
 
-    public NewsHandler(Context context,  String url) {
-        this.context = context;
+    public NewsHandler( String url) {
         this.url = url;
     }
+
     public Observable<String> getNewsContent(final String charset) {
 
-        return Observable.create(new Observable.OnSubscribe<String>(){
+        return Observable.create(new Observable.OnSubscribe<String>() {
             @Override
             public void call(final Subscriber<? super String> subscriber) {
+                final Request request = new Request.Builder()
+                        .url(url)
+                        .build();
 
-                VolleyStringRequest req = new VolleyStringRequest(url, charset, new Response.Listener<String>() {
+                HttpClient.getHttpClient().newCall(request).enqueue(new Callback() {
                     @Override
-                    public void onResponse(String response) {
-                        subscriber.onNext(response);
-                        subscriber.onCompleted();
+                    public void onFailure(Call call, IOException e) {
+                        subscriber.onError(e);
                     }
 
-                }, new Response.ErrorListener() {
                     @Override
-                    public void onErrorResponse(VolleyError error) {
-                        subscriber.onError(error);
+                    public void onResponse(Call call, okhttp3.Response response) throws IOException {
+                        if (response.isSuccessful()) {
+
+                            String encodedResponse = parseNetworkResponse(charset, response.body());
+                            subscriber.onNext(encodedResponse);
+                        }
+                        subscriber.onCompleted();
+
                     }
                 });
 
-                VolleySingleton.getInstance(context).addToRequestQueue(req);
-
             }
         });
+    }
+
+
+    private String parseNetworkResponse(String charset, okhttp3.ResponseBody response) {
+
+        String parsedString = "";
+        try {
+
+            if (!charset.equals("utf-8")) {
+                parsedString = new String(response.bytes(), charset);
+            } else {
+                parsedString = response.string();
+            }
+
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+            Log.e(TAG, e.getMessage());
+        } catch (IOException e) {
+            e.printStackTrace();
+            Log.e(TAG, e.getMessage());
+        }
+
+        return parsedString;
+
     }
 
 }
