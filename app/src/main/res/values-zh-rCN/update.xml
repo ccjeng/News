@@ -3,8 +3,8 @@
 	tools:ignore="MissingTranslation">
 
     <string-array name="updates">
-    	<item>v1.7.6\n
-			-大幅改善新闻载入之效能\n
+    	<item>v1.7.7\n
+			修正Android 4.x装置无法使用部分功能的问题\n
 		</item>
 	</string-array>
 </resources>
