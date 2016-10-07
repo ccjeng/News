@@ -73,7 +73,7 @@ public class NewsHandler {
             Log.e(TAG, e.getMessage());
         } catch (IOException e) {
             e.printStackTrace();
-            Log.e(TAG, e.getMessage());
+            //Log.e(TAG, e.getMessage());
         }
 
         return parsedString;

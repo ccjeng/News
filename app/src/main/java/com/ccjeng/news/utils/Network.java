@@ -5,6 +5,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.util.Log;
 
+import com.ccjeng.news.view.base.BaseApplication;
 import com.mopub.mobileads.MoPubErrorCode;
 import com.mopub.mobileads.MoPubView;
 
@@ -52,9 +53,9 @@ public class Network {
 
     public static void AdView(MoPubView adView, String AdUnitID) {
         adView.setAdUnitId(AdUnitID);
-        //if (!BaseApplication.APPDEBUG) {
-            //adView.setTesting(true);
-
+        if (BaseApplication.APPDEBUG) {
+            adView.setTesting(true);
+        } else {
             adView.loadAd();
             adView.setBannerAdListener(new MoPubView.BannerAdListener() {
                 @Override
@@ -82,7 +83,7 @@ public class Network {
 
                 }
             });
-       // }
+        }
     }
 
 

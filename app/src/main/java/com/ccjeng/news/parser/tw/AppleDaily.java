@@ -28,6 +28,7 @@ public class AppleDaily extends AbstractNews {
 
         String title = "";
         String time = "";
+        Log.d(TAG, content);
 
         try {
             title = doc.select("h1#h1").text();
@@ -36,6 +37,7 @@ public class AppleDaily extends AbstractNews {
 
         } catch (Exception e) {
             e.printStackTrace();
+            //Log.e(TAG, e.getMessage());
         }
 
         if (BaseApplication.APPDEBUG) {

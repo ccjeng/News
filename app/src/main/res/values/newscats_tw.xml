@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools"
 	tools:ignore="MissingTranslation">
-
 	<string-array name="newscatsCNA">
 		<item>重點新聞</item>
 		<item>新聞圖輯</item>
@@ -81,7 +80,12 @@
     	<item>體育總覽</item>
     	<item>地產總覽</item>
     	<item>論壇與專欄</item>
-    </string-array>
+		<item>副刊 焦點</item>
+		<item>副刊 旅遊與美食</item>
+		<item>副刊 家庭與健康總覽</item>
+		<item>副刊 科技3C</item>
+		<item>副刊 名采人間事總覽</item>
+	</string-array>
     <string-array name="newsfeedsAppDaily">
 	    <item>http://www.appledaily.com.tw/rss/newcreate/kind/rnews/type/new</item>
 	   	<item>http://www.appledaily.com.tw/rss/newcreate/kind/sec/type/5</item>
@@ -91,7 +95,12 @@
     	<item>http://www.appledaily.com.tw/rss/newcreate/kind/sec/type/10</item>
     	<item>http://www.appledaily.com.tw/rss/newcreate/kind/sec/type/31488836</item>
     	<item>http://www.appledaily.com.tw/rss/newcreate/kind/sec/type/forum</item>
-    </string-array>
+		<item>http://www.appledaily.com.tw/rss/newcreate/kind/sec/type/17</item>
+		<item>http://www.appledaily.com.tw/rss/newcreate/kind/sec/type/ALL24</item>
+		<item>http://www.appledaily.com.tw/rss/newcreate/kind/sec/type/19</item>
+		<item>http://www.appledaily.com.tw/rss/newcreate/kind/sec/type/18</item>
+		<item>http://www.appledaily.com.tw/rss/newcreate/kind/sec/type/20</item>
+	</string-array>
 
     <string-array name="newscatsUDN">
     	<item>最新報導</item>
