@@ -51,6 +51,8 @@ public class NewsRSSList extends MVPBaseActivity<NewsRSSListView, NewsRSSListPre
     private String newsName;
     private String categoryName;
 
+    private NewsListAdapter adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,6 +71,9 @@ public class NewsRSSList extends MVPBaseActivity<NewsRSSListView, NewsRSSListPre
         recyclerView.setLayoutManager(llm);
         recyclerView.setHasFixedSize(true);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
+
+        adapter = new NewsListAdapter(this);
+        recyclerView.setAdapter(adapter);
 
         //get intent values
         Bundle bunde = this.getIntent().getExtras();
@@ -143,8 +148,7 @@ public class NewsRSSList extends MVPBaseActivity<NewsRSSListView, NewsRSSListPre
 
         } else {
         //response Success
-            NewsListAdapter adapter = new NewsListAdapter(this, rssList);
-            recyclerView.setAdapter(adapter);
+            adapter.setData(rssList);
 
             if (rssList.getItemCount() == 0) {
                 this.showError(R.string.no_data);

@@ -17,9 +17,13 @@ public class NewsCategoryAdapter extends RecyclerView.Adapter<NewsCategoryAdapte
     private String[] mArrayString;
     private Context mContext;
 
-    public NewsCategoryAdapter(Context context, String[] arrayString) {
-        this.mArrayString = arrayString;
+    public NewsCategoryAdapter(Context context) {
         this.mContext = context;
+    }
+
+    public void setData(String[] arrayString) {
+        this.mArrayString = arrayString;
+        notifyDataSetChanged();
     }
 
     @Override

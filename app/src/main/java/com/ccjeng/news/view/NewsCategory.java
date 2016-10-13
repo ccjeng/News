@@ -36,6 +36,7 @@ public class NewsCategory extends BaseActivity {
     private String tabName;
     private String categoryName;
     private String[] category;
+    private NewsCategoryAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +56,8 @@ public class NewsCategory extends BaseActivity {
         LinearLayoutManager llm = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(llm);
         recyclerView.setHasFixedSize(true);
+        adapter = new NewsCategoryAdapter(this);
+        recyclerView.setAdapter(adapter);
 
         //get intent values
         Bundle bunde = this.getIntent().getExtras();
@@ -95,9 +98,7 @@ public class NewsCategory extends BaseActivity {
         category = cat.getCategory(tabName, sourceNumber);
 
         if (category != null) {
-            NewsCategoryAdapter adapter = new NewsCategoryAdapter(this, category);
-            recyclerView.setAdapter(adapter);
-
+            adapter.setData(category);
             recyclerView.addOnItemTouchListener(
                     new RecyclerItemClickListener(this, new RecyclerItemClickListener.OnItemClickListener() {
                         @Override

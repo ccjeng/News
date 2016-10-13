@@ -46,5 +46,6 @@
     <string name="welcome_message">歡迎使用華文News，超好用的新聞閱讀器\n\n建議使用wifi，以獲得最佳瀏覽速度。
     \n\n請按下方的設定按鈕，自訂最佳的瀏覽狀態。
     </string>
+    <string name="close">關閉</string>
 
 </resources>

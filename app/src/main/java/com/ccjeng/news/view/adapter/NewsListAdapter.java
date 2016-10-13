@@ -18,13 +18,16 @@ import com.ccjeng.news.view.NewsRSSList;
 public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.CustomViewHolder> {
 	private static final String TAG = "NewsListAdapter";
 	private final NewsRSSList context;
-	private final RSSFeed items;
+	private RSSFeed items = null;
 	
-	public NewsListAdapter(NewsRSSList context, RSSFeed list) {
+	public NewsListAdapter(NewsRSSList context) {
 		  this.context = context;
-		  this.items = list;
 	 }
 
+	public void setData(RSSFeed list) {
+		this.items = list;
+		notifyDataSetChanged();
+	}
 	@Override
 	public CustomViewHolder onCreateViewHolder(ViewGroup parent, int i) {
 		View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.rsslist_item, parent, false);

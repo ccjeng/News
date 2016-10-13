@@ -46,5 +46,7 @@
     <string name="welcome_message">欢迎使用华文News，超好用的新闻阅读器。\n\n建议使用wifi，以获得最佳浏览速度。
     \n\n请按下方的设定按钮，自订最佳的浏览状态。
     </string>
+    <string name="close">关闭</string>
+
 
 </resources>

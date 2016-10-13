@@ -86,16 +86,21 @@ public class Network {
         }
     }
 
-
     public static String checkNewsViewURL(String url) {
 
         //force change TW / HK yahoo url to mobile version.
         if (url.contains("news.yahoo.com")) {
-
             url = url.replace("news", "mobi");
-
             Log.d(TAG, "New URL =" + url);
 
+        }
+
+        //force change TW appledaily entertainment url to mobile version.
+        if (url.contains("www.appledaily.com.tw") && url.contains("entertainment")) {
+
+            url = url.replace("www.appledaily.com.tw","m.ent.appledaily.com.tw");
+            url = url.replace("/appledaily/","/section/");
+            Log.d(TAG, "New URL =" + url);
         }
 
         return url;

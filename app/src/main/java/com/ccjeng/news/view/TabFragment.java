@@ -72,8 +72,9 @@ public class TabFragment extends Fragment {
                 break;
         }
 
-        NewsCategoryAdapter adapter = new NewsCategoryAdapter(getActivity(), newsSource);
+        NewsCategoryAdapter adapter = new NewsCategoryAdapter(getActivity());
         v.setAdapter(adapter);
+        adapter.setData(newsSource);
 
         v.addOnItemTouchListener(
                 new RecyclerItemClickListener(getActivity(), new RecyclerItemClickListener.OnItemClickListener() {

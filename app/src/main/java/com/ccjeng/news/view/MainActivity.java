@@ -1,7 +1,5 @@
 package com.ccjeng.news.view;
 
-import android.app.Dialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.Color;
@@ -15,7 +13,6 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -31,6 +28,7 @@ import com.ccjeng.news.utils.PreferenceSetting;
 import com.ccjeng.news.utils.Version;
 import com.ccjeng.news.view.base.BaseActivity;
 import com.ccjeng.news.view.base.BaseApplication;
+import com.ccjeng.news.view.dialog.WelcomeDialog;
 import com.mikepenz.aboutlibraries.Libs;
 import com.mikepenz.aboutlibraries.LibsBuilder;
 import com.mikepenz.community_material_typeface_library.CommunityMaterial;
@@ -60,8 +58,6 @@ public class MainActivity extends BaseActivity {
     @Bind(R.id.drawerlayout)
     DrawerLayout drawerLayout;
 
-    private static final int DIALOG_WELCOME = 1;
-    private static final int DIALOG_UPDATE = 2;
     private MoPubView moPubView;
     private ActionBarDrawerToggle actionBarDrawerToggle;
 
@@ -76,9 +72,7 @@ public class MainActivity extends BaseActivity {
         ga.trackerPage(this);
 
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
-
         setSupportActionBar(toolbar);
-
         setSwipeBackEnable(false);
 
         pager.setAdapter(new ViewPagerAdapter(getSupportFragmentManager()));
@@ -87,15 +81,8 @@ public class MainActivity extends BaseActivity {
         navDrawer();
 
         PreferenceSetting.getPreference(this);
-        changeTheme(savedInstanceState);
 
-        //todo use dailog fragment
-        if (Version.isNewInstallation(this)) {
-            this.showDialog(DIALOG_WELCOME);
-        } else
-        if (Version.newVersionInstalled(this)) {
-            this.showDialog(DIALOG_UPDATE);
-        }
+        changeTheme(savedInstanceState);
 
         //default tab selection
         TabLayout.Tab tab = tabs.getTabAt(BaseApplication.getPrefDefaultTab());
@@ -104,6 +91,27 @@ public class MainActivity extends BaseActivity {
         }
         moPubView = (MoPubView) findViewById(R.id.adview);
         Network.AdView(moPubView, Constant.Ad_MoPub_Main);
+
+
+        if (Version.isNewInstallation(this)) {
+            WelcomeDialog welcomeDialog = WelcomeDialog.newInstance(getString(R.string.welcome_title)
+                    , getString(R.string.welcome_message));
+            welcomeDialog.show(getSupportFragmentManager(), welcomeDialog.getClass().getName());
+        } else
+        if (Version.newVersionInstalled(this))
+        {
+            String[] changes = getResources().getStringArray(R.array.updates);
+            StringBuilder buf = new StringBuilder();
+            for (int i = 0; i < changes.length; i++) {
+                buf.append("\n\n");
+                buf.append(changes[i]);
+            }
+
+            WelcomeDialog updateDialog = WelcomeDialog.newInstance(getString(R.string.changelog_title)
+                    , buf.toString().trim());
+            updateDialog.show(getSupportFragmentManager(), updateDialog.getClass().getName());
+
+        }
     }
 
     @Override
@@ -121,9 +129,7 @@ public class MainActivity extends BaseActivity {
         PreferenceSetting.getPreference(this);
     }
 
-
     private long lastMillis;
-
     @Override
     public void onBackPressed() {
         if ((System.currentTimeMillis() - lastMillis) > 2000) {
@@ -148,7 +154,6 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-
         if (actionBarDrawerToggle.onOptionsItemSelected(item)) {
             return true;
         }
@@ -258,46 +263,6 @@ public class MainActivity extends BaseActivity {
 
         //calling sync state is necessay or else your hamburger icon wont show up
         actionBarDrawerToggle.syncState();
-    }
-
-    protected final Dialog onCreateDialog(final int id) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-
-        builder.setIcon(new IconicsDrawable(this)
-                .icon(CommunityMaterial.Icon.cmd_information)
-                .color(Color.GRAY)
-                .sizeDp(24));
-
-        builder.setCancelable(true);
-        builder.setPositiveButton(android.R.string.ok, null);
-
-        //final Context context = this;
-
-        switch (id) {
-            case DIALOG_WELCOME:
-                builder.setTitle(getResources().getString(R.string.welcome_title));
-                builder.setMessage(getResources().getString(R.string.welcome_message));
-                builder.setNeutralButton(getText(R.string.setting),
-                        new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(final DialogInterface d, final int which) {
-                                Intent i = new Intent(MainActivity.this, Preference.class);
-                                startActivity(i);
-                            }
-                        });
-                break;
-            case DIALOG_UPDATE:
-                builder.setTitle(getString(R.string.changelog_title));
-                final String[] changes = getResources().getStringArray(R.array.updates);
-                final StringBuilder buf = new StringBuilder();
-                for (int i = 0; i < changes.length; i++) {
-                    buf.append("\n\n");
-                    buf.append(changes[i]);
-                }
-                builder.setMessage(buf.toString().trim());
-                break;
-        }
-        return builder.create();
     }
 
     //Change Day/Night Theme

@@ -31,9 +31,16 @@ public class AppleDaily extends AbstractNews {
         Log.d(TAG, content);
 
         try {
-            title = doc.select("h1#h1").text();
-            time = doc.select("time").first().text();
-            body = doc.select("div.articulum").html();
+
+            if (link.contains("entertainment")) {
+                title = doc.select("h1").text();
+                time = doc.select("p.lastupdate").first().text();
+                body = doc.select("div.nmi-article > p").html() + doc.select("div.nmi-article > center").html();
+            } else {
+                title = doc.select("h1#h1").text();
+                time = doc.select("time").first().text();
+                body = doc.select("div.articulum").html();
+            }
 
         } catch (Exception e) {
             e.printStackTrace();
