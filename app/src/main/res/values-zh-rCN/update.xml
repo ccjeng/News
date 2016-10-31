@@ -3,7 +3,7 @@
 	tools:ignore="MissingTranslation">
 
     <string-array name="updates">
-    	<item>v1.8.0\n修复台湾苹果日报娱乐新闻\n新增台湾苹果日报副刊
+    	<item>v1.8.1\n修复大榴莲
 		</item>
 	</string-array>
 </resources>

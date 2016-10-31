@@ -1,14 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 24
-    buildToolsVersion '24.0.1'
+    compileSdkVersion 25
+    buildToolsVersion '25.0.0'
     defaultConfig {
         applicationId "com.ccjeng.news"
         minSdkVersion 16
         targetSdkVersion 23
-        versionCode 38
-        versionName '1.8.0.101416SN'
+        versionCode 39
+        versionName '1.8.1.103116SN'
         vectorDrawables.useSupportLibrary = true
         multiDexEnabled true
     }
@@ -35,14 +35,14 @@ android {
 dependencies {
     //compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:24.2.1'
-    compile 'com.android.support:design:24.2.1'
+    compile 'com.android.support:appcompat-v7:25.0.0'
+    compile 'com.android.support:design:25.0.0'
     compile 'com.android.support:multidex:1.0.1'
-    compile 'com.google.android.gms:play-services-analytics:9.6.1'
-    compile 'com.google.android.gms:play-services-ads:9.6.1'
+    compile 'com.google.android.gms:play-services-analytics:9.8.0'
+    compile 'com.google.android.gms:play-services-ads:9.8.0'
     //for FAN, don't move
-    compile 'com.google.firebase:firebase-core:9.6.1'
-    releaseCompile 'com.google.firebase:firebase-crash:9.6.1'
+    compile 'com.google.firebase:firebase-core:9.8.0'
+    releaseCompile 'com.google.firebase:firebase-crash:9.8.0'
     compile 'com.jakewharton:butterknife:7.0.1'
     compile 'com.mikepenz:iconics-core:2.7.1@aar'
     compile 'com.mikepenz:community-material-typeface:1.5.54.1@aar'

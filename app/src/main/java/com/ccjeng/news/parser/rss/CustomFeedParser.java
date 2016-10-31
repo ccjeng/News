@@ -63,6 +63,20 @@ public class CustomFeedParser {
                     item.setDescription(k.select("div#news_index_desc").text());
                     feed.addItem(item);
                 }
+            } else if (url.contains("daliulian")) {
+                links = doc.select("div.snippet");
+                root = "http://www.daliulian.net/";
+
+                for (Element k : links) {
+                    item = new RSSItem();
+                    Log.d("daliulian", k.select("div.media-heading").text());
+                    item.setTitle(k.select("h3.title").text());
+                    item.setLink(k.select("h3 a").attr("href"));
+                    item.setPubDate(k.select("div.media-heading").text());
+                    item.setDescription("");
+                    feed.addItem(item);
+                }
+
             }
 
         } catch (Exception e) {
