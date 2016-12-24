@@ -3,7 +3,7 @@
 	tools:ignore="MissingTranslation">
 
     <string-array name="updates">
-    	<item>v1.8.0\n修復大榴槤
+    	<item>v1.8.2\n移除一些不必要的權限
     	</item>
 	</string-array>
 </resources>
