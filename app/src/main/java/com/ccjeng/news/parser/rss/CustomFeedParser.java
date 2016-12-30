@@ -63,17 +63,16 @@ public class CustomFeedParser {
                     item.setDescription(k.select("div#news_index_desc").text());
                     feed.addItem(item);
                 }
-            } else if (url.contains("daliulian")) {
-                links = doc.select("div.snippet");
-                root = "http://www.daliulian.net/";
+            } else if (url.contains("thegreatdaily")) {
+                links = doc.select("div.item");
 
                 for (Element k : links) {
                     item = new RSSItem();
-                    Log.d("daliulian", k.select("div.media-heading").text());
-                    item.setTitle(k.select("h3.title").text());
-                    item.setLink(k.select("h3 a").attr("href"));
-                    item.setPubDate(k.select("div.media-heading").text());
-                    item.setDescription("");
+                    Log.d("daliulian", k.select("div.media > div.title").text());
+                    item.setTitle(k.select("div.media > div.title").text());
+                    item.setLink(k.select("div.media > div.title a").attr("href"));
+                    item.setPubDate("");
+                    item.setDescription(k.select("div.cover").html().replace("/img","http://www.thegreatdaily.com/img"));
                     feed.addItem(item);
                 }
 

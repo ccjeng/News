@@ -206,30 +206,22 @@
     </string-array>
 
     <string-array name="newscatsHKam730">
-        <item>新聞</item>
+       <!-- <item>新聞</item>
         <item>財經</item>
-        <item>地產</item>
         <item>娛樂</item>
-        <item>體育</item>
         <item>健康</item>
-        <item>小歇 </item>
-        <item>時尚</item>
-        <item>新科玩</item>
-        <item>賞味</item>
-        <item>遊樂 </item>
+        <item>科技</item>
+        <item>體育</item>-->
+       <!-- <item>旅遊.飲食</item>-->
     </string-array>
     <string-array name="newsfeedsHKam730">
-        <item>http://www.am730.com.hk/section_index-1</item>
-        <item>http://www.am730.com.hk/section_index-2</item>
-        <item>http://www.am730.com.hk/section_index-4</item>
-        <item>http://www.am730.com.hk/section_index-13</item>
-        <item>http://www.am730.com.hk/section_index-6</item>
-        <item>http://www.am730.com.hk/section_index-3</item>
-        <item>http://www.am730.com.hk/section_index-11</item>
-        <item>http://www.am730.com.hk/section_index-9</item>
-        <item>http://www.am730.com.hk/section_index-8</item>
-        <item>http://www.am730.com.hk/section_index-12</item>
-        <item>http://www.am730.com.hk/section_index-10</item>
+      <!--  <item>https://www.am730.com.hk/news/%E6%96%B0%E8%81%9E</item>
+        <item>https://www.am730.com.hk/news/%E8%B2%A1%E7%B6%93</item>
+        <item>https://www.am730.com.hk/news/%E5%A8%9B%E6%A8%82</item>
+        <item>https://www.am730.com.hk/news/%E5%81%A5%E5%BA%B7</item>
+        <item>https://www.am730.com.hk/news/%E7%A7%91%E6%8A%80</item>
+        <item>https://www.am730.com.hk/news/%E9%AB%94%E8%82%B2</item>-->
+      <!--  <item>https://www.am730.com.hk/news/%E6%97%85%E9%81%8A.%E9%A3%B2%E9%A3%9F</item>-->
     </string-array>
     <string-array name="newscatsHKheadline">
         <!-- <item>即時新聞</item>-->

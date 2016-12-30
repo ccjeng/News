@@ -378,7 +378,7 @@ public class Category {
 
         if (url.contains("hkm.appledaily.com") ||
                 url.contains("am730.com.hk") ||
-                url.contains("daliulian")){
+                url.contains("thegreatdaily")){
             return true;
         } else {
             return false;
