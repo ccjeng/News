@@ -51,17 +51,22 @@ public class CustomFeedParser {
                 }
 
             } else if (url.contains("am730.com.hk")) {
-                links = doc.select("div#news_index_box");
-                root = "http://www.am730.com.hk/";
+                links = doc.select("div.columns-left div.animationBox");
+                //root = "http://www.am730.com.hk/";
 
+                String postUrl = "";
                 for (Element k : links) {
-                    Log.d("AM730", k.select("div#news_index_title").text());
+                    postUrl = k.select("div.newsTitle a.aGray").attr("href");
+                    Log.d("AM730", k.select("div.newsTitle").text() + postUrl);
+
                     item = new RSSItem();
-                    item.setTitle(k.select("div#news_index_title").text());
-                    item.setLink(root + k.select("div#news_index_title a").attr("href"));
-                    item.setPubDate(k.select("div#news_index_date").text());
-                    item.setDescription(k.select("div#news_index_desc").text());
-                    feed.addItem(item);
+                    item.setTitle(k.select("div.newsTitle").text());
+                    item.setLink(postUrl);
+                    item.setPubDate(k.select("div.newsUpdateTime").text());
+                    item.setDescription("");
+                    if (!postUrl.equals("")) {
+                        feed.addItem(item);
+                    }
                 }
             } else if (url.contains("thegreatdaily")) {
                 links = doc.select("div.item");

@@ -29,9 +29,9 @@ public class AM730 extends AbstractNews {
 
         try {
             //// TODO: 2015/12/1 title & time
-            title = doc.select("title").text();
-            time = doc.select("div#article_date").text();
-            body = doc.select("div#article_content").html() + doc.select("div#slider").html();
+            title = doc.select("div.news-detail-title").text();
+            time = doc.select("div.news-detail-date").text();
+            body = doc.select("div.news-detail-content").html();
 
                     //doc.select("ul.slides").get(0).html();
 
@@ -64,8 +64,8 @@ public class AM730 extends AbstractNews {
 
     protected String cleaner(String rs) {
 
-        rs = rs.replace("<img src=\"images/am730_article_logo.jpg\">","");
-        rs = rs.replace("<img src=\"uploads","<img src=\"http://www.am730.com.hk/uploads");
+        rs = rs.replace("<img src=\"https://d2e7nuz2r6mjca.cloudfront.net/assets/img/logo_bottom.png\" class=\"logo\">","");
+       // rs = rs.replace("<img src=\"uploads","<img src=\"http://www.am730.com.hk/uploads");
 
         Whitelist wlist = new Whitelist();
 
