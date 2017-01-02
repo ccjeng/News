@@ -1,7 +1,5 @@
 package com.ccjeng.news.parser.rss;
 
-import android.util.Log;
-
 import com.ccjeng.news.controler.rss.RSSFeed;
 import com.ccjeng.news.controler.rss.RSSItem;
 
@@ -57,7 +55,7 @@ public class CustomFeedParser {
                 String postUrl = "";
                 for (Element k : links) {
                     postUrl = k.select("div.newsTitle a.aGray").attr("href");
-                    Log.d("AM730", k.select("div.newsTitle").text() + postUrl);
+                    //Log.d("AM730", k.select("div.newsTitle").text() + postUrl);
 
                     item = new RSSItem();
                     item.setTitle(k.select("div.newsTitle").text());
@@ -73,7 +71,7 @@ public class CustomFeedParser {
 
                 for (Element k : links) {
                     item = new RSSItem();
-                    Log.d("daliulian", k.select("div.media > div.title").text());
+                    //Log.d("daliulian", k.select("div.media > div.title").text());
                     item.setTitle(k.select("div.media > div.title").text());
                     item.setLink(k.select("div.media > div.title a").attr("href"));
                     item.setPubDate("");

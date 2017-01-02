@@ -17,7 +17,6 @@ import com.ccjeng.news.parser.hk.TheStandNews;
 import com.ccjeng.news.parser.sg.Daliulian;
 import com.ccjeng.news.parser.sg.Guangming;
 import com.ccjeng.news.parser.sg.Kwongwah;
-import com.ccjeng.news.parser.sg.MyPaper;
 import com.ccjeng.news.parser.sg.Zaobao;
 import com.ccjeng.news.parser.tw.AppleDaily;
 import com.ccjeng.news.parser.tw.CNA;
@@ -133,15 +132,12 @@ public class Category {
                     category = context.getResources().getStringArray(R.array.newscatsZaobao);
                     break;
                 case 1:
-                    category = context.getResources().getStringArray(R.array.newscatsMyPaper);
-                    break;
-                case 2:
                     category = context.getResources().getStringArray(R.array.newscatsDaliulian);
                     break;
-                case 3:
+                case 2:
                     category = context.getResources().getStringArray(R.array.newscatsKwongwah);
                     break;
-                case 4:
+                case 3:
                     category = context.getResources().getStringArray(R.array.newscatsGuangming);
                     break;
             }
@@ -240,15 +236,12 @@ public class Category {
                     feedURL = context.getResources().getStringArray(R.array.newsfeedsZaobao);
                     break;
                 case 1:
-                    feedURL = context.getResources().getStringArray(R.array.newsfeedsMyPaper);
-                    break;
-                case 2:
                     feedURL = context.getResources().getStringArray(R.array.newsfeedsDaliulian);
                     break;
-                case 3:
+                case 2:
                     feedURL = context.getResources().getStringArray(R.array.newsfeedsKwongwah);
                     break;
-                case 4:
+                case 3:
                     feedURL = context.getResources().getStringArray(R.array.newsfeedsGuangming);
                     break;
             }
@@ -343,15 +336,12 @@ public class Category {
                     parser = new Zaobao();
                     break;
                 case 1:
-                    parser = new MyPaper();
-                    break;
-                case 2:
                     parser = new Daliulian();
                     break;
-                case 3:
+                case 2:
                     parser = new Kwongwah();
                     break;
-                case 4:
+                case 3:
                     parser = new Guangming();
                     break;
             }

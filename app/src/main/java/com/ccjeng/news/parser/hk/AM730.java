@@ -28,8 +28,7 @@ public class AM730 extends AbstractNews {
         String time = "";
 
         try {
-            //// TODO: 2015/12/1 title & time
-            title = doc.select("div.news-detail-title").text();
+            title = doc.select("div.news-detail-title").first().text();
             time = doc.select("div.news-detail-date").text();
             body = doc.select("div.news-detail-content").html();
 

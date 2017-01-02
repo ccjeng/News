@@ -30,20 +30,6 @@
         <item>http://www.zaobao.com/ssi/rss/fk.xml</item>
         <item>http://www.zaobao.com/ssi/rss/wencui.xml</item>
     </string-array>
-    <string-array name="newscatsMyPaper">
-        <item>新闻</item>
-        <item>观点</item>
-        <item>生活</item>
-        <item>娱乐</item>
-        <item>特辑</item>
-    </string-array>
-    <string-array name="newsfeedsMyPaper">
-        <item>http://mypaper.sg/taxonomy/term/23/feed/55339</item>
-        <item>http://mypaper.sg/taxonomy/term/35/feed/55350</item>
-        <item>http://mypaper.sg/taxonomy/term/22/feed/55352</item>
-        <item>http://mypaper.sg/taxonomy/term/20/feed/55361</item>
-        <item>http://mypaper.sg/taxonomy/term/21/feed/55354</item>
-    </string-array>
     <string-array name="newscatsDaliulian">
         <item>新聞</item>
         <item>家庭</item>
