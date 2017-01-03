@@ -145,8 +145,6 @@
         <item>果籽</item>
         <item>財經</item>
         <item>體育</item>
-        <item>壹週刊</item>
-        <item>飲食男女</item>
     </string-array>
     <string-array name="newsfeedsHKAppleDaily">
         <item>http://hkm.appledaily.com/list.php?category_guid=4104&amp;category=daily</item>
@@ -155,8 +153,6 @@
         <item>http://hkm.appledaily.com/list.php?category_guid=vice&amp;category=daily</item>
         <item>http://hkm.appledaily.com/list.php?category_guid=15307&amp;category=daily</item>
         <item>http://hkm.appledaily.com/list.php?category_guid=25391&amp;category=daily</item>
-        <item>http://hkm.appledaily.com/list.php?category_guid=16632792&amp;category=daily</item>
-        <item>http://hkm.appledaily.com/list.php?category_guid=16632793&amp;category=daily</item>
     </string-array>
 
     <string-array name="newscatsHKAppleDailyRT">
