@@ -193,19 +193,19 @@
     	<item>藝文副刊</item>
     </string-array>
     <string-array name="newsfeedsChinaTimes">
-    	<item>http://feeds.feedburner.com/chinatimes/realtimenews</item>
-    	<item>http://feeds.feedburner.com/chinatimes/chinatimes</item>
-    	<item>http://feeds.feedburner.com/chinatimes/chinatimes-focus</item>
-    	<item>http://feeds.feedburner.com/chinatimes/chinatimes-life</item>
-    	<item>http://feeds.feedburner.com/chinatimes/chinatimes-society</item>
-    	<item>http://feeds.feedburner.com/chinatimes/chinatimes-international</item>
-    	<item>http://feeds.feedburner.com/chinatimes/chinatimes-local</item>
-    	<item>http://feeds.feedburner.com/chinatimes/chinatimes-finance</item>
-    	<item>http://feeds.feedburner.com/chinatimes/chinatimes-sport</item>
-    	<item>http://feeds.feedburner.com/chinatimes/chinatimes-showbiz</item>
-    	<item>http://feeds.feedburner.com/chinatimes/chinatimes-fashion</item>
-    	<item>http://feeds.feedburner.com/chinatimes/chinatimes-comment</item>
-    	<item>http://feeds.feedburner.com/chinatimes/chinatimes-philology</item>
+    	<item>http://www.chinatimes.com/rss/realtimenews.xml</item>
+    	<item>http://www.chinatimes.com/rss/chinatimes.xml</item>
+    	<item>http://www.chinatimes.com/rss/chinatimes-focus.xml</item>
+    	<item>http://www.chinatimes.com/rss/chinatimes-life.xml</item>
+    	<item>http://www.chinatimes.com/rss/chinatimes-society.xml</item>
+    	<item>http://www.chinatimes.com/rss/chinatimes-international.xml</item>
+    	<item>http://www.chinatimes.com/rss/chinatimes-local.xml</item>
+    	<item>http://www.chinatimes.com/rss/chinatimes-finance.xml</item>
+    	<item>http://www.chinatimes.com/rss/chinatimes-sport.xml</item>
+    	<item>http://www.chinatimes.com/rss/chinatimes-showbiz.xml</item>
+    	<item>http://www.chinatimes.com/rss/chinatimes-fashion.xml</item>
+    	<item>http://www.chinatimes.com/rss/chinatimes-comment.xml</item>
+    	<item>http://www.chinatimes.com/rss/chinatimes-philology.xml</item>
     </string-array>
 	<string-array name="newscatsStorm">
 		<item>評論</item>
@@ -317,16 +317,16 @@
 		<item>產業特刊</item>
 	</string-array>
 	<string-array name="newsfeedsCommercial">
-		<item>http://feeds.feedburner.com/chinatimes/commercial</item>
-		<item>http://feeds.feedburner.com/chinatimes/commercial-focus</item>
-		<item>http://feeds.feedburner.com/chinatimes/commercial-international</item>
-		<item>http://feeds.feedburner.com/chinatimes/commercial-tax</item>
-		<item>http://feeds.feedburner.com/chinatimes/commercial-technology</item>
-		<item>http://feeds.feedburner.com/chinatimes/commercial-stock</item>
-		<item>http://feeds.feedburner.com/chinatimes/commercial-enterprise</item>
-		<item>http://feeds.feedburner.com/chinatimes/commercial-money</item>
-		<item>http://feeds.feedburner.com/chinatimes/commercial-week</item>
-		<item>http://feeds.feedburner.com/chinatimes/commercial-special</item>
+		<item>http://www.chinatimes.com/rss/commercial.xml</item>
+		<item>http://www.chinatimes.com/rss/commercial-focus.xml</item>
+		<item>http://www.chinatimes.com/rss/commercial-international.xml</item>
+		<item>http://www.chinatimes.com/rss/commercial-tax.xml</item>
+		<item>http://www.chinatimes.com/rss/commercial-technology.xml</item>
+		<item>http://www.chinatimes.com/rss/commercial-stock.xml</item>
+		<item>http://www.chinatimes.com/rss/commercial-enterprise.xml</item>
+		<item>http://www.chinatimes.com/rss/commercial-money.xml</item>
+		<item>http://www.chinatimes.com/rss/commercial-week.xml</item>
+		<item>http://www.chinatimes.com/rss/commercial-special.xml</item>
 	</string-array>
 	<string-array name="newscatsEttoday">
 		<!--<item>即時新聞</item>-->

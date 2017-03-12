@@ -3,7 +3,7 @@
 	tools:ignore="MissingTranslation">
 
     <string-array name="updates">
-    	<item>v1.8.3\n修復大榴槤和AM730\n移除我報(已停刊)
+    	<item>v1.8.4\n修復中國時報和東森新聞雲\n
     	</item>
 	</string-array>
 </resources>

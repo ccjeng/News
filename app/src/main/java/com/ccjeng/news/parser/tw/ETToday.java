@@ -28,25 +28,17 @@ public class ETToday extends AbstractNews {
         String time = "";
 
         try {
-            if (link.contains("/star/")) { //影劇
-                title = doc.select("div.module_1 > h2.title").text();
-                time = doc.select("div.module_1 > div.story > p.date").text();
-                body = doc.select("div.module_1 > div.story").html();
 
-            } else if (link.contains("/sport/")) { //運動
-                title = doc.select("div.subjcet_article > h1.title").text();
-                time = doc.select("div.subjcet_article > div.date").text();
-                body = doc.select("div.subjcet_article > div.story").html();
-
-            } else if (link.contains("/travel/")) { //旅遊
-                title = doc.select("div.subjcet_news > h2.title").text();
-                time = doc.select("div.subjcet_news > div.date").text();
-                body = doc.select("div.subjcet_news > div.story").html();
+            if (link.contains("/star/") || link.contains("/travel/")) {
+                title = doc.select("h2.title").text();
+                Log.d(TAG, "title2=" + title);
             } else {
-                title = doc.select("div.subjcet_news header h2").text();
-                time = doc.select("span.news-time").text();
-                body = doc.select("div.story > section").html();
+                title = doc.select("h1.title").text();
             }
+
+            time = doc.select("span.news-time").text();
+            body = doc.select("div.story").html();
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -79,8 +71,8 @@ public class ETToday extends AbstractNews {
 
         Whitelist wlist = new Whitelist();
 
-        wlist.addTags("p","br");
-        wlist.addTags("table","tbody","tr","td");
+        wlist.addTags("p", "br");
+        wlist.addTags("table", "tbody", "tr", "td");
         wlist.addTags("img").addAttributes("img", "src");
 
         return Jsoup.clean(rs, wlist);
