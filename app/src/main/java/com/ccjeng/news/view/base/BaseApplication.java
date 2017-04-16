@@ -10,8 +10,6 @@ import com.google.android.gms.analytics.Tracker;
 
 import java.util.HashMap;
 
-import me.majiajie.swipeback.utils.ActivityStack;
-
 /**
  * Created by andycheng on 2015/11/15.
  */
@@ -23,7 +21,7 @@ public class BaseApplication extends MultiDexApplication {
     public void onCreate() {
         super.onCreate();
         //LeakCanary.install(this);
-        this.registerActivityLifecycleCallbacks(ActivityStack.getInstance());
+        //this.registerActivityLifecycleCallbacks(ActivityStack.getInstance());
     }
 
     /* Global Variables

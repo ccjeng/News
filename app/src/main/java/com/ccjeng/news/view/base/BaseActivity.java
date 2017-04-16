@@ -5,7 +5,9 @@ import android.view.MenuItem;
 
 import com.google.android.gms.analytics.GoogleAnalytics;
 
-import me.majiajie.swipeback.SwipeBackActivity;
+import me.yokeyword.fragmentation.SwipeBackLayout;
+import me.yokeyword.fragmentation_swipeback.SwipeBackActivity;
+
 
 /**
  * Created by andycheng on 2016/6/17.
@@ -14,6 +16,7 @@ public class BaseActivity  extends SwipeBackActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSwipeBackLayout().setEdgeOrientation(SwipeBackLayout.EDGE_LEFT);
 
     }
 

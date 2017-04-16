@@ -7,7 +7,9 @@ import android.view.MenuItem;
 import com.ccjeng.news.presenter.base.BasePresenter;
 import com.google.android.gms.analytics.GoogleAnalytics;
 
-import me.majiajie.swipeback.SwipeBackActivity;
+import me.yokeyword.fragmentation.SwipeBackLayout;
+import me.yokeyword.fragmentation_swipeback.SwipeBackActivity;
+
 
 /**
  * Created by andycheng on 2016/9/5.
@@ -20,6 +22,7 @@ public abstract class MVPBaseActivity<V, T extends BasePresenter<V>> extends Swi
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSwipeBackLayout().setEdgeOrientation(SwipeBackLayout.EDGE_LEFT);
         mPresenter = createPresenter();
         mPresenter.attachView((V) this);
     }

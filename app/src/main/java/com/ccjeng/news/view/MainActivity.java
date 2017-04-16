@@ -18,7 +18,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 import com.ccjeng.news.R;
 import com.ccjeng.news.utils.Analytics;
@@ -73,7 +72,7 @@ public class MainActivity extends BaseActivity {
 
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
         setSupportActionBar(toolbar);
-        setSwipeBackEnable(false);
+        //setSwipeBackEnable(false);
 
         pager.setAdapter(new ViewPagerAdapter(getSupportFragmentManager()));
         tabs.setupWithViewPager(pager);
@@ -129,6 +128,7 @@ public class MainActivity extends BaseActivity {
         PreferenceSetting.getPreference(this);
     }
 
+    /*
     private long lastMillis;
     @Override
     public void onBackPressed() {
@@ -138,7 +138,7 @@ public class MainActivity extends BaseActivity {
         } else {
             finish();
         }
-    }
+    }*/
 
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
