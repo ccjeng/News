@@ -3,7 +3,7 @@
 	tools:ignore="MissingTranslation">
 
     <string-array name="updates">
-    	<item>v1.8.4\n修復中國時報和東森新聞雲\n
+    	<item>v1.8.5\n改善右滑關閉穩定性
     	</item>
 	</string-array>
 </resources>

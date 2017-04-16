@@ -7,8 +7,8 @@ android {
         applicationId "com.ccjeng.news"
         minSdkVersion 16
         targetSdkVersion 23
-        versionCode 42
-        versionName '1.8.4.031217SN'
+        versionCode 43
+        versionName '1.8.5.041617SN'
         vectorDrawables.useSupportLibrary = true
         multiDexEnabled true
     }
@@ -55,7 +55,6 @@ dependencies {
     }
     compile 'org.jsoup:jsoup:1.10.2'
     compile 'com.github.bumptech.glide:glide:3.7.0'
-    //compile 'me.majiajie:swipe-back:1.0.0-alpha2'
     compile 'me.yokeyword:fragmentation:0.10.3'
     compile 'me.yokeyword:fragmentation-swipeback:0.7.9'
     compile 'com.squareup.okhttp3:okhttp:3.4.1'
