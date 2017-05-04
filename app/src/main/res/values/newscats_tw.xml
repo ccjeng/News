@@ -465,13 +465,15 @@
     	<item>http://news.ltn.com.tw/rss/supplement.xml</item>
     </string-array>
 	<string-array name="newsCatsTheNewsLens">
-		<item>新聞</item>
-		<item>評論</item>
+		<item>臺灣</item>
 		<item>香港</item>
+		<item>東南亞</item>
+		<item>國際</item>
 	</string-array>
-	<string-array name="newsFeedsTheNewsLens">
+	<string-array name="newsFeedsTheNewsLens">臺
 		<item>http://feeds.feedburner.com/thenewslens</item>
-		<item>http://feeds.feedburner.com/thenewslens/review</item>
 		<item>http://feeds.feedburner.com/thenewslens/hk</item>
+		<item>https://feeds.feedburner.com/TheNewsLensasean</item>
+		<item>https://feeds.feedburner.com/TheNewsLens/international</item>
 	</string-array>
 </resources>

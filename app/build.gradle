@@ -7,8 +7,8 @@ android {
         applicationId "com.ccjeng.news"
         minSdkVersion 16
         targetSdkVersion 23
-        versionCode 43
-        versionName '1.8.5.041617SN'
+        versionCode 44
+        versionName '1.8.6.050417SN'
         vectorDrawables.useSupportLibrary = true
         multiDexEnabled true
     }
@@ -33,16 +33,17 @@ android {
 }
 
 dependencies {
+
     //compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support:design:25.3.1'
     compile 'com.android.support:multidex:1.0.1'
-    compile 'com.google.android.gms:play-services-analytics:10.2.1'
-    compile 'com.google.android.gms:play-services-ads:10.2.1'
+    compile 'com.google.android.gms:play-services-analytics:10.2.4'
+    compile 'com.google.android.gms:play-services-ads:10.2.4'
     //for FAN, don't move
-    compile 'com.google.firebase:firebase-core:10.2.1'
-    releaseCompile 'com.google.firebase:firebase-crash:10.2.1'
+    compile 'com.google.firebase:firebase-core:10.2.4'
+    releaseCompile 'com.google.firebase:firebase-crash:10.2.4'
     compile 'com.jakewharton:butterknife:7.0.1'
     compile 'com.mikepenz:iconics-core:2.7.1@aar'
     compile 'com.mikepenz:community-material-typeface:1.5.54.1@aar'
@@ -61,7 +62,7 @@ dependencies {
     compile 'com.facebook.android:audience-network-sdk:4.20.0'
     compile 'io.reactivex:rxjava:1.2.0'
     compile 'io.reactivex:rxandroid:1.2.1'
-    compile files('src/main/libs/vpadn-sdk-obf463-22216102-1612221555-54fff67.jar')
+    compile files('src/main/libs/vpadn-sdk-obf464-21407102-1704121104-cdcc646.jar')
 }
 
 apply plugin: 'com.google.gms.google-services'

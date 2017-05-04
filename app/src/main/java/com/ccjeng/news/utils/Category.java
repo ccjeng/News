@@ -102,27 +102,27 @@ public class Category {
                     category = context.getResources().getStringArray(R.array.newscatsHKOrientalDaily);
                     break;
                 case 3:
-                    category = context.getResources().getStringArray(R.array.newscatsHKYahoo);
-                    break;
-                case 4:
+                    //category = context.getResources().getStringArray(R.array.newscatsHKYahoo);
+                    //break;
+                //case 4:
                     category = context.getResources().getStringArray(R.array.newscatsHKEJ);
                     break;
-                case 5:
+                case 4:
                     category = context.getResources().getStringArray(R.array.newscatsHKMetro);
                     break;
-                case 6:
+                case 5:
                     category = context.getResources().getStringArray(R.array.newscatsHKam730);
                     break;
-                case 7:
+                case 6:
                     category = context.getResources().getStringArray(R.array.newscatsHKheadline);
                     break;
-                case 8:
+                case 7:
                     category = context.getResources().getStringArray(R.array.newscatsETNet);
                     break;
-                case 9:
+                case 8:
                     category = context.getResources().getStringArray(R.array.newscatsTheStandNews);
                     break;
-                case 10:
+                case 9:
                     category = context.getResources().getStringArray(R.array.newscatsInMediaHK);
                     break;
             }
@@ -206,27 +206,27 @@ public class Category {
                     feedURL = context.getResources().getStringArray(R.array.newsfeedsHKOrientalDaily);
                     break;
                 case 3:
-                    feedURL = context.getResources().getStringArray(R.array.newsfeedsHKYahoo);
-                    break;
-                case 4:
+                    //feedURL = context.getResources().getStringArray(R.array.newsfeedsHKYahoo);
+                    //break;
+                //case 4:
                     feedURL = context.getResources().getStringArray(R.array.newsfeedsHKEJ);
                     break;
-                case 5:
+                case 4:
                     feedURL = context.getResources().getStringArray(R.array.newsfeedsHKMetro);
                     break;
-                case 6:
+                case 5:
                     feedURL = context.getResources().getStringArray(R.array.newsfeedsHKam730);
                     break;
-                case 7:
+                case 6:
                     feedURL = context.getResources().getStringArray(R.array.newsfeedsHKheadline);
                     break;
-                case 8:
+                case 7:
                     feedURL = context.getResources().getStringArray(R.array.newsfeedsETNet);
                     break;
-                case 9:
+                case 8:
                     feedURL = context.getResources().getStringArray(R.array.newsfeedsTheStandNews);
                     break;
-                case 10:
+                case 9:
                     feedURL = context.getResources().getStringArray(R.array.newsfeedsInMediaHK);
                     break;
             }

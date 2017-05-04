@@ -95,14 +95,6 @@ public class Network {
 
         }
 
-        //force change TW appledaily entertainment url to mobile version.
-        if (url.contains("www.appledaily.com.tw") && url.contains("entertainment")) {
-
-            url = url.replace("www.appledaily.com.tw","m.ent.appledaily.com.tw");
-            url = url.replace("/appledaily/","/section/");
-            Log.d(TAG, "New URL =" + url);
-        }
-
         return url;
 
     }

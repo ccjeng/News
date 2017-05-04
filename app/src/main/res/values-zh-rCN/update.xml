@@ -3,7 +3,9 @@
 	tools:ignore="MissingTranslation">
 
     <string-array name="updates">
-    	<item>v1.8.5\n改善右滑关闭稳定性
+    	<item>v1.8.6\n修复台湾苹果日报娱乐新闻
+			\n修复ETToday图片不能显示的问题
+			\n移除香港雅虎新闻(因网站新闻列表为的台湾内容)
 		</item>
 	</string-array>
 </resources>
