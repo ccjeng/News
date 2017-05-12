@@ -3,9 +3,7 @@
 	tools:ignore="MissingTranslation">
 
     <string-array name="updates">
-    	<item>v1.8.6\n修復台灣蘋果日報娛樂新聞
-			\n修復ETToday圖片不能顯示的問題
-			\n移除香港雅虎新聞(因網站新聞列表為的台灣內容)
+    	<item>v1.8.7\n修復ETNet
     	</item>
 	</string-array>
 </resources>

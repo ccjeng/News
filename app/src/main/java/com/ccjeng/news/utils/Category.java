@@ -9,7 +9,6 @@ import com.ccjeng.news.parser.hk.ETNet;
 import com.ccjeng.news.parser.hk.HKAppleDaily;
 import com.ccjeng.news.parser.hk.HKEJ;
 import com.ccjeng.news.parser.hk.HKHeadline;
-import com.ccjeng.news.parser.hk.HKYahoo;
 import com.ccjeng.news.parser.hk.InMediaHK;
 import com.ccjeng.news.parser.hk.OrientalDaily;
 import com.ccjeng.news.parser.hk.RTHK;
@@ -306,27 +305,27 @@ public class Category {
                     parser = new OrientalDaily();
                     break;
                 case 3:
-                    parser = new HKYahoo();
-                    break;
-                case 4:
+                //    parser = new HKYahoo();
+                //    break;
+                //case 4:
                     parser = new HKEJ();
                     break;
-                case 5:
+                case 4:
                     parser = new RTHK();
                     break;
-                case 6:
+                case 5:
                     parser = new AM730();
                     break;
-                case 7:
+                case 6:
                     parser = new HKHeadline();
                     break;
-                case 8:
+                case 7:
                     parser = new ETNet();
                     break;
-                case 9:
+                case 8:
                     parser = new TheStandNews();
                     break;
-                case 10:
+                case 9:
                     parser = new InMediaHK();
                     break;
             }
@@ -355,7 +354,7 @@ public class Category {
 
         if (tab.equals("HK")) {
             switch (position) {
-                case 7: //HKHeadline
+                case 6: //HKHeadline
                     encoding = "big-5";
                     break;
             }
