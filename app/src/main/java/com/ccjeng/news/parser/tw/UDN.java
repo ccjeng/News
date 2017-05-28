@@ -34,8 +34,14 @@ public class UDN extends AbstractNews {
             } else {
                 title = doc.select("h1").text();
             }
-            time = doc.select("div#story_bady_info h3").text();
-            body = doc.select("div#story_body_content").html();
+
+            if (link.contains("stars.udn.com")) {
+                time = doc.select("time").text();
+                body = doc.select("figure").html() + "<p>"+ doc.select("div#story").html();
+            } else {
+                time = doc.select("div#story_bady_info h3").text();
+                body = doc.select("div#story_body_content").html();
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }

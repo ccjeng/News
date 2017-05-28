@@ -80,22 +80,26 @@
     </string-array>
     <string-array name="newscatsGuangming">
         <item>即時新聞</item>
-        <item>要聞</item>
-        <item>專題</item>
-        <item>評論</item>
-        <item>光明專欄</item>
-        <item>地方</item>
-        <item>良醫</item>
-        <item>副刊</item>
+        <item>國內新聞</item>
+        <item>國際新聞</item>
+        <item>娛樂</item>
+        <item>體育</item>
+        <item>地方 北馬</item>
+        <item>地方 中馬</item>
+        <item>地方 東霹</item>
+        <item>地方 柔佛</item>
+        <item>地方 森甲</item>
     </string-array>
     <string-array name="newsfeedsGuangming">
-        <item>http://www.guangming.com.my/taxonomy/term/84/0/feed</item>
-        <item>http://www.guangming.com.my/taxonomy/term/3/0/feed</item>
-        <item>http://www.guangming.com.my/taxonomy/term/5/0/feed</item>
-        <item>http://www.guangming.com.my/taxonomy/term/6/0/feed</item>
-        <item>http://www.guangming.com.my/taxonomy/term/2/0/feed</item>
-        <item>http://www.guangming.com.my/taxonomy/term/7/0/feed</item>
-        <item>http://www.guangming.com.my/taxonomy/term/8/0/feed</item>
-        <item>http://www.guangming.com.my/taxonomy/term/9/0/feed</item>
+        <item>http://www.guangming.com.my/taxonomy/term/241/feed</item>
+        <item>http://www.guangming.com.my/taxonomy/term/173/feed</item>
+        <item>http://www.guangming.com.my/taxonomy/term/246/feed</item>
+        <item>http://www.guangming.com.my/taxonomy/term/237/feed</item>
+        <item>http://www.guangming.com.my/taxonomy/term/245/feed</item>
+        <item>http://www.guangming.com.my/taxonomy/term/304/feed</item>
+        <item>http://www.guangming.com.my/taxonomy/term/189/feed</item>
+        <item>http://www.guangming.com.my/taxonomy/term/192/feed</item>
+        <item>http://www.guangming.com.my/taxonomy/term/196/feed</item>
+        <item>http://www.guangming.com.my/taxonomy/term/187/feed</item>
     </string-array>
 </resources>

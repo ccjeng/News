@@ -8,6 +8,7 @@
 		<item>社會新聞</item>
 		<item>生活新聞</item>
 		<item>財經新聞</item>
+		<item>科技新聞</item>
 		<item>國際新聞</item>
 		<item>兩岸新聞</item>
 		<item>娛樂新聞</item>
@@ -22,6 +23,7 @@
 		<item>http://feeds.feedburner.com/rsscna/social</item>
 		<item>http://feeds.feedburner.com/rsscna/lifehealth</item>
 		<item>http://feeds.feedburner.com/rsscna/finance</item>
+		<item>http://feeds.feedburner.com/rsscna/technology</item>
 		<item>http://feeds.feedburner.com/rsscna/intworld</item>
 		<item>http://feeds.feedburner.com/rsscna/mainland</item>
 		<item>http://feeds.feedburner.com/rsscna/stars</item>
@@ -42,13 +44,6 @@
 		<item>影劇新聞</item>
 		<item>旅遊新聞</item>
 		<item>生活新聞</item>
-	    <item>實用心情新聞</item>
-		<item>感人心情新聞</item>
-		<item>開心心情新聞</item>
-		<item>超扯心情新聞</item>
-		<item>害怕心情新聞</item>
-		<item>難過心情新聞</item>
-		<item>火大心情新聞</item>
     </string-array>
     <string-array name="newsfeedsYahoo">
   	    <item>https://tw.news.yahoo.com/rss/politics</item>
@@ -63,13 +58,6 @@
 	  	<item>https://tw.news.yahoo.com/rss/entertainment</item>
 		<item>https://tw.news.yahoo.com/rss/travel</item>
 		<item>https://tw.news.yahoo.com/rss/lifestyle</item>
-		<item>http://feeds.feedburner.com/yahoo/HOzB</item>
-		<item>http://feeds.feedburner.com/yahoo/PJwg</item>
-		<item>http://feeds.feedburner.com/yahoo/vnjj</item>
-		<item>http://feeds.feedburner.com/yahoo/PldX</item>
-		<item>http://feeds.feedburner.com/yahoo/dPLS</item>
-		<item>http://feeds.feedburner.com/yahoo/qwHZ</item>
-		<item>http://feeds.feedburner.com/yahoo/eklF</item>
     </string-array>
     <string-array name="newscatsAppDaily">
     	<item>即時新聞</item>
@@ -105,13 +93,13 @@
     <string-array name="newscatsUDN">
     	<item>最新報導</item>
     	<item>要聞</item>
-    	<item>娛樂</item>
     	<item>運動</item>
     	<item>全球</item>
 		<item>社會</item>
 		<item>產經</item>
 		<item>股市</item>
 		<item>生活</item>
+		<item>娛樂</item>
 		<item>地方</item>
 		<item>兩岸</item>
 		<item>數位</item>
@@ -120,13 +108,13 @@
     <string-array name="newsfeedsUDN">
     	<item>http://udn.com/rssfeed/latest</item>
 		<item>http://udn.com/rssfeed/news/2/6638</item>
-    	<item>http://udn.com/rssfeed/news/2/6648</item>
     	<item>http://udn.com/rssfeed/news/2/7227</item>
     	<item>http://udn.com/rssfeed/news/2/7225</item>
     	<item>http://udn.com/rssfeed/news/2/6639</item>
     	<item>http://udn.com/rssfeed/news/2/6644</item>
     	<item>http://udn.com/rssfeed/news/2/6645</item>
     	<item>http://udn.com/rssfeed/news/2/6649</item>
+		<item>https://stars.udn.com/rss/news/1022/10089</item>
 		<item>http://udn.com/rssfeed/news/2/6641</item>
 		<item>http://udn.com/rssfeed/news/2/6640</item>
 		<item>http://udn.com/rssfeed/news/2/7226</item>
@@ -207,15 +195,40 @@
     	<item>http://www.chinatimes.com/rss/chinatimes-comment.xml</item>
     	<item>http://www.chinatimes.com/rss/chinatimes-philology.xml</item>
     </string-array>
+	<string-array name="newscatsWant">
+		<item>焦點新聞</item>
+		<item>話題觀察</item>
+		<item>兩岸新聞</item>
+		<item>時尚娛樂</item>
+		<item>醫藥健康</item>
+		<item>旅遊情報</item>
+		<item>兩岸藝文</item>
+		<item>產業財經</item>
+		<item>論壇廣場</item>
+	</string-array>
+	<string-array name="newsfeedsWant">
+		<item>http://www.chinatimes.com/rss/want-daily-focus.xml</item>
+		<item>http://www.chinatimes.com/rss/want-daily-topic.xml</item>
+		<item>http://www.chinatimes.com/rss/want-daily-mainland.xml</item>
+		<item>http://www.chinatimes.com/rss/want-daily-showbiz.xml</item>
+		<item>http://www.chinatimes.com/rss/want-daily-health.xml</item>
+		<item>http://www.chinatimes.com/rss/want-daily-travel.xml</item>
+		<item>http://www.chinatimes.com/rss/want-daily-philology.xml</item>
+		<item>http://www.chinatimes.com/rss/want-daily-finance.xml</item>
+		<item>http://www.chinatimes.com/rss/want-daily-comment.xml</item>
+	</string-array>
+
 	<string-array name="newscatsStorm">
 		<item>評論</item>
 		<item>政治</item>
 		<item>國際</item>
+		<item>新新聞</item>
 		<item>國內</item>
 		<item>中港澳</item>
 		<item>財經</item>
 		<item>調查</item>
 		<item>軍事</item>
+		<item>藝文</item>
 		<item>風生活</item>
 		<item>學長姐說</item>
 	</string-array>
@@ -223,87 +236,17 @@
 		<item>http://www.storm.mg/feeds/2</item>
 		<item>http://www.storm.mg/feeds/118</item>
 		<item>http://www.storm.mg/feeds/117</item>
+		<item>http://www.storm.mg/feeds/87726</item>
 		<item>http://www.storm.mg/feeds/22172</item>
 		<item>http://www.storm.mg/feeds/121</item>
 		<item>http://www.storm.mg/feeds/23083</item>
 		<item>http://www.storm.mg/feeds/24667</item>
 		<item>http://www.storm.mg/feeds/26644</item>
+		<item>http://www.storm.mg/feeds/84984</item>
 		<item>http://www.storm.mg/feeds/104</item>
 		<item>http://www.storm.mg/feeds/36291</item>
 	</string-array>
-	<!--
-    <string-array name="newscatsNOW">
-    	<item>即時新聞</item>
-    	<item>政治新聞</item>
-    	<item>財經新聞</item>
-    	<item>社會新聞</item>
-    	<item>生活新聞</item>
-    	<item>消費新聞</item>
-    	<item>旅遊新聞</item>
-    	<item>科技新聞</item>
-    	<item>娛樂新聞</item>
-    	<item>運動新聞</item>
-    	<item>網路追追追</item>
-		<item>命理新聞</item>
-		<item>色區新聞</item>
-		<item>美人幫</item>
-    </string-array>
-    <string-array name="newsfeedsNOW">
-    	<item>http://feeds.feedburner.com/nownews/</item>
-    	<item>http://www.nownews.com/rss/1.rdf</item>
-    	<item>http://www.nownews.com/rss/2.rdf</item>
-    	<item>http://www.nownews.com/rss/3.rdf</item>
-    	<item>http://www.nownews.com/rss/4.rdf</item>
-    	<item>http://www.nownews.com/rss/5.rdf</item>
-    	<item>http://www.nownews.com/rss/6.rdf</item>
-    	<item>http://www.nownews.com/rss/7.rdf</item>
-    	<item>http://www.nownews.com/rss/9.rdf</item>
-    	<item>http://www.nownews.com/rss/10.rdf</item>
-    	<item>http://www.nownews.com/rss/8.rdf</item>
-		<item>http://www.nownews.com/rss/21.rdf</item>
-		<item>http://feeds.feedburner.com/nownews/cybersex</item>
-		 <item>http://www.nownews.com/rss/buty_rss.rdf</item>
-    </string-array>
 
-    <string-array name="newscatsEngadget">
-    	<item>Engadget中文版</item>
-    	<item>Engadget中国版</item>
-     	<item>科新聞</item>
-    	<item>大人物</item>
-    	<item>好科技</item>
-    	<item>癮車報</item>
-    </string-array>
-    <string-array name="newsfeedsEngadget">
-    	<item>http://chinese.engadget.com/rss.xml</item>
-    	<item>http://cn.engadget.com/rss.xml</item> 
-     	<item>http://feeds.feedburner.com/cool3c-nccc </item>
-    	<item>http://feeds.feedburner.com/cool3c/daman</item>
-    	<item>http://feeds.feedburner.com/cool3c-her</item>
-    	<item>http://feeds.feedburner.com/cool3c/car</item>
-    </string-array>
-
-
-    <string-array name="newscatsBNext">
-    	<item>新聞精選</item>
-    	<item>科技</item>
-    	<item>網路</item>
-    	<item>人物</item>
-    	<item>品牌與設計</item>
-    	<item>綠能</item>
-    	<item>數位行銷</item>
-    	<item>社群活動</item>
-    </string-array>
-    <string-array name="newsfeedsBNext">
-    	<item>http://www.bnext.com.tw/feed/rss/topicslinks</item>
-    	<item>http://www.bnext.com.tw/Feed/rss/cid/76</item>
-    	<item>http://www.bnext.com.tw/Feed/rss/cid/99</item>
-    	<item>http://www.bnext.com.tw/Feed/rss/cid/101</item>
-    	<item>http://www.bnext.com.tw/Feed/rss/cid/133</item>
-    	<item>http://www.bnext.com.tw/Feed/rss/cid/52</item>
-    	<item>http://www.bnext.com.tw/Feed/rss/cid/102</item>
-    	<item>http://www.bnext.com.tw/Feed/rss/event</item>
-    </string-array>
-    -->
 	<string-array name="newscatsCommercial">
 		<item>工商總覽</item>
 		<item>財經要聞</item>
@@ -329,7 +272,7 @@
 		<item>http://www.chinatimes.com/rss/commercial-special.xml</item>
 	</string-array>
 	<string-array name="newscatsEttoday">
-		<!--<item>即時新聞</item>-->
+		<item>即時新聞</item>
 		<item>政治新聞</item>
 		<item>財經新聞</item>
 		<item>國際新聞</item>
@@ -344,10 +287,11 @@
 		<item>旅遊新聞</item>
 		<item>時尚新聞</item>
 		<item>名家新聞</item>
-		<item>開運新聞</item>
+		<item>網搜新聞</item>
+		<item>鍵盤大檸檬</item>
 	</string-array>
 	<string-array name="newsfeedsEttoday">
-    	<!--<item>http://feeds.feedburner.com/ettoday/realtime</item>-->
+    	<item>http://feeds.feedburner.com/ettoday/realtime</item>
     	<item>http://feeds.feedburner.com/ettoday/news</item>
 		<item>http://feeds.feedburner.com/ettoday/finance</item>
     	<item>http://feeds.feedburner.com/ettoday/global</item>
@@ -362,7 +306,8 @@
     	<item>http://feeds.feedburner.com/ettoday/travel</item>
     	<item>http://feeds.feedburner.com/ettoday/consuming</item>
     	<item>http://feeds.feedburner.com/ettoday/master</item>
-    	<item>http://feeds.feedburner.com/ettoday/fortune</item>
+		<item>http://feeds.feedburner.com/ettoday/netsearch</item>
+		<item>http://feeds.feedburner.com/ettoday/dalemon</item>
     </string-array>
     <string-array name="newscatsCNYes">
     	<!--<item>總覽</item>-->
@@ -420,9 +365,10 @@
     	<item>全部</item>
 		<item>政治經濟</item>
     	<item>國際中國</item>
-    	<item>生活科技</item>
-    	<item>司法人權</item>
-    	<item>藝文媒體</item>
+    <!--	<item>生活藝文</item>
+    	<item>環境人權</item>-->
+    	<item>科技電競</item>
+		<item>美食旅遊</item>
     	<item>評論</item>
 		<item>開講無疆界</item>
 		<item>公民連線</item>
@@ -431,10 +377,11 @@
     	<item>http://newtalk.tw/rss/all</item>
 		<item>http://newtalk.tw/rss/category/1</item>
     	<item>http://newtalk.tw/rss/category/2</item>
-    	<item>http://newtalk.tw/rss/category/3</item>
-    	<item>http://newtalk.tw/rss/category/4</item>
+    	<!--<item>http://newtalk.tw/rss/category/3</item>
+    	<item>http://newtalk.tw/rss/category/4</item>-->
     	<item>http://newtalk.tw/rss/category/5</item>
-    	<item>http://newtalk.tw/rss/opinion_news</item>
+		<item>http://newtalk.tw/rss/category/6</item>
+		<item>http://newtalk.tw/rss/opinion_news</item>
 		<item>http://newtalk.tw/rss/opinion_uservoice</item>
 		<item>http://newtalk.tw/rss/citizen</item>
     </string-array>
@@ -448,6 +395,7 @@
     	<item>體育新聞</item>
     	<item>財經焦點</item>
     	<item>影視新聞</item>
+		<item>消費新聞</item>
     	<item>地方新聞</item>
     	<item>副刊</item>
     </string-array>
@@ -461,7 +409,8 @@
     	<item>http://news.ltn.com.tw/rss/sports.xml</item>
     	<item>http://news.ltn.com.tw/rss/business.xml</item>
     	<item>http://news.ltn.com.tw/rss/entertainment.xml</item>
-    	<item>http://news.ltn.com.tw/rss/local.xml</item>
+    	<item>http://news.ltn.com.tw/rss/consumer.xml</item>
+		<item>http://news.ltn.com.tw/rss/local.xml</item>
     	<item>http://news.ltn.com.tw/rss/supplement.xml</item>
     </string-array>
 	<string-array name="newsCatsTheNewsLens">

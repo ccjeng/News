@@ -14,37 +14,61 @@ import org.jsoup.select.Elements;
 public class CustomFeedParser {
 
     public RSSFeed getFeeds(String url, String content) {
+        final String TAG = "CustomFeedParser";
         RSSFeed feed = new RSSFeed();
         RSSItem item;
         Document doc = Jsoup.parse(content);
         Elements links;
+        Element link;
         String root;
 
         try {
 
             if (url.contains("hkm.appledaily.com")) {
-                links = doc.select("ul li a");
                 root = "http://hkm.appledaily.com/";
 
-                for (Element k : links) {
-                    if (k.attr("href").contains("detail.php")) {
-
-                        String u = k.attr("href");
-
+                if(url.contains("category=magazine")) { //壹週
+                    links = doc.select("div.slider");
+                    for (Element k : links) {
                         item = new RSSItem();
-                        item.setTitle(k.select("p").text());
-                        item.setLink(root + u);
-
-                        if (url.contains("=daily")) {
-                            //日報
-                            item.setPubDate(u.substring(u.length() - 8));
-                        } else if (url.contains("=instant")) {
-                            //即時新聞
-                            item.setPubDate(k.select("label").text());
-                        }
+                        item.setTitle(k.select("p.caption").text());
+                        item.setLink(root + k.select("a").attr("href"));
+                        item.setDescription("");
+                        item.setImg(k.select("div.background").attr("style").replace("background-image:url('","").replace("')",""));
+                        feed.addItem(item);
+                    }
+                    links = doc.select("div.item");
+                    for (Element k : links) {
+                        item = new RSSItem();
+                        item.setTitle(k.select("p").get(1).text());
+                        item.setLink(root + k.select("a").attr("href"));
                         item.setDescription("");
                         item.setImg(k.select("img").first().absUrl("src"));
                         feed.addItem(item);
+                    }
+
+                } else {
+                    links = doc.select("ul li a");
+                    for (Element k : links) {
+                        if (k.attr("href").contains("detail.php")) {
+
+                            String u = k.attr("href");
+
+                            item = new RSSItem();
+                            item.setTitle(k.select("p").text());
+                            item.setLink(root + u);
+
+                            if (url.contains("=daily")) {
+                                //日報
+                                item.setPubDate(u.substring(u.length() - 8));
+                            } else if (url.contains("=instant")) {
+                                //即時新聞
+                                item.setPubDate(k.select("label").text());
+                            }
+                            item.setDescription("");
+                            item.setImg(k.select("img").first().absUrl("src"));
+                            feed.addItem(item);
+                        }
                     }
                 }
 

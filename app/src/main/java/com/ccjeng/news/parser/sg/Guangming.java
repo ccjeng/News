@@ -28,10 +28,9 @@ public class Guangming extends AbstractNews {
         String time = "";
 
         try {
-            title = doc.select("h2.title").text();
-            time = doc.select("div.submitted").text();
-            body = doc.select("div.content_wrapper").html() + "<p>"
-                    + doc.select("ul#spotlight").html();
+            title = doc.select("h1").text();
+            time = doc.select("div.article-create-date").text();
+            body = doc.select("article > div.content").html();
         } catch (Exception e) {
             e.printStackTrace();
         }
