@@ -3,7 +3,7 @@
 	tools:ignore="MissingTranslation">
 
     <string-array name="updates">
-    	<item>v1.8.8\n新增旺报\n香港苹果新增壹周Plus,饮食男女,Ketchupe\n东森新闻云新增键盘大柠檬\n修复联合新闻网\n修复光明日报
+    	<item>v1.8.9\n修复自由时报\n优化新闻列表图片显示
 		</item>
 	</string-array>
 </resources>

@@ -10,10 +10,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.ccjeng.news.R;
 import com.ccjeng.news.controler.rss.RSSFeed;
 import com.ccjeng.news.utils.ScreenUtil;
 import com.ccjeng.news.view.NewsRSSList;
+
+import static com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions.withCrossFade;
+
 
 public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.CustomViewHolder> {
 	private static final String TAG = "NewsListAdapter";
@@ -59,12 +63,14 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.Custom
 			customViewHolder.imageView.setVisibility(View.GONE);
 		} else {
 			//Load image
+			RequestOptions options = new RequestOptions();
+			options.centerCrop();
+
 			Glide.with(context)
 					.load(items.getItem(i).getImg())
-					.override(72, 72)
-					.centerCrop()
+					.apply(options)
 					.thumbnail( 0.1f )
-					.crossFade()
+					.transition(withCrossFade())
 					.into(customViewHolder.imageView)
 					;
 		}

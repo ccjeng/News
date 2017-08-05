@@ -47,8 +47,8 @@ public class LibertyTimes extends AbstractNews {
             }
             else {
                 title = doc.select("h1").text();
-                time = doc.select("div#newstext span").get(0).text();
-                body = doc.select("div#newstext").html();
+                time = doc.select("div.text span").get(0).text();
+                body = doc.select("div.text").html();
             }
         } catch (Exception e) {
             e.printStackTrace();

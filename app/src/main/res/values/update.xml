@@ -3,7 +3,7 @@
 	tools:ignore="MissingTranslation">
 
     <string-array name="updates">
-    	<item>v1.8.8\n新增旺報\n香港蘋果新增壹週Plus,飲食男女,Ketchupe\n東森新聞雲新增鍵盤大檸檬\n修復聯合新聞網\n修復光明日報
+    	<item>v1.8.9\n修復自由時報\n優化新聞列表圖片顯示
     	</item>
 	</string-array>
 </resources>
