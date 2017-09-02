@@ -7,16 +7,18 @@ import android.app.Activity;
 import android.content.Context;
 import android.util.Log;
 
+import com.mopub.common.util.Views;
+import com.mopub.mobileads.CustomEventBanner;
 import com.vpadn.ads.VpadnAd;
 import com.vpadn.ads.VpadnAdListener;
 import com.vpadn.ads.VpadnAdRequest;
 import com.vpadn.ads.VpadnAdRequest.VpadnErrorCode;
 import com.vpadn.ads.VpadnAdSize;
 import com.vpadn.ads.VpadnBanner;
-import com.mopub.common.util.Views;
-import com.mopub.mobileads.CustomEventBanner;
-import static com.mopub.mobileads.MoPubErrorCode.ADAPTER_CONFIGURATION_ERROR;
+
 import java.util.Map;
+
+import static com.mopub.mobileads.MoPubErrorCode.ADAPTER_CONFIGURATION_ERROR;
 import static com.mopub.mobileads.MoPubErrorCode.NETWORK_NO_FILL;
 
 

@@ -3,6 +3,8 @@
 buildscript {
     repositories {
         jcenter()
+        // includes the MoPub SDK and AVID library
+        //maven { url "https://s3.amazonaws.com/moat-sdk-builds" }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.3.3'

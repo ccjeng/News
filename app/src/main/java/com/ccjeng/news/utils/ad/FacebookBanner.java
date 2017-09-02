@@ -114,6 +114,11 @@ public class FacebookBanner extends CustomEventBanner implements AdListener {
         mBannerListener.onBannerClicked();
     }
 
+    @Override
+    public void onLoggingImpression(Ad ad) {
+
+    }
+
     private boolean serverExtrasAreValid(final Map<String, String> serverExtras) {
         final String placementId = serverExtras.get(PLACEMENT_ID_KEY);
         return (placementId != null && placementId.length() > 0);

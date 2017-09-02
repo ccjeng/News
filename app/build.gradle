@@ -61,7 +61,7 @@ dependencies {
     compile 'me.yokeyword:fragmentation:0.10.3'
     compile 'me.yokeyword:fragmentation-swipeback:0.7.9'
     compile 'com.squareup.okhttp3:okhttp:3.4.1'
-    compile 'com.facebook.android:audience-network-sdk:4.20.0'
+    compile 'com.facebook.android:audience-network-sdk:4.25.0'
     compile 'io.reactivex:rxjava:1.2.0'
     compile 'io.reactivex:rxandroid:1.2.1'
     compile files('src/main/libs/vpadn-sdk-obf465-71707102-1707171713-4cf3969.jar')
