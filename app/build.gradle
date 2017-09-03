@@ -7,8 +7,8 @@ android {
         applicationId "com.ccjeng.news"
         minSdkVersion 16
         targetSdkVersion 23
-        versionCode 47
-        versionName '1.8.9.080517SN'
+        versionCode 48
+        versionName '1.8.10.090317SN'
         vectorDrawables.useSupportLibrary = true
         multiDexEnabled true
     }

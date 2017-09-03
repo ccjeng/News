@@ -3,7 +3,7 @@
 	tools:ignore="MissingTranslation">
 
     <string-array name="updates">
-    	<item>v1.8.9\n修復自由時報\n優化新聞列表圖片顯示
+    	<item>v1.8.10\n修復大榴槤
     	</item>
 	</string-array>
 </resources>
