@@ -34,7 +34,7 @@ import com.pnikosis.materialishprogress.ProgressWheel;
 
 import java.io.IOException;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 //todo 加上新聞小幫手檢核 sample: https://github.com/g0v/newshelper-extension/blob/master/background.js
@@ -44,13 +44,13 @@ public class NewsView extends MVPBaseActivity<NewsViewView, NewsViewPresenter> i
     private static final String TAG = NewsView.class.getSimpleName();
 
     WebView webView;
-    @Bind(R.id.toolbar)
+    @BindView(R.id.toolbar)
     Toolbar toolbar;
-    @Bind(R.id.progress_wheel)
+    @BindView(R.id.progress_wheel)
     ProgressWheel progressWheel;
-    @Bind(R.id.main)
+    @BindView(R.id.main)
     NestedScrollView main;
-    @Bind(R.id.coordinator)
+    @BindView(R.id.coordinator)
     CoordinatorLayout coordinator;
 
     private Analytics ga;
@@ -239,6 +239,7 @@ public class NewsView extends MVPBaseActivity<NewsViewView, NewsViewPresenter> i
                     webView.loadDataWithBaseURL(null, newsContent, "text/html", "utf-8", "about:blank");
 
                     //image fit screen
+
                     final String js;
                     js = "javascript:(function () { " +
                             " var w = " + Webpage.getWidth(NewsView.this) + ";" +

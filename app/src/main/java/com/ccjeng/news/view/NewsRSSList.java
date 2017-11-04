@@ -12,7 +12,6 @@ import android.view.Menu;
 import android.view.View;
 
 import com.ccjeng.news.R;
-import com.ccjeng.news.view.adapter.NewsListAdapter;
 import com.ccjeng.news.controler.rss.RSSFeed;
 import com.ccjeng.news.presenter.NewsRSSListPresenter;
 import com.ccjeng.news.presenter.NewsRSSListView;
@@ -20,11 +19,12 @@ import com.ccjeng.news.utils.Analytics;
 import com.ccjeng.news.utils.Constant;
 import com.ccjeng.news.utils.Network;
 import com.ccjeng.news.utils.UI;
+import com.ccjeng.news.view.adapter.NewsListAdapter;
 import com.ccjeng.news.view.base.MVPBaseActivity;
 import com.mopub.mobileads.MoPubView;
 import com.pnikosis.materialishprogress.ProgressWheel;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class NewsRSSList extends MVPBaseActivity<NewsRSSListView, NewsRSSListPresenter>
@@ -33,13 +33,13 @@ public class NewsRSSList extends MVPBaseActivity<NewsRSSListView, NewsRSSListPre
     private static final String TAG = NewsRSSList.class.getSimpleName();
     private Analytics ga;
 
-    @Bind(R.id.toolbar)
+    @BindView(R.id.toolbar)
     Toolbar toolbar;
-    @Bind(R.id.recyclerView)
+    @BindView(R.id.recyclerView)
     RecyclerView recyclerView;
-    @Bind(R.id.progress_wheel)
+    @BindView(R.id.progress_wheel)
     ProgressWheel progressWheel;
-    @Bind(R.id.coordinator)
+    @BindView(R.id.coordinator)
     CoordinatorLayout coordinator;
 
     private MoPubView moPubView;

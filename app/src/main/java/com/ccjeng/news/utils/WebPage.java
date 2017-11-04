@@ -72,12 +72,6 @@ public class Webpage {
         else
             width = dm.widthPixels;
 
-        //int currentapiVersion = android.os.Build.VERSION.SDK_INT;
-
-        //Log.d(TAG, "currentapiVersion = " + currentapiVersion);
-        //Log.d(TAG, "width px = " + width);
-        //Log.d(TAG, "width dip = " + Webpage.px2dip(context, width));
-
         return Webpage.px2dip(context, width);
 
     }

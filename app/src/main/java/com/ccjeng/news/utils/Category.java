@@ -370,7 +370,7 @@ public class Category {
 
     public static boolean customRSSFeed(String url) {
 
-        if (url.contains("hkm.appledaily.com") ||
+        if (url.contains("appledaily") || // include TW and HK
                 url.contains("am730.com.hk") ||
                 url.contains("thegreatdaily")){
             return true;

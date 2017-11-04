@@ -32,9 +32,9 @@ public class AppleDaily extends AbstractNews {
 
         try {
 
-            title = doc.select("h1#h1").text();
-            time = doc.select("time").first().text();
-            body = doc.select("div.articulum").html();
+            title = doc.select("hgroup > h1").text();
+            time = doc.select("div.ndArticle_creat").first().text();
+            body = doc.select("div.ndAritcle_headPic").html() + doc.select("article.ndArticle_content").html();
 
         } catch (Exception e) {
             e.printStackTrace();

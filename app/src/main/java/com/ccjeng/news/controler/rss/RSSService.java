@@ -5,6 +5,7 @@ import android.util.Log;
 import com.ccjeng.news.controler.HttpClient;
 import com.ccjeng.news.parser.rss.CustomFeedParser;
 import com.ccjeng.news.utils.Category;
+import com.ccjeng.news.utils.Constant;
 
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
@@ -43,6 +44,7 @@ public class RSSService {
             @Override
             public void call(final Subscriber<? super RSSFeed> subscriber) {
                 final Request request = new Request.Builder()
+                        .header("User-Agent", Constant.MobileUserAgentString)
                         .url(url)
                         .build();
 

@@ -34,7 +34,7 @@ import com.mikepenz.community_material_typeface_library.CommunityMaterial;
 import com.mikepenz.iconics.IconicsDrawable;
 import com.mopub.mobileads.MoPubView;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainActivity extends BaseActivity {
@@ -42,19 +42,19 @@ public class MainActivity extends BaseActivity {
     private static final String TAG = MainActivity.class.getName();
     private Analytics ga;
 
-    @Bind(R.id.tabs)
+    @BindView(R.id.tabs)
     TabLayout tabs;
 
-    @Bind(R.id.toolbar)
+    @BindView(R.id.toolbar)
     Toolbar toolbar;
 
-    @Bind(R.id.pager)
+    @BindView(R.id.pager)
     ViewPager pager;
 
-    @Bind(R.id.navigation)
+    @BindView(R.id.navigation)
     NavigationView navigation;
 
-    @Bind(R.id.drawerlayout)
+    @BindView(R.id.drawerlayout)
     DrawerLayout drawerLayout;
 
     private MoPubView moPubView;

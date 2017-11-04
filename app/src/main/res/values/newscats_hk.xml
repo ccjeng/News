@@ -145,20 +145,14 @@
         <item>果籽</item>
         <item>財經</item>
         <item>體育</item>
-        <item>壹週Plus</item>
-        <item>飲食男女</item>
-        <item>Ketchuper</item>
     </string-array>
     <string-array name="newsfeedsHKAppleDaily">
-        <item>http://hkm.appledaily.com/list.php?category_guid=4104&amp;category=daily</item>
-        <item>http://hkm.appledaily.com/list.php?category_guid=15335&amp;category=daily</item>
-        <item>http://hkm.appledaily.com/list.php?category_guid=462&amp;category=daily</item>
-        <item>http://hkm.appledaily.com/list.php?category_guid=vice&amp;category=daily</item>
-        <item>http://hkm.appledaily.com/list.php?category_guid=15307&amp;category=daily</item>
-        <item>http://hkm.appledaily.com/list.php?category_guid=25391&amp;category=daily</item>
-        <item>http://hkm.appledaily.com/list.php?category_guid=nextplus&amp;category=magazine</item>
-        <item>http://hkm.appledaily.com/list.php?category_guid=etw&amp;category=magazine</item>
-        <item>http://hkm.appledaily.com/list.php?category_guid=ketchuper&amp;category=magazine</item>
+        <item>https://hk.news.appledaily.com/daily/local</item>
+        <item>https://hk.news.appledaily.com/daily/international</item>
+        <item>https://hk.entertainment.appledaily.com/daily/entertainment</item>
+        <item>https://hk.lifestyle.appledaily.com/daily/lifestyle</item>
+        <item>https://hk.finance.appledaily.com/daily/finance</item>
+        <item>https://hk.sports.appledaily.com/daily/sports</item>
     </string-array>
 
     <string-array name="newscatsHKAppleDailyRT">
@@ -173,15 +167,15 @@
         <item>馬經</item>
     </string-array>
     <string-array name="newsfeedsHKAppleDailyRT">
-        <item>http://hkm.appledaily.com/list.php?category_guid=6996647&amp;category=instant</item>
-        <item>http://hkm.appledaily.com/list.php?category_guid=10829391&amp;category=instant</item>
-        <item>http://hkm.appledaily.com/list.php?category_guid=7018882&amp;category=instant</item>
-        <item>http://hkm.appledaily.com/list.php?category_guid=10793096&amp;category=instant</item>
-        <item>http://hkm.appledaily.com/list.php?category_guid=10793140&amp;category=instant</item>
-        <item>http://hkm.appledaily.com/list.php?category_guid=7015342&amp;category=instant</item>
-        <item>http://hkm.appledaily.com/list.php?category_guid=10829392&amp;category=instant</item>
-        <item>http://hkm.appledaily.com/list.php?category_guid=7032049&amp;category=instant</item>
-        <item>http://hkm.appledaily.com/list.php?category_guid=10860680&amp;category=instant</item>
+        <item>https://hk.news.appledaily.com/realtime</item>
+        <item>https://hk.news.appledaily.com/realtime/breaking</item>
+        <item>https://hk.entertainment.appledaily.com/enews/realtime</item>
+        <item>https://hk.news.appledaily.com/realtime/china</item>
+        <item>https://hk.news.appledaily.com/realtime/international</item>
+        <item>https://hk.finance.appledaily.com/realtime/finance</item>
+        <item>https://hk.lifestyle.appledaily.com/realtime/lifestyle</item>
+        <item>https://hk.sports.appledaily.com/realtime/sports</item>
+        <item>https://hk.sports.appledaily.com/realtime/racing</item>
     </string-array>
 
     <string-array name="newscatsHKEJ">

@@ -9,16 +9,16 @@ import android.view.Menu;
 import android.view.View;
 
 import com.ccjeng.news.R;
-import com.ccjeng.news.view.adapter.NewsCategoryAdapter;
-import com.ccjeng.news.view.adapter.RecyclerItemClickListener;
 import com.ccjeng.news.utils.Analytics;
 import com.ccjeng.news.utils.Category;
 import com.ccjeng.news.utils.Constant;
 import com.ccjeng.news.utils.Network;
+import com.ccjeng.news.view.adapter.NewsCategoryAdapter;
+import com.ccjeng.news.view.adapter.RecyclerItemClickListener;
 import com.ccjeng.news.view.base.BaseActivity;
 import com.mopub.mobileads.MoPubView;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class NewsCategory extends BaseActivity {
@@ -26,9 +26,9 @@ public class NewsCategory extends BaseActivity {
     private static final String TAG = NewsCategory.class.getName();
     private Analytics ga;
 
-    @Bind(R.id.toolbar)
+    @BindView(R.id.toolbar)
     Toolbar toolbar;
-    @Bind(R.id.recyclerView)
+    @BindView(R.id.recyclerView)
     RecyclerView recyclerView;
 
     private MoPubView moPubView;

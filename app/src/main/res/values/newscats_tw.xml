@@ -60,34 +60,20 @@
 		<item>https://tw.news.yahoo.com/rss/lifestyle</item>
     </string-array>
     <string-array name="newscatsAppDaily">
-    	<item>即時新聞</item>
-	   	<item>要聞總覽</item>
-    	<item>國際總覽</item>
-    	<item>財經總覽</item>
-    	<item>娛樂總覽</item>
-    	<item>體育總覽</item>
-    	<item>地產總覽</item>
-    	<item>論壇與專欄</item>
-		<item>副刊 焦點</item>
-		<item>副刊 旅遊與美食</item>
-		<item>副刊 家庭與健康總覽</item>
-		<item>副刊 科技3C</item>
-		<item>副刊 名采人間事總覽</item>
+		<item>要聞</item>
+    	<item>娛樂</item>
+    	<item>國際</item>
+    	<item>財經</item>
+    	<item>體育</item>
+		<item>副刊</item>
 	</string-array>
     <string-array name="newsfeedsAppDaily">
-	    <item>http://www.appledaily.com.tw/rss/newcreate/kind/rnews/type/new</item>
-	   	<item>http://www.appledaily.com.tw/rss/newcreate/kind/sec/type/5</item>
-    	<item>http://www.appledaily.com.tw/rss/newcreate/kind/sec/type/7</item>
-    	<item>http://www.appledaily.com.tw/rss/newcreate/kind/sec/type/8</item>
-    	<item>http://www.appledaily.com.tw/rss/newcreate/kind/sec/type/9</item>
-    	<item>http://www.appledaily.com.tw/rss/newcreate/kind/sec/type/10</item>
-    	<item>http://www.appledaily.com.tw/rss/newcreate/kind/sec/type/31488836</item>
-    	<item>http://www.appledaily.com.tw/rss/newcreate/kind/sec/type/forum</item>
-		<item>http://www.appledaily.com.tw/rss/newcreate/kind/sec/type/17</item>
-		<item>http://www.appledaily.com.tw/rss/newcreate/kind/sec/type/ALL24</item>
-		<item>http://www.appledaily.com.tw/rss/newcreate/kind/sec/type/19</item>
-		<item>http://www.appledaily.com.tw/rss/newcreate/kind/sec/type/18</item>
-		<item>http://www.appledaily.com.tw/rss/newcreate/kind/sec/type/20</item>
+		<item>https://tw.news.appledaily.com/headline/daily/</item>
+    	<item>https://tw.entertainment.appledaily.com/daily</item>
+    	<item>https://tw.news.appledaily.com/international/daily</item>
+    	<item>https://tw.finance.appledaily.com/daily</item>
+    	<item>https://tw.sports.appledaily.com/daily</item>
+    	<item>https://tw.lifestyle.appledaily.com/daily</item>
 	</string-array>
 
     <string-array name="newscatsUDN">

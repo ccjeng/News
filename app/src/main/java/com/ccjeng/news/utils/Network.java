@@ -9,6 +9,9 @@ import com.ccjeng.news.view.base.BaseApplication;
 import com.mopub.mobileads.MoPubErrorCode;
 import com.mopub.mobileads.MoPubView;
 
+import java.net.URI;
+import java.net.URISyntaxException;
+
 /**
  * Created by andycheng on 2015/11/15.
  */
@@ -96,6 +99,12 @@ public class Network {
         }
 
         return url;
-
     }
+
+    public static String getDomainName(String url) throws URISyntaxException {
+        URI uri = new URI(url);
+        String domain = uri.getHost();
+        return domain.startsWith("www.") ? domain.substring(4) : domain;
+    }
+
 }

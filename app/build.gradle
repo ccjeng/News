@@ -1,8 +1,9 @@
 apply plugin: 'com.android.application'
+//apply plugin: 'com.jakewharton.butterknife'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion '25.0.0'
+    compileSdkVersion 27
+    buildToolsVersion '26.0.2'
     defaultConfig {
         applicationId "com.ccjeng.news"
         minSdkVersion 16
@@ -36,17 +37,18 @@ dependencies {
 
     //compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:25.3.1'
-    compile 'com.android.support:support-v4:25.3.1' //Glide
-    compile 'com.android.support:design:25.3.1'
-    compile 'com.android.support:multidex:1.0.1'
-    compile 'com.google.android.gms:play-services-analytics:11.0.4'
-    compile 'com.google.android.gms:play-services-ads:11.0.4'
+    compile 'com.android.support:appcompat-v7:27.0.0'
+    compile 'com.android.support:support-v4:27.0.0' //Glide
+    compile 'com.android.support:design:27.0.0'
+    compile 'com.android.support:multidex:1.0.2'
+    compile 'com.google.android.gms:play-services-analytics:11.4.2'
+    compile 'com.google.android.gms:play-services-ads:11.4.2'
     //for FAN, don't move
-    compile 'com.google.firebase:firebase-core:11.0.4'
-    releaseCompile 'com.google.firebase:firebase-crash:11.0.4'
-    compile 'com.jakewharton:butterknife:7.0.1'
-    compile 'com.mikepenz:iconics-core:2.7.1@aar'
+    compile 'com.google.firebase:firebase-core:11.4.2'
+    releaseCompile 'com.google.firebase:firebase-crash:11.4.2'
+    compile 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    compile 'com.mikepenz:iconics-core:2.8.1@aar'
     compile 'com.mikepenz:community-material-typeface:1.5.54.1@aar'
     compile 'com.pnikosis:materialish-progress:1.7'
     compile('com.mikepenz:aboutlibraries:5.7.1@aar') {
@@ -60,7 +62,7 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.0.0'
     compile 'me.yokeyword:fragmentation:0.10.3'
     compile 'me.yokeyword:fragmentation-swipeback:0.7.9'
-    compile 'com.squareup.okhttp3:okhttp:3.4.1'
+    compile 'com.squareup.okhttp3:okhttp:3.9.0'
     compile 'com.facebook.android:audience-network-sdk:4.25.0'
     compile 'io.reactivex:rxjava:1.2.0'
     compile 'io.reactivex:rxandroid:1.2.1'
