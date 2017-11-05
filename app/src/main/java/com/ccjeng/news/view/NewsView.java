@@ -20,7 +20,6 @@ import com.ccjeng.news.presenter.NewsViewPresenter;
 import com.ccjeng.news.presenter.NewsViewView;
 import com.ccjeng.news.utils.Analytics;
 import com.ccjeng.news.utils.Category;
-import com.ccjeng.news.utils.Constant;
 import com.ccjeng.news.utils.Network;
 import com.ccjeng.news.utils.PreferenceSetting;
 import com.ccjeng.news.utils.UI;
@@ -29,7 +28,6 @@ import com.ccjeng.news.view.base.BaseApplication;
 import com.ccjeng.news.view.base.MVPBaseActivity;
 import com.mikepenz.community_material_typeface_library.CommunityMaterial;
 import com.mikepenz.iconics.IconicsDrawable;
-import com.mopub.mobileads.MoPubView;
 import com.pnikosis.materialishprogress.ProgressWheel;
 
 import java.io.IOException;
@@ -58,7 +56,7 @@ public class NewsView extends MVPBaseActivity<NewsViewView, NewsViewPresenter> i
     private String newsName;
     private String newsUrl;
     private String newsTitle;
-    private MoPubView moPubView;
+    //private MoPubView moPubView;
     private int sourceNumber;
     private String tabName;
 
@@ -93,7 +91,7 @@ public class NewsView extends MVPBaseActivity<NewsViewView, NewsViewPresenter> i
 
         main.setBackgroundColor(Color.parseColor(BaseApplication.getPrefBGColor()));
 
-        moPubView = (MoPubView) findViewById(R.id.adview);
+        //moPubView = (MoPubView) findViewById(R.id.adview);
 
         if (Network.isNetworkConnected(this)) {
 
@@ -101,7 +99,7 @@ public class NewsView extends MVPBaseActivity<NewsViewView, NewsViewPresenter> i
             main.setVisibility(View.GONE);
             mPresenter.getNews(tabName, sourceNumber, newsUrl);
 
-            Network.AdView(moPubView, Constant.AD_MoPub_View);
+            //Network.AdView(moPubView, Constant.AD_MoPub_View);
 
         } else {
             this.showError(R.string.network_error);
@@ -121,9 +119,9 @@ public class NewsView extends MVPBaseActivity<NewsViewView, NewsViewPresenter> i
 
     @Override
     protected void onDestroy() {
-        if (moPubView != null) {
-            moPubView.destroy();
-        }
+        //if (moPubView != null) {
+        //    moPubView.destroy();
+        //}
 
         super.onDestroy();
         mPresenter.onDestroy();

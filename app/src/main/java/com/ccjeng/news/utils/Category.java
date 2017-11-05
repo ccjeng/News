@@ -28,7 +28,6 @@ import com.ccjeng.news.parser.tw.Storm;
 import com.ccjeng.news.parser.tw.TheNewsLens;
 import com.ccjeng.news.parser.tw.UDN;
 import com.ccjeng.news.parser.tw.Yahoo;
-import com.ccjeng.news.parser.tw.YamNews;
 
 /**
  * Created by andycheng on 2015/11/14.
@@ -59,34 +58,34 @@ public class Category {
                     category = context.getResources().getStringArray(R.array.newscatsUDNFN);
                     break;
                 case 4:
-                    category = context.getResources().getStringArray(R.array.newscatsYam);
-                    break;
-                case 5:
                     category = context.getResources().getStringArray(R.array.newscatsChinaTimes);
                     break;
-                case 6:
+                case 5:
                     category = context.getResources().getStringArray(R.array.newscatsCommercial);
                     break;
-                case 7:
+                case 6:
                     category = context.getResources().getStringArray(R.array.newscatsWant);
                     break;
-                case 8:
+                case 7:
                     category = context.getResources().getStringArray(R.array.newscatsStorm);
                     break;
-                case 9:
+                case 8:
                     category = context.getResources().getStringArray(R.array.newscatsEttoday);
                     break;
-                case 10:
+                case 9:
                     category = context.getResources().getStringArray(R.array.newscatsCNYes);
                     break;
-                case 11:
+                case 10:
                     category = context.getResources().getStringArray(R.array.newscatsNewsTalk);
                     break;
-                case 12:
+                case 11:
                     category = context.getResources().getStringArray(R.array.newscatsLibertyTimes);
                     break;
-                case 13:
+                case 12:
                     category = context.getResources().getStringArray(R.array.newscatsAppDaily);
+                    break;
+                case 13:
+                    category = context.getResources().getStringArray(R.array.newscatsAppDailyRT);
                     break;
                 case 14:
                     category = context.getResources().getStringArray(R.array.newsCatsTheNewsLens);
@@ -166,34 +165,34 @@ public class Category {
                     feedURL = context.getResources().getStringArray(R.array.newsfeedsUDNFN);
                     break;
                 case 4:
-                    feedURL = context.getResources().getStringArray(R.array.newsfeedsYam);
-                    break;
-                case 5:
                     feedURL = context.getResources().getStringArray(R.array.newsfeedsChinaTimes);
                     break;
-                case 6:
+                case 5:
                     feedURL = context.getResources().getStringArray(R.array.newsfeedsCommercial);
                     break;
-                case 7:
+                case 6:
                     feedURL = context.getResources().getStringArray(R.array.newsfeedsWant);
                     break;
-                case 8:
+                case 7:
                     feedURL = context.getResources().getStringArray(R.array.newsfeedsStorm);
                     break;
-                case 9:
+                case 8:
                     feedURL = context.getResources().getStringArray(R.array.newsfeedsEttoday);
                     break;
-                case 10:
+                case 9:
                     feedURL = context.getResources().getStringArray(R.array.newsfeedsCNYes);
                     break;
-                case 11:
+                case 10:
                     feedURL = context.getResources().getStringArray(R.array.newsfeedsNewsTalk);
                     break;
-                case 12:
+                case 11:
                     feedURL = context.getResources().getStringArray(R.array.newsfeedsLibertyTimes);
                     break;
-                case 13:
+                case 12:
                     feedURL = context.getResources().getStringArray(R.array.newsfeedsAppDaily);
+                    break;
+                case 13:
+                    feedURL = context.getResources().getStringArray(R.array.newsfeedsAppDailyRT);
                     break;
                 case 14:
                     feedURL = context.getResources().getStringArray(R.array.newsFeedsTheNewsLens);
@@ -271,28 +270,26 @@ public class Category {
                     parser = new UDN();
                     break;
                 case 4:
-                    parser = new YamNews();
-                    break;
                 case 5:
                 case 6:
-                case 7:
                     parser = new ChinaTimes();
                     break;
-                case 8:
+                case 7:
                     parser = new Storm();
                     break;
-                case 9:
+                case 8:
                     parser = new ETToday();
                     break;
-                case 10:
+                case 9:
                     parser = new CNYes();
                     break;
-                case 11:
+                case 10:
                     parser = new NewTalk();
                     break;
-                case 12:
+                case 11:
                     parser = new LibertyTimes();
                     break;
+                case 12:
                 case 13:
                     parser = new AppleDaily();
                     break;

@@ -68,12 +68,29 @@
 		<item>副刊</item>
 	</string-array>
     <string-array name="newsfeedsAppDaily">
-		<item>https://tw.news.appledaily.com/headline/daily/</item>
+		<item>https://tw.news.appledaily.com/headline/daily</item>
     	<item>https://tw.entertainment.appledaily.com/daily</item>
     	<item>https://tw.news.appledaily.com/international/daily</item>
     	<item>https://tw.finance.appledaily.com/daily</item>
     	<item>https://tw.sports.appledaily.com/daily</item>
     	<item>https://tw.lifestyle.appledaily.com/daily</item>
+	</string-array>
+
+	<string-array name="newscatsAppDailyRT">
+		<item>最新</item>
+		<item>焦點</item>
+		<item>娛樂</item>
+		<item>社會</item>
+		<item>國際</item>
+		<item>政治</item>
+	</string-array>
+	<string-array name="newsfeedsAppDailyRT">
+		<item>https://tw.appledaily.com/new/realtime</item>
+		<item>https://tw.appledaily.com/recommend/realtime</item>
+		<item>https://tw.entertainment.appledaily.com/realtime</item>
+		<item>https://tw.news.appledaily.com/local/realtime</item>
+		<item>https://tw.news.appledaily.com/international/realtime</item>
+		<item>https://tw.news.appledaily.com/politics/realtime</item>
 	</string-array>
 
     <string-array name="newscatsUDN">
@@ -131,26 +148,6 @@
 		<item>http://money.udn.com/rssfeed/news/1001/5596</item>
 		<item>http://money.udn.com/rssfeed/news/1001/5597</item>
 	</string-array>
-    <string-array name="newscatsYam">
-    	<item>政治新聞</item>
-    	<item>社會新聞</item>
-    	<item>生活新聞</item>
-    	<item>娛樂新聞</item>
-    	<item>運動新聞</item>
-    	<item>財經新聞</item>
-		<item>國際新聞</item>
-		<item>地方新聞</item>
-    </string-array>
-    <string-array name="newsfeedsYam">
-    	<item>http://n.yam.com/RSS/Rss_politics.xml</item>
-    	<item>http://n.yam.com/RSS/Rss_society.xml</item>
-    	<item>http://n.yam.com/RSS/Rss_life.xml</item>
-    	<item>http://n.yam.com/RSS/Rss_entertain.xml</item>
-    	<item>http://n.yam.com/RSS/Rss_sports.xml</item>
-    	<item>http://n.yam.com/RSS/Rss_fn.xml</item>
-    	<item>http://n.yam.com/RSS/Rss_international.xml</item>
-    	<item>http://n.yam.com/RSS/Rss_place.xml</item>
-    </string-array>
     <string-array name="newscatsChinaTimes">
     	<item>即時新聞</item>
     	<item>中時總覽</item>
@@ -348,11 +345,10 @@
     	<item>http://news.cnyes.com/RSS/metal</item>   	
     </string-array>  
     <string-array name="newscatsNewsTalk">
-    	<item>全部</item>
 		<item>政治經濟</item>
     	<item>國際中國</item>
-    <!--	<item>生活藝文</item>
-    	<item>環境人權</item>-->
+    	<item>生活藝文</item>
+    	<item>環保司法</item>
     	<item>科技電競</item>
 		<item>美食旅遊</item>
     	<item>評論</item>
@@ -360,11 +356,10 @@
 		<item>公民連線</item>
     </string-array>
     <string-array name="newsfeedsNewsTalk">
-    	<item>http://newtalk.tw/rss/all</item>
 		<item>http://newtalk.tw/rss/category/1</item>
     	<item>http://newtalk.tw/rss/category/2</item>
-    	<!--<item>http://newtalk.tw/rss/category/3</item>
-    	<item>http://newtalk.tw/rss/category/4</item>-->
+    	<item>http://newtalk.tw/rss/category/3</item>
+    	<item>http://newtalk.tw/rss/category/4</item>
     	<item>http://newtalk.tw/rss/category/5</item>
 		<item>http://newtalk.tw/rss/category/6</item>
 		<item>http://newtalk.tw/rss/opinion_news</item>

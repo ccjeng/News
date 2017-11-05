@@ -65,6 +65,7 @@ public class AppleDaily extends AbstractNews {
 
     protected String cleaner(String rs) {
 
+        /*
         rs = rs.replace("<img src=\"http://twimg.edgesuite.net/appledaily/images/twitterline.png\">", "");
         rs = rs.replace("/thumbnail/","/IphoneThumbnail/");
         rs = rs.replace("_160x160.jpg","_280x.jpg");
@@ -74,6 +75,7 @@ public class AppleDaily extends AbstractNews {
 
         rs = rs.replace("<h2 id=\"bhead\">","<p><b>");
         rs = rs.replace("</h2>","</b></p>");
+        */
 
         Whitelist wlist=new Whitelist();
 

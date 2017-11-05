@@ -28,9 +28,9 @@ public class ChinaTimes extends AbstractNews {
         String time = "";
 
         try {
-            title = doc.select("header > h1").text();
-            time = doc.select("div.reporter > time").text() + "<br/>" + doc.select("div.rp_name").text();
-            body = doc.select("article.clear-fix").get(1).html();
+            title = doc.select("h1#h1").text();
+            time = doc.select("time").text();
+            body = doc.select("figure").html() + doc.select("article.arttext").html();
         } catch (Exception e) {
             e.printStackTrace();
         }

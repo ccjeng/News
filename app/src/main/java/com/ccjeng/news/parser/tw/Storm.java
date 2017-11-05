@@ -28,9 +28,9 @@ public class Storm extends AbstractNews {
         String time = "";
 
         try {
-            title = doc.select("div.title-wrap > h1.title").text();
-            time = doc.select("div.author_date > span.date").text() + " " + doc.select("div.author_date > a").text();
-            body = doc.select("div.content-float > div.imgs").html() + doc.select("div.content-float > div.article-wrapper").html();
+            title = doc.select("h1#article_title").text();
+            time = doc.select("div.article_info_content > span.info_time").text();
+            body = doc.select("div#feature_img_wrapper").html() + doc.select("article").html();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -58,8 +58,6 @@ public class Storm extends AbstractNews {
     }
 
     protected String cleaner(String rs) {
-
-        rs = rs.replace("相關報導", "<!--");
 
         Whitelist wlist = new Whitelist();
 

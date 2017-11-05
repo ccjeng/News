@@ -21,8 +21,6 @@ import android.view.View;
 
 import com.ccjeng.news.R;
 import com.ccjeng.news.utils.Analytics;
-import com.ccjeng.news.utils.Constant;
-import com.ccjeng.news.utils.Network;
 import com.ccjeng.news.utils.PreferenceSetting;
 import com.ccjeng.news.utils.Version;
 import com.ccjeng.news.view.base.BaseActivity;
@@ -32,7 +30,6 @@ import com.mikepenz.aboutlibraries.Libs;
 import com.mikepenz.aboutlibraries.LibsBuilder;
 import com.mikepenz.community_material_typeface_library.CommunityMaterial;
 import com.mikepenz.iconics.IconicsDrawable;
-import com.mopub.mobileads.MoPubView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -57,7 +54,7 @@ public class MainActivity extends BaseActivity {
     @BindView(R.id.drawerlayout)
     DrawerLayout drawerLayout;
 
-    private MoPubView moPubView;
+    //private MoPubView moPubView;
     private ActionBarDrawerToggle actionBarDrawerToggle;
 
     @Override
@@ -88,8 +85,8 @@ public class MainActivity extends BaseActivity {
         if (tab != null) {
             tab.select();
         }
-        moPubView = (MoPubView) findViewById(R.id.adview);
-        Network.AdView(moPubView, Constant.Ad_MoPub_Main);
+        //moPubView = (MoPubView) findViewById(R.id.adview);
+        //Network.AdView(moPubView, Constant.Ad_MoPub_Main);
 
 
         if (Version.isNewInstallation(this)) {
@@ -115,9 +112,9 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void onDestroy() {
-        if (moPubView != null) {
-            moPubView.destroy();
-        }
+        //if (moPubView != null) {
+        //    moPubView.destroy();
+        //}
 
         super.onDestroy();
     }

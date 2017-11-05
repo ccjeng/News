@@ -32,7 +32,7 @@ public class HKAppleDaily extends AbstractNews {
             time = "";
             //time = doc.select("body > b").get(0).text();
             //body = doc.select("body").html();
-            body = doc.select("div#content-article").html();
+            body = doc.select("div.photo") + doc.select("div.Article").html();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -64,10 +64,12 @@ public class HKAppleDaily extends AbstractNews {
         rs = rs.replace("<h2>","<p>");
         rs = rs.replace("</h2>","</p>");
         rs = rs.replace("#video_player{width:100%; height:100%;}","");
-*/
+
 
         rs = rs.replace("<h1>","<!--");
         rs = rs.replace("</h1>","-->");
+*/
+        rs = rs.replace("https://staticlayout.appledaily.hk/web_images/layout/art_end.gif","");
 
         Whitelist wlist = new Whitelist();
 

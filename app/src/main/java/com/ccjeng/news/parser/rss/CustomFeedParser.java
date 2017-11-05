@@ -1,7 +1,5 @@
 package com.ccjeng.news.parser.rss;
 
-import android.util.Log;
-
 import com.ccjeng.news.controler.rss.RSSFeed;
 import com.ccjeng.news.controler.rss.RSSItem;
 import com.ccjeng.news.utils.Network;
@@ -38,7 +36,7 @@ public class CustomFeedParser {
                     item.setDescription("");
                     item.setImg(k.select("a > img").attr("src"));
 
-                    Log.d("appledaily", k.select("a > p").text());
+                    //Log.d("appledaily", k.select("a > p").text());
 
                     if (k.select("a > p").hasText()) {
                         feed.addItem(item);
@@ -69,7 +67,7 @@ public class CustomFeedParser {
                 for (Element k : links) {
                     item = new RSSItem();
                     //Log.d("daliulian", k.select("div.media > div.title").text());
-                    item.setTitle(k.select("div.media h3.title").text());
+                    item.setTitle(k.select("div.media h4.title").text());
                     item.setLink(k.select("div.media > div.media-body a").attr("href"));
                     item.setPubDate("");
                     item.setDescription(k.select("div.media-left").html().replace("/img","http://www.thegreatdaily.com/img"));
@@ -79,7 +77,7 @@ public class CustomFeedParser {
             } else if (url.contains("appledaily") && url.contains("tw")) {
 
                 root = "";
-                if (url.contains("daily")) {
+                if (url.contains("/daily")) {
                     root = "https://" + Network.getDomainName(url);
                 }
 
@@ -88,10 +86,18 @@ public class CustomFeedParser {
                 for (Element k : links) {
                     item = new RSSItem();
                     item.setTitle(k.select("p.art-title").text());
-                    item.setLink(root + k.select("a").attr("href"));
+
+                    if (url.contains("/daily")) {
+                        item.setLink(root + k.select("a").attr("href"));
+                    } else {
+                        item.setLink(k.select("a").attr("href"));
+                    }
                     item.setDescription("");
                     item.setPubDate(k.select("p.art-stats span.time").text());
-                    item.setImg("https:" + k.select("img").attr("src"));
+
+                    if (!k.select("img").attr("src").isEmpty()) {
+                        item.setImg("https:" + k.select("img").attr("src"));
+                    }
 
                     //Log.d("appledaily", "main-articles = " + root + k.select("a").attr("href"));
 

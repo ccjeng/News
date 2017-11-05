@@ -5,9 +5,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.util.Log;
 
-import com.ccjeng.news.view.base.BaseApplication;
-import com.mopub.mobileads.MoPubErrorCode;
-import com.mopub.mobileads.MoPubView;
+import com.vpadn.ads.VpadnBanner;
 
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -54,6 +52,10 @@ public class Network {
 
     }
 
+    public static void AdView(VpadnBanner adView, String AdUnitID) {
+
+    }
+    /*
     public static void AdView(MoPubView adView, String AdUnitID) {
         adView.setAdUnitId(AdUnitID);
         if (BaseApplication.APPDEBUG) {
@@ -88,6 +90,7 @@ public class Network {
             });
         }
     }
+    */
 
     public static String checkNewsViewURL(String url) {
 

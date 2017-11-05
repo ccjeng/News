@@ -11,12 +11,9 @@ import android.view.View;
 import com.ccjeng.news.R;
 import com.ccjeng.news.utils.Analytics;
 import com.ccjeng.news.utils.Category;
-import com.ccjeng.news.utils.Constant;
-import com.ccjeng.news.utils.Network;
 import com.ccjeng.news.view.adapter.NewsCategoryAdapter;
 import com.ccjeng.news.view.adapter.RecyclerItemClickListener;
 import com.ccjeng.news.view.base.BaseActivity;
-import com.mopub.mobileads.MoPubView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -31,7 +28,7 @@ public class NewsCategory extends BaseActivity {
     @BindView(R.id.recyclerView)
     RecyclerView recyclerView;
 
-    private MoPubView moPubView;
+    //private MoPubView moPubView;
     private int sourceNumber;
     private String tabName;
     private String categoryName;
@@ -70,8 +67,8 @@ public class NewsCategory extends BaseActivity {
         showResult(tabName, sourceNumber);
 
 
-        moPubView = (MoPubView) findViewById(R.id.adview);
-        Network.AdView(moPubView, Constant.Ad_MoPub_Category);
+        //moPubView = (MoPubView) findViewById(R.id.adview);
+        //Network.AdView(moPubView, Constant.Ad_MoPub_Category);
 
         ga.trackEvent(this, "Click", "News", categoryName, 0);
 
@@ -79,9 +76,9 @@ public class NewsCategory extends BaseActivity {
 
     @Override
     protected void onDestroy() {
-        if (moPubView != null) {
-            moPubView.destroy();
-        }
+        //if (moPubView != null) {
+        //    moPubView.destroy();
+        //}
         super.onDestroy();
     }
 

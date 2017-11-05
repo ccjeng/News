@@ -16,12 +16,10 @@ import com.ccjeng.news.controler.rss.RSSFeed;
 import com.ccjeng.news.presenter.NewsRSSListPresenter;
 import com.ccjeng.news.presenter.NewsRSSListView;
 import com.ccjeng.news.utils.Analytics;
-import com.ccjeng.news.utils.Constant;
 import com.ccjeng.news.utils.Network;
 import com.ccjeng.news.utils.UI;
 import com.ccjeng.news.view.adapter.NewsListAdapter;
 import com.ccjeng.news.view.base.MVPBaseActivity;
-import com.mopub.mobileads.MoPubView;
 import com.pnikosis.materialishprogress.ProgressWheel;
 
 import butterknife.BindView;
@@ -42,7 +40,7 @@ public class NewsRSSList extends MVPBaseActivity<NewsRSSListView, NewsRSSListPre
     @BindView(R.id.coordinator)
     CoordinatorLayout coordinator;
 
-    private MoPubView moPubView;
+    //private MoPubView moPubView;
     private SwipeRefreshLayout mSwipeLayout;
 
     private int sourceNumber;
@@ -101,8 +99,8 @@ public class NewsRSSList extends MVPBaseActivity<NewsRSSListView, NewsRSSListPre
         }
 
 
-        moPubView = (MoPubView) findViewById(R.id.adview);
-        Network.AdView(moPubView, Constant.Ad_MoPub_RSS);
+        //moPubView = (MoPubView) findViewById(R.id.adview);
+        //Network.AdView(moPubView, Constant.Ad_MoPub_RSS);
 
         ga.trackEvent(this, "Click", "Category", newsName + "-" + categoryName, 0);
 
@@ -111,9 +109,9 @@ public class NewsRSSList extends MVPBaseActivity<NewsRSSListView, NewsRSSListPre
 
     @Override
     protected void onDestroy() {
-        if (moPubView != null) {
-            moPubView.destroy();
-        }
+        //if (moPubView != null) {
+        //    moPubView.destroy();
+        //}
         mPresenter.onDestroy();
         super.onDestroy();
     }

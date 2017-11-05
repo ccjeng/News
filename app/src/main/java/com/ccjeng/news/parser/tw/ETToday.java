@@ -67,8 +67,10 @@ public class ETToday extends AbstractNews {
 
     protected String cleaner(String rs) {
 
+        rs = rs.replace("<img src=\"//","<img src=\"https://");
         rs = rs.replace("<div class=\"test-keyword\"> ", "<!--");
         rs = rs.replace("\"//static.ettoday.net","\"http://static.ettoday.net");
+
 
         Whitelist wlist = new Whitelist();
 
