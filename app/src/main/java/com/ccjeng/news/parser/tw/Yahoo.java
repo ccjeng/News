@@ -30,8 +30,14 @@ public class Yahoo extends AbstractNews {
 
         try {
             title = doc.select("h1").text();
-            time = doc.select("div.provider").text() + doc.select("div.publish").text();
-            body = doc.select("div.bd").html();
+
+           // if (link.contains("mobi")) {
+                time = doc.select("h3 time").text();
+                body = doc.select("div.content-body").html();
+           /* } else {
+                time = doc.select("div.provider").text() + doc.select("div.publish").text();
+                body = doc.select("div.bd").html();
+            }*/
         } catch (Exception e) {
             e.printStackTrace();
         }

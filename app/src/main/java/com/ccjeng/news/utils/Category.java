@@ -369,7 +369,7 @@ public class Category {
 
         if (url.contains("appledaily") || // include TW and HK
                 url.contains("am730.com.hk") ||
-                url.contains("thegreatdaily")){
+                url.contains("thegreatdaily")) {
             return true;
         } else {
             return false;

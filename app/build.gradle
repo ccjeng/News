@@ -8,8 +8,8 @@ android {
         applicationId "com.ccjeng.news"
         minSdkVersion 16
         targetSdkVersion 23
-        versionCode 49
-        versionName '1.9.0.110717SN'
+        versionCode 50
+        versionName '1.9.1.022518SN'
         vectorDrawables.useSupportLibrary = true
         multiDexEnabled true
     }
@@ -36,16 +36,16 @@ android {
 dependencies {
     //compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:27.0.0'
-    compile 'com.android.support:support-v4:27.0.0'
+    compile 'com.android.support:appcompat-v7:27.0.2'
+    compile 'com.android.support:support-v4:27.0.2'
     //Glide
-    compile 'com.android.support:design:27.0.0'
+    compile 'com.android.support:design:27.0.2'
     compile 'com.android.support:multidex:1.0.2'
-    compile 'com.google.android.gms:play-services-analytics:11.4.2'
-    compile 'com.google.android.gms:play-services-ads:11.4.2'
+    compile 'com.google.android.gms:play-services-analytics:11.8.0'
+    compile 'com.google.android.gms:play-services-ads:11.8.0'
     //for FAN, don't move
-    compile 'com.google.firebase:firebase-core:11.4.2'
-    releaseCompile 'com.google.firebase:firebase-crash:11.4.2'
+    compile 'com.google.firebase:firebase-core:11.8.0'
+    releaseCompile 'com.google.firebase:firebase-crash:11.8.0'
     compile 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
     compile 'com.mikepenz:iconics-core:2.8.1@aar'
@@ -54,19 +54,15 @@ dependencies {
     compile('com.mikepenz:aboutlibraries:5.7.1@aar') {
         transitive = true
     }
-    //compile('com.mopub:mopub-sdk:4.12.0@aar') {
-    //    transitive = true
-    //}
     compile 'org.jsoup:jsoup:1.11.1'
     compile 'com.github.bumptech.glide:glide:4.0.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.0.0'
     compile 'me.yokeyword:fragmentation:0.10.3'
     compile 'me.yokeyword:fragmentation-swipeback:0.7.9'
     compile 'com.squareup.okhttp3:okhttp:3.9.0'
-    //compile 'com.facebook.android:audience-network-sdk:4.25.0'
-    compile 'io.reactivex:rxjava:1.2.0'
+    compile 'io.reactivex:rxjava:1.3.0'
     compile 'io.reactivex:rxandroid:1.2.1'
-    implementation files('src/main/libs/vpadn-sdk-obf466-50907102-1709051709-67cc94a.jar')
+    implementation files('src/main/libs/vpadn-sdk-obf471-10207102-1802011415-5985d26.jar')
 }
 
 apply plugin: 'com.google.gms.google-services'

@@ -62,15 +62,15 @@ public class CustomFeedParser {
                     }
                 }
             } else if (url.contains("thegreatdaily")) {
-                links = doc.select("div.snippet");
+                links = doc.select("div#list > div.item");
 
                 for (Element k : links) {
                     item = new RSSItem();
                     //Log.d("daliulian", k.select("div.media > div.title").text());
-                    item.setTitle(k.select("div.media h4.title").text());
-                    item.setLink(k.select("div.media > div.media-body a").attr("href"));
+                    item.setTitle(k.select("div.title").text());
+                    item.setLink(k.select("div.title > a").attr("href"));
                     item.setPubDate("");
-                    item.setDescription(k.select("div.media-left").html().replace("/img","http://www.thegreatdaily.com/img"));
+                    item.setDescription(k.select("div.cover").html().replace("/img","http://www.thegreatdaily.com/img"));
                     feed.addItem(item);
                 }
 
