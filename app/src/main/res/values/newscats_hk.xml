@@ -142,7 +142,6 @@
         <item>要聞港聞</item>
         <item>兩岸國際</item>
         <item>娛樂</item>
-        <item>果籽</item>
         <item>財經</item>
         <item>體育</item>
     </string-array>
@@ -150,7 +149,6 @@
         <item>https://hk.news.appledaily.com/daily/local</item>
         <item>https://hk.news.appledaily.com/daily/international</item>
         <item>https://hk.entertainment.appledaily.com/daily/entertainment</item>
-        <item>https://hk.lifestyle.appledaily.com/daily/lifestyle</item>
         <item>https://hk.finance.appledaily.com/daily/finance</item>
         <item>https://hk.sports.appledaily.com/daily/sports</item>
     </string-array>

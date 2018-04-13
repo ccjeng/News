@@ -29,16 +29,17 @@ public class CustomFeedParser {
 
                 links = doc.select("div.content-list > ul.list > li");
 
+                String imgLink = "";
                 for (Element k : links) {
                     item = new RSSItem();
-                    item.setTitle(k.select("a > p").text().replace("　　",""));
+                    item.setTitle(k.select("a p").text().replace("　　",""));
                     item.setLink(k.select("a").attr("href"));
                     item.setDescription("");
-                    item.setImg(k.select("a > img").attr("src"));
+                    //imgLink = k.select("a img").attr("src");
+                    //item.setImg(imgLink);
 
-                    //Log.d("appledaily", k.select("a > p").text());
 
-                    if (k.select("a > p").hasText()) {
+                    if (k.select("a p").hasText()) {
                         feed.addItem(item);
                     }
                 }
