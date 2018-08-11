@@ -32,12 +32,13 @@ public class CustomFeedParser {
                 String imgLink = "";
                 for (Element k : links) {
                     item = new RSSItem();
+
                     item.setTitle(k.select("a p").text().replace("　　",""));
                     item.setLink(k.select("a").attr("href"));
                     item.setDescription("");
+
                     //imgLink = k.select("a img").attr("src");
                     //item.setImg(imgLink);
-
 
                     if (k.select("a p").hasText()) {
                         feed.addItem(item);
@@ -62,7 +63,8 @@ public class CustomFeedParser {
                         feed.addItem(item);
                     }
                 }
-            } else if (url.contains("thegreatdaily")) {
+            } else if (url.contains("twgreatdaily")) {
+
                 links = doc.select("div#list > div.item");
 
                 for (Element k : links) {
@@ -71,7 +73,7 @@ public class CustomFeedParser {
                     item.setTitle(k.select("div.title").text());
                     item.setLink(k.select("div.title > a").attr("href"));
                     item.setPubDate("");
-                    item.setDescription(k.select("div.cover").html().replace("/img","http://www.thegreatdaily.com/img"));
+                    item.setDescription(k.select("div.cover").html().replace("/img","http://www.twgreatdaily.com/img"));
                     feed.addItem(item);
                 }
 

@@ -39,12 +39,12 @@
         <item>娛樂</item>
     </string-array>
     <string-array name="newsfeedsDaliulian">
-        <item>http://www.thegreatdaily.com/cat46</item>
-        <item>http://www.thegreatdaily.com/cat119</item>
-        <item>http://www.thegreatdaily.com/cat48</item>
-        <item>http://www.thegreatdaily.com/cat47</item>
-        <item>http://www.thegreatdaily.com/cat91</item>
-        <item>http://www.thegreatdaily.com/cat95</item>
+        <item>http://www.twgreatdaily.com/cat46</item>
+        <item>http://www.twgreatdaily.com/cat119</item>
+        <item>http://www.twgreatdaily.com/cat48</item>
+        <item>http://www.twgreatdaily.com/cat47</item>
+        <item>http://www.twgreatdaily.com/cat91</item>
+        <item>http://www.twgreatdaily.com/cat95</item>
     </string-array>
     <string-array name="newscatsKwongwah">
         <item>北马新闻</item>
