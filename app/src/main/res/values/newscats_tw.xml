@@ -253,7 +253,6 @@
 		<item>http://www.chinatimes.com/rss/commercial-special.xml</item>
 	</string-array>
 	<string-array name="newscatsEttoday">
-		<item>即時新聞</item>
 		<item>政治新聞</item>
 		<item>財經新聞</item>
 		<item>國際新聞</item>
@@ -272,7 +271,6 @@
 		<item>鍵盤大檸檬</item>
 	</string-array>
 	<string-array name="newsfeedsEttoday">
-    	<item>http://feeds.feedburner.com/ettoday/realtime</item>
     	<item>http://feeds.feedburner.com/ettoday/news</item>
 		<item>http://feeds.feedburner.com/ettoday/finance</item>
     	<item>http://feeds.feedburner.com/ettoday/global</item>
