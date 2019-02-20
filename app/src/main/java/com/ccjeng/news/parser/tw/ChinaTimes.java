@@ -58,6 +58,8 @@ public class ChinaTimes extends AbstractNews {
 
     protected String cleaner(String rs) {
 
+        rs = rs.replace("src=\"//img.","src=\"https://img.");
+
         Whitelist wlist = new Whitelist();
 
         wlist.addTags("p","figcaption");

@@ -29,15 +29,19 @@ public class ETToday extends AbstractNews {
 
         try {
 
-            if (link.contains("/star/") || link.contains("/travel/")) {
-                title = doc.select("h2.title").text();
-                Log.d(TAG, "title2=" + title);
-            } else {
+            if (link.contains("/travel/")) {
                 title = doc.select("h1.title").text();
+                time = doc.select("time.date").text();
+                body = doc.select("article > div.story").html();
+            } else if (link.contains("/dalemon/")) {
+                title = doc.select("h1.title").text();
+                body = doc.select("article > div.subject_article > div.story").html();
+            } else {
+                title = doc.select("h1").text();
+                time = doc.select("time.header-time").text();
+                body = doc.select("article > div.content-container").html();
             }
 
-            time = doc.select("span.news-time").text();
-            body = doc.select("div.story").html();
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -67,10 +71,8 @@ public class ETToday extends AbstractNews {
 
     protected String cleaner(String rs) {
 
-        rs = rs.replace("<img src=\"//","<img src=\"https://");
-        rs = rs.replace("<div class=\"test-keyword\"> ", "<!--");
-        rs = rs.replace("\"//static.ettoday.net","\"http://static.ettoday.net");
-
+        rs = rs.replace("amp-img","img");
+        rs = rs.replace("img src=\"//","img src=\"https://");
 
         Whitelist wlist = new Whitelist();
 

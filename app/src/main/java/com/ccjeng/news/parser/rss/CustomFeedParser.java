@@ -71,7 +71,7 @@ public class CustomFeedParser {
                     item = new RSSItem();
                     //Log.d("daliulian", k.select("div.media > div.title").text());
                     item.setTitle(k.select("div.title").text());
-                    item.setLink(k.select("div.title > a").attr("href"));
+                    item.setLink("https://www.twgreatdaily.com" + k.select("div.title > a").attr("href"));
                     item.setPubDate("");
                     item.setDescription(k.select("div.cover").html().replace("/img","http://www.twgreatdaily.com/img"));
                     feed.addItem(item);

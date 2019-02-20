@@ -39,7 +39,7 @@ public class UDN extends AbstractNews {
                 time = doc.select("time").text();
                 body = doc.select("figure").html() + "<p>"+ doc.select("div#story").html();
             } else {
-                time = doc.select("div#story_bady_info h3").text();
+                time = doc.select("div.story_bady_info_author").text();
                 body = doc.select("div#story_body_content").html();
             }
         } catch (Exception e) {

@@ -28,8 +28,8 @@ public class CNYes extends AbstractNews {
         String time = "";
 
         try {
-            title = doc.select("h1").text();
-            time = doc.select("time").text();
+            title = doc.select("h1 > span").first().text();
+            time = doc.select("h1 time").text();
             body = doc.select("article").html();
         } catch (Exception e) {
             e.printStackTrace();

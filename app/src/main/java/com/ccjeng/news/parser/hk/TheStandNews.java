@@ -28,11 +28,12 @@ public class TheStandNews extends AbstractNews {
         String time = "";
 
         try {
-            title = doc.select("h1.article-name").text();
-            time = doc.select("p.date").get(4).text();
-            body = doc.select("div.article-content").html() + "<p>"
-                    + doc.select("div.article-photo").html() + "<p>"
-                    + doc.select("p.caption").html();
+            title = doc.select("article > h1.article-name").text();
+            time = doc.select("article > p.date").text();
+            body = doc.select("article > div.article-photo").html() + "<p>"
+                    + doc.select("p.caption").html() + "<p>"
+                    + doc.select("article > div.article-content").html()
+                    ;
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -3,7 +3,7 @@
 	tools:ignore="MissingTranslation">
 
     <string-array name="updates">
-    	<item>v1.9.3\n修复大榴槤
+    	<item>v1.9.4\n修复新闻
 		</item>
 	</string-array>
 </resources>

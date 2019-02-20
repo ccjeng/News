@@ -59,7 +59,7 @@ public class Daliulian extends AbstractNews {
 
     protected String cleaner(String rs) {
 
-        rs = rs.replace("/imgs/","http://www.twgreatdaily.com/imgs/");
+        rs = rs.replace("src=\"/imgs/","src=\"http://www.twgreatdaily.com/imgs/");
         rs = rs.replace("贊助商鏈接","");
 
         Whitelist wlist = new Whitelist();

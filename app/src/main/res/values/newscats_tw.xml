@@ -3,7 +3,6 @@
 	tools:ignore="MissingTranslation">
 	<string-array name="newscatsCNA">
 		<item>重點新聞</item>
-		<item>新聞圖輯</item>
 		<item>要聞新聞</item>
 		<item>社會新聞</item>
 		<item>生活新聞</item>
@@ -18,7 +17,6 @@
 	</string-array>
 	<string-array name="newsfeedsCNA">
 		<item>http://feeds.feedburner.com/cnaFirstNews</item>
-		<item>http://feeds.feedburner.com/rsscna/PhotoAlbum</item>
 		<item>http://feeds.feedburner.com/rsscna/politics</item>
 		<item>http://feeds.feedburner.com/rsscna/social</item>
 		<item>http://feeds.feedburner.com/rsscna/lifehealth</item>
@@ -293,78 +291,36 @@
 		<item>http://feeds.feedburner.com/ettoday/dalemon</item>
     </string-array>
     <string-array name="newscatsCNYes">
-    	<!--<item>總覽</item>-->
-    	<item>頭條</item>
-    	<item>台股</item>
-    	<item>美股</item>
-    	<item>A股</item>
-    	<item>港股</item>
-    	<item>興櫃</item>
-    	<item>未上市</item>
-    	<item>國際股</item>
-    	<item>基金</item>
-    	<item>宏觀</item>
-    	<item>指標</item>
-    	<item>產業</item>
+    	<item>頭條新聞</item>
+    	<item>台灣股市</item>
+    	<item>國際股市</item>
+    	<item>大陸股市</item>
     	<item>外匯</item>
-    	<item>期貨</item>
+    	<item>商品期貨</item>
     	<item>房產</item>
-    	<item>鉅亨看世界</item>
-    	<item>旅遊</item>
-    	<item>深度</item>
-    	<item>時事</item>
-    	<item>生活</item>
-    	<item>能源</item>
-    	<item>黃金</item>
-    	<item>金屬</item>
     </string-array>
     <string-array name="newsfeedsCNYes">
-    	<!--<item>http://news.cnyes.com/RSS/rollnews</item>-->
-    	<item>http://news.cnyes.com/RSS/headline</item>
-    	<item>http://news.cnyes.com/RSS/tw_stock</item>
-    	<item>http://news.cnyes.com/RSS/us_stock</item>
-    	<item>http://news.cnyes.com/RSS/sh_stock</item>
-    	<item>http://news.cnyes.com/RSS/hk_stock</item>
-    	<item>http://news.cnyes.com/RSS/eme</item>
-    	<item>http://news.cnyes.com/RSS/pre</item>
-    	<item>http://news.cnyes.com/RSS/wd_stock</item>
-    	<item>http://news.cnyes.com/RSS/fund</item>
-    	<item>http://news.cnyes.com/RSS/MACRO</item>
-    	<item>http://news.cnyes.com/RSS/index</item>
-    	<item>http://news.cnyes.com/RSS/industry</item>
-    	<item>http://news.cnyes.com/RSS/forex</item>
-    	<item>http://news.cnyes.com/RSS/future</item>
-    	<item>http://news.cnyes.com/RSS/cnyeshouse</item>
-    	<item>http://news.cnyes.com/RSS/MURMUR</item>
-    	<item>http://news.cnyes.com/RSS/travel</item>
-    	<item>http://news.cnyes.com/RSS/deep</item>
-    	<item>http://news.cnyes.com/RSS/event</item>
-    	<item>http://news.cnyes.com/RSS/live</item>
-    	<item>http://news.cnyes.com/RSS/energry</item>
-    	<item>http://news.cnyes.com/RSS/gold</item>
-    	<item>http://news.cnyes.com/RSS/metal</item>   	
+    	<item>https://news.cnyes.com/rss/v1/news/category/headline</item>
+    	<item>https://news.cnyes.com/rss/v1/news/category/tw_stock</item>
+    	<item>https://news.cnyes.com/rss/v1/news/category/wd_stock</item>
+    	<item>https://news.cnyes.com/rss/v1/news/category/cn_stock</item>
+    	<item>https://news.cnyes.com/rss/v1/news/category/forex</item>
+    	<item>https://news.cnyes.com/rss/v1/news/category/future</item>
+    	<item>https://news.cnyes.com/rss/v1/news/category/cnyeshouse</item>
     </string-array>  
     <string-array name="newscatsNewsTalk">
-		<item>政治經濟</item>
-    	<item>國際中國</item>
-    	<item>生活藝文</item>
-    	<item>環保司法</item>
-    	<item>科技電競</item>
-		<item>美食旅遊</item>
+		<item>政治</item>
+		<item>國際</item>
+		<item>財經</item>
+    	<item>司法</item>
     	<item>評論</item>
-		<item>開講無疆界</item>
-		<item>公民連線</item>
     </string-array>
     <string-array name="newsfeedsNewsTalk">
-		<item>http://newtalk.tw/rss/category/1</item>
-    	<item>http://newtalk.tw/rss/category/2</item>
-    	<item>http://newtalk.tw/rss/category/3</item>
-    	<item>http://newtalk.tw/rss/category/4</item>
-    	<item>http://newtalk.tw/rss/category/5</item>
-		<item>http://newtalk.tw/rss/category/6</item>
-		<item>http://newtalk.tw/rss/opinion_news</item>
-		<item>http://newtalk.tw/rss/opinion_uservoice</item>
-		<item>http://newtalk.tw/rss/citizen</item>
+		<item>https://newtalk.tw/rss/category/2</item>
+		<item>https://newtalk.tw/rss/category/1</item>
+    	<item>https://newtalk.tw/rss/category/3</item>
+    	<item>https://newtalk.tw/rss/category/4</item>
+		<item>https://newtalk.tw/rss/opinion_news</item>
     </string-array>
     <string-array name="newscatsLibertyTimes">
     	<item>焦點新聞</item>

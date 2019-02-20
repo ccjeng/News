@@ -28,18 +28,10 @@ public class HKHeadline extends AbstractNews {
         String time = "";
 
         try {
-            if (link.contains("ent/")) {
-                title = doc.select("td.bodytext > b").text();
-                time = doc.select("td.bodytext > font").text();
-                body = doc.select("div.hkadj").html();  //todo + "<p>" + doc.select("img.imgtop").html();
-
-            } else {
-                title = doc.select("div.headlinetitle").text();
-                time = doc.select("table span.newsheadlinetime").text();
-                body = doc.select("div.bodytext_v1").html() + "<p>" + doc.select("table tr td.news_line02").html();
-
-            }
-
+                title = doc.select("h1").text();
+                time = doc.select("span.date").text();
+                body = doc.select("div.content > div.content-carousel").html()
+                + doc.select("div.content > div#news-content").html();
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -69,7 +61,7 @@ public class HKHeadline extends AbstractNews {
 
     protected String cleaner(String rs) {
 
-        rs = rs.replace("www.hkheadline.com","");
+        rs = rs.replace("img src=\"//static","img src=\"http://static");
         rs = rs.replace("&nbsp;","");
 
         Whitelist wlist = new Whitelist();

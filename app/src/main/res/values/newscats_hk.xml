@@ -216,28 +216,10 @@
         <item>https://www.am730.com.hk/news/%E6%97%85%E9%81%8A.%E9%A3%B2%E9%A3%9F</item>
     </string-array>
     <string-array name="newscatsHKheadline">
-        <!-- <item>即時新聞</item>-->
-        <!-- 	<item>日報新聞-全部</item> -->
-        <item>港聞</item>
-        <item>中國</item>
-        <item>國際</item>
-        <item>地產</item>
-        <item>體育</item>
-        <item>副刊</item>
-        <item>娛樂 最新本地</item>
-        <item>娛樂 最新外娛</item>
+        <item>頭條日報 </item>
     </string-array>
     <string-array name="newsfeedsHKheadline">
-        <!-- <item>http://news.hkheadline.com/instantnews/xml/instant_news_xml.xml</item>-->
-        <!-- <item>http://news.hkheadline.com/dailynews/xml/daily_news_xml.xml</item> -->
-        <item>http://www.feed43.com/5652083487268223.xml</item>
-        <item>http://www.feed43.com/1650212611678040.xml</item>
-        <item>http://www.feed43.com/8334601303067526.xml</item>
-        <item>http://www.feed43.com/6861325447714757.xml</item>
-        <item>http://www.feed43.com/6835046601035184.xml</item>
-        <item>http://www.feed43.com/2016532758715585.xml</item>
-        <item>http://www.feed43.com/1074704207872608.xml</item>
-        <item>http://www.feed43.com/7074545008260156.xml</item>
+        <item>http://hd.stheadline.com/rss/news/daily/</item>
     </string-array>
     <string-array name="newscatsETNet">
         <item>精選新聞</item>

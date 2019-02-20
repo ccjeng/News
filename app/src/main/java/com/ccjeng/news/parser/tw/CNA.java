@@ -28,9 +28,9 @@ public class CNA extends AbstractNews {
         String time = "";
 
         try {
-            title = doc.select("div.news_title > h1").text();
-            time = doc.select("div.update_times > p.blue").text();
-            body = doc.select("div.news_article > div.article_box").html();
+            title = doc.select("div.centralContent h1").text();
+            time = doc.select("div.centralContent div.updatetime").text();
+            body = doc.select("div.centralContent div.fullPic").html() + doc.select("div.centralContent div.paragraph").first().html();
         } catch (Exception e) {
             e.printStackTrace();
         }

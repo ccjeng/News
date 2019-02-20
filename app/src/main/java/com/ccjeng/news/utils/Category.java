@@ -355,11 +355,13 @@ public class Category {
         String encoding = "utf-8";
 
         if (tab.equals("HK")) {
+
+          /*
             switch (position) {
                 case 6: //HKHeadline
                     encoding = "big-5";
                     break;
-            }
+            }*/
         }
 
         return encoding;
